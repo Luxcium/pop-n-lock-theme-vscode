@@ -1,6 +1,6 @@
 {
   "name": "pop-n-lock-theme-vscode",
-  "version": "3.15.2",
+  "version": "3.15.3",
   "publisher": "Luxcium",
   "license": "MIT",
   "displayName": "Pop N' Lock Theme by Luxcium ✨",
@@ -18,7 +18,7 @@
     "checkout:vnext": "git checkout version/dev-pop-n-lock-theme-code@next; git pull origin version/dev-pop-n-lock-theme-code@next --verbose",
     "checkout:master": "git checkout master && git pull origin master --verbose",
     "gitmerge:squash:vnext": "git merge --squash --verify-signatures --signoff --stat --progress --verbose version/dev-pop-n-lock-theme-code@next",
-    "gitmerge:commit": "git add . --verbose ; git commit -vsS -am 'All changes on version/@next will be PackNPublish'; npm run git:push",
+    "gitmerge:commit": "git add . --verbose ; git commit -vsS -am 'version@next fusion in master will be PackNPublish'; npm run git:push",
     "gitmergeback:master": "git merge master --progress --stat --commit -m 'Merging master back' && npm run git:push ",
     "will:gitmerge": "npm run checkout:commit; npm run checkout:vnext; npm run gitmergeback:master ;npm run checkout:master",
     "gitchekback:vnext": "npm run gitcheckout:vnext ",
