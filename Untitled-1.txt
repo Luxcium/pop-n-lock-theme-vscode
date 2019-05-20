@@ -1,0 +1,8 @@
+checkout:commit
+checkout:vnext
+checkout:master
+gitmerge:commit
+git cb vscode/Luxcium.pop-n-lock-theme-vscode@something
+git add . --verbose ; git commit -vsS -am 'Published Luxcium.pop-n-lock-theme-vscode@3.15.3'; npm run git:push
+checkout:master
+gitmergeback:master
