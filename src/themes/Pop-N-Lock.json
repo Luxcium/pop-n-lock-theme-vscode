@@ -186,8 +186,8 @@
     // #endregion
     // #region *** gitDecoration ***
     "gitDecoration.addedResourceForeground": "#FD0f",
-    "gitDecoration.conflictingResourceForeground": "#F15f",
-    "gitDecoration.deletedResourceForeground": "#C32f",
+    "gitDecoration.conflictingResourceForeground": "#F12B",
+    "gitDecoration.deletedResourceForeground": "#C32B",
     "gitDecoration.ignoredResourceForeground": "#48Ac",
     "gitDecoration.modifiedResourceForeground": "#FDB92FFF",
     "gitDecoration.submoduleResourceForeground": "#95Bc",
@@ -227,7 +227,7 @@
     "list.inactiveFocusBackground": "#22E4",
     "list.inactiveSelectionBackground": "#48A5",
     "list.inactiveSelectionForeground": "#DCBf",
-    "list.invalidItemForeground": "#F43c",
+    "list.invalidItemForeground": "#F42c",
     "list.warningForeground": "#8D5F",
 
     /* *** listFilterWidget.background": "#426e", *** */
