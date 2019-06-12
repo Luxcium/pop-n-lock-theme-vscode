@@ -153,7 +153,7 @@ export class ClassName extends ParentClass implements IInterface {
   }
   public static staticValue: any;
   public value: string;
-  public angel: any;
+  public angel: any;1
   public othervalue: any;
   private _othervalue: any;
   public constructor(parametre: Arguments) {
