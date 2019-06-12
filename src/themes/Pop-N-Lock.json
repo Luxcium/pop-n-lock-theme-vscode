@@ -435,7 +435,7 @@
   "tokenColors": [
     // "#A5BE","#E25D","#FC5F","#BE5D","#ADCD"
     // "#E1AE","#E43E","#EDAD","#7C2E","#6BFD"
-    // "#D67E","#F91F","#AE9B","#AE9B","#7ADF"
+    // "#D67E","#F91F","#7E9A","#7E9A","#7ADF"
 
     // #region "typescript" --------------------------------------------------
 
@@ -481,7 +481,7 @@
         "source.ts meta.return.type support.type.primitive"
       ],
       "settings": {
-        "foreground": "#AE9B",
+        "foreground": "#7E9A",
         "fontStyle": "bold italic"
       }
     },
@@ -842,7 +842,7 @@
         "source.ts keyword.operator.type"
       ],
       "settings": {
-        "foreground": "#AE9B",
+        "foreground": "#7E9A",
         "fontStyle": ""
       }
     },
@@ -852,7 +852,7 @@
         "source.ts keyword.operator.rest"
       ],
       "settings": {
-        "foreground": "#AE9B",
+        "foreground": "#7E9A",
         "fontStyle": "bold"
       }
     },
@@ -1390,7 +1390,7 @@
         "source.tsx keyword.operator.type"
       ],
       "settings": {
-        "foreground": "#AE9B",
+        "foreground": "#7E9A",
         "fontStyle": ""
       }
     },
@@ -1400,7 +1400,7 @@
         "source.tsx keyword.operator.rest"
       ],
       "settings": {
-        "foreground": "#AE9B",
+        "foreground": "#7E9A",
         "fontStyle": "bold"
       }
     },
@@ -1939,7 +1939,7 @@
         "source.js keyword.operator.type"
       ],
       "settings": {
-        "foreground": "#AE9B",
+        "foreground": "#7E9A",
         "fontStyle": ""
       }
     },
@@ -1949,7 +1949,7 @@
         "source.js keyword.operator.rest"
       ],
       "settings": {
-        "foreground": "#AE9B",
+        "foreground": "#7E9A",
         "fontStyle": "bold"
       }
     },
@@ -2409,7 +2409,7 @@ meta.flow-sequence.yaml
     {
       "scope": ["keyword.operator.assignment.jsdoc"],
       "settings": {
-        "foreground": "#AE9B",
+        "foreground": "#7E9A",
         "fontStyle": "bold"
       }
     },
@@ -2962,7 +2962,7 @@ meta.flow-sequence.yaml
     },
     // #endregion "JSX / TSX TAGS" ------------------------------------------------
     // #region "HTML" --------------------------------------------------------
-    // "#BE5B" "#FC5F" "#ADCC" "#6BFD" "#EDAE" "#AE9B""#D79F" "#DF8E"
+    // "#BE5B" "#FC5F" "#ADCC" "#6BFD" "#EDAE" "#7E9A""#D79F" "#DF8E"
     // "#fabd2fFF""#b8bb26FF""#8ec07cFF""#d3869bFF""#369ec7FF""#B35F""#EDAE"
     /* support.function.misc.css
 
