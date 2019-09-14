@@ -1,0 +1,146 @@
+@media screen and (min-width: 800px) {
+  .jumbotron h1 {
+    font-size: 90px;
+    font-weight: 300;
+  }
+}
+/* .monaco-editor */
+.squiggly-info {
+  background: url('data:image/svg+xml,%3Csvg%20xmlns') repeat-x bottom left;
+}
+
+.monaco-editor .squiggly-hint {
+  border-bottom: 2px dotted rgba(240, 201, 16, 0.07);
+}
+
+.monaco-editor .squiggly-hint {
+  background: url('data:image/svg+xml,%3Csvg%20xmlns') no-repeat bottom left;
+}
+
+#idselector span.inline-selected-text {
+  color: rgba(221, 204, 170, 0.93);
+}
+
+.monaco-editor .codelens-decoration > a:hover {
+  color: rgba(53, 52, 50, 0.93) !important;
+}
+
+.monaco-editor .minimap-slider:hover {
+  background: rgba(255, 187, 68, 0.33);
+}
+
+.jumbotron {
+  margin-bottom: 0;
+  color: #333;
+  width: 100%;
+  /* margin: auto; */
+  background: rgb(212, 212, 221);
+  /* Old browsers */
+  background: radial-gradient(
+    ellipse at center top,
+    rgba(255, 255, 245, 1) 0%,
+    rgba(174, 174, 183, 1) 100%
+  );
+}
+
+.showUnused .monaco-editor .squiggly-inline-unnecessary {
+  opacity: 0.333;
+}
+
+.monaco-editor .rangeHighlight {
+  border: 1px solid rgba(119, 17, 102, 0.07);
+}
+
+/*.monaco-editor .minimap-slider.active, */
+.monaco-editor .minimap-slider.active .minimap-slider-horizontal {
+  background: rgba(85, 17, 102, 0.43);
+}
+
+.monaco-editor .minimap-shadow-visible {
+  box-shadow: #111122 -6px 0 6px -6px inset;
+}
+
+.monaco-editor .scroll-decoration {
+  box-shadow: #111122 0 6px 6px -6px inset;
+}
+
+.monaco-editor .focused .selected-text {
+  background-color: rgba(85, 51, 238, 0.4);
+}
+
+.monaco-editor .selected-text {
+  background-color: rgba(85, 136, 238, 0.53);
+}
+
+.monaco-editor,
+.monaco-editor-background,
+.monaco-editor .inputarea.ime-input {
+  background-color: #202135;
+}
+
+.monaco-editor,
+.monaco-editor .inputarea.ime-input {
+  color: rgba(221, 204, 170, 0.93);
+}
+
+.monaco-editor .margin {
+  background-color: #1d1c2f;
+}
+
+.monaco-editor .rangeHighlight {
+  background-color: rgba(34, 51, 68, 0.33);
+}
+
+.monaco-editor .squiggly-info {
+  border-bottom: 4px double rgba(38, 141, 214, 0.07);
+}
+
+.showUnused .monaco-editor .squiggly-unnecessary {
+  border-bottom: 2px dashed rgba(153, 85, 187, 0.73);
+}
+
+.monaco-diff-editor .diff-review-line-number {
+  color: rgba(221, 204, 170, 0.33);
+}
+
+.monaco-diff-editor .diff-review-shadow {
+  box-shadow: #111122 0 -6px 6px -6px inset;
+}
+
+.monaco-editor .line-insert,
+.monaco-editor .char-insert {
+  background-color: rgba(136, 221, 170, 0.2);
+}
+
+.monaco-diff-editor .line-insert,
+.monaco-diff-editor .char-insert {
+  background-color: rgba(136, 221, 170, 0.2);
+}
+
+.monaco-editor .inline-added-margin-view-zone {
+  background-color: rgba(136, 221, 170, 0.2);
+}
+
+.monaco-editor .line-delete,
+.monaco-editor .char-delete {
+  background-color: rgba(238, 68, 119, 0.2);
+}
+
+.monaco-diff-editor .line-delete,
+.monaco-diff-editor .char-delete {
+  background-color: rgba(238, 68, 119, 0.2);
+}
+
+.monaco-editor .inline-deleted-margin-view-zone {
+  background-color: rgba(238, 68, 119, 0.2);
+}
+
+.monaco-editor .line-insert,
+.monaco-editor .char-insert {
+  border: 1px solid rgba(119, 17, 102, 0);
+}
+
+.monaco-editor .line-delete,
+.monaco-editor .char-delete {
+  border: 1px solid rgba(119, 17, 102, 0);
+}

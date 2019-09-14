@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style type="text/css">
+      body {
+        font-family: 'Open Sans', Helvetica, sans-serif;
+        font-weight: 100;
+        color: #ccc;
+        background: #fff;
+        font-size: 16px;
+      }
+
+      h2,
+      h3,
+      h4 {
+        font-weight: 200;
+      }
+
+      h2 {
+        font-size: 28px;
+      }
+
+      .mainContainer {
+        width: 100vw;
+        height: 100vh;
+      }
+
+      .jumbotron {
+        margin-bottom: 0;
+        color: #333;
+        width: 100%;
+        /* margin: auto; */
+        background: rgb(212, 212, 221);
+        /* Old browsers */
+        background: radial-gradient(
+          ellipse at center top,
+          rgba(255, 255, 245, 1) 0%,
+          rgba(174, 174, 183, 1) 100%
+        );
+        /* W3C */
+        top: 0;
+        position: absolute;
+        /* position: relative;  */
+      }
+
+      .jumbotron h1 {
+        font-family: 'Roboto', 'Open Sans', Helvetica, sans-serif;
+        font-size: 120px;
+        font-weight: 500;
+        color: white;
+        text-shadow: 0px 2px 0px #abc, 0px 4px 10px rgba(0, 0, 0, 0.15),
+          0px 5px 2px rgba(0, 0, 0, 0.1), 0px 6px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .jumbotron p {
+        font-family: 'Montserrat', 'Open Sans', Helvetica, sans-serif;
+        font-size: 55px;
+        font-weight: 100;
+        display: block;
+      }
+
+      .main {
+        background: #fff;
+        color: #234;
+        border-top: 1px solid rgba(0, 0, 0, 0.12);
+        padding-top: 100px;
+        padding-bottom: 200px;
+        width: 100%;
+      }
+
+      .footer {
+        padding: 0;
+        background: rgba(10, 24, 55, 1);
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        padding-top: 200px;
+        padding-bottom: 15px;
+        width: 100%;
+        bottom: 0;
+        position: absolute;
+      }
+
+      .notLead {
+        font-size: 25px;
+        font-weight: initial;
+        padding: 10px 100px;
+      }
+
+      .img-container {
+        padding-bottom: 60px;
+        padding-right: 50px;
+        position: relative;
+      }
+
+      @media screen and (max-width: 799px) {
+        .jumbotron h1 {
+          font-size: 70px;
+          font-weight: 200;
+        }
+
+        .jumbotron p {
+          font-size: 25px;
+          font-weight: 90;
+        }
+
+        .notLead {
+          font-size: 18px;
+        }
+      }
+
+      @media screen and (min-width: 800px) {
+        .jumbotron h1 {
+          font-size: 90px;
+          font-weight: 300;
+        }
+
+        .jumbotron p {
+          font-size: 40px;
+          font-weight: 90;
+        }
+
+        .notLead {
+          font-size: 25px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      //   #!/usr/bin/env node
+
+      const repl = require('repl');
+      const chalk = require('chalk');
+      const jsdom = require('jsdom');
+      const puppeteer = require('puppeteer');
+      const { JSDOM } = jsdom;
+      const log = console.log;
+
+      const myRepl = repl.start({
+        terminal: true,
+        useColors: true,
+        ignoreUndefined: false,
+        useGlobal: true,
+        prompt: '\u001b[45m\u001b[30m \ue74e \u001b[0m\u001b[35m\u001b[0m '
+      });
+      function initializeContext() {
+        myRepl.prompt();
+
+        myRepl.context.R = require('ramda');
+        /**
+         * in @file 'repl/node-repl/jsconfig.json'
+         * {
+         *    "compilerOptions": {
+         *        "module": "commonjs",
+         *        "target": "esnext"
+         * }
+         * /* ... */
+        myRepl.context.$ = require('jquery');
+        myRepl.context.R = require('ramda');
+        myRepl.context.F = require('lodash/fp');
+        myRepl.context.C = chalk;
+        myRepl.context.dom = '';
+        myRepl.context.domRaw = '';
+        myRepl.context.puppeteer = puppeteer;
+        myRepl.context.L = console.log;
+        myRepl.context.E = console.error;
+        myRepl.context.I = console.info;
+        myRepl.context.dir = console.dir;
+        /**
+         * @param {string | Buffer | ArrayBuffer | DataView | Int8Array | Uint8Array | Uint8ClampedArray | Int16Array | Uint16Array | Int32Array | Uint32Array | Float32Array | Float64Array} html
+         */
+
+        function setJSDOM(myURL) {
+          log(0, myURL);
+          let newURL = '';
+          let myDomElements = {
+            window: null,
+            document: null,
+            body: null
+          };
+          try {
+            if (myURL.toUpperCase().indexOf('HTTP') === -1) {
+              try {
+                newURL = 'https://' + myURL;
+                setDomFromURL(newURL, myDomElements);
+              } catch (error) {
+                newURL = 'http://' + myURL;
+                setDomFromURL(newURL, myDomElements);
+              }
+            } else {
+              setDomFromURL(myURL, myDomElements);
+            }
+          } catch (error) {
+            log(4, myURL);
+            log(error.message);
+          }
+        }
+
+        myRepl.context.JSDOM = JSDOM;
+        myRepl.context.setJSDOM = setJSDOM;
+
+        /**
+         * @param {number} yourNumber
+         */
+        // @ts-ignore
+        myRepl.context.toHex = yourNumber =>
+          log(
+            chalk.cyan.bold(
+              `0x${Math.round(yourNumber)
+                .toString(16)
+                .toUpperCase()}`
+            )
+          );
+        /**
+         * @param {string} hexString
+         */
+        myRepl.context.fromHex = hexString => parseInt(hexString, 16);
+      }
+      initializeContext();
+      myRepl.on('reset', initializeContext);
+      // @ts-ignore
+      console.log(chalk.yellow.bold(`Node ${process.version}`));
+      myRepl.prompt();
+      console.log(chalk.green(`Node ${path.resolve()}`));
+      myRepl.prompt();
+
+      exports = { myRepl };
+      function setDomFromURL(myURL) {
+        // log(myURL);
+        puppetUrl(myURL)
+          .then(res => {
+            myRepl.context.dom = new JSDOM(res.data.toString());
+            myRepl.context.domRaw = res.data;
+            myRepl.context.body =
+              myRepl.context.dom.window.document.body || null;
+            myRepl.context.document =
+              myRepl.context.dom.window.document || null;
+            myRepl.context.window = myRepl.context.dom.window || null;
+            log(myRepl.context.dom.window.document.location.toString());
+          })
+          .catch(e => {
+            throw e;
+          });
+      }
+      // setJSDOM('google.com')
+      // setJSDOM('https://www.barchart.com/stocks/most-active/daily-volume-leaders?viewName=main&screener=price_gt_10&orderBy=percentChange&orderDir=desc')
+      // let mySymbList = []
+      // sym = window.document.querySelectorAll('.symbol div span a')
+      // symb = sym.forEach(itWill=>mySymbList.push(itWill.innerText))
+
+      const puppetUrl = async myUrl => {
+        const browser = await puppeteer.launch({ headless: false });
+        const page = await browser.newPage();
+        await page.goto(myUrl);
+        await page.screenshot({ path: 'example.png' });
+        await browser.close();
+      };
+    </script>
+  </body>
+</html>
