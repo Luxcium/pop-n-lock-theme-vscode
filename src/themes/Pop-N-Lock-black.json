@@ -3071,7 +3071,7 @@ support.function.console.js
     },
     // #endregion
     // #region "JSON" ----------------------------------------------------------
-    // "#FC5D","#9C8B","#CE5B","#D89B","#5BEB","#DDDB","#39EB"
+    // "#FC5C","#9C8B","#CE5B","#D89C","#5BEB","#DDDB","#39EB"
     {
       "name": "JSON key-value separator",
       "scope": [
@@ -3111,7 +3111,7 @@ support.function.console.js
         "source.json meta.structure.dictionary.json support.type.property-name"
       ],
       "settings": {
-        "foreground": "#D89B" /*#FC5D*/
+        "foreground": "#D89C" /*#FC5D*/
       }
     },
     {
@@ -3120,7 +3120,7 @@ support.function.console.js
         "source.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name"
       ],
       "settings": {
-        "foreground": "#FC5D",
+        "foreground": "#FC5C",
       }
     },
     {
@@ -3129,7 +3129,7 @@ support.function.console.js
         "source.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name"
       ],
       "settings": {
-        "foreground": "#D89B"
+        "foreground": "#D89C"
       }
     },
     {
@@ -3165,7 +3165,7 @@ support.function.console.js
         "source.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name"
       ],
       "settings": {
-        "foreground": "#FC5D", /*#FC5D*/
+        "foreground": "#FC5C", /*#FC5D*/
       }
     },
     {
@@ -3269,7 +3269,7 @@ support.function.console.js
         "source.yaml string.unquoted.plain.out entity.name.tag"
       ],
       "settings": {
-        "foreground": "#FC5D",
+        "foreground": "#FC5C",
       }
     },
     {
@@ -3277,7 +3277,7 @@ support.function.console.js
         "source.yaml string.unquoted.plain.in entity.name.tag"
       ],
       "settings": {
-        "foreground": "#D89B"
+        "foreground": "#D89C"
       }
     },
     {
@@ -3372,7 +3372,7 @@ support.function.console.js
         "entity.name.type.instance.jsdoc"
       ],
       "settings": {
-        "foreground": "#FC5D",
+        "foreground": "#FC5C",
         "fontStyle": ""
       }
     },

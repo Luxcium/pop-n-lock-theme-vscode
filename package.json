@@ -10,6 +10,14 @@
   "qna": "marketplace",
   "icon": "Scientia-is-lux-principium-400px-TM.png",
   "homepage": "https://github.com/luxcium/pop-n-lock-theme-vscode/#readme",
+  "bugs": {
+    "url": "https://github.com/luxcium/pop-n-lock-theme-vscode/issues",
+    "email": "luxcium@neb401.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/luxcium/pop-n-lock-theme-vscode.git"
+  },
   "engines": {
     "vscode": "^1.12.0"
   },
@@ -37,7 +45,7 @@
         "path": "./src/themes/Pop-N-Lock.json"
       },
       {
-        "label": "Pop N' Lock Theme by Luxcium BLACK ✨",
+        "label": "Pop N' Lock Theme by Luxcium (BLACK PREVIEW)✨",
         "uiTheme": "vs-dark",
         "path": "./src/themes/Pop-N-Lock-black.json"
       }
@@ -142,14 +150,6 @@
     "aaron-bond.better-comments",
     "pkief.material-icon-theme"
   ],
-  "bugs": {
-    "url": "https://github.com/luxcium/pop-n-lock-theme-vscode/issues",
-    "email": "luxcium@neb401.com"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/luxcium/pop-n-lock-theme-vscode.git"
-  },
   "dependencies": {
     "vscode-languageclient": "^5.2.1"
   },
