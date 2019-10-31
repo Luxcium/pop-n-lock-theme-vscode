@@ -183,6 +183,34 @@
         // "#2C203C",
         "#2C203C"
     ],
+    "tab": {
+        // "editor.snippetFinalTabstopHighlightBackground": "#2355",
+        // "editor.snippetTabstopHighlightBackground": "#2355",
+        // "editorGroupHeader.noTabsBackground": "#1C1C2E55" /* 1C1C2E */,
+        // "editorGroupHeader.tabsBackground": "#1C1C2E55" /* 1C1C2E */,
+        // "tab.activeBackground": "#1D254555" /* 1D2545 */,
+        // "tab.hoverBackground": "#52A5",
+        // "tab.inactiveBackground": "#2A204055" /* 2A2040 */,
+        // "tab.unfocusedHoverBackground": "#52A4",
+        // "editor.snippetFinalTabstopHighlightBorder": "#2355",
+        // "editor.snippetTabstopHighlightBorder": "#235A",
+        // "editorGroupHeader.tabsBorder": "#1D254555" /* 1D2545 */,
+        // "tab.activeBorder": "#1D254500",
+        "tab.activeBorderTop": "#AE4A", // ! F
+        "tab.activeModifiedBorder": "#F42A", // ! F
+        // "tab.border": "#1C1C2E55" /* 1C1C2E */,
+        "tab.hoverBorder": "#38AA",
+        "tab.inactiveModifiedBorder": "#E3DA",
+        // "tab.unfocusedActiveBorder": "#1D254500",
+        // "tab.unfocusedActiveBorderTop": "#FB9A",
+        // "tab.unfocusedActiveModifiedBorder": "#F45A",
+        // "tab.unfocusedHoverBorder": "#38AA",
+        // "tab.unfocusedInactiveModifiedBorder": "#E5D7",
+        "tab.activeForeground": "#DCAA",
+        "tab.inactiveForeground": "#FC68",
+        "tab.unfocusedActiveForeground": "#FC68",
+        "tab.unfocusedInactiveForeground": "#FC68"
+    },
     "border": {
         "contrastActiveBorder": "#F150",
         "contrastBorder": "#DCA4",

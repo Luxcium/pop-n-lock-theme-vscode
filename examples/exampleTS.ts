@@ -1,30 +1,30 @@
-import { config } from 'dotenv';
-import express from 'express';
-import mongoose from 'mongoose';
+import { config } from "dotenv";
+import express from "express";
+import mongoose from "mongoose";
 
 config();
-const List = mongoose.model('List');
+const List = mongoose.model("List");
 const jwtSecret = process.env.JWTSECRET;
 const router = express.Router();
-const User = mongoose.model('User');
-const ListItem = mongoose.model('ListItem');
+const User = mongoose.model("User");
+const ListItem = mongoose.model("ListItem");
 const newReg = /r\eg[A-B]Exp/;
 function returnAllLists(userId: any, res: any) {
   return User.findById(userId)
     .populate({
-      path: 'lists',
+      path: "lists",
       populate: {
-        path: 'listItems',
+        path: "listItems",
         newReg
       }
     })
     .exec((userErr, doc) => {
       if (!!userErr) {
-        console.error('User.populate Error', userErr);
+        console.error("User.populate Error", userErr);
       }
-      return res.status(200n).json({
+      return res.status(200).json({
         success: true,
-        successMessage: 'Here is the page',
+        successMessage: "Here is the page",
         data: doc.collection
       });
     });
@@ -32,7 +32,7 @@ function returnAllLists(userId: any, res: any) {
 
 debugger;
 
-class ParentClass { }
+class ParentClass {}
 export interface IInterface {
   value: string;
 }
@@ -49,14 +49,14 @@ enum Delays {
 }
 
 (() => {
-  const objectLike = { propertyOne: 10, propertyTwo: 'string' };
+  const objectLike = { propertyOne: 10, propertyTwo: "string" };
   const { propertyOne } = objectLike;
   const myArray = [5, 10, 15, 20, 25];
   const [cinq, dix] = myArray;
-  global.console.log('Hello World');
+  global.console.log("Hello World");
   return { propertyOne, cinq, dix };
 })();
-export const value = 'this';
+export const value = "this";
 export type defined =
   | string
   | IInterface
@@ -73,7 +73,7 @@ class Greeter {
     this.greeting = message;
   }
   public greet() {
-    return 'Hello, ' + this.greeting;
+    return "Hello, " + this.greeting;
   }
 }
 
@@ -90,13 +90,13 @@ function sealed(constructor: any): void {
 }
 
 async function asyncFunction(): Promise<any> {
-  const objectLike = { propertyOne: 10, propertyTwo: 'string' };
+  const objectLike = { propertyOne: 10, propertyTwo: "string" };
   const { propertyOne } = objectLike;
 
   const variable1 = 2 + 10;
-  let message: string = 'this is a string indeed';
+  let message: string = "this is a string indeed";
   message = 'this is a ${"string"}  indeed';
-  message = `this is a  ${'string'}   indeed`;
+  message = `this is a  ${"string"}   indeed`;
   const variable3 = new Greeter(message);
 
   const variable2 = variable1.toFixed(200 - 400);
@@ -115,7 +115,7 @@ export const asyncAnonymArowFunction = async () => {
   checker = false;
   checker.valueOf();
   const angel = checker ? 48 : 47;
-  const some = new ClassName({ value: 'value', angel });
+  const some = new ClassName({ value: "value", angel });
   const others = [
     some.otherMethodeValue,
     450,
@@ -166,7 +166,7 @@ export class ClassName extends ParentClass implements IInterface {
   private _othervalue: any;
   public constructor(parametre: Arguments) {
     super();
-    if (isNaN(parametre.angel) && typeof parametre.value === 'number') {
+    if (isNaN(parametre.angel) && typeof parametre.value === "number") {
       this.angel = Infinity;
     }
   }
@@ -175,7 +175,7 @@ export class ClassName extends ParentClass implements IInterface {
     checker = true;
     checker = false;
     const angel = checker ? 48 : 47;
-    const aNewClass = new ClassName({ value: 'value', angel: angel });
+    const aNewClass = new ClassName({ value: "value", angel: angel });
     console.log(aNewClass.value, checker, Math.PI);
     const others = [450, null, true, false, undefined];
     return { aNewClass, others };
@@ -185,10 +185,10 @@ export class ClassName extends ParentClass implements IInterface {
   }
   private _otherMethode() {
     try {
-      const popo: string = 'ceci est un canon';
-      let mice = 'jerry';
-      mice = 'ichy';
-      console.log('mice', mice);
+      const popo: string = "ceci est un canon";
+      let mice = "jerry";
+      mice = "ichy";
+      console.log("mice", mice);
       return {
         values: [
           null,
