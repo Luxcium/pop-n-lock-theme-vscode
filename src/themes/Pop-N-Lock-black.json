@@ -115,11 +115,11 @@
     /* *** *** *** *** */
     "editorGroup.border": "#FC65",
     "editorGroup.dropBackground": "#2C203C",
-    "editorGroup.emptyBackground": "#1C1C2EAA" /* 1C1C2E */,
-    "editorGroup.focusedEmptyBorder": "#1C1C2EAA" /* 1C1C2E */,
+    "editorGroup.emptyBackground": "#1C1C2E55" /* 1C1C2E */,
+    "editorGroup.focusedEmptyBorder": "#1C1C2E55" /* 1C1C2E */,
     /* *** *** *** *** */
-    "editorGroupHeader.noTabsBackground": "#1C1C2EAA" /* 1C1C2E */,
-    "editorGroupHeader.tabsBackground": "#1C1C2EAA" /* 1C1C2E */,
+    "editorGroupHeader.noTabsBackground": "#1C1C2E55" /* 1C1C2E */,
+    "editorGroupHeader.tabsBackground": "#1C1C2E55" /* 1C1C2E */,
     "editorGroupHeader.tabsBorder": "#1D2545",
     /* *** *** *** *** */
     "editorGutter.addedBackground": "#8B3C",
@@ -128,7 +128,7 @@
     /* *** *** *** *** */
     "editorHoverWidget.background": "#1D2555AA",
     "editorHoverWidget.border": "#DCA3",
-    "editorHoverWidget.statusBarBackground": "#1C1C2EAA" /* 1C1C2E */,
+    "editorHoverWidget.statusBarBackground": "#1C1C2E55" /* 1C1C2E */,
     /* *** *** *** *** */
     "editorWhitespace.foreground": "#DCA2",
     "editorLineNumber.activeForeground": "#DCAA",
@@ -160,7 +160,7 @@
     "editorOverviewRuler.wordHighlightForeground": "#8DAC",
     "editorOverviewRuler.wordHighlightStrongForeground": "#E47C",
     /* *** *** *** *** */
-    "editorPane.background": "#1C1C2EAA" /* 1C1C2E */,
+    "editorPane.background": "#1C1C2E55" /* 1C1C2E */,
     /* *** *** *** *** */
     "editorRuler.foreground": "#E474",
     /* *** *** *** *** */
@@ -355,11 +355,11 @@
     "statusBar.noFolderForeground": "#DCAA",
     // #endregion
     // #region *** STATUS BAR ITEM ***
-    "statusBarItem.activeBackground": "#1C1C2EAA" /* 1C1C2E */,
-    "statusBarItem.hoverBackground": "#1C1C2EAA" /* 1C1C2E */,
+    "statusBarItem.activeBackground": "#1C1C2E55" /* 1C1C2E */,
+    "statusBarItem.hoverBackground": "#1C1C2E55" /* 1C1C2E */,
     "statusBarItem.prominentBackground": "#694C",
     "statusBarItem.prominentForeground": "#DCAA",
-    "statusBarItem.prominentHoverBackground": "#1C1C2EAA" /* 1C1C2E */,
+    "statusBarItem.prominentHoverBackground": "#1C1C2E55" /* 1C1C2E */,
     // #endregion
     // #region *** tab.activeBackground ***
     "tab.activeBackground": "#1D2545",
@@ -367,7 +367,7 @@
     "tab.activeBorderTop": "#AE4A", // ! F
     "tab.activeForeground": "#DCAA",
     "tab.activeModifiedBorder": "#F42A", // ! F
-    "tab.border": "#1C1C2EAA" /* 1C1C2E */,
+    "tab.border": "#1C1C2E55" /* 1C1C2E */,
     "tab.hoverBackground": "#52A5",
     "tab.hoverBorder": "#38AC",
     "tab.inactiveBackground": "#2A2040",
@@ -392,10 +392,10 @@
     "textSeparator.foreground": "#DCAA",
     // #endregion
     // #region *** TITTLE BAR ***
-    "titleBar.activeBackground": "#1C1C2EAA" /* 1C1C2E */,
+    "titleBar.activeBackground": "#1C1C2E55" /* 1C1C2E */,
     "titleBar.activeForeground": "#DCAA",
-    "titleBar.border": "#1C1C2EAA" /* 1C1C2E */,
-    "titleBar.inactiveBackground": "#1C1C2EAA" /* 1C1C2E */,
+    "titleBar.border": "#1C1C2E55" /* 1C1C2E */,
+    "titleBar.inactiveBackground": "#1C1C2E55" /* 1C1C2E */,
     "titleBar.inactiveForeground": "#DCA5",
     // #endregion
     // #region *** TERMINAL ***
