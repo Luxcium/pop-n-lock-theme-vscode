@@ -1,6 +1,6 @@
 {
     // ("#[a-f0-9]{6})(")
-    // "#1C1C2EAA" /* 1C1C2E */ ,
+    // "#1C1C2EAA" /* 1C1C2E */ // ,"#1C1C2E55"
     // "peekViewEditorGutter.background": "#152240",
     "dropdown.listBackground": "#19152F",
     "editorGroup.emptyBackground": "#1C1C2E",
