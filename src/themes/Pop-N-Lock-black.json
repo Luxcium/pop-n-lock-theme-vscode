@@ -5,7 +5,7 @@
   "colors": {
     /* *** MAIN *** */
     "editorGutter.commentRangeForeground": "#53EA",
-    "editor.background": "#102",
+    "editor.background": "#112",
     "editor.foreground": "#DCAA",
     "editorGutter.background": "#1D1C2F",
     "contrastActiveBorder": "#F150",
