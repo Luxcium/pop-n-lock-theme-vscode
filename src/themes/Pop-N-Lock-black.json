@@ -8,7 +8,7 @@
     "editorGutter.commentRangeForeground": "#53EA",
     "editor.background": "#112F",
     "editor.foreground": "#DCAA",
-    "editorGutter.background": "#1D1C2F",
+    "editorGutter.background": "#222A",
     "contrastActiveBorder": "#F150",
     "contrastBorder": "#DCA4",
     "errorForeground": "#DCAA",
@@ -24,7 +24,7 @@
     // #endregion
     // #region *** activityBar ***
     "activityBar.background": "#1C1C30",
-    "activityBar.border": "#FC65",
+    "activityBar.border": "#FC62",
     "activityBar.dropBackground": "#7165",
     "activityBar.foreground": "#FECA",
     "activityBar.inactiveForeground": "#FEC8",
