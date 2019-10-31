@@ -6,7 +6,7 @@
     // ("#[a-f0-9]{3})[abcdef](")
     /* *** MAIN *** */
     "editorGutter.commentRangeForeground": "#53EA",
-    "editor.background": "#112",
+    "editor.background": "#112F",
     "editor.foreground": "#DCAA",
     "editorGutter.background": "#1D1C2F",
     "contrastActiveBorder": "#F150",
@@ -3113,7 +3113,7 @@ support.function.console.js
         "source.json meta.structure.dictionary.json support.type.property-name"
       ],
       "settings": {
-        "foreground": "#FC5A" /*#FC5D*/
+        "foreground": "#FC5C" /*#FC5D*/
       }
     },
     {
@@ -3122,7 +3122,7 @@ support.function.console.js
         "source.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name"
       ],
       "settings": {
-        "foreground": "#D89"
+        "foreground": "#D89A"
       }
     },
     {
@@ -3131,7 +3131,7 @@ support.function.console.js
         "source.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name"
       ],
       "settings": {
-        "foreground": "#9C8"
+        "foreground": "#9C8A"
       }
     },
     {
@@ -3140,7 +3140,7 @@ support.function.console.js
         "source.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name"
       ],
       "settings": {
-        "foreground": "#5BE"
+        "foreground": "#5BEA"
       }
     },
     {
@@ -3149,7 +3149,7 @@ support.function.console.js
         "source.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name"
       ],
       "settings": {
-        "foreground": "#DDD"
+        "foreground": "#DDDA"
       }
     },
     {
@@ -3158,7 +3158,7 @@ support.function.console.js
         "source.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json meta.structure.dictionary.value.json meta.structure.dictionary.json support.type.property-name"
       ],
       "settings": {
-        "foreground": "#9C8"
+        "foreground": "#9C8A"
       }
     },
     {
@@ -3175,7 +3175,7 @@ support.function.console.js
         "source.json string.quasi"
       ],
       "settings": {
-        "foreground": "#B35",
+        "foreground": "#B35A",
         "fontStyle": ""
       }
     },
@@ -3193,7 +3193,7 @@ support.function.console.js
         "source.json invalid"
       ],
       "settings": {
-        "foreground": "#B35",
+        "foreground": "#B35A",
         "fontStyle": ""
       }
     },
@@ -3202,7 +3202,7 @@ support.function.console.js
         "source.json invalid.deprecated"
       ],
       "settings": {
-        "foreground": "#B35",
+        "foreground": "#B35A",
         "fontStyle": "underline"
       }
     },
@@ -3211,7 +3211,7 @@ support.function.console.js
         "source.json invalid.illegal"
       ],
       "settings": {
-        "foreground": "#B35",
+        "foreground": "#B35A",
         "fontStyle": ""
       }
     },
@@ -3220,7 +3220,7 @@ support.function.console.js
         "source.json invalid.illegal.newline"
       ],
       "settings": {
-        "foreground": "#B35",
+        "foreground": "#B35A",
         "fontStyle": ""
       }
     },
@@ -5911,7 +5911,7 @@ source.css
         "comment.line.double-slash",
       ],
       "settings": {
-        "foreground": "#4DDA",
+        "foreground": "#4DD8",
         "fontStyle": ""
       }
     },
@@ -5920,7 +5920,7 @@ source.css
         "comment.line.double-slash punctuation.definition.comment",
       ],
       "settings": {
-        "foreground": "#4CD5",
+        "foreground": "#4CD4",
         "fontStyle": "bold"
       }
     },
@@ -5929,7 +5929,7 @@ source.css
         "comment.block",
       ],
       "settings": {
-        "foreground": "#B4DA",
+        "foreground": "#B4D8",
         "fontStyle": ""
       }
     },
@@ -5938,7 +5938,7 @@ source.css
         "comment.block punctuation.definition.comment",
       ],
       "settings": {
-        "foreground": "#B4D5",
+        "foreground": "#B4D4",
         "fontStyle": "bold"
       }
     },
@@ -6061,5 +6061,3 @@ source.css
     // #endregion
   ]
 }
-/* "#B5F9" */ /* "#63E" */
-/* "#41DA" */
