@@ -55,6 +55,11 @@
         "label": "Pop N' Lock Theme by Luxcium ✨ Alexis's Black ⛷",
         "uiTheme": "vs-dark",
         "path": "./src/themes/Pop-N-Lock-black.json"
+      },
+      {
+        "label": "Test Pop N' Lock Theme by Luxcium ✨ Alexis's Black ⛷",
+        "uiTheme": "vs-dark",
+        "path": "./src/themes/Pop-N-Lock-test.json"
       }
     ],
     "languages": [
@@ -168,7 +173,7 @@
     "@types/jsonwebtoken": "^8.3.2",
     "@types/mocha": "^5.2.7",
     "@types/mongoose": "^5.3.26",
-    "@types/node": "^12.11.7",
+    "@types/node": "^12.12.7",
     "@types/puppeteer": "^1.19.1",
     "@types/react": "^16.8.14",
     "@types/react-dom": "^16.8.4",
@@ -185,7 +190,7 @@
     "tslint": "^5.19.0",
     "tslint-config-airbnb": "^5.11.1",
     "tslint-config-prettier": "^1.18.0",
-    "typescript": "^3.6.4",
+    "typescript": "^3.7.1-rc",
     "vsce": "^1.66.0",
     "vscode-test": "^1.2.0",
     "webpack": "^4.39.3",
