@@ -93,7 +93,6 @@
     "peekViewResult.selectionBackground": "#42B4",
     "peekViewResult.selectionForeground": "#EDAB",
     "selection.background": "#698B",
-    "terminal.selectionBackground": "#3277",
     "tab.unfocusedHoverBackground": "#52A4",
     "tab.unfocusedHoverBorder": "#38AB",
     "button.hoverBackground": "#38AB",
@@ -297,27 +296,6 @@
     "statusBarItem.prominentBackground": "#694B",
     "statusBarItem.prominentForeground": "#DCBB",
     "tab.border": "#1D1A1F",
-    "terminal.ansiBlack": "#221B25",
-    "terminal.ansiBlue": "#458588",
-    "terminal.ansiBrightBlack": "#928374",
-    "terminal.ansiBrightBlue": "#99C6CA",
-    "terminal.ansiBrightCyan": "#8AE180",
-    "terminal.ansiBrightGreen": "#B5C033",
-    "terminal.ansiBrightMagenta": "#D66282",
-    "terminal.ansiBrightRed": "#F42C3E",
-    "terminal.ansiBrightWhite": "#DDCCAA",
-    "terminal.ansiBrightYellow": "#FABE2F",
-    "terminal.ansiCyan": "#689E6A",
-    "terminal.ansiGreen": "#98971A",
-    "terminal.ansiMagenta": "#B16286",
-    "terminal.ansiRed": "#CC241D",
-    "terminal.ansiWhite": "#C0B0A0",
-    "terminal.ansiYellow": "#E7A931",
-    "terminal.background": "#1E1E1E",
-    "terminal.border": "#1C1C24",
-    "terminal.foreground": "#DDBC9A",
-    "terminalCursor.background": "#00ff00",
-    "terminalCursor.foreground": "#C02030",
     "textBlockQuote.background": "#2C203C55",
     "textBlockQuote.border": "#7161",
     "textCodeBlock.background": "#2C203C55",
@@ -392,32 +370,83 @@
     // "statusBarItem.remoteBackground": "#ff0000",
     // "statusBarItem.remoteForeground": "#ff0000",
     // "tree.indentGuidesStroke": "#ff0000",
+    //
+    // #b4bdc5EE
+    //
     /* editorLightBulb */
-    "editorLightBulb.foreground": "#FC3E",
-    "editorLightBulbAutoFix.foreground": "#39CE",
+    "editorLightBulb.foreground": "#FC3D",
+    "editorLightBulbAutoFix.foreground": "#39CD",
     /* gitDecoration */
-    "gitDecoration.addedResourceForeground": "#3C3E",
-    "gitDecoration.modifiedResourceForeground": "#FC3E",
-    "gitDecoration.conflictingResourceForeground": "#F33E",
-    "gitDecoration.deletedResourceForeground": "#936E",
-    "gitDecoration.ignoredResourceForeground": "#39CE",
-    "gitDecoration.submoduleResourceForeground": "#C3CE",
-    "gitDecoration.untrackedResourceForeground": "#F93E",
+    "gitDecoration.addedResourceForeground": "#3C0D",
+    "gitDecoration.modifiedResourceForeground": "#FB0D",
+    "gitDecoration.conflictingResourceForeground": "#F20D",
+    "gitDecoration.deletedResourceForeground": "#936F",
+    "gitDecoration.ignoredResourceForeground": "#09CD",
+    "gitDecoration.submoduleResourceForeground": "#C3CD",
+    "gitDecoration.untrackedResourceForeground": "#F90D",
     /* error and warnings */
-    "list.errorForeground": "#F36E",
-    "minimap.errorHighlight": "#F36E",
-    "editorError.foreground": "#F36E",
-    "problemsErrorIcon.foreground": "#F36E",
-    "notificationsErrorIcon.foreground": "#F36E",
-    "tab.activeModifiedBorder": "#F36E",
-    "editorOverviewRuler.errorForeground": "#F36E",
-    "editorOverviewRuler.warningForeground": "#CF3E",
-    "notificationsWarningIcon.foreground": "#CF3E",
-    "problemsWarningIcon.foreground": "#CF3E",
-    "tab.activeBorderTop": "#CF3E",
-    "list.warningForeground": "#CF3E",
-    "editorWarning.foreground": "#CF3E",
-    "minimap.warningHighlight": "#CF3E"
+    "list.errorForeground": "#F36F",
+    "minimap.errorHighlight": "#F36F",
+    "editorError.foreground": "#F36F",
+    "problemsErrorIcon.foreground": "#F36F",
+    "notificationsErrorIcon.foreground": "#F36F",
+    "tab.activeModifiedBorder": "#F36F",
+    "editorOverviewRuler.errorForeground": "#F36F",
+    "editorOverviewRuler.warningForeground": "#CF3F",
+    "notificationsWarningIcon.foreground": "#CF3F",
+    "problemsWarningIcon.foreground": "#CF3F",
+    "tab.activeBorderTop": "#CF3F",
+    "list.warningForeground": "#CF3F",
+    "editorWarning.foreground": "#CF3F",
+    "minimap.warningHighlight": "#CF3F",
+    "terminal.selectionBackground": "#3277",
+    "terminal.background": "#1E1E1E",
+    "terminal.border": "#1C1C24",
+    "terminalCursor.background": "#00ff00",
+    "terminalCursor.foreground": "#C02030",
+    /* terminal */
+    /* terminal */
+    "terminal.foreground": "#C4BDB5",
+    /* terminal colors */
+    "terminal.ansiBlack": "#221B25",
+    "terminal.ansiBlue": "#458588",
+    "terminal.ansiCyan": "#689E6A",
+    "terminal.ansiGreen": "#98971A",
+    "terminal.ansiMagenta": "#B16286",
+    "terminal.ansiRed": "#CC241D",
+    "terminal.ansiWhite": "#C0B0A0",
+    "terminal.ansiYellow": "#E7A931",
+    "terminal.ansiBrightBlack": "#928374",
+    "terminal.ansiBrightBlue": "#99C6CA",
+    "terminal.ansiBrightCyan": "#8AE180",
+    "terminal.ansiBrightGreen": "#B5C033",
+    "terminal.ansiBrightMagenta": "#D66282",
+    "terminal.ansiBrightRed": "#F42C3E",
+    "terminal.ansiBrightWhite": "#DDCCAA",
+    "terminal.ansiBrightYellow": "#FABE2F"
+
+    // #DDBC9A
+    // #D3BCA5
+    // #C9BDB0
+    // #C4BDB5 //&
+    // #BEBDBA
+    // #B4BDC5
+
+    /*
+  #C9BDB0
+  #BBBDBE
+  #C2BDB7
+  #C9BDB0
+  #CFBCA8
+  #D6BCA1
+  #DDBC9A
+
+#DDBC9A
+#D3BCA5
+#C9BDB0
+#C9BDB0
+#C9BDB0
+ */
   },
   "tokenColors": [
     // "TypeScript main Tokens colors" -----------------------------------------

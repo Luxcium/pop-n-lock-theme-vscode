@@ -4,7 +4,7 @@
   "type": "dark",
   "colors": {
     // "quickInput.background": "#336",
-    "quickInput.foreground": "#C9BDB0EE",
+    "quickInput.foreground": "#C4BDB5",
     // "searchEditor.textInputBorder": "#ff0000",
     // "searchEditor.textInputBorder": "#ff0000",
 
@@ -14,14 +14,14 @@
     "peekViewEditor.matchHighlightBorder": "#618",
     "peekViewResult.matchHighlightBackground": "#39C5",
     "peekViewResult.selectionBackground": "#42b4",
-    "peekViewResult.selectionForeground": "#EDAB",
+    "peekViewResult.selectionForeground": "#C4BDB5",
     "peekView.border": "#FC5D",
     "peekViewResult.background": "#52A2",
-    "peekViewResult.fileForeground": "#EDAB",
-    "peekViewResult.lineForeground": "#EDAB",
+    "peekViewResult.fileForeground": "#C4BDB5",
+    "peekViewResult.lineForeground": "#C4BDB5",
     "peekViewTitle.background": "#14B5",
-    "peekViewTitleDescription.foreground": "#EDAB",
-    "peekViewTitleLabel.foreground": "#EDAB",
+    "peekViewTitleDescription.foreground": "#C4BDB5",
+    "peekViewTitleLabel.foreground": "#C4BDB5",
 
     "diffEditor.insertedTextBackground": "#8DA3",
     "diffEditor.removedTextBackground": "#E473",
@@ -243,7 +243,7 @@
     "editorRuler.foreground": "#E474",
     "editorSuggestWidget.background": "#235D",
     "editorSuggestWidget.border": "#6BFD",
-    "editorSuggestWidget.foreground": "#EDAB",
+    "editorSuggestWidget.foreground": "#C4BDB5",
     "editorSuggestWidget.selectedBackground": "#4AE4",
     "editorUnnecessaryCode.border": "#95B4",
     "editorUnnecessaryCode.opacity": "#FFF5",
@@ -414,18 +414,17 @@
     //
     // #b4bdc5EE
     //
-
     /* editorLightBulb */
-    "editorLightBulb.foreground": "#FC3E",
-    "editorLightBulbAutoFix.foreground": "#39CE",
+    "editorLightBulb.foreground": "#FC3D",
+    "editorLightBulbAutoFix.foreground": "#39CD",
     /* gitDecoration */
-    "gitDecoration.addedResourceForeground": "#3C3E",
-    "gitDecoration.modifiedResourceForeground": "#FB0E",
-    "gitDecoration.conflictingResourceForeground": "#F33E",
-    "gitDecoration.deletedResourceForeground": "#936E",
-    "gitDecoration.ignoredResourceForeground": "#39CE",
-    "gitDecoration.submoduleResourceForeground": "#C3CE",
-    "gitDecoration.untrackedResourceForeground": "#F93E",
+    "gitDecoration.addedResourceForeground": "#3C0D",
+    "gitDecoration.modifiedResourceForeground": "#FB0D",
+    "gitDecoration.conflictingResourceForeground": "#F20D",
+    "gitDecoration.deletedResourceForeground": "#936F",
+    "gitDecoration.ignoredResourceForeground": "#09CD",
+    "gitDecoration.submoduleResourceForeground": "#C3CD",
+    "gitDecoration.untrackedResourceForeground": "#F90D",
     /* error and warnings */
     "list.errorForeground": "#F36F",
     "minimap.errorHighlight": "#F36F",
@@ -445,12 +444,13 @@
     // #DDBC9A
     // #D3BCA5
     // #C9BDB0
+    // #C4BDB5 //&
     // #BEBDBA
     // #B4BDC5
     /* terminal */
-    "terminal.background": "#221E25",
-    "terminal.border": "#77116633",
-    "terminal.foreground": "#C9BDB0",
+    "terminal.background": "#2E2A25",
+    "terminal.border": "#77116655",
+    "terminal.foreground": "#C4BDB5DD",
     "terminalCursor.background": "#29153A",
     "terminalCursor.foreground": "#F33",
     "terminal.selectionBackground": "#3277",
@@ -480,7 +480,7 @@
   #CFBCA8
   #D6BCA1
   #DDBC9A
-
+// next version
 #DDBC9A
 #D3BCA5
 #C9BDB0
@@ -523,7 +523,7 @@
   "tokenColors": [
     // "TypeScript main Tokens colors" -----------------------------------------
     // "#D25B","#E43D","#E67D","#E1AD","#7ADD",
-    // "#FC5D","#F91D","#EDAB","#A5BD","#ADCC",
+    // "#FC5D","#F91D","#C4BDB5","#A5BD","#ADCC",
     // "#CE5C","#7C2D","#4B9D","#55FD","#6BFC",
     // #region "TypeScript" ----------------------------------------------------
     // #region TS INTERFACE START HERE
@@ -546,7 +546,7 @@
         "entity.name.type.alias"
       ],
       "settings": {
-        "foreground": "#EDAB",
+        "foreground": "#C4BDB5",
         "fontStyle": "bold"
       }
     },
@@ -730,7 +730,7 @@
         "source.ts entity.name.type.module"
       ],
       "settings": {
-        "foreground": "#EDAB",
+        "foreground": "#C4BDB5",
         "fontStyle": "bold"
       }
     },
@@ -767,7 +767,7 @@
         "source.ts meta.decorator variable.other.readwrite"
       ],
       "settings": {
-        "foreground": "#EDAB",
+        "foreground": "#C4BDB5",
         "fontStyle": "bold"
       }
     },
@@ -1338,14 +1338,14 @@
         "source.ts strong"
       ],
       "settings": {
-        "foreground": "#EDAB",
+        "foreground": "#C4BDB5",
         "fontStyle": "bold"
       }
     },
     {
       "scope": ["source.ts markup.italic"],
       "settings": {
-        "foreground": "#EDAB",
+        "foreground": "#C4BDB5",
         "fontStyle": "italic"
       }
     },
@@ -1391,7 +1391,7 @@
         "entity.name.type.alias"
       ],
       "settings": {
-        "foreground": "#EDAB",
+        "foreground": "#C4BDB5",
         "fontStyle": "bold"
       }
     },
@@ -1559,7 +1559,7 @@
         "source.tsx entity.name.type.module"
       ],
       "settings": {
-        "foreground": "#EDAB",
+        "foreground": "#C4BDB5",
         "fontStyle": "bold"
       }
     },
@@ -1596,7 +1596,7 @@
         "source.tsx meta.decorator variable.other.readwrite"
       ],
       "settings": {
-        "foreground": "#EDAB",
+        "foreground": "#C4BDB5",
         "fontStyle": "bold"
       }
     },
@@ -2154,14 +2154,14 @@
         "source.tsx strong"
       ],
       "settings": {
-        "foreground": "#EDAB",
+        "foreground": "#C4BDB5",
         "fontStyle": "bold"
       }
     },
     {
       "scope": ["source.tsx markup.italic"],
       "settings": {
-        "foreground": "#EDAB",
+        "foreground": "#C4BDB5",
         "fontStyle": "italic"
       }
     },
@@ -2207,7 +2207,7 @@
         "entity.name.type.alias"
       ],
       "settings": {
-        "foreground": "#EDAB",
+        "foreground": "#C4BDB5",
         "fontStyle": "bold"
       }
     },
@@ -2391,7 +2391,7 @@
         "source.js entity.name.type.module"
       ],
       "settings": {
-        "foreground": "#EDAB",
+        "foreground": "#C4BDB5",
         "fontStyle": "bold"
       }
     },
@@ -2428,7 +2428,7 @@
         "source.js meta.decorator variable.other.readwrite"
       ],
       "settings": {
-        "foreground": "#EDAB",
+        "foreground": "#C4BDB5",
         "fontStyle": "bold"
       }
     },
@@ -3001,14 +3001,14 @@ support.function.console.js
         "source.js strong"
       ],
       "settings": {
-        "foreground": "#EDAB",
+        "foreground": "#C4BDB5",
         "fontStyle": "bold"
       }
     },
     {
       "scope": ["source.js markup.italic"],
       "settings": {
-        "foreground": "#EDAB",
+        "foreground": "#C4BDB5",
         "fontStyle": "italic"
       }
     },
@@ -3205,7 +3205,7 @@ support.function.console.js
         "source.yaml punctuation.separator.key-value.mapping"
       ],
       "settings": {
-        "foreground": "#EDAB",
+        "foreground": "#C4BDB5",
         "fontStyle": "bold"
       }
     },
@@ -3799,7 +3799,7 @@ support.function.console.js
     {
       "scope": ["meta.tag meta.jsx.children"],
       "settings": {
-        "foreground": "#EDAB"
+        "foreground": "#C4BDB5"
       }
     },
     {
@@ -3879,8 +3879,8 @@ support.function.console.js
     },
     // #endregion "JSX / TSX TAGS" ------------------------------------------------
     // #region "HTML" ----------------------------------------------------------
-    // "#BE5B" "#FC5D" "#ADCC" "#6BFC" "#EDAB" "#4B9D""#D79F" "#DF8E"
-    // "#fabE2fFF""#b8bb26FF""#8ec07cFF""#d3869bFF""#369ec7FF""#B35F""#EDAB"
+    // "#BE5B" "#FC5D" "#ADCC" "#6BFC" "#C4BDB5" "#4B9D""#D79F" "#DF8E"
+    // "#fabE2fFF""#b8bb26FF""#8ec07cFF""#d3869bFF""#369ec7FF""#B35F""#C4BDB5"
     /* support.function.misc.css
 
 
@@ -4909,7 +4909,7 @@ source.css
         "entity.name.type.alias"
       ],
       "settings": {
-        "foreground": "#EDAB",
+        "foreground": "#C4BDB5",
         "fontStyle": "bold"
       }
     },
@@ -5077,7 +5077,7 @@ source.css
         "source entity.name.type.module"
       ],
       "settings": {
-        "foreground": "#EDAB",
+        "foreground": "#C4BDB5",
         "fontStyle": "bold"
       }
     },
@@ -5114,7 +5114,7 @@ source.css
         "source meta.decorator variable.other.readwrite"
       ],
       "settings": {
-        "foreground": "#EDAB",
+        "foreground": "#C4BDB5",
         "fontStyle": "bold"
       }
     },
@@ -5672,14 +5672,14 @@ source.css
     {
       "scope": ["source emphasis", "source markup.bold", "source strong"],
       "settings": {
-        "foreground": "#EDAB",
+        "foreground": "#C4BDB5",
         "fontStyle": "bold"
       }
     },
     {
       "scope": ["source markup.italic"],
       "settings": {
-        "foreground": "#EDAB",
+        "foreground": "#C4BDB5",
         "fontStyle": "italic"
       }
     },
@@ -5860,7 +5860,7 @@ source.css
         "source.tsx punctuation.terminator.statement"
       ],
       "settings": {
-        "foreground": "#EDAB",
+        "foreground": "#C4BDB5",
         "fontStyle": "bold"
       }
     },

@@ -1,6 +1,7 @@
 {
   "name": "pop-n-lock-theme-vscode",
   "version": "3.25.6",
+
   "publisher": "Luxcium",
   "license": "MIT",
   "displayName": "Pop N' Lock Theme by Luxcium ✨",
@@ -84,11 +85,6 @@
         "label": "Pop N' Lock Theme by Luxcium ✨",
         "uiTheme": "vs-dark",
         "path": "./src/themes/Pop-N-Lock.original.json"
-      },
-      {
-        "label": "Pop N' Lock Matt Theme ✨",
-        "uiTheme": "vs-dark",
-        "path": "./src/themes/Pop-N-Lock.matt.json"
       },
       {
         "label": "Pop N' Lock Theme by Luxcium ✨ Alexis's Black ⛷",
