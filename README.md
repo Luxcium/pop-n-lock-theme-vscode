@@ -11,11 +11,11 @@
 
 **This powerful theme of colour is always evolving**
 
-Colourful features are added and more languages will be included soon. This theme is **STRONGLY OPINIONATED** to make sure to to be influencing the opinion request any changes you want by filling an issue to be part of the 17 000+ happy users.
+Colourful features are added and more languages will be included soon. This theme is **STRONGLY OPINIONATED** to make sure to to be influencing the opinion request any changes you want by filling an issue to be part of the 18&nbsp;000+ happy users.
 
 ## Make sure people know how you feel with a 5-star review
 
-> ### **Click: [I want to tell everyone about _Pop N' Lock Theme by Luxcium ✨_ ](https://marketplace.visualstudio.com/items?itemName=Luxcium.pop-n-lock-theme-vscode&ssr=false#review-details)** and read the **«_✨ Be Proud_»** section below
+> ### **Click: [I want to tell everyone about _Pop N' Lock Theme by Luxcium ✨_ ](https://marketplace.visualstudio.com/items?itemName=Luxcium.pop-n-lock-theme-vscode&ssr=false#review-details)** and read the **«✨ Be Proud»** section below
 >
 > [![Visual Studio Marketplace Rating (Stars)](https://img.shields.io/visual-studio-marketplace/stars/luxcium.pop-n-lock-theme-vscode.svg?color=48A&label=Pop%20N%27%20Lock)](https://marketplace.visualstudio.com/items?itemName=Luxcium.pop-n-lock-theme-vscode&ssr=false#review-details)
 
