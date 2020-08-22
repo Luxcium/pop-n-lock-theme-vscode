@@ -273,7 +273,7 @@ Pop N' Lock Theme by Luxcium ✨ TSA/ASD 🧩 (PREVIEW may change in future rele
 - [Pop n' Lock on vsixhub ](https://www.vsixhub.com/vsix/381/)
 - [Pop n' Lock on xspdf ](https://www.xspdf.com/help/52355090.html)
 - [Pop n' Lock on gitmemory ](https://www.gitmemory.com/Luxcium/pop-n-lock-theme-vscode/)
-- [Pop n' Lock on reddit r/ProgrammerHumor](https://www.reddit.com/r/ProgrammerHumor/comments/ht2tcl/i_cant_understand_other_colors/)
+- [Pop n' Lock on reddit r/ProgrammerHumor](https://www.reddit.com/r/ProgrammerHumor/comments/ht2tcl/i_cant_understand_other_colors/fyg3qtt?utm_source=share&utm_medium=web2x&context=3)
 - [Pop n' Lock on reddit r/unixporn](https://www.reddit.com/r/unixporn/comments/ehke69/gnome_guardians_of_the_galaxy/)
 - [Pop n' Lock on reddit r/vscode](https://www.reddit.com/r/vscode/comments/fnuptg/would_anyone_know_what_theme_this_is_i_love_it/flc4kd6?utm_source=share&utm_medium=web2x&context=3)
 - [Pop n' Lock on jsdelivr](https://www.jsdelivr.com/package/npm/pop-n-lock-theme-vscode)
@@ -311,9 +311,9 @@ Based on _Popping and Locking (VS Code Theme)_
 
 ---
 
-**THE LUXCIUM OWL LOGO IS A TRADEMARK OF BENJAMIN VINCENT KASAPOGLU ™ & © 2017-2020 ALL RIGHT RESERVED**
+**THE LUXCIUM OWL LOGO IS A TRADEMARK OF BENJAMIN VINCENT KASAPOGLU (™ & © 2017-2020 ALL RIGHT RESERVED)**
 
-**« _POP N' LOCK THEME_ » & « _POP N' LOCK THEME BY LUXCIUM ✨_ » ARE TRADEMARKS OF BENJAMIN VINCENT KASAPOGLU ™ & © 2018-2020 ALL RIGHT RESERVED**
+**« _POP N' LOCK THEME_ » & « _POP N' LOCK THEME BY LUXCIUM ✨_ » ARE TRADEMARKS OF BENJAMIN VINCENT KASAPOGLU (™ & © 2018-2020 ALL RIGHT RESERVED)**
 
 ---
 
