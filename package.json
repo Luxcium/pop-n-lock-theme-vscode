@@ -1,6 +1,6 @@
 {
   "name": "pop-n-lock-theme-vscode",
-  "version": "3.30.1",
+  "version": "3.30.2",
   "publisher": "Luxcium",
   "license": "MIT",
   "displayName": "Pop N' Lock Theme by Luxcium ✨",
@@ -33,10 +33,10 @@
     "vsce:publish": "vsce publish --yarn",
     "vsce:package": "vsce package --yarn",
     "vsce:pak-pub": "vsce package --yarn && vsce publish --yarn",
-    "vsce:release": "yarn run --ignore-engines vsce:prepublish && yarn run --ignore-engines vsce:pak-pub && git add .",
     "vsce:prepublish": "yarn run --ignore-engines update:all; yarn run --ignore-engines test",
-    "vsce:release:minor": "yarn run --ignore-engines vsce:prepublish ; yarn version --ignore-engines  --no-git-tag-version --minor && yarn run --ignore-engines vsce:pak-pub  && git add .",
-    "vsce:release:patch": "yarn run --ignore-engines vsce:prepublish ; yarn version --ignore-engines  --no-git-tag-version --patch && yarn run --ignore-engines vsce:pak-pub && git add ."
+    "vsce:release": "yarn run --ignore-engines vsce:prepublish && yarn run --ignore-engines vsce:pak-pub && git add .  && yarn run npm:publish",
+    "vsce:release:minor": "yarn run --ignore-engines vsce:prepublish ; yarn version --ignore-engines  --no-git-tag-version --minor && yarn run --ignore-engines vsce:pak-pub  && git add . && yarn run npm:publish",
+    "vsce:release:patch": "yarn run --ignore-engines vsce:prepublish ; yarn version --ignore-engines  --no-git-tag-version --patch && yarn run --ignore-engines vsce:pak-pub && git add . && yarn run npm:publish"
   },
   "dependencies": {
     "color-convert": "^2.0.1"
