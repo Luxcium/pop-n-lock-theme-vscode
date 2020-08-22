@@ -1,3 +1,4 @@
 node_modules
 *.env
 dist
+pop-n-lock*.tgz

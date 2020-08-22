@@ -9,6 +9,7 @@ lib/**/*
 !src/languages/**/*.*
 !src/themes/**/*.*
 !pop-n-lock*
+pop-n-lock*.tgz
 !*.ico
 !*.png
 !social-media*
