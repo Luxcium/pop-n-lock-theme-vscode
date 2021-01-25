@@ -94,9 +94,9 @@ export const colors = {
   'notifications.border': '#7161',
   'notifications.foreground': '#C9BDB0EE',
   /*
-     "#FC3",
+     "#FC5",
      "#F93",
-     "#F33",
+     "#E43",
      "#936",
      "#39C",
      "#C3C",
@@ -491,9 +491,9 @@ export const colors = {
  */
 
 /*
-    "gitDecoration.addedResourceForeground": "#FC3",
+    "gitDecoration.addedResourceForeground": "#FC5",
     "gitDecoration.modifiedResourceForeground": "#F93",
-    "gitDecoration.conflictingResourceForeground": "#F33",
+    "gitDecoration.conflictingResourceForeground": "#E43",
     "gitDecoration.deletedResourceForeground": "#936",
     "gitDecoration.ignoredResourceForeground": "#39C",
     "gitDecoration.submoduleResourceForeground": "#C3C",
@@ -524,7 +524,7 @@ export const colors = {
 colors//   "tokenColors": [
 //     // "TypeScript main Tokens colors" -----------------------------------------
 //     // "#D25B","#E43D","#E67D","#E1AD","#7ADD",
-//     // "#FC5D","#F91D","#C4BDB5","#A5BD","#ADCC",
+//     // "#FC5D","#F91D","#C4BDB5","#95BD","#ADCC",
 //     // "#CE5C","#7C2D","#4B9D","#55FD","#6BFC",
 //     // #region "TypeScript" ----------------------------------------------------
 //     // #region TS INTERFACE START HERE

@@ -1006,7 +1006,7 @@
     "sideBarSectionHeader.border": "#C3B39322",
 
     "contrastActiveBorder": "#ff009311",
-    "contrastBorder": "#FEDA",
+    "contrastBorder": "#FECA",
     "editor.lineHighlightBorder": "#B5E4",
     "list.activeSelectionBackground": "#5084",
     "list.activeSelectionForeground": "#FFD9D0",
@@ -1117,7 +1117,7 @@
     "terminalCursor.foreground": "#C23",
     "terminalCursor.background": "#19152F",
 
-    "terminal.border": "#FF0000FF",
+    "terminal.border": "#F20F",
     "terminal.background": "#1D1521",
     "terminal.foreground": "#FEBF",
     "terminal.ansiBlack": "#1D1521",

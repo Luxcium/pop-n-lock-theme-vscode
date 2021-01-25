@@ -417,10 +417,10 @@
     "terminal.ansiWhite": "#C0B0A0",
     "terminal.ansiRed": "#CC241D",
     "terminal.ansiBrightMagenta": "#D66282",
-    "terminal.ansiBrightWhite": "#DDCCAA",
+    "terminal.ansiBrightWhite": "#DCAF",
     "terminal.ansiYellow": "#E7A931",
     "terminal.ansiBrightRed": "#F42C3E",
-    "terminal.ansiBrightYellow": "#FABE2F"
+    "terminal.ansiBrightYellow": "#E7A931"
     /*
 
   #B4BDC5EE
