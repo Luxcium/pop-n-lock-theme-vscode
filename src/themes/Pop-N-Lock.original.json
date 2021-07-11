@@ -2,11 +2,6 @@
   "$schema": "vscode://schemas/color-theme",
   "name": "Pop N Lock Theme by Luxcium",
   "type": "dark",
-  // '#71CCE7',
-  // '#417CC8',
-  // '#FFAE17',
-  // '#F7D84A',
-  // https://pastebin.com/7LaYhbZh //+ VSCODE-color-theme-1.56.0-insider-colors
   "colors": {
     "quickInput.foreground": "#C4BDB5DD",
     "peekViewEditor.background": "#235B",
@@ -6311,6 +6306,991 @@ source.css
       }
     }
     // #endregion
+    /*
+
+
+        {
+          "scope": [
+            "comment.block.documentation.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "comment.block.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "comment.line.documentation.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "comment.line.double-slash.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "constant.character.escape.backslash.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "constant.character.escape.bit.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "constant.character.escape.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "constant.character.escape.unicode.punctuation.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "constant.character.escape.unicode.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "constant.language.bool.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "constant.numeric.bin.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "constant.numeric.decimal.exponent.mantissa.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "constant.numeric.decimal.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "constant.numeric.hex.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "constant.numeric.oct.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "constant.other.caps.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "entity.name.function.macro.rules.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "entity.name.function.macro.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "entity.name.function.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "entity.name.module.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "entity.name.namespace.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "entity.name.type.declaration.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "entity.name.type.enum.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "entity.name.type.lifetime.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "entity.name.type.macro.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "entity.name.type.metavariable.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "entity.name.type.numeric.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "entity.name.type.option.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "entity.name.type.primitive.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "entity.name.type.result.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "entity.name.type.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "entity.name.type.struct.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "entity.name.type.trait.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "keyword.control.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "keyword.declaration.enum.rust°storage.type.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "keyword.declaration.struct.rust°storage.type.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "keyword.declaration.trait.rust°storage.type.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "keyword.declaration.type.rust°storage.type.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "keyword.operator.access.dot.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "keyword.operator.arrow.fat.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "keyword.operator.arrow.skinny.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "keyword.operator.assignment.equal.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "keyword.operator.assignment.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "keyword.operator.attribute.inner.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "keyword.operator.borrow.and.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "keyword.operator.borrow.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "keyword.operator.comparison.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "keyword.operator.dereference.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "keyword.operator.exponent.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "keyword.operator.exponent.sign.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "keyword.operator.key-value.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "keyword.operator.logical.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "keyword.operator.macro.dollar.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "keyword.operator.math.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "keyword.operator.namespace.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "keyword.operator.question.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "keyword.operator.range.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "keyword.operator.subpattern.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "keyword.other.crate.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "keyword.other.fn.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "keyword.other.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "keyword.other.rust°storage.type.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "meta.attribute.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "meta.function.call.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "meta.function.definition.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "meta.import.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "meta.interpolation.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "meta.macro.metavariable.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "meta.macro.metavariable.type.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "meta.macro.rules.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "meta.macro.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "meta.use.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "punctuation.brackets.angle.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "punctuation.brackets.attribute.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "punctuation.brackets.curly.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "punctuation.brackets.round.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "punctuation.brackets.square.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "punctuation.comma.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "punctuation.definition.attribute.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "punctuation.definition.char.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "punctuation.definition.interpolation.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "punctuation.definition.lifetime.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "punctuation.definition.string.raw.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "punctuation.definition.string.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "punctuation.semi.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "punctuation.separator.dot.decimal.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "Rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "storage.modifier.mut.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "storage.modifier.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "storage.type.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "string.quoted.byte.raw.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "string.quoted.double.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "string.quoted.single.char.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "variable.language.self.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "variable.language.super.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "variable.other.metavariable.name.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "variable.other.metavariable.specifier.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        },
+        {
+          "scope": [
+            "variable.other.rust"
+          ],
+          "settings": {
+            "foreground": "#E8DD",
+            "fontStyle": ""
+          }
+        }
+
+"comment.block.documentation.rust"
+"comment.block.rust"
+"comment.line.documentation.rust"
+"comment.line.double-slash.rust"
+"constant.character.escape.backslash.rust"
+"constant.character.escape.bit.rust"
+"constant.character.escape.rust"
+"constant.character.escape.unicode.punctuation.rust"
+"constant.character.escape.unicode.rust"
+"constant.language.bool.rust"
+"constant.numeric.bin.rust"
+"constant.numeric.decimal.exponent.mantissa.rust"
+"constant.numeric.decimal.rust"
+"constant.numeric.hex.rust"
+"constant.numeric.oct.rust"
+"constant.other.caps.rust"
+"entity.name.function.macro.rules.rust"
+"entity.name.function.macro.rust"
+"entity.name.function.rust"
+"entity.name.module.rust"
+"entity.name.namespace.rust"
+"entity.name.type.declaration.rust"
+"entity.name.type.enum.rust"
+"entity.name.type.lifetime.rust"
+"entity.name.type.macro.rust"
+"entity.name.type.metavariable.rust"
+"entity.name.type.numeric.rust"
+"entity.name.type.option.rust"
+"entity.name.type.primitive.rust"
+"entity.name.type.result.rust"
+"entity.name.type.rust"
+"entity.name.type.struct.rust"
+"entity.name.type.trait.rust"
+"keyword.control.rust"
+"keyword.declaration.enum.rust°storage.type.rust"
+"keyword.declaration.struct.rust°storage.type.rust"
+"keyword.declaration.trait.rust°storage.type.rust"
+"keyword.declaration.type.rust°storage.type.rust"
+"keyword.operator.access.dot.rust"
+"keyword.operator.arrow.fat.rust"
+"keyword.operator.arrow.skinny.rust"
+"keyword.operator.assignment.equal.rust"
+"keyword.operator.assignment.rust"
+"keyword.operator.attribute.inner.rust"
+"keyword.operator.borrow.and.rust"
+"keyword.operator.borrow.rust"
+"keyword.operator.comparison.rust"
+"keyword.operator.dereference.rust"
+"keyword.operator.exponent.rust"
+"keyword.operator.exponent.sign.rust"
+"keyword.operator.key-value.rust"
+"keyword.operator.logical.rust"
+"keyword.operator.macro.dollar.rust"
+"keyword.operator.math.rust"
+"keyword.operator.namespace.rust"
+"keyword.operator.question.rust"
+"keyword.operator.range.rust"
+"keyword.operator.subpattern.rust"
+"keyword.other.crate.rust"
+"keyword.other.fn.rust"
+"keyword.other.rust"
+"keyword.other.rust°storage.type.rust"
+"meta.attribute.rust"
+"meta.function.call.rust"
+"meta.function.definition.rust"
+"meta.import.rust"
+"meta.interpolation.rust"
+"meta.macro.metavariable.rust"
+"meta.macro.metavariable.type.rust"
+"meta.macro.rules.rust"
+"meta.macro.rust"
+"meta.use.rust"
+"punctuation.brackets.angle.rust"
+"punctuation.brackets.attribute.rust"
+"punctuation.brackets.curly.rust"
+"punctuation.brackets.round.rust"
+"punctuation.brackets.square.rust"
+"punctuation.comma.rust"
+"punctuation.definition.attribute.rust"
+"punctuation.definition.char.rust"
+"punctuation.definition.interpolation.rust"
+"punctuation.definition.lifetime.rust"
+"punctuation.definition.string.raw.rust"
+"punctuation.definition.string.rust"
+"punctuation.semi.rust"
+"punctuation.separator.dot.decimal.rust"
+"Rust"
+"storage.modifier.mut.rust"
+"storage.modifier.rust"
+"storage.type.rust"
+"string.quoted.byte.raw.rust"
+"string.quoted.double.rust"
+"string.quoted.single.char.rust"
+"variable.language.self.rust"
+"variable.language.super.rust"
+"variable.other.metavariable.name.rust"
+"variable.other.metavariable.specifier.rust"
+"variable.other.rust"
+    */
   ]
 }
 /*
@@ -6476,3 +7456,8 @@ source.css
 #C4BDB5
 %
   */
+// '#71CCE7',
+// '#417CC8',
+// '#FFAE17',
+// '#F7D84A',
+// https://pastebin.com/7LaYhbZh //+ VSCODE-color-theme-1.56.0-insider-colors

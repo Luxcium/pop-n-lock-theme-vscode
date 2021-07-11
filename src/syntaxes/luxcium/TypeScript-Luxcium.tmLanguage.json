@@ -1,5 +1,5 @@
 {
-  "$schema": "../../../resources/schemas/tmlanguage.json",
+  "$schema": "../../resources/schemas/tmlanguage.json",
   "name": "TypeScript (Luxcium)",
   "scopeName": "source.ts.luxcium",
   "fileTypes": ["ts"],
@@ -8,6 +8,7 @@
       "include": "#directives"
     },
     {
+      
       "include": "#statements"
     },
     {
