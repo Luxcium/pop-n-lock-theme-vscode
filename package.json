@@ -38,11 +38,8 @@
     "vsce:release:minor": "yarn run --ignore-engines vsce:prepublish ; yarn version --ignore-engines  --no-git-tag-version --minor && yarn run --ignore-engines vsce:pak-pub  && git add . && yarn run npm:publish",
     "vsce:release:patch": "yarn run --ignore-engines vsce:prepublish ; yarn version --ignore-engines  --no-git-tag-version --patch && yarn run --ignore-engines vsce:pak-pub && git add . && yarn run npm:publish"
   },
-  "dependencies": {},
   "devDependencies": {
-    "@types/dotenv": "^8.2.0",
     "@types/express": "^4.17.6",
-    "@types/mongoose": "^5.7.10",
     "@types/node": "^13.11.1",
     "@types/puppeteer": "^2.0.1",
     "@types/react": "^16.9.34",
@@ -70,7 +67,6 @@
     "semver": "^7.2.2",
     "snyk": "^1.518.0",
     "tslib": "^1.11.1",
-    "tslint": "^6.1.1",
     "tslint-config-prettier": "^1.18.0",
     "typescript": "^3.8.3",
     "vsce": "^1.78.0",
@@ -105,6 +101,18 @@
       }
     ],
     "languages": [
+      {
+        "id": "desktop",
+        "aliases": [
+          "Desktop",
+          "desktop"
+        ],
+        "firstLine": "^\\[Desktop Entry\\]",
+        "extensions": [
+          ".desktop"
+        ],
+        "configuration": "./src/languages/desktop.language-configuration.json"
+      },
       {
         "id": "typescript",
         "aliases": [

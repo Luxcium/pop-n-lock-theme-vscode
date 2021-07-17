@@ -1,0 +1,110 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Desktop",
+	"patterns": [
+		{
+			"include": "#layout"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#values"
+		},
+		{
+			"include": "#inCommands"
+		},
+		{
+			"include": "#inCategories"
+		}
+	],
+	"repository": {
+		"layout": {
+			"patterns": [
+				{
+					"name": "comment",
+					"begin": "^\\[Desktop",
+					"end": "\\]"
+				},
+				{
+					"name": "comment",
+					"match": "^\\s*#.*"
+				},
+				{
+					"name": "comment",
+					"match": ";"
+				},
+				{
+					"name": "comment",
+					"match": "^\\[X-GNOME-Metatheme\\]$"
+				}
+			]
+		},
+		"keywords": {
+			"patterns": [
+				{
+					"name": "keyword",
+					"match": "^Type|^Version|^Name|^GenericName|^NoDisplay|^Comment|^Icon|^Hidden|^OnlyShowIn|^NotShowIn|^DBusActivatable|^TryExec|^Exec|^Path|^Terminal|^Actions|^MimeType|^Categories|^Implements|^Keywords|^StartupNotify|^StartupWMClass|^URL|^PrefersNonDefaultGPU"
+				},
+				{
+					"name": "constant.language",
+					"match": "(?<!^)\\[.+\\](?==)"
+				},
+				{
+					"name": "keyword",
+					"match": "^GtkTheme|^MetacityTheme|^IconTheme|^ButtonLayout|^ApplicationFont|^Encoding"
+				}
+			]
+		},
+		"values": {
+			"patterns": [
+				{
+					"name": "keyword.operator",
+					"match": "="
+				},
+				{
+					"name": "variable",
+					"match": "true|false"
+				},
+				{
+					"name": "constant.numeric",
+					"match": "[0-9]+\\.[0-9]+|[0-9]+"
+				}
+			]
+		},
+		"inCommands": {
+			"patterns": [
+				{
+					"name": "variable.parameter",
+					"match": "(?<=^Exec.*)(?<!\\S)--\\S+(?!\\S)"
+				},
+				{
+					"name": "variable",
+					"match": "\\%."
+				},
+				{
+					"name": "string",
+					"match": "\\B/\\S+\\b"
+				},
+				{
+					"name": "string",
+					"match": "\".*\""
+				}
+			]
+		},
+		"inCategories": {
+			"patterns": [
+				{
+					"name": "variable",
+					"begin": "(?<=^Categories.*)",
+					"match": "AudioVideo|Audio|Video|Development|Education|Game|Graphics|Network|Office|Science|Settings|System|Utility"
+				},
+				{
+					"name": "string",
+					"match": "(?<=^Categories.*)[^=;]+"
+				}
+			]
+		}
+	},
+	"scopeName": "source.desktop"
+}

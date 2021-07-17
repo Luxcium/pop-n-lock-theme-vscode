@@ -1,0 +1,82 @@
+[Desktop Entry]
+Name=Code X
+Comment=Prefered Code Editor
+GenericName=VSCode Text Editor & IDE
+Exec=/usr/share/code/code --no-sandbox --unity-launch %F
+Icon=/home/luxcium/projects/main-POP-N-LOCK-x1DF2/icons/code (11).svg
+Type=Application
+StartupNotify=false
+StartupWMClass=Code-15
+Categories=Utility;TextEditor;Development;IDE;
+MimeType=text/plain;inode/directory;
+Actions=Rust;questrade-ts;Luxcium;maybelist;node;vscode;zsh-code;config;Python-3.9.5;AhMyZSH;TypeScript;
+Keywords=vscode;
+PrefersNonDefaultGPU=1
+
+[Desktop Action AhMyZSH]
+Exec=/usr/share/code/code --no-sandbox --new-window /home/luxcium/ahmyzsh/
+Icon=/home/luxcium/.local/share/icons/code-icons/io.elementary.code.svg.~1~.svg
+Name=°AhMyZSH°
+Path=/home/luxcium/ahmyzsh/
+
+[Desktop Action questrade-ts]
+Exec=/usr/share/code/code --no-sandbox --new-window /home/luxcium/dev/questrade-ts/
+Icon=/home/luxcium/.local/share/icons/code-icons/vs-code-dir-1234/code_backup-symbolic.svg
+Name=Open questrade-ts
+Path=/home/luxcium/dev/questrade-ts/
+
+[Desktop Action Rust]
+Exec=/usr/share/code/code --no-sandbox --new-window /home/luxcium/projects/rust/
+Icon=/home/luxcium/.local/share/icons/rust-icons/text-rust.svg.svg
+Name=Rust Env
+Path=/home/luxcium/projects/rust/
+
+[Desktop Action Luxcium]
+Exec=/usr/share/code/code --no-sandbox --new-window /home/luxcium/dev/Luxcium/
+Icon=/home/luxcium/.local/share/icons/code-icons/vs-code-dir-1234/visual-studio-code-insiders-symbolic.svg.~1~.svg
+Name=Open Luxcium
+Path=/home/luxcium/dev/Luxcium/
+
+[Desktop Action Python-3.9.5]
+Exec=/usr/share/code/code --no-sandbox --new-window /home/luxcium/.local/src/temp/Python-3.9.5/
+Icon=/home/luxcium/.local/share/icons/code-icons/application-x-python-bytecode.svg.~21~.svg
+Name=Open Python-3.9.5
+Path=/home/luxcium/.local/src/temp/Python-3.9.5/
+
+[Desktop Action TypeScript]
+Exec=/home/luxcium/projects/TypeScript-/bin/code --no-sandbox --new-window /home/luxcium/projects/TypeScript-/project/TypeScript
+Icon=/home/luxcium/projects/TypeScript-/icons/folder-vscode-open.svg
+Name=Open TypeScript
+Path=/home/luxcium/projects/TypeScript-/project/TypeScript
+
+[Desktop Action maybelist]
+Exec=/usr/share/code/code --no-sandbox --new-window /home/luxcium/dev/maybelist/
+Icon=/home/luxcium/.local/share/icons/code-icons/vs-code-dir-1234/visual-studio-code-insiders-symbolic.svg.~1~.svg
+Name=Open maybelist
+Path=/home/luxcium/dev/maybelist/
+
+[Desktop Action node]
+Exec=/usr/share/code/code --no-sandbox --new-window /home/luxcium/.local/src/temp/node/
+Icon=/home/luxcium/.local/share/icons/code-icons/vs-code-dir-1234/visual-studio-code-insiders-symbolic.svg.~1~.svg
+Name=Open node
+Path=/home/luxcium/.local/src/temp/node/
+
+[Desktop Action vscode]
+Exec=/usr/share/code/code --no-sandbox --new-window /home/luxcium/.local/src/temp/vscode/
+Icon=/home/luxcium/.local/share/icons/code-icons/vs-code-dir-1234/visual-studio-code-insiders-symbolic.svg.~1~.svg
+Name=Open vscode
+Path=/home/luxcium/.local/src/temp/vscode/
+
+[Desktop Action zsh-code]
+Exec=/usr/share/code/code --no-sandbox --new-window /home/luxcium/.local/src/temp/zsh-code/
+Icon=/home/luxcium/.local/share/icons/code-icons/vs-code-dir-1234/visual-studio-code-insiders-symbolic.svg.~1~.svg
+Name=Open zsh-code
+Path=/home/luxcium/.local/src/temp/zsh-code/
+
+[Desktop Action config]
+Exec=/usr/share/code/code --no-sandbox --new-window /home/luxcium/.config
+Icon=/home/luxcium/.local/share/icons/code-icons/vs-code-dir-1234/visual-studio-code-insiders-symbolic.svg.~1~.svg
+Name=.config
+Path=/home/luxcium/.config
+
+/home/luxcium/.config
