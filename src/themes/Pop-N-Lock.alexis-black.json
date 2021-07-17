@@ -152,7 +152,7 @@
     "window.inactiveBorder": "#1b1b26",
     "activityBar.background": "#181818",
     "activityBar.border": "#FC54",
-    "activityBar.dropBackground": "#7166",
+    // "activityBar.dropBackground": "#7166",
     "activityBar.foreground": "#FECB",
     "activityBarBadge.background": "#38AB",
     "activityBarBadge.foreground": "#FD6",
