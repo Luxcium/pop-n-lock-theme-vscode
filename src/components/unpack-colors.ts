@@ -1,5 +1,5 @@
 import { strict as assert } from 'assert';
-import { getKind } from './kinds';
+import { getColorKind } from './colors-kinds';
 
 export function unpackColors({
   elements,
@@ -19,12 +19,12 @@ export function unpackColors({
     };
     return mainObject;
   } else {
-    if (getKind(elements[0]) === 'other') {
+    if (getColorKind(elements[0]) === 'other') {
       console.log(elements[0]);
     }
     mainObject[elements[0]] = {
       color: some1.toUpperCase(),
-      kind: getKind(elements[0]),
+      kind: getColorKind(elements[0]),
     };
     return mainObject;
   }
