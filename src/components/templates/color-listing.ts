@@ -1,4 +1,4 @@
-export const colorOrdering = [
+export const colorOrdering: { [key: string]: string }[] = [
   { 'widget.shadow': '#001111FF' },
   { 'editorGroupHeader.border': '#001133FF' },
   { 'symbolIcon.referenceForeground': '#00539CFF' },

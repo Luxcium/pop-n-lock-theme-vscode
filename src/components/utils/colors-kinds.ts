@@ -45,26 +45,3 @@ export function getColorKind(str: string): string {
   }
   return kind;
 }
-
-// blue;
-// green;
-// lines;
-// orange;
-// purple;
-// red;
-// yellow;
-// iconErrored;
-// iconFailed;
-// iconPassed;
-// iconQueued;
-// iconSkipped;
-// iconUnset;
-// runAction;
-// boolean;
-// error;
-// name;
-// number;
-// string;
-// value;
-// diagonalFill;
-// indentGuidesStroke;
