@@ -1,4 +1,4 @@
-export const colourOrdering = [
+export const colorOrdering = [
   { 'widget.shadow': '#001111FF' },
   { 'editorGroupHeader.border': '#001133FF' },
   { 'symbolIcon.referenceForeground': '#00539CFF' },

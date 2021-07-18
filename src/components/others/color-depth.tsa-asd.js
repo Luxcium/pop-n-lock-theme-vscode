@@ -95,24 +95,19 @@ colors5 = {
   'peekViewTitle.background': '#14B5',
   'scrollbarSlider.background': '#7165',
   'editor.selectionHighlightBackground': '#5275', // 6
-  'editor.selectionBackground': '#53E5',// 6
-  'menubar.selectionBorder': '#6185',// 6
+  'editor.selectionBackground': '#53E5', // 6
+  'menubar.selectionBorder': '#6185', // 6
   'list.activeSelectionBackground': '#38A5', // 7
   'list.hoverBackground': '#7165', // 7
   'list.focusBackground': '#7165', // 7
   'terminal.selectionBackground': '#3275', // 7
-  
 };
-colors6 = {
-};
-colors7 = {
-    
-};
-colors8 = {
-};
+colors6 = {};
+colors7 = {};
+colors8 = {};
 colors9 = {
-    'scrollbarSlider.activeBackground': '#AE49', // 8
-    'tab.unfocusedInactiveModifiedBorder': '#E5D9',
+  'scrollbarSlider.activeBackground': '#AE49', // 8
+  'tab.unfocusedInactiveModifiedBorder': '#E5D9',
   'extensionButton.prominentHoverBackground': '#7169',
   'tab.unfocusedActiveForeground': '#FD89',
   'tab.unfocusedInactiveForeground': '#FD89',
@@ -129,11 +124,8 @@ colors9 = {
   'activityBar.activeBackground': '#7169', // A
   'window.activeBorder': '#7169', // A
   'sideBarSectionHeader.border': '#7169', // A
-
-
 };
-                        colorsA = {
-};
+colorsA = {};
 colorsB = {
   'editorInfo.foreground': '#6BFB',
   'editorMarkerNavigationError.background': '#B35B',
