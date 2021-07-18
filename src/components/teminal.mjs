@@ -1,9 +1,9 @@
-export const terminalCursor = {
+const terminalCursor = {
   background: '#29153A',
   foreground: '#F33',
 };
 
-export const terminal = {
+const terminal = {
   background: '#202010',
   border: '#77116655',
   foreground: '#C4BDB5DD',
@@ -25,3 +25,19 @@ export const terminal = {
   ansiBrightWhite: '#DDCCAA',
   ansiBrightYellow: '#FABE2F',
 };
+
+function terminalJson(terminalObj, name) {
+  let accumulator = '';
+  for (const property in terminalObj) {
+    accumulator = `${accumulator}"${name}.${property}": "${terminalObj[property]}", `;
+  }
+  const sliced = accumulator.slice(0, -2);
+  return JSON.parse(`{${sliced}}`);
+}
+
+export function getTerminal() {
+  return {
+    ...terminalJson(terminal, 'terminal'),
+    ...terminalJson(terminalCursor, 'terminalCursor'),
+  };
+}

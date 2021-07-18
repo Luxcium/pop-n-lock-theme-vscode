@@ -1,0 +1,64 @@
+extensions/extension-editing/package.json:        "url": "vscode://schemas/vscode-extensions"
+extensions/extension-editing/package.json:        "url": "vscode://schemas/language-configuration"
+extensions/extension-editing/package.json:        "url": "vscode://schemas/icon-theme"
+extensions/extension-editing/package.json:        "url": "vscode://schemas/product-icon-theme"
+extensions/extension-editing/package.json:        "url": "vscode://schemas/color-theme"
+extensions/json-language-features/client/src/jsonClient.ts:                     url = schema.schema.id || `vscode://schemas/custom/${encodeURIComponent(hash(schema.schema).toString(16))}`;
+extensions/json-language-features/server/src/jsonServer.ts:                                     uri = schema.schema.id || `vscode://schemas/custom/${index}`;
+extensions/configuration-editing/package.json:        "url": "vscode://schemas/keybindings"
+extensions/configuration-editing/package.json:        "url": "vscode://schemas/keybindings"
+extensions/configuration-editing/package.json:        "url": "vscode://schemas/settings/default"
+extensions/configuration-editing/package.json:        "url": "vscode://schemas/settings/user"
+extensions/configuration-editing/package.json:        "url": "vscode://schemas/settings/machine"
+extensions/configuration-editing/package.json:        "url": "vscode://schemas/workspaceConfig"
+extensions/configuration-editing/package.json:        "url": "vscode://schemas/workspaceConfig"
+extensions/configuration-editing/package.json:        "url": "vscode://schemas/argv"
+extensions/configuration-editing/package.json:        "url": "vscode://schemas/settings/folder"
+extensions/configuration-editing/package.json:        "url": "vscode://schemas/launch"
+extensions/configuration-editing/package.json:        "url": "vscode://schemas/tasks"
+extensions/configuration-editing/package.json:        "url": "vscode://schemas/tasks"
+extensions/configuration-editing/package.json:        "url": "vscode://schemas/snippets"
+extensions/configuration-editing/package.json:        "url": "vscode://schemas/snippets"
+extensions/configuration-editing/package.json:        "url": "vscode://schemas/global-snippets"
+extensions/configuration-editing/package.json:        "url": "vscode://schemas/extensions"
+extensions/configuration-editing/schemas/devContainer.schema.src.json:                                  "$ref": "vscode://schemas/settings/machine",
+extensions/configuration-editing/schemas/attachContainer.schema.json:                                   "$ref": "vscode://schemas/settings/machine",
+extensions/configuration-editing/schemas/devContainer.schema.generated.json:                                    "$ref": "vscode://schemas/settings/machine",
+extensions/configuration-editing/schemas/devContainer.schema.generated.json:                                    "$ref": "vscode://schemas/settings/machine",
+extensions/configuration-editing/schemas/devContainer.schema.generated.json:                                    "$ref": "vscode://schemas/settings/machine",
+extensions/configuration-editing/schemas/devContainer.schema.generated.json:                                    "$ref": "vscode://schemas/settings/machine",
+extensions/configuration-editing/schemas/devContainer.schema.generated.json:                                    "$ref": "vscode://schemas/settings/machine",
+grep: extensions/node_modules/.bin/tsc: Aucun fichier ou dossier de ce type
+grep: extensions/node_modules/.bin/tsserver: Aucun fichier ou dossier de ce type
+extensions/theme-defaults/themes/dark_vs.json:  "$schema": "vscode://schemas/color-theme",
+extensions/theme-defaults/themes/hc_black.json: "$schema": "vscode://schemas/color-theme",
+extensions/theme-defaults/themes/dark_plus.json:        "$schema": "vscode://schemas/color-theme",
+extensions/theme-defaults/themes/light_plus.json:       "$schema": "vscode://schemas/color-theme",
+extensions/theme-defaults/themes/light_vs.json: "$schema": "vscode://schemas/color-theme",
+extensions/vscode-notebook-tests/package.json:        "url": "vscode://schemas/notebook/cellmetadata"
+src/vs/workbench/api/common/configurationExtensionPoint.ts:jsonRegistry.registerSchema('vscode://schemas/workspaceConfig', {
+src/vs/workbench/api/common/configurationExtensionPoint.ts:                     $ref: 'vscode://schemas/extensions'
+src/vs/workbench/contrib/extensions/common/extensionsFileTemplate.ts:export const ExtensionsConfigurationSchemaId = 'vscode://schemas/extensions';
+src/vs/workbench/contrib/notebook/browser/notebook.contribution.ts:             jsonRegistry.registerSchema('vscode://schemas/notebook/cellmetadata', metadataSchema);
+src/vs/workbench/contrib/snippets/browser/snippets.contribution.ts:const languageScopeSchemaId = 'vscode://schemas/snippets';
+src/vs/workbench/contrib/snippets/browser/snippets.contribution.ts:const globalSchemaId = 'vscode://schemas/global-snippets';
+src/vs/workbench/contrib/codeEditor/browser/languageConfigurationExtensionPoint.ts:const schemaId = 'vscode://schemas/language-configuration';
+src/vs/workbench/services/extensions/common/extensionsRegistry.ts:const schemaId = 'vscode://schemas/vscode-extensions';
+src/vs/workbench/services/keybinding/browser/keybindingService.ts:let schemaId = 'vscode://schemas/keybindings';
+src/vs/workbench/services/themes/common/fileIconThemeSchema.ts:const schemaId = 'vscode://schemas/icon-theme';
+src/vs/workbench/services/themes/common/colorThemeSchema.ts:export const textmateColorsSchemaId = 'vscode://schemas/textmate-colors';
+src/vs/workbench/services/themes/common/colorThemeSchema.ts:export const colorThemeSchemaId = 'vscode://schemas/color-theme';
+src/vs/workbench/services/themes/common/productIconThemeSchema.ts:const schemaId = 'vscode://schemas/product-icon-theme';
+src/vs/workbench/services/configuration/common/configuration.ts:export const defaultSettingsSchemaId = 'vscode://schemas/settings/default';
+src/vs/workbench/services/configuration/common/configuration.ts:export const userSettingsSchemaId = 'vscode://schemas/settings/user';
+src/vs/workbench/services/configuration/common/configuration.ts:export const machineSettingsSchemaId = 'vscode://schemas/settings/machine';
+src/vs/workbench/services/configuration/common/configuration.ts:export const workspaceSettingsSchemaId = 'vscode://schemas/settings/workspace';
+src/vs/workbench/services/configuration/common/configuration.ts:export const folderSettingsSchemaId = 'vscode://schemas/settings/folder';
+src/vs/workbench/services/configuration/common/configuration.ts:export const launchSchemaId = 'vscode://schemas/launch';
+src/vs/workbench/services/configuration/common/configuration.ts:export const tasksSchemaId = 'vscode://schemas/tasks';
+src/vs/workbench/electron-sandbox/desktop.contribution.ts:      const argvDefinitionFileSchemaId = 'vscode://schemas/argv';
+src/vs/platform/theme/common/colorRegistry.ts:export const workbenchColorsSchemaId = 'vscode://schemas/workbench-colors';
+src/vs/platform/theme/common/tokenClassificationRegistry.ts:export const tokenStylingSchemaId = 'vscode://schemas/token-styling';
+src/vs/platform/theme/common/iconRegistry.ts:export const iconsSchemaId = 'vscode://schemas/icons';
+src/vs/platform/userDataSync/common/userDataSync.ts:    const ignoredSettingsSchemaId = 'vscode://schemas/ignoredSettings';
+src/vs/platform/configuration/common/configurationRegistry.ts:export const resourceLanguageSettingsSchemaId = 'vscode://schemas/settings/resourceLanguage';
