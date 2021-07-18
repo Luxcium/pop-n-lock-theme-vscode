@@ -1,4 +1,4 @@
-export const colors = {
+export const colorsInfos = {
   widget: {
     shadow: {
       color: '#001111FF',
