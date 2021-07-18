@@ -1,11 +1,14 @@
 {
     "compilerOptions": {
-        "module": "commonjs",
+        "module": "CommonJS",
         "target": "es6",
         "outDir": "dist",
         "lib": [
-            "es6",
+            "ESNext",
             "dom"
+        ],
+        "types": [
+            "node",
         ],
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true,
@@ -17,7 +20,8 @@
     },
     "include": [
         "src/**/*.ts",
-        "src/TypeScript/terminal-colors.js"
+        "src/TypeScript/terminal-colors.js",
+        "src/components"
         // "./node_modules/vscode/vscode.d.ts",
         // "./node_modules/vscode/lib/*"
     ]

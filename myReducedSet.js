@@ -1,4 +1,4 @@
-const colorListReducedSet = [
+export const colorListReducedSet = [
   '#001111',
   '#001133',
   '#111122',
@@ -190,9 +190,8 @@ const colorListReducedSet = [
   '#FFFFFF',
 ];
 
-
-// Sorted by saturation: 
-const satuirationSort  = [
+// Sorted by saturation:
+const satuirationSort = [
   '#001111',
   '#001133',
   '#00539C',
@@ -382,9 +381,9 @@ const satuirationSort  = [
   '#CCCCCC',
   '#DDDDDD',
   '#FFFFFF',
-  ]
-  
-   const Mixfff50 =[
+];
+
+const Mixfff50 = [
   '#FFFFFF',
   '#FFF6EE',
   '#FFF6E5',
@@ -573,12 +572,7 @@ const satuirationSort  = [
   '#8F878F',
   '#888890',
   '#7F8899',
-  '#7F8888'
-   ]
+  '#7F8888',
+];
 
-   export const  newColors= [
-    '#71CCE7',
-    '#417CC8',
-    '#FFAE17',
-    '#F7D84A',
-   ]
+export const newColors = ['#71CCE7', '#417CC8', '#FFAE17', '#F7D84A'];

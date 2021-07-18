@@ -25,6 +25,7 @@
   },
   "scripts": {
     "test": "snyk test",
+    "postinstall": "pwd; sh scripts/postinstall.sh",
     "unpdate:code": "yarn add -D --force --ignore-scripts --ignore-engines @types/vscode@1.34.0; vsce -V",
     "update:global": "yarn global add --force --ignore-scripts --ignore-engines npm@latest yarn@latest vsce@latest",
     "update:local": "yarn add --dev --force --ignore-scripts --ignore-engines npm@latest yarn@latest vsce@latest",
@@ -309,5 +310,8 @@
     "id": "e9677069-69cb-4942-ba29-54429a6cb4af",
     "publisherDisplayName": "Luxcium ✨",
     "publisherId": "896dbdcd-d417-4c51-8ff0-ec82723b0706"
+  },
+  "dependencies": {
+    "typedoc": "^0.21.4"
   }
 }
