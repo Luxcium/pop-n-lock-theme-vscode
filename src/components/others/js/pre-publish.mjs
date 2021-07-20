@@ -2,6 +2,8 @@ import { readFile, writeFile } from 'fs';
 import { promisify } from 'util';
 import * as vscode from 'vscode';
 import { getTerminal } from './teminal.mjs';
+const readFileAsync = promisify(readFile);
+const writeFileAsync = promisify(writeFile);
 const themeColor = new vscode.ThemeColor();
 themeColor;
 // vscode..
@@ -11,8 +13,6 @@ async function prePublish() {
   const writePath =
     './src/components/templates/Pop-N-Lock.original-striped.json';
 
-  const readFileAsync = promisify(readFile);
-  const writeFileAsync = promisify(writeFile);
   // try {
   const rawdata = (await readFileAsync(filePath))
     .toString()
