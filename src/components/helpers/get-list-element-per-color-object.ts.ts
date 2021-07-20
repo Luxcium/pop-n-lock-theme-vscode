@@ -9,22 +9,20 @@ async function composite(path: PathOrFileDescriptor) {
   const step5 = listElementPerColor;
   return step5(step4(step3(step2(step1(path)))));
 }
-async function main() {
-  const pathToJsonColours =
-    '/home/luxcium/projects/main-POP-N-LOCK-x1DF2/data/extensions/pop-n-lock-theme-vscode/src/components/mappings/JSON/colors-auto.json';
+export const pathToJsonColours_: PathOrFileDescriptor =
+  '/home/luxcium/projects/main-POP-N-LOCK-x1DF2/data/extensions/pop-n-lock-theme-vscode/src/components/mappings/JSON/colors-auto.json';
 
-  console.log(await composite(pathToJsonColours));
-  return new colorElement();
+export async function getListElementPerColorObject(
+  pathToJsonColours: PathOrFileDescriptor = pathToJsonColours_
+) {
+  void new colorElement();
+  return composite(pathToJsonColours);
 }
-main();
 
 export async function readLines(path: PathOrFileDescriptor): Promise<string[]> {
   const stringBuff = (await readFileAsync(path)).toString();
   return stringBuff.split(/\r?\n/);
 }
-
-// const lines = readLines(pathToJsonColours);
-const init = {};
 
 export async function splitLines(
   lines_: Promise<string[]>
@@ -72,7 +70,7 @@ export async function listElementPerColor(
       }
     }
     return obj;
-  }, init);
+  }, {});
 }
 
 class colorElement {
@@ -120,3 +118,11 @@ class colorElement {
 // );
 //   return new colorElement();
 // }
+
+// touch composite.ts
+// touch get-list-element-per-color-object.ts
+// touch read-lines.ts
+// touch split-lines.ts
+// touch extract-color-information.ts
+// touch normalize-strings.ts
+// touch list-element-per-color.ts

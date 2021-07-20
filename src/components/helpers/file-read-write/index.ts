@@ -6,7 +6,7 @@ import {
   normalizeStrings,
   readLines,
   splitLines,
-} from '../som';
+} from '../get-list-element-per-color-object.ts';
 import { readFileAsyncFromPath } from './read-file-async-from-path';
 import { writeFileToPathAsync } from './write-file-to-path-async';
 
