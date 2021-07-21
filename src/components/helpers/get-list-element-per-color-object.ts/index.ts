@@ -9,6 +9,7 @@ import { splitLines } from './split-lines';
 export const pathToJsonColours_: PathOrFileDescriptor =
   '/home/luxcium/projects/main-POP-N-LOCK-x1DF2/data/extensions/pop-n-lock-theme-vscode/src/components/mappings/JSON/colors-auto.json';
 
+// here is the example I was talking about @CheesusCrustMan#8153
 async function getListElementPerColorObject(
   pathToJsonColours: PathOrFileDescriptor
 ) {
@@ -50,3 +51,5 @@ async function main() {
     .forEach(item => console.log(item));
   return void 0;
 }
+
+export function reverse() {}
