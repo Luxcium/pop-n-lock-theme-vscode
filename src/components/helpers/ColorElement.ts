@@ -1,10 +1,12 @@
-export class colorElement {
+export class ColorElement {
   private colorHex_: string;
   private elementName: string;
   internalElementsList: string[];
   internalElementsAttributs: string[];
+  private isVoid: boolean;
   constructor(elementName: string, colorHex?: string) {
     this.elementName = elementName;
+    if (elementName === 'VOID') this.isVoid = true;
     this.internalElementsList = elementName.toLowerCase().split('.');
     this.internalElementsAttributs = elementName
       .split(/[A-Z.]/)
@@ -27,5 +29,8 @@ export class colorElement {
   }
   setColorHex(value: string) {
     this.colorHex_ = value;
+  }
+  get isNull() {
+    return this.isVoid;
   }
 }

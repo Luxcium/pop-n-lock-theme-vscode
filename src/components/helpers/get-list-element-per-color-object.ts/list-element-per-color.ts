@@ -1,7 +1,7 @@
 export async function listElementPerColor(
-  some: Promise<[string, string][]>
+  someList: Promise<[string, string][]>
 ): Promise<{ [key: string]: string[] }> {
-  return (await some).reduce((obj, listItem) => {
+  return (await someList).reduce((obj, listItem) => {
     const [colorName, elementName] = listItem;
     const trimedValue = elementName?.trim();
     if (trimedValue != null) {
