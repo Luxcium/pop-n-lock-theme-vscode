@@ -1,16 +1,18 @@
 import { ColorElement } from '../ColorElement';
 
-export async function listElementPerColor(
+export async function createColorElementsList(
   someList: Promise<[string?, string?][]>
-): Promise<(string | ColorElement)[]> {
+): Promise<ColorElement[]> {
   return (await someList).map(listItem => {
     const [colorName, elementName] = listItem;
     const trimedValue = elementName?.trim();
-    if (trimedValue != null) {
-      return (new ColorElement(elementName).colorHex = colorName);
+    if (trimedValue && colorName) {
+      const colorElement = new ColorElement(trimedValue);
+      colorElement.colorHex = colorName;
+      return colorElement;
     }
     return new ColorElement('VOID');
   });
 }
 
-// : Promise<{ [key: string]: string[] }>
+// create-color-element-list.ts

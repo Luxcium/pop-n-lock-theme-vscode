@@ -1,4 +1,5 @@
 import { PathOrFileDescriptor } from 'fs';
+import { createColorElementsList } from './create-color-element-list';
 import { extractColorInformation } from './extract-color-information';
 import { listElementPerColor } from './list-element-per-color';
 import { normalizeStrings } from './normalize-strings';
@@ -19,6 +20,19 @@ async function getListElementPerColorObject(
   return step5(step4(step3(step2(step1(pathToJsonColours)))));
 }
 
+export async function getColorElementsList(
+  pathToJsonColours: PathOrFileDescriptor,
+  includeNullElements: boolean = false
+) {
+  const step1 = readLines;
+  const step2 = splitLines;
+  const step3 = extractColorInformation;
+  const step4 = normalizeStrings;
+  const step5 = createColorElementsList;
+  return (await step5(step4(step3(step2(step1(pathToJsonColours)))))).filter(
+    item => includeNullElements || !item.isNull
+  );
+}
 export {
   extractColorInformation,
   listElementPerColor,
@@ -27,3 +41,12 @@ export {
   splitLines,
   getListElementPerColorObject,
 };
+
+main();
+async function main() {
+  const colorElementList = await getColorElementsList(pathToJsonColours_, true);
+  colorElementList
+    .filter(item => item.isNull)
+    .forEach(item => console.log(item));
+  return void 0;
+}
