@@ -2,7 +2,7 @@ import { PathOrFileDescriptor } from 'fs';
 import { createColorElementsList } from './create-color-element-list';
 import { extractColorInformation } from './extract-color-information';
 import { listElementPerColor } from './list-element-per-color';
-import { normalizeStrings } from './normalize-strings';
+import { normalizeQuotedStrings } from './normalize-strings';
 import { readLines } from './read-lines';
 import { splitLines } from './split-lines';
 
@@ -15,7 +15,7 @@ async function getListElementPerColorObject(
   const step1 = readLines;
   const step2 = splitLines;
   const step3 = extractColorInformation;
-  const step4 = normalizeStrings;
+  const step4 = normalizeQuotedStrings;
   const step5 = listElementPerColor;
   return step5(step4(step3(step2(step1(pathToJsonColours)))));
 }
@@ -27,7 +27,7 @@ export async function getColorElementsList(
   const step1 = readLines;
   const step2 = splitLines;
   const step3 = extractColorInformation;
-  const step4 = normalizeStrings;
+  const step4 = normalizeQuotedStrings;
   const step5 = createColorElementsList;
   return (await step5(step4(step3(step2(step1(pathToJsonColours)))))).filter(
     item => includeNullElements || !item.isNull
@@ -36,7 +36,7 @@ export async function getColorElementsList(
 export {
   extractColorInformation,
   listElementPerColor,
-  normalizeStrings,
+  normalizeQuotedStrings,
   readLines,
   splitLines,
   getListElementPerColorObject,

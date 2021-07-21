@@ -1,9 +1,10 @@
-export async function normalizeStrings(
-  someList: Promise<[string?, string?][]>
+/** Remove any double quotes from the string */
+export async function normalizeQuotedStrings(
+  stringsTupleList: Promise<[string?, string?][]>
 ): Promise<[string, string][]> {
-  return (await someList).map(list => {
-    const [colorName, elementName] = list;
+  return (await stringsTupleList).map(list => {
+    const [str1, str2] = list;
 
-    return [colorName?.replaceAll('"', ''), elementName?.replaceAll('"', '')];
+    return [str1?.replaceAll('"', ''), str2?.replaceAll('"', '')];
   });
 }
