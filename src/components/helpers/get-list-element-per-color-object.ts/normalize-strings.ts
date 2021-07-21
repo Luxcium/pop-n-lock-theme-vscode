@@ -4,6 +4,6 @@ export async function normalizeStrings(
   return (await some).map(list => {
     const [colorName, elementName] = list;
 
-    return [colorName, elementName.replaceAll('"', '')];
+    return [colorName.replaceAll('"', ''), elementName.replaceAll('"', '')];
   });
 }
