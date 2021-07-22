@@ -1,4 +1,13 @@
 {
     "workbench.colorTheme": "Pop N' Lock Theme by Luxcium ✨",
     "editor.semanticHighlighting.enabled": false,
+    // "editor.semanticHighlighting.enabled": true,
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        ".history": true,
+        "**/.DS_Store": true
+    }
 }
