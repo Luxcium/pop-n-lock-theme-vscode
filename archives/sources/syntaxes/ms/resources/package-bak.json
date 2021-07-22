@@ -1,0 +1,66 @@
+{
+	"name": "typescript-javascript-grammar",
+	"private": true,
+	"displayName": "Latest TypeScript and Javascript Grammar",
+	"description": "This is development branch of VSCode JS/TS colorization. Please file any issues you find against https://github.com/Microsoft/TypeScript-TmLanguage/issues",
+	"license": "SEE LICENSE IN LICENSE.txt",
+	"author": "Microsoft Corporation",
+	"galleryBanner": {
+		"color": "#5c2d91",
+		"theme": "dark"
+	},
+	"icon": "logo.png",
+	"publisher": "ms-vscode",
+	"version": "0.0.50",
+	"engines": {
+		"vscode": "*"
+	},
+	"scripts": {
+		"update-grammar": "node ./build/update-grammar.js"
+	},
+	"devDependencies": {
+		"fast-plist": "0.1.1"
+	},
+	"bugs": {
+		"url": "https://github.com/Microsoft/TypeScript-TmLanguage/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/sheetalkamat/TypeScript-TmLanguage-VsCode.git"
+	},
+	"extensionDependencies": [
+		"vscode.typescript",
+		"vscode.javascript"
+	],
+	"categories": [
+		"Programming Languages"
+	],
+	"keywords": [
+		"typeScript",
+		"javascript"
+	],
+	"contributes": {
+		"grammars": [
+			{
+				"language": "javascript",
+				"scopeName": "source.js",
+				"path": "./syntaxes/JavaScript.tmLanguage.json"
+			},
+			{
+				"language": "typescript",
+				"scopeName": "source.ts",
+				"path": "./syntaxes/TypeScript.tmLanguage.json"
+			},
+			{
+				"language": "typescriptreact",
+				"scopeName": "source.tsx",
+				"path": "./syntaxes/TypeScriptReact.tmLanguage.json"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "8d912f11-39d6-4200-92dc-95714358a0d1",
+		"publisherId": "5f5636e7-69ed-4afe-b5d6-8d231fb3d3ee",
+		"publisherDisplayName": "Microsoft"
+	}
+}

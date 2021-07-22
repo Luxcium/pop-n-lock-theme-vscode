@@ -8,6 +8,21 @@
         "**/.hg": true,
         "**/CVS": true,
         ".history": true,
-        "**/.DS_Store": true
+        "**/.DS_Store": true,
+        "images": true,
+        "luxcium-TM.ico": true,
+        "node_modules": true,
+        "Scientia-is-lux-principium-400px-TM.png": true,
+        "social-media-image.png": true,
+        "archives": false,
+        "core": false,
+        "LICENSE": false,
+        "package.json": false,
+        "package-lock.json": false,
+        "pop-n-lock-theme-vscode-3.31.0.vsix": false,
+        "README.md": false,
+        "scripts": false,
+        "src": false,
+        "tsconfig.json": false,
     }
 }
