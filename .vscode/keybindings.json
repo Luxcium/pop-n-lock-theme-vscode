@@ -1,0 +1,12 @@
+[
+  {
+    "key": "f5",
+    "command": "workbench.action.tasks.build",
+    "when": "!inDebugMode"
+  },
+  {
+    "key": "f5",
+    "command": "-workbench.action.debug.start",
+    "when": "debuggersAvailable && !inDebugMode"
+  }
+]
