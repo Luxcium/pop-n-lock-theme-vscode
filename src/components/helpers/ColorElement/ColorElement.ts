@@ -2,7 +2,9 @@ import { colorExtractHex } from './helpers';
 
 export class ColorElement implements IColorElement {
   public colorElementName: string;
+
   public colorHexValue: string;
+
   public isVoid: boolean;
   private initialElementName_: string;
   private initialColor_: string;
@@ -110,6 +112,7 @@ export class ColorElement implements IColorElement {
   get elementName() {
     return this.initialElementName_;
   }
+
   public setColorHex(value: string) {
     this.colorHexValue = value;
     this.initialColor_ = value;
@@ -126,19 +129,25 @@ export class ColorElement implements IColorElement {
   get elementsAttributs() {
     return this.isNotNull ? this.elementsAttributs_ : [];
   }
+
   public toString(): string;
+
   public toString(simpleString: true): string;
+
   public toString(simpleString: false): string;
+
   public toString(
     simpleString: false,
     replacer: (this: any, key: string, value: any) => any,
     space: number
   ): string;
+
   public toString(
     simpleString: false,
     replacer: (this: any, key: string, value: any) => any,
     space: string
   ): string;
+
   public toString(
     simpleString: boolean = true,
     replacer: (this: any, key: string, value: any) => any = null,
@@ -156,9 +165,7 @@ export class ColorElement implements IColorElement {
       space
     )}`;
   }
-  /*
-  {colorElementName:this.colorElementName,colorHexValue:this.colorElementName}
-   */
+
   public toValue() {
     const tempString = `{"colorElementName": "${this.colorElementName}", "colorHexValue": "${this.colorHexValue}"}`;
     const tempString1 = `{"colorElementName": "","colorHexValue": ""}`;
