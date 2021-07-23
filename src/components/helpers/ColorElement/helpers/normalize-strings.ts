@@ -1,7 +1,9 @@
+import { ColorElementTuple } from '../ColorElement';
+
 /** Remove any double quotes from the string */
 export async function normalizeQuotedStrings(
-  stringsTupleList: Promise<[string?, string?][]>
-): Promise<[string, string][]> {
+  stringsTupleList: Promise<ColorElementTuple[]>
+): Promise<ColorElementTuple[]> {
   return (await stringsTupleList).map(list => {
     const [str1, str2] = list;
 

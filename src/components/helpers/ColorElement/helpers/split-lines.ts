@@ -1,11 +1,10 @@
-const re = /^\s*[{}[\]]$|^\s$/;
-void re;
+const empltyLines = /^\s*[{}[\]]$|^\s*$/;
 export async function splitLines(
   lines: Promise<string[]>
 ): Promise<[string, string][]> {
   return (await lines)
     .filter(line => line)
-    .filter(line => !re.test(line))
+    .filter(line => !empltyLines.test(line))
     .map(line => {
       return line.split(':') as [string, string];
     })
