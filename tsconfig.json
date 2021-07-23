@@ -48,18 +48,19 @@
         "./examples/",
         "./images/",
         "./lib/",
-        "./node_modules/",
+        "**/node_modules/",
         "./resources/",
         "./scripts/",
         "./src/vscode-lang-extensions/",
+        "./archives/**",
         "./src/resources/"
     ],
     "include": [
         "src/**/*.ts",
         "src/TypeScript/terminal-colors.js",
-        "src/components"
-        // "./node_modules/vscode/vscode.d.ts",
+        "src/components",
         // "./node_modules/vscode/lib/*"
+        // "./node_modules/vscode/vscode.d.ts",,
     ]
 }
 /*

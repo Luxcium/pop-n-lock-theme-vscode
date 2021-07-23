@@ -1,3 +1,5 @@
+import * as imp_ from '.';
+void imp_;
 export async function listElementPerColor(
   colorAndElementTuple: Promise<[string, string][]>
 ): Promise<{ [key: string]: string[] }> {
