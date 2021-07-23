@@ -1,4 +1,4 @@
-import { ColorElementTuple } from '../ColorElement';
+import { ColorElementTuple } from '../types';
 
 /** Remove any double quotes from the string */
 export async function normalizeQuotedStrings(

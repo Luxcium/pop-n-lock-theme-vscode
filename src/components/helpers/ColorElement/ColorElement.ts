@@ -1,4 +1,5 @@
 import { colorExtractHex } from './helpers';
+import { ColorElementTuple, IColorElement } from './types';
 
 export class ColorElement implements IColorElement {
   public colorElementName: string;
@@ -173,11 +174,3 @@ export class ColorElement implements IColorElement {
     return JSON.parse(tempString);
   }
 }
-export interface IColorElement {
-  colorElementName: string;
-  colorHexValue: string;
-}
-export type ColorElementTuple = [
-  colorElementName: string,
-  colorHexValue: string
-];

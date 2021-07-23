@@ -1,4 +1,4 @@
-import { ColorElementTuple } from '../ColorElement';
+import { ColorElementTuple } from '../types';
 
 export async function extractColorInformation(
   colorElementTupleList: Promise<ColorElementTuple[]>,
