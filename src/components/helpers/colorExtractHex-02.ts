@@ -14,3 +14,4 @@ export function colorExtractHex(
   }
   return typeof template === 'string' ? template + extractedHex : extractedHex;
 }
+// https://www.typescriptlang.org/play?#code/KYDwDg9gTgLgBAMwK4DsDGMCWEVzRAG2gFEQYoBDDACVAAoAoOPQ6ALjgGdzMUBzADRM4MYAFswBCqI7covPnAA+cANpyFAXWVqN-AVx79tAXjUBycwcuaGASjgBvYfhTcWRKAFlpaABYcAErAfKRgPjD+AIJQlACecGb4ngB0Yr5+dAD0qgAMALQAnBT5CJqOAMwCABwAvll8mHYA3C447qDkVKIAJrQgicLMydAR-nAAZBMeoxkpBMD8MH6JJmYAjHAA-DPeGXnaHJatzJgIcHQx8SmYnFcUcXSiElKidg7OzMxQwDBIULhnpJpMB5os+MtVhshl8dkDXsADnAANRwTqUDDAPqgGHMDjwkFgpYrNZmABMuO2InEwNESNR6O6WP6KOpLxBqnWti+Xw4jMx2JAJzgtWEPz+AJEcTAwAg5wJoihcHMej45ipCuArP5vRZfLIGN1oFaoqAA
