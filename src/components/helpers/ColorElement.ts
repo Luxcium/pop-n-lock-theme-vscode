@@ -1,79 +1,114 @@
 export class ColorElement {
+  private initialElementName_: string;
+  private initialColor_: string;
   private colorHex_: string;
-  private elementName: string;
-  private internalElementsList: string[];
-  private internalElementsAttributs: string[];
-  private isVoid: boolean;
+  private elementName_: string;
+  private elementsList_: string[];
+  private elementsAttributs_: string[];
+  public isVoid: boolean;
+
   constructor(elementName: string, colorHex?: string) {
-    this.elementName = elementName;
-    this.isVoid = elementName === 'VOID' ? true : false;
-    this.internalElementsList = elementName.toLowerCase().split('.');
-    // gitDecoration.deletedResourceForeground
-    this.internalElementsAttributs = elementName
+    this.setColorHex(colorHex || null);
+
+    Object.defineProperties(this, {
+      isVoid: {
+        value: this.elementName_ === 'VOID' ? true : false,
+        enumerable: true,
+      },
+      elementName_: {
+        value: elementName,
+        enumerable: false,
+      },
+      elementsList_: {
+        value: this.setElementList(elementName),
+        enumerable: false,
+      },
+      elementsAttributs_: {
+        value: this.setElementsAttributs_(elementName),
+        enumerable: false,
+      },
+      colorHex_: {
+        value: colorHex || null,
+        enumerable: false,
+      },
+      initialColor_: {
+        value: colorHex || null,
+        enumerable: false,
+      },
+      initialElementName_: {
+        value: elementName,
+        enumerable: false,
+      },
+    });
+
+    if (this.isNotNull) {
+      Object.defineProperties(this, {
+        elementName_: {
+          enumerable: true,
+        },
+        elementsList_: {
+          enumerable: true,
+        },
+        elementsAttributs_: {
+          enumerable: true,
+        },
+        colorHex_: {
+          value: colorHex || null,
+          enumerable: true,
+        },
+        isVoid: {
+          enumerable: false,
+        },
+      });
+    }
+    return this;
+  }
+  private setElementList(elementName: string = this.elementName_) {
+    return elementName.split('.');
+  }
+  private setElementsAttributs_(elementName: string = this.elementName_) {
+    return elementName
       .replaceAll(/[.]?([a-z][a-z0-9]*|[A-Z][a-z0-9]*)/g, '.$1')
       .split(/[.]/)
       .filter((item, _i, _list) => {
         return item;
       })
       .map(item => item.toLowerCase());
-    this.setColorHex(colorHex);
-    void this.internalElementsList;
-    Object.defineProperties(this, {
-      internalElementsList: {
-        enumerable: false,
-      },
-      internalElementsAttributs: {
-        enumerable: false,
-      },
-      colorHex_: {
-        value: null,
-        enumerable: false,
-      },
-    });
-    if (this.isNotNull) {
-      Object.defineProperties(this, {
-        isVoid: {
-          enumerable: false,
-        },
-        internalElementsList: {
-          enumerable: true,
-        },
-        internalElementsAttributs: {
-          enumerable: true,
-        },
-        colorHex_: {
-          enumerable: true,
-        },
-      });
-    }
   }
-  get initialElementName() {
-    return this.elementName;
+  private get initialElementName() {
+    return this.initialElementName_;
   }
 
-  get initialColorName() {
-    return this.colorHex_;
+  get initialColor() {
+    return this.initialColor_;
   }
 
   set colorHex(value: string) {
-    this.colorHex_ = this.isNotNull ? value : null;
+    const setValue = this.isNotNull ? value : null;
+    this.colorHex_ = setValue ? value : null;
   }
   get colorHex() {
     return this.colorHex_;
+  }
+  get elementName() {
+    return this.initialElementName;
   }
   setColorHex(value: string) {
     this.colorHex_ = value;
   }
   get isNull() {
-    return this.isVoid;
+    return this.elementName_ === 'VOID' ? true : false;
   }
   private get isNotNull() {
-    return !this.isVoid;
+    return !this.isNull;
   }
   get elementList() {
-    return this.isNotNull ? this.internalElementsList : [];
+    return this.isNotNull ? this.elementsList_ : [];
   }
   get elementsAttributs() {
-    return this.isNotNull ? this.internalElementsAttributs : [];
+    return this.isNotNull ? this.elementsAttributs_ : [];
+  }
+  public toString() {
+    return `"${this.initialElementName_}":"${this.colorHex_}"`;
   }
 }
