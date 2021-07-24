@@ -1,9 +1,9 @@
 import { ColorElement } from './ColorElement';
-import { IColorElement } from './types';
+import { IColorElement_ } from './types';
 
 export class ColorElements {
-  private colorElementList_: IColorElement[];
-  constructor(colorElementList: IColorElement[]) {
+  private colorElementList_: IColorElement_[];
+  constructor(colorElementList: IColorElement_[]) {
     this.colorElementList_ = colorElementList;
   }
   public get mainAttributeList() {
@@ -39,6 +39,7 @@ export class ColorElements {
         ),
       ];
     }
+
     valueToReturn = [
       ...this.colorElementList_.filter(colorElement =>
         new ColorElement(colorElement).elementsAttributs.some(
@@ -62,12 +63,16 @@ export class ColorElements {
   public get length() {
     return this.colorElementList_.length;
   }
+
   public tail(index: number = 0) {
-    return new ColorElements(
-      this.colorElementList_
+    return this.colorElementList_
+      .slice(index + 1)
+      .map((colorElement: IColorElement_) => new ColorElement(colorElement));
+    /* new ColorElements(  [
+      ...this.colorElementList_
         .slice(index + 1)
-        .map(colorElement => new ColorElement(colorElement).toValue())
-    );
+        .map(colorElement => new ColorElement(colorElement).toValue()),
+    ]  ) */
   }
 }
 
