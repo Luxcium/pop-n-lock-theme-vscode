@@ -1,7 +1,7 @@
 import { colorExtractHex } from './helpers';
-import { ColorElementTuple, IColorElement, IColorElement_ } from './types';
+import { ColorElementTuple, ColorElement_, IColorElement } from './types';
 
-export class ColorElement implements IColorElement_, IColorElement {
+export class ColorElement implements IColorElement, ColorElement_ {
   public elementName: string;
   public colorHexValue: string;
   public isVoid: boolean;
@@ -11,11 +11,11 @@ export class ColorElement implements IColorElement_, IColorElement {
   private elementsAttributs_: string[];
 
   constructor(colorElement: ColorElementTuple);
-  constructor(colorElement: IColorElement_);
+  constructor(colorElement: IColorElement);
   constructor(colorElement: string);
   constructor(colorElement: string, colorHexValue: string);
   constructor(
-    colorElement: ColorElementTuple | IColorElement | string,
+    colorElement: ColorElementTuple | ColorElement_ | string,
     colorHexValue: string = null
   ) {
     this.initialElementName_ = 'VOID';
@@ -27,8 +27,8 @@ export class ColorElement implements IColorElement_, IColorElement {
     if (Array.isArray(colorElement)) {
       [colorElementName, colorValue] = colorElement;
     } else if (typeof colorElement === 'object') {
-      if (colorElement instanceof IColorElement) {
-        console.log(colorElement instanceof IColorElement);
+      if (colorElement instanceof ColorElement_) {
+        console.log(colorElement instanceof ColorElement_);
       } else {
         console.error('colorElement is-NOT-instance-of IColorElement');
       }

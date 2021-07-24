@@ -1,4 +1,4 @@
-export interface IColorElement_ {
+export interface IColorElement {
   elementName: string;
   colorHexValue: string;
 }
@@ -7,7 +7,7 @@ export type ColorElementTuple = [
   colorHexValue: string
 ];
 
-export abstract class IColorElement implements IColorElement_ {
+export abstract class ColorElement_ implements IColorElement {
   elementName: string;
   colorHexValue: string;
 }
