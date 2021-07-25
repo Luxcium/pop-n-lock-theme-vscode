@@ -1,7 +1,7 @@
 import { PathOrFileDescriptor } from 'fs';
 import { ColorElements } from '../ColorElements';
 import { getColorElementsList } from './get-color-elements-list';
-export { colorExtractHex } from './extract-color-information';
+export { colorHexMatch } from './extract-color-information';
 export const pathToJsonColours_: PathOrFileDescriptor =
   '/home/luxcium/projects/main-POP-N-LOCK-x1DF2/data/extensions/pop-n-lock-theme-vscode/src/components/mappings/JSON/colors-auto.json';
 

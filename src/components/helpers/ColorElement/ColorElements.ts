@@ -11,7 +11,7 @@ export class ColorElements {
       ...new Set(
         this.colorElementList_
           .map(colorElement =>
-            new ColorElement(colorElement).elementsAttributs.slice(-1)
+            new ColorElement(colorElement).elementsAttributes.slice(-1)
           )
           .flat()
       ),
@@ -22,18 +22,20 @@ export class ColorElements {
     return [
       ...new Set(
         this.colorElementList_
-          .map(colorElement => new ColorElement(colorElement).elementsAttributs)
+          .map(
+            colorElement => new ColorElement(colorElement).elementsAttributes
+          )
           .flat()
       ),
     ];
   }
 
-  public listAttribute(attribute: string, mainAttributesOnly: boolean = false) {
+  public listAttribute(attribute: string, mainattributesOnly: boolean = false) {
     let valueToReturn: any = [];
-    if (mainAttributesOnly) {
+    if (mainattributesOnly) {
       valueToReturn = [
         ...this.colorElementList_.filter(colorElement =>
-          new ColorElement(colorElement).elementsAttributs
+          new ColorElement(colorElement).elementsAttributes
             .slice(-1)
             .some(element => element === attribute)
         ),
@@ -42,7 +44,7 @@ export class ColorElements {
 
     valueToReturn = [
       ...this.colorElementList_.filter(colorElement =>
-        new ColorElement(colorElement).elementsAttributs.some(
+        new ColorElement(colorElement).elementsAttributes.some(
           element => element === attribute
         )
       ),
