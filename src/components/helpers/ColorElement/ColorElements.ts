@@ -30,9 +30,9 @@ export class ColorElements {
     ];
   }
 
-  public listAttribute(attribute: string, mainattributesOnly: boolean = false) {
+  public listAttribute(attribute: string, mainAttributesOnly: boolean = false) {
     let valueToReturn: any = [];
-    if (mainattributesOnly) {
+    if (mainAttributesOnly) {
       valueToReturn = [
         ...this.colorElementList_.filter(colorElement =>
           new ColorElement(colorElement).elementsAttributes
