@@ -151,23 +151,26 @@ export class ColorElement implements IColorElement, ColorElement_ {
   public toString(simpleString: false): string;
   public toString(
     simpleString: false,
+    template: string | [string] | [string, string],
     replacer: (this: any, key: string, value: any) => any,
     space: number
   ): string;
   public toString(
     simpleString: false,
+    template: string | [string] | [string, string],
     replacer: (this: any, key: string, value: any) => any,
     space: string
   ): string;
   public toString(
     simpleString: boolean = true,
+    template: string | [string] | [string, string] = '#',
     replacer: (this: any, key: string, value: any) => any = null,
     space: string | number = 2
   ): string {
     if (simpleString) {
       return `"${this.initialElementName_}":"${colorHexMatch(
         this.initialColor_,
-        '#'
+        template
       )}"`;
     }
     return `${this.constructor.name} ${JSON.stringify(
