@@ -2,20 +2,18 @@
     "compilerOptions": {
         /* Basic Options */
         "noEmit": false,
-        "noEmitOnError": true,
+        "noEmitOnError": false,
         "target": "es6",
         "module": "commonjs",
         "rootDir": "./",
-        "outDir": "./out/src",
-        // "declarationDir": "./out/typings",
-        // "declaration": true,
-        // "composite": true,
+        "outDir": "./build/",
         "lib": [
             "ESNext",
             "dom"
         ],
         "types": [
             "node",
+            "vscode"
         ],
         /* Compilation Options */
         "allowJs": true,
@@ -42,65 +40,8 @@
         "noUnusedParameters": true,
         "esModuleInterop": true
     },
-    "exclude": [
-        "./color-convert/",
-        "./dist/",
-        "./examples/",
-        "./images/",
-        "./lib/",
-        "**/node_modules/",
-        "./resources/",
-        "./scripts/",
-        "./src/vscode-lang-extensions/",
-        "./archives/**",
-        "./src/resources/"
-    ],
     "include": [
-        "src/**/*.ts",
-        "src/TypeScript/terminal-colors.js",
-        "src/components",
-        "helpers",
-        // helpers/index.ts
-        // "./node_modules/vscode/lib/*"
-        // "./node_modules/vscode/vscode.d.ts",,
+        "tools",
+        "components",
     ]
 }
-/*
-working-notes.txt
-❯ ls -F1
-color-convert/
-colors-reference.js
-contribute.md
-dist/
-examples/
-images/
-lib/
-LICENSE
-luxcium-TM.ico
-myColorList.js
-myReducedSet.js
-node_modules/
-package.json
-package-lock.json
-pop-n-lock-theme-vscode-3.31.0.vsix
-README.md
-removecode.jsonc
-resources/
-Scientia-is-lux-principium-400px-TM.png
-scripts/
-social-media-image.png
-src/
-tsconfig.json
-tslint.json
-working-notes.txt
-
-
-
-
-
-
-
-
-
-
-*/

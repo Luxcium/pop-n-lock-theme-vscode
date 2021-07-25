@@ -58,7 +58,7 @@
     "include": [
         "src/**/*.ts",
         "src/TypeScript/terminal-colors.js",
-        "src/components",
+        "helpers/components",
         "helpers",
         // helpers/index.ts
         // "./node_modules/vscode/lib/*"
