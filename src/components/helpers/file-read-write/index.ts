@@ -10,3 +10,5 @@ export const IO = {
   read: readFileAsyncFromPath,
   write: writeFileToPathAsync,
 };
+
+export { fileToWrite, writeTo } from './write-to-file';

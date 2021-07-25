@@ -224,5 +224,27 @@ export class ColorElement implements IColorElement, ColorElement_ {
     console.log('elementsAttributes :>> ', clone1.elementsAttributes);
     console.log('elementList :>> ', clone1.elementList);
     console.log('toString :>> ', clone1.toString());
+    console.log('toValue <simpleValue> :>> ', clone1.toValue(true));
+    console.log('toValue :>> ', clone1.toValue(false));
+    console.log(
+      'colorElementName :>> ',
+      clone1.toValue(false).colorElementName
+    );
+    console.log('colorHex :>> ', clone1.toValue(false).colorHex);
+    console.log('colorHexValue :>> ', clone1.toValue(false).colorHexValue);
+    console.log('elementList :>> ', clone1.toValue(false).elementList);
+    console.log('elementName :>> ', clone1.toValue(false).elementName);
+    console.log(
+      'elementsAttributes :>> ',
+      clone1.toValue(false).elementsAttributes
+    );
+    console.log('initialColor :>> ', clone1.toValue(false).initialColor);
+    console.log('isNull :>> ', clone1.toValue(false).isNull);
+    console.log('isVoid :>> ', clone1.toValue(false).isVoid);
+    console.log('mainAttribute :>> ', clone1.toValue(false).mainAttribute);
+    console.log(
+      'setColorHex :>> ',
+      clone1.toValue(false).setColorHex('00ff00cc')
+    );
   }
 }
