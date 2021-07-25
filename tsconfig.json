@@ -5,8 +5,8 @@
         "noEmitOnError": true,
         "target": "es6",
         "module": "commonjs",
-        "rootDir": "./src",
-        "outDir": "./out/src",
+        "rootDir": "./",
+        "outDir": "./out/",
         // "declarationDir": "./out/typings",
         // "declaration": true,
         // "composite": true,
@@ -51,7 +51,7 @@
         "**/node_modules/",
         "./resources/",
         "./scripts/",
-        "./src/vscode-lang-extensions/",
+        "./src/extensions/",
         "./archives/**",
         "./src/resources/"
     ],
@@ -59,6 +59,8 @@
         "src/**/*.ts",
         "src/TypeScript/terminal-colors.js",
         "src/components",
+        "helpers",
+        // helpers/index.ts
         // "./node_modules/vscode/lib/*"
         // "./node_modules/vscode/vscode.d.ts",,
     ]

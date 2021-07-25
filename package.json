@@ -39,15 +39,18 @@
     "vsce:release:minor": "yarn run --ignore-engines vsce:prepublish ; yarn version --ignore-engines  --no-git-tag-version --minor && yarn run --ignore-engines vsce:pak-pub  && git add . && yarn run npm:publish",
     "vsce:release:patch": "yarn run --ignore-engines vsce:prepublish ; yarn version --ignore-engines  --no-git-tag-version --patch && yarn run --ignore-engines vsce:pak-pub && git add . && yarn run npm:publish"
   },
+  "dependencies": {
+    "@types/vscode": "^1.58.1"
+  },
   "devDependencies": {
-    "@types/vscode": "latest",
     "@types/node": "latest",
     "@types/prettier": "latest",
-    "prettier": "latest",
     "npm": "latest",
+    "prettier": "latest",
     "rimraf": "latest",
     "semver": "latest",
     "snyk": "latest",
+    "typedoc": "^0.21.4",
     "typescript": "latest",
     "vsce": "latest",
     "yarn": "latest"
@@ -287,8 +290,5 @@
     "id": "e9677069-69cb-4942-ba29-54429a6cb4af",
     "publisherDisplayName": "Luxcium ✨",
     "publisherId": "896dbdcd-d417-4c51-8ff0-ec82723b0706"
-  },
-  "dependencies": {
-    "typedoc": "^0.21.4"
   }
 }
