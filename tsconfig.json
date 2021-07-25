@@ -51,7 +51,7 @@
         "**/node_modules/",
         "./resources/",
         "./scripts/",
-        "./src/extensions/",
+        "./extensions/**",
         "./archives/**",
         "./src/resources/"
     ],
