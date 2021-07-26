@@ -1,47 +1,61 @@
 {
-    "compilerOptions": {
-        /* Basic Options */
-        "noEmit": false,
-        "noEmitOnError": false,
-        "target": "es6",
-        "module": "commonjs",
-        "rootDir": "./",
-        "outDir": "./build/",
-        "lib": [
-            "ESNext",
-            "dom"
-        ],
-        "types": [
-            "node",
-            "vscode"
-        ],
-        /* Compilation Options */
-        "allowJs": true,
-        "checkJs": false,
-        "importHelpers": true,
-        "newLine": "lf",
-        "noEmitHelpers": false,
-        "noErrorTruncation": true,
-        "removeComments": false,
-        "resolveJsonModule": true,
-        "skipLibCheck": false,
-        "useDefineForClassFields": true,
-        "importsNotUsedAsValues": "remove",
-        "forceConsistentCasingInFileNames": true,
-        "assumeChangesOnlyAffectDirectDependencies": false,
-        "generateCpuProfile": "./performance/.cpuprofile",
-        /* Incremental compilation. */
-        "incremental": true,
-        "tsBuildInfoFile": "./out/ts-build-info.lib",
-        "experimentalDecorators": true,
-        "emitDecoratorMetadata": true,
-        "sourceMap": false,
-        "noUnusedLocals": true,
-        "noUnusedParameters": true,
-        "esModuleInterop": true
-    },
-    "include": [
-        "tools",
-        "components",
-    ]
+  "extends": "../tsconfig.base.json",
+  "include": [
+    "tools",
+    "components",
+  ],
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "lib": [
+      "ESNext",
+      "dom"
+    ],
+    /* Output Options */
+    "rootDir": "./",
+    "outDir": "./build/",
+    /* Emit Options */
+    "noEmit": false,
+    "noEmitOnError": false,
+    "noEmitHelpers": false,
+    /* Incremental compilation. */
+    "incremental": true,
+    "tsBuildInfoFile": "./build/build-info.lib",
+    /* Basic Options */
+    "importHelpers": true,
+    "types": [
+      "node",
+      "vscode"
+    ],
+    /* Compilation Options */
+    "noErrorTruncation": true,
+    "allowJs": true,
+    "checkJs": false,
+    "newLine": "lf",
+    "removeComments": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": false,
+    "useDefineForClassFields": true,
+    "importsNotUsedAsValues": "remove",
+    "forceConsistentCasingInFileNames": true,
+    "assumeChangesOnlyAffectDirectDependencies": false,
+    "generateCpuProfile": "./performance/.cpuprofile",
+    "noUnusedLocals": true,
+    "noImplicitReturns": true,
+    "noUnusedParameters": true,
+    "esModuleInterop": true,
+    "pretty": true,
+    "sourceMap": true,
+    "inlineSourceMap": false,
+    "inlineSources": true,
+    "declaration": true,
+    "declarationMap": true,
+    "declarationDir": "./build/types",
+    "isolatedModules": true,
+    // "exactOptionalPropertyTypes": false,
+    "composite": true,
+    /* Experimental Decorators */
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+  },
 }

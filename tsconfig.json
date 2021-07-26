@@ -1,106 +1,60 @@
 {
-    "compilerOptions": {
-        /* Basic Options */
-        "noEmit": false,
-        "noEmitOnError": true,
-        "target": "es6",
-        "module": "commonjs",
-        "rootDir": "./",
-        "outDir": "./out/",
-        // "declarationDir": "./out/typings",
-        // "declaration": true,
-        // "composite": true,
-        "lib": [
-            "ESNext",
-            "dom"
-        ],
-        "types": [
-            "node",
-        ],
-        /* Compilation Options */
-        "allowJs": true,
-        "checkJs": false,
-        "importHelpers": true,
-        "newLine": "lf",
-        "noEmitHelpers": false,
-        "noErrorTruncation": true,
-        "removeComments": false,
-        "resolveJsonModule": true,
-        "skipLibCheck": false,
-        "useDefineForClassFields": true,
-        "importsNotUsedAsValues": "remove",
-        "forceConsistentCasingInFileNames": true,
-        "assumeChangesOnlyAffectDirectDependencies": false,
-        "generateCpuProfile": "./performance/.cpuprofile",
-        /* Incremental compilation. */
-        "incremental": true,
-        "tsBuildInfoFile": "./out/ts-build-info.lib",
-        "experimentalDecorators": true,
-        "emitDecoratorMetadata": true,
-        "sourceMap": false,
-        "noUnusedLocals": true,
-        "noUnusedParameters": true,
-        "esModuleInterop": true
-    },
-    "exclude": [
-        "./color-convert/",
-        "./dist/",
-        "./examples/",
-        "./images/",
-        "./lib/",
-        "**/node_modules/",
-        "./resources/",
-        "./scripts/",
-        "./extensions/**",
-        "./archives/**",
-        "./src/resources/"
-    ],
-    "include": [
-        "src/**/*.ts",
-        "src/TypeScript/terminal-colors.js",
-        "helpers/components",
-        "helpers",
-        // helpers/index.ts
-        // "./node_modules/vscode/lib/*"
-        // "./node_modules/vscode/vscode.d.ts",,
-    ]
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    /* Basic Options */
+    "target": "es6",
+    "module": "commonjs",
+    "moduleResolution": "Node",
+    "importHelpers": true,
+    /* Emit Options */
+    "noEmit": false,
+    "noEmitOnError": false,
+    "noEmitHelpers": false,
+    /* Paths */
+    "rootDir": "./",
+    "outDir": "./out/",
+    "declarationDir": "./out/typings",
+    "tsBuildInfoFile": "./out/.tsbuildinfo.lib",
+    "generateCpuProfile": "./out/profile.cpuprofile",
+    /* Declaration and Map Options */
+    "declaration": true,
+    "inlineSourceMap": true,
+    "inlineSources": true,
+    "declarationMap": true,
+    /* Compilation Options */
+    "noLib": false,
+    "allowJs": true,
+    "checkJs": false,
+    "resolveJsonModule": true,
+    "removeComments": false,
+    "noResolve": false,
+    "skipLibCheck": false,
+    "importsNotUsedAsValues": "remove",
+    /* Experimental Decorators */
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+  },
+  "exclude": [
+    "./color-convert/",
+    "**/dist/",
+    "**/out/",
+    "./examples/",
+    "./images/",
+    "./lib/",
+    "**/node_modules/",
+    "./resources/",
+    "./scripts/",
+    "./extensions/**",
+    "./archives/**",
+    "./src/resources/"
+  ],
+  "include": [
+    "src/**/*.ts",
+    "src/TypeScript/terminal-colors.js",
+    "helpers",
+    "helpers",
+    // helpers/index.ts
+    // "./node_modules/vscode/lib/*"
+    // "./node_modules/vscode/vscode.d.ts",,
+  ]
 }
-/*
-working-notes.txt
-❯ ls -F1
-color-convert/
-colors-reference.js
-contribute.md
-dist/
-examples/
-images/
-lib/
-LICENSE
-luxcium-TM.ico
-myColorList.js
-myReducedSet.js
-node_modules/
-package.json
-package-lock.json
-pop-n-lock-theme-vscode-3.31.0.vsix
-README.md
-removecode.jsonc
-resources/
-Scientia-is-lux-principium-400px-TM.png
-scripts/
-social-media-image.png
-src/
-tsconfig.json
-tslint.json
-working-notes.txt
-
-
-
-
-
-
-
-
-
-
-*/
