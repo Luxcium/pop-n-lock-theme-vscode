@@ -43,13 +43,16 @@
     "@types/vscode": "^1.58.1"
   },
   "devDependencies": {
+    "@types/jest": "^26.0.24",
     "@types/node": "latest",
     "@types/prettier": "latest",
+    "jest": "^27.0.6",
     "npm": "latest",
     "prettier": "latest",
     "rimraf": "latest",
     "semver": "latest",
     "snyk": "latest",
+    "tslib": "^2.3.0",
     "typedoc": "^0.21.4",
     "typescript": "latest",
     "vsce": "latest",
