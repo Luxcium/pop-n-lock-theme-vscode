@@ -14,7 +14,7 @@
       ],
       "isBackground": false,
       "runOptions": {
-        "reevaluateOnRerun": true,
+        "reevaluateOnRerun": false,
         "instanceLimit": 1,
         "runOn": "default"
       },

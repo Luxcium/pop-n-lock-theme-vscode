@@ -15,11 +15,11 @@ export function getColorMapping(
   let mainObject = {};
   colorObject.map((obj: ColorOrder) => {
     const colorObjectList = Object.entries(obj).flat();
-    const elements = colorObjectList[0].split('.');
+    const elements = colorObjectList[0]?.split('.') || ['udefined'];
     const value = [elements, colorObjectList[1]];
     unpackColors({
       elements,
-      firstColorObject: colorObjectList[1],
+      firstColorObject: colorObjectList[1] || '',
       mainObject,
     });
     return value;

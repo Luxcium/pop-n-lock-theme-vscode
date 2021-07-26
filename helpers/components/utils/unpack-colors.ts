@@ -8,9 +8,9 @@ export function unpackColors({
 }: {
   elements: string[];
   firstColorObject: string;
-  mainObject: {};
+  mainObject: { [key: string]: any };
 }) {
-  assert(elements.length > 0);
+  assert(elements.length > 0 && elements[0] != null);
   if (elements.length > 1) {
     const restElements = elements.slice(1);
     mainObject[elements[0]] = {
@@ -33,5 +33,3 @@ export function unpackColors({
     return mainObject;
   }
 }
-
-// element kind

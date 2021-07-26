@@ -8,6 +8,5 @@ export type ColorElementTuple = [
 ];
 
 export abstract class ColorElement_ implements IColorElement {
-  elementName: string;
-  colorHexValue: string;
+  constructor(public elementName: string, public colorHexValue: string) {}
 }

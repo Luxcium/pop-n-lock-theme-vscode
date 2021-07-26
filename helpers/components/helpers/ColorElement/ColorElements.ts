@@ -58,9 +58,11 @@ export class ColorElements {
     return this.listAttribute(attribute, mainAttributesOnly).length;
   }
   public head(index: number = 0) {
-    return new ColorElements([
-      new ColorElement(this.colorElementList_[index]).toValue(),
-    ]);
+    const elementAtIndex = this.colorElementList_[index];
+    if (elementAtIndex != null && this.colorElementList_.length > index) {
+      return new ColorElements([new ColorElement(elementAtIndex).toValue()]);
+    }
+    return new ColorElements([new ColorElement(ColorElement.void).toValue()]);
   }
   public get length() {
     return this.colorElementList_.length;
@@ -70,21 +72,14 @@ export class ColorElements {
     return this.colorElementList_
       .slice(index + 1)
       .map((colorElement: IColorElement) => new ColorElement(colorElement));
-    /* new ColorElements(  [
-      ...this.colorElementList_
-        .slice(index + 1)
-        .map(colorElement => new ColorElement(colorElement).toValue()),
-    ]  ) */
   }
 }
 
-{
-  function tests() {
-    console.log('MUST implement tests for  :>> class ColorElements');
-  }
-
-  function main() {
-    return tests();
-  }
-  if (require.main.filename === __filename) main();
+function TESTING() {
+  console.log('MUST implement tests for  :>> class ColorElements');
 }
+
+function main() {
+  return TESTING();
+}
+if (require?.main?.filename === __filename) main();

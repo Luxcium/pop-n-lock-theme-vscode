@@ -60,7 +60,7 @@ export function asyncWorkerWrapper(script: any, callback?: any) {
     // Send a message to the main thread.
     // const { parse } = require('some-js-parsing-library');
     const script = workerData;
-    parentPort.postMessage(
+    parentPort?.postMessage(
       `Hello world! from Worker ${threadId} will perform some script ${script}`
     );
     eval(script);
