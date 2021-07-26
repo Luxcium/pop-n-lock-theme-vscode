@@ -31,7 +31,6 @@
     "downlevelIteration": false,
     "emitDeclarationOnly": false,
     /*                                                                       */
-    "noLib": true,
     "skipLibCheck": true,
     "noEmitHelpers": true,
     "importHelpers": false,
@@ -50,6 +49,7 @@
     "composite": true,
     "esModuleInterop": true,
     "isolatedModules": true,
+    "incremental": true,
     "allowSyntheticDefaultImports": true,
     /*                                                                       */
     "disableSourceOfProjectReferenceRedirect": false,

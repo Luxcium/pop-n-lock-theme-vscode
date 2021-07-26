@@ -1,7 +1,7 @@
-import { colorHexMatch } from './helpers';
-import { ColorElementTuple, ColorElement_, IColorElement } from './types';
+import { colorHexMatch } from '../../functions';
+import { ColorElementTuple, IColorElement, _ColorElement } from '../../types';
 
-export class ColorElement implements IColorElement, ColorElement_ {
+export class ColorElement implements IColorElement, _ColorElement {
   public elementName: string;
   public colorHexValue: string;
   public isVoid: boolean;
@@ -13,11 +13,11 @@ export class ColorElement implements IColorElement, ColorElement_ {
     return new ColorElement('VOID');
   }
   constructor(colorElement: ColorElementTuple);
-  constructor(colorElement: ColorElement_);
+  constructor(colorElement: _ColorElement);
   constructor(colorElement: string | null);
   constructor(colorElement: string | null, colorHexValue: string | null);
   constructor(
-    colorElement: ColorElementTuple | ColorElement_ | string | null,
+    colorElement: ColorElementTuple | _ColorElement | string | null,
     colorHexValue?: string | null
   ) {
     this.elementName = '';
@@ -188,8 +188,8 @@ export class ColorElement implements IColorElement, ColorElement_ {
   }
 
   public toValue(simpleValue?: false): ColorElement;
-  public toValue(simpleValue?: true): ColorElement_;
-  public toValue(simpleValue: boolean = false): ColorElement | ColorElement_ {
+  public toValue(simpleValue?: true): _ColorElement;
+  public toValue(simpleValue: boolean = false): ColorElement | _ColorElement {
     const tempString = `{"elementName": "${this.elementName}", "colorHexValue": "${this.colorHexValue}"}`;
     const simpleValue_ = JSON.parse(tempString);
     if (simpleValue) {

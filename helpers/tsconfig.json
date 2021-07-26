@@ -7,10 +7,6 @@
   "compilerOptions": {
     "target": "es5",
     "module": "commonjs",
-    "lib": [
-      "ESNext",
-      "dom"
-    ],
     /* Output Options */
     "rootDir": "./",
     "outDir": "./build/",
@@ -23,10 +19,6 @@
     "tsBuildInfoFile": "./build/build-info.lib",
     /* Basic Options */
     "importHelpers": true,
-    "types": [
-      "node",
-      "vscode"
-    ],
     /* Compilation Options */
     "noErrorTruncation": true,
     "allowJs": true,
@@ -57,5 +49,17 @@
     /* Experimental Decorators */
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-  },
+    "lib": [
+      "esnext",
+      "DOM"
+    ],
+    "types": [
+      "node",
+      "jest"
+    ],
+    "typeRoots": [
+      "../node_modules/@types",
+      "../node_modules/.registry.npmjs.org/@types",
+    ]
+  }
 }

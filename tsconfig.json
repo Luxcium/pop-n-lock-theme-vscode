@@ -22,7 +22,7 @@
     "inlineSources": true,
     "declarationMap": true,
     /* Compilation Options */
-    "noLib": false,
+    // "noLib": false,
     "allowJs": true,
     "checkJs": false,
     "resolveJsonModule": true,
@@ -33,6 +33,14 @@
     /* Experimental Decorators */
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
+    "lib": [
+      "esnext",
+      "DOM"
+    ],
+    "types": [
+      "node",
+      "jest"
+    ],
   },
   "exclude": [
     "./color-convert/",
@@ -49,10 +57,9 @@
     "./src/resources/"
   ],
   "include": [
+    "./helpers",
     "src/**/*.ts",
     "src/TypeScript/terminal-colors.js",
-    "helpers",
-    "helpers",
     // helpers/index.ts
     // "./node_modules/vscode/lib/*"
     // "./node_modules/vscode/vscode.d.ts",,
