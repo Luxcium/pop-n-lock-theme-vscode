@@ -10,6 +10,7 @@
     "noEmit": false,
     "noEmitOnError": false,
     "noEmitHelpers": false,
+    "noResolve": false,
     /* Paths */
     "rootDir": "./",
     "outDir": "./out/",
@@ -27,7 +28,6 @@
     "checkJs": false,
     "resolveJsonModule": true,
     "removeComments": false,
-    "noResolve": false,
     "skipLibCheck": false,
     "importsNotUsedAsValues": "remove",
     /* Experimental Decorators */

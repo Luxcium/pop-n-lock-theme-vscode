@@ -14,7 +14,6 @@
     "target": "es5",
     "module": "CommonJS",
     "moduleResolution": "Node",
-    "rootDir": "./",
     /*                                                                       */
     "listFiles": false,
     "listFilesOnly": false,
@@ -31,10 +30,10 @@
     "downlevelIteration": false,
     "emitDeclarationOnly": false,
     /*                                                                       */
+    "noResolve": false,
     "skipLibCheck": true,
     "noEmitHelpers": true,
     "importHelpers": false,
-    "noResolve": true,
     "importsNotUsedAsValues": "remove",
     /*                                                                       */
     "allowJs": true,

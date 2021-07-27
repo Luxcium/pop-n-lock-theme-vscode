@@ -16,7 +16,7 @@ export function colorHexMatch(
   inputString: Promise<string | null> | string | null,
   template: string | [string] | [string, string] = ['', '']
 ): Promise<string | null> | string | null {
-  if (typeof inputString === 'string') {
+  if (typeof inputString === 'string' || inputString === null) {
     return colorHexMatch_(inputString, template);
   }
   return colorExtractHexAsync(inputString, template);
@@ -38,13 +38,13 @@ export async function extractColorInformation(
 }
 async function colorExtractHexAsync(
   inputString: Promise<string | null> | string | null,
-  template: string | [string] | [string, string] = ['', '']
+  template: string | [string] | [string, string]
 ): Promise<string | null> {
   return colorHexMatch_((await Promise.resolve(inputString)) || null, template);
 }
 function colorHexMatch_(
   inputString: string | null,
-  template: string | [string] | [string, string] = ['', '']
+  template: string | [string] | [string, string]
 ): string | null {
   if (inputString == null) return null;
   const colorMatch: RegExpMatchArray | null =
@@ -52,15 +52,11 @@ function colorHexMatch_(
   if (colorMatch && colorMatch.length === 1 && colorMatch[0]) {
     const extractedHex = colorMatch[0].toUpperCase();
     if (Array.isArray(template)) {
-      return template.length === 1
-        ? template[0] + extractedHex
-        : template.length === 2
-        ? template[0] + extractedHex + template[1]
-        : null;
+      if (template.length === 1) return template[0] + extractedHex;
+      if (template.length === 2)
+        return template[0] + extractedHex + template[1];
     }
-    return typeof template === 'string'
-      ? template + extractedHex
-      : extractedHex;
+    if (typeof template === 'string') return template + extractedHex;
   }
   return null;
 }

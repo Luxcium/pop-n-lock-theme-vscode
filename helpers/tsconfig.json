@@ -12,6 +12,7 @@
     "outDir": "./build/",
     /* Emit Options */
     "noEmit": false,
+    "noResolve": false,
     "noEmitOnError": false,
     "noEmitHelpers": false,
     /* Incremental compilation. */
@@ -44,8 +45,8 @@
     "declarationMap": true,
     "declarationDir": "./build/types",
     "isolatedModules": true,
-    // "exactOptionalPropertyTypes": false,
     "composite": true,
+    "downlevelIteration": true,
     /* Experimental Decorators */
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
@@ -57,9 +58,9 @@
       "node",
       "jest"
     ],
-    "typeRoots": [
-      "../node_modules/@types",
-      "../node_modules/.registry.npmjs.org/@types",
-    ]
+    // "typeRoots": [
+    //   "../node_modules/@types",
+    //   "../node_modules/.registry.npmjs.org/@types",
+    // ]
   }
 }

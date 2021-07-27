@@ -43,6 +43,7 @@
     "@types/vscode": "^1.58.1"
   },
   "devDependencies": {
+    "@babel/preset-typescript": "^7.14.5",
     "@types/jest": "^26.0.24",
     "@types/node": "^16.4.3",
     "@types/prettier": "latest",
@@ -54,10 +55,11 @@
     "rimraf": "latest",
     "semver": "latest",
     "snyk": "latest",
+    "ts-jest": "^27.0.4",
     "ts-node": "^10.1.0",
     "tslib": "^2.3.0",
     "typedoc": "^0.21.4",
-    "typescript": "latest",
+    "typescript": "^4.3.5",
     "vsce": "latest",
     "yarn": "latest"
   },
