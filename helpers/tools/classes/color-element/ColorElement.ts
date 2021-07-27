@@ -1,5 +1,6 @@
 import { colorHexMatch } from '../../functions';
 import { ColorElementTuple, IColorElement, _ColorElement } from '../../types';
+import { standardize } from './functions';
 
 export class ColorElement implements IColorElement, _ColorElement {
   public elementName: string;
@@ -20,28 +21,18 @@ export class ColorElement implements IColorElement, _ColorElement {
     colorElement: ColorElementTuple | _ColorElement | string | null,
     colorHexValue?: string | null
   ) {
+    const [colorElementName, colorValue] = standardize(
+      colorElement as any,
+      colorHexValue as any
+    );
+
     this.elementName = '';
     this.colorHexValue = '';
     this.isVoid = true;
     this.elementsList_ = [''];
     this.elementsAttributes_ = [''];
     this.initialElementName_ = 'VOID';
-    this.initialColor_ = null;
-
-    let colorElementName: string = this.initialElementName_ || 'VOID';
-    let colorValue: string | null = this.initialColor_ || null;
-
-    if (Array.isArray(colorElement)) {
-      [colorElementName, colorValue] = colorElement;
-    } else if (typeof colorElement === 'object') {
-      colorElementName = colorElement?.elementName || 'VOID';
-      colorValue = colorElement?.colorHexValue || null;
-    } else if (!!colorElement === true && typeof colorElement === 'string') {
-      //** !!colorElement === true is to validate against empty strig or null or undefined //*/
-
-      colorElementName = colorElement;
-      colorValue = colorHexValue || null;
-    }
+    this.initialColor_ = '';
 
     this.setInitialNameValue(colorElementName);
     this.setInitialColorHexValue(colorValue);
@@ -88,25 +79,23 @@ export class ColorElement implements IColorElement, _ColorElement {
   }
 
   private setInitialNameValue(elementName: string) {
-    this.setElementList(elementName);
-    this.setElementsAttributes(elementName);
-    this.elementName = elementName;
     this.initialElementName_ = elementName;
     this.isVoid = this.initialElementName_ === 'VOID' ? true : false;
+    this.elementName = this.initialElementName_;
+    this.setElementList();
+    this.setElementsAttributes();
   }
 
   private setInitialColorHexValue(colorValue: string | null) {
-    this.initialColor_ = this.initialColor_ ? this.initialColor_ : colorValue;
+    this.initialColor_ = colorValue;
     this.setColorHex(colorValue);
   }
 
-  private setElementList(elementName: string = this.initialElementName_) {
-    this.elementsList_ = elementName.split('.');
+  private setElementList() {
+    this.elementsList_ = this.initialElementName_.split('.');
   }
-  private setElementsAttributes(
-    elementName: string = this.initialElementName_
-  ) {
-    this.elementsAttributes_ = elementName
+  private setElementsAttributes() {
+    this.elementsAttributes_ = this.initialElementName_
       .replaceAll(/[.]?([a-z][a-z0-9]*|[A-Z][a-z0-9]*)/g, '.$1')
       .split(/[.]/)
       .filter((item, _i, _list) => {
@@ -116,8 +105,13 @@ export class ColorElement implements IColorElement, _ColorElement {
   }
 
   public setColorHex(colorValue: string | null) {
-    this.colorHexValue = colorHexMatch(colorValue, '#');
-    this.setInitialColorHex(colorValue);
+    if (!this.isNull) {
+      this.colorHexValue = colorHexMatch(colorValue, '#');
+      this.setInitialColorHex(colorValue);
+      return this.colorHexValue;
+    }
+    this.colorHexValue = '';
+    return this.colorHexValue;
   }
   private setInitialColorHex(colorValue: string | null) {
     this.initialColor_ = this.initialColor_ ? this.initialColor_ : colorValue;
@@ -199,56 +193,71 @@ export class ColorElement implements IColorElement, _ColorElement {
   }
 }
 
-if (require?.main?.filename === __filename) main();
+// if (require?.main?.filename === __filename) main();
 
-function main() {
-  return TESTING();
-}
+// function main() {
+//   return TESTING();
+// }
 
-function TESTING() {
-  const color1 = new ColorElement(['editorInfo.background', '"XFFEEBBCC"']);
-  const color2 = new ColorElement(color1);
-  const myColorElement = {
-    elementName: 'string',
-    colorHexValue: 'string',
-  };
-  const color3 = new ColorElement('editorInfo.background');
-  const color4 = new ColorElement('editorInfo.background', '"XFFEEBBCC"');
-  const color5 = new ColorElement('', '"XFFEEBBCC"');
-  const color6 = new ColorElement(myColorElement);
-  myColorElement;
-  const clone1 = color4.toValue(false);
-  console.log('color1 :>> ', color1);
-  console.log('color2 :>> ', color2);
-  console.log('color3 :>> ', color3);
-  console.log('color4 :>> ', color4);
-  console.log('color5 :>> ', color5);
-  console.log('color6 :>> ', color6);
-  console.log('simpleValue :>> ', color4.toValue());
-  console.log('clone :>> ', clone1);
-  console.log('mainAttribute :>> ', clone1.mainAttribute);
-  console.log('elementsAttributes :>> ', clone1.elementsAttributes);
-  console.log('elementList :>> ', clone1.elementList);
-  console.log('toString :>> ', clone1.toString());
-  console.log('toValue <simpleValue> :>> ', clone1.toValue(true));
-  console.log('toValue :>> ', clone1.toValue(false));
-  console.log('colorElementName :>> ', clone1.toValue(false).colorElementName);
-  console.log('colorHex :>> ', clone1.toValue(false).colorHex);
-  console.log('colorHexValue :>> ', clone1.toValue(false).colorHexValue);
-  console.log('elementList :>> ', clone1.toValue(false).elementList);
-  console.log('elementName :>> ', clone1.toValue(false).elementName);
-  console.log(
-    'elementsAttributes :>> ',
-    clone1.toValue(false).elementsAttributes
-  );
-  console.log('initialColor :>> ', clone1.toValue(false).initialColor);
-  console.log('isNull :>> ', clone1.toValue(false).isNull);
-  console.log('isVoid :>> ', clone1.toValue(false).isVoid);
-  console.log('mainAttribute :>> ', clone1.toValue(false).mainAttribute);
-  console.log(
-    'setColorHex :>> ',
-    clone1.toValue(false).setColorHex('00ff00cc')
-  );
-}
+// function TESTING() {
+//   const color1 = new ColorElement(['editorInfo.background', '"XFFEEBBCC"']);
+//   const color2 = new ColorElement(color1);
+//   const myColorElement = {
+//     elementName: 'string',
+//     colorHexValue: 'string',
+//   };
+//   const color3 = new ColorElement('editorInfo.background');
+//   const color4 = new ColorElement('editorInfo.background', '"XFFEEBBCC"');
+//   const color5 = new ColorElement('', '"XFFEEBBCC"');
+//   const color6 = new ColorElement(myColorElement);
+//   myColorElement;
+//   const clone1 = color4.toValue(false);
+//   console.log('color1 :>> ', color1);
+//   console.log('color2 :>> ', color2);
+//   console.log('color3 :>> ', color3);
+//   console.log('color4 :>> ', color4);
+//   console.log('color5 :>> ', color5);
+//   console.log('color6 :>> ', color6);
+//   console.log('simpleValue :>> ', color4.toValue());
+//   console.log('clone :>> ', clone1);
+//   console.log('mainAttribute :>> ', clone1.mainAttribute);
+//   console.log('elementsAttributes :>> ', clone1.elementsAttributes);
+//   console.log('elementList :>> ', clone1.elementList);
+//   console.log('toString :>> ', clone1.toString());
+//   console.log('toValue <simpleValue> :>> ', clone1.toValue(true));
+//   console.log('toValue :>> ', clone1.toValue(false));
+//   console.log('colorElementName :>> ', clone1.toValue(false).colorElementName);
+//   console.log('colorHex :>> ', clone1.toValue(false).colorHex);
+//   console.log('colorHexValue :>> ', clone1.toValue(false).colorHexValue);
+//   console.log('elementList :>> ', clone1.toValue(false).elementList);
+//   console.log('elementName :>> ', clone1.toValue(false).elementName);
+//   console.log(
+//     'elementsAttributes :>> ',
+//     clone1.toValue(false).elementsAttributes
+//   );
+//   console.log('initialColor :>> ', clone1.toValue(false).initialColor);
+//   console.log('isNull :>> ', clone1.toValue(false).isNull);
+//   console.log('isVoid :>> ', clone1.toValue(false).isVoid);
+//   console.log('mainAttribute :>> ', clone1.toValue(false).mainAttribute);
+//   console.log(
+//     'setColorHex :>> ',
+//     clone1.toValue(false).setColorHex('00ff00cc')
+//   );
+// }
 
-export const emptyColorElement = () => ColorElement.void;
+// export const emptyColorElement = () => ColorElement.void;
+
+// let colorElementName: string = this.initialElementName_;
+// let colorValue: string | null = this.initialColor_;
+
+// if (Array.isArray(colorElement)) {
+//   [colorElementName, colorValue] = colorElement;
+// } else if (typeof colorElement === 'object' && colorElement != null) {
+//   colorElementName = colorElement.elementName || 'VOID';
+//   colorValue = colorElement.colorHexValue || '';
+// } else if (!!colorElement === true && typeof colorElement === 'string') {
+//   //** !!colorElement === true is to validate against empty strig or null or undefined //*/
+
+//   colorElementName = colorElement;
+//   colorValue = colorHexValue || '';
+// }
