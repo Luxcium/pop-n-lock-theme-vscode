@@ -12,5 +12,14 @@
   "proseWrap": "preserve",
   "rangeStart": 0,
   "trailingComma": "es5",
-  "useTabs": false
+  "useTabs": false,
+  "overrides": [
+    {
+      "files": "helpers/tools/color/**/*.*",
+      "options": {
+        "printWidth": 120,
+        "semi": true
+      }
+    }
+  ]
 }
