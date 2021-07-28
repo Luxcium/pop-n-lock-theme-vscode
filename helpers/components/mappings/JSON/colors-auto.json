@@ -513,9 +513,5 @@
   "editorMarkerNavigationInfo.background": "#FFCC55EE",
   "problemsInfoIcon.foreground": "#FFCC55EE",
   "notificationsInfoIcon.foreground": "#FFCC55FF",
-  "icon.foreground": "#FFCC77CC",
-  "property": 
-  [
-    
-  ]
+  "icon.foreground": "#FFCC77CC"
 }

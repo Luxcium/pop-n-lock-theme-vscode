@@ -108,10 +108,10 @@ export class ColorElement implements IColorElement, _ColorElement {
     if (!this.isNull) {
       this.colorHexValue = colorHexMatch(colorValue, '#');
       this.setInitialColorHex(colorValue);
-      return this.colorHexValue;
+      return this;
     }
     this.colorHexValue = '';
-    return this.colorHexValue;
+    return this;
   }
   private setInitialColorHex(colorValue: string | null) {
     this.initialColor_ = this.initialColor_ ? this.initialColor_ : colorValue;
@@ -180,7 +180,9 @@ export class ColorElement implements IColorElement, _ColorElement {
       space
     )}`;
   }
-
+  public toObject() {
+    return JSON.parse(`{${this.toString(true)}}`);
+  }
   public toValue(simpleValue?: false): ColorElement;
   public toValue(simpleValue?: true): _ColorElement;
   public toValue(simpleValue: boolean = false): ColorElement | _ColorElement {
