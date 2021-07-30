@@ -19,7 +19,7 @@ module.exports = {
   // collectCoverageFrom: undefined,
 
   // The directory where Jest should output its coverage files
-  coverageDirectory: 'coverage',
+  coverageDirectory: './coverage',
 
   // An array of regexp pattern strings used to skip coverage collection
   // coveragePathIgnorePatterns: [
@@ -30,12 +30,7 @@ module.exports = {
   coverageProvider: 'v8',
 
   // A list of reporter names that Jest uses when writing coverage reports
-  // coverageReporters: [
-  //   "json",
-  //   "text",
-  //   "lcov",
-  //   "clover"
-  // ],
+  coverageReporters: ['json', 'text', 'lcov', 'clover'],
 
   // An object that configures minimum threshold enforcement for coverage results
   // coverageThreshold: undefined,
@@ -111,7 +106,7 @@ module.exports = {
   // restoreMocks: false,
 
   // The root directory that Jest should scan for tests and modules within
-  rootDir: './helpers',
+  rootDir: './',
 
   // A list of paths to directories that Jest should use to search for files in
   // roots: [
@@ -144,11 +139,11 @@ module.exports = {
   // testLocationInResults: false,
 
   // The glob patterns Jest uses to detect test files
-  // testMatch: [
-  //   '**/helpers/__tests__/**/*.[jt]s?(x)',
-  //   '**/helpers/?(*.)+(spec|test).[tj]s?(x)',
-  //   'helpers/tools/functions/extract-color-information.test.ts',
-  // ],
+  testMatch: [
+    // './helpers/**/', //__tests__/**/*.[jt]s?(x)',
+    // './helpers/**/?(*.)+(spec|test).[tj]s?(x)',
+    // 'helpers/tools/functions/extract-color-information.test.ts',
+  ],
 
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
   // testPathIgnorePatterns: ['/node_modules/', '/extensions/', '/archives/'],

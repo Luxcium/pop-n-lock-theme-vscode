@@ -1,6 +1,5 @@
-import { colorHexMatch } from '../../functions';
+import { colorHexMatchComplex, standardize } from '../../functions';
 import { ColorElementTuple, IColorElement, _ColorElement } from '../../types';
-import { standardize } from './functions';
 
 export class ColorElement implements IColorElement, _ColorElement {
   public elementName: string;
@@ -106,7 +105,7 @@ export class ColorElement implements IColorElement, _ColorElement {
 
   public setColorHex(colorValue: string | null) {
     if (!this.isNull) {
-      this.colorHexValue = colorHexMatch(colorValue, '#');
+      this.colorHexValue = colorHexMatchComplex(colorValue, '#');
       this.setInitialColorHex(colorValue);
       return this;
     }
@@ -169,7 +168,7 @@ export class ColorElement implements IColorElement, _ColorElement {
     space: string | number = 2
   ): string {
     if (simpleString) {
-      return `"${this.initialElementName_}":"${colorHexMatch(
+      return `"${this.initialElementName_}":"${colorHexMatchComplex(
         this.initialColor_,
         template
       )}"`;

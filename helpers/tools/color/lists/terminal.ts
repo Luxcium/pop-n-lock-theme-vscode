@@ -7,7 +7,7 @@ export const terminal = {
   background: '#202010',
   border: '#77116655',
   foreground: '#C4BDB5DD',
-  selectionBackground: '#3277',
+  selectionBackground: '#33227777',
   ansiBlack: '#201020',
   ansiBlue: '#458588',
   ansiCyan: '#689E6A',
@@ -26,7 +26,7 @@ export const terminal = {
   ansiBrightYellow: '#FABE2F',
 };
 
-function terminalJson(terminalObj: any, name: string) {
+export function terminalJson(terminalObj: any, name: string) {
   let accumulator = '';
   for (const property in terminalObj) {
     accumulator = `${accumulator}"${name}.${property}": "${terminalObj[property]}", `;
@@ -35,9 +35,11 @@ function terminalJson(terminalObj: any, name: string) {
   return JSON.parse(`{${sliced}}`);
 }
 
-export function getTerminal() {
+export function getTerminalColors() {
   return {
     ...terminalJson(terminal, 'terminal'),
     ...terminalJson(terminalCursor, 'terminalCursor'),
   };
 }
+
+// console.log('getTerminal() :>> ', getTerminalColors());

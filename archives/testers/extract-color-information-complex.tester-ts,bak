@@ -1,56 +1,70 @@
-import { colorHexMatch, extractColorInformation } from '.';
+import {
+  colorHexMatchComplex,
+  extractColorInformation,
+} from '../../helpers/tools/classes/color-element/functions';
 
-describe('colorHexMatch', () => {
+describe('colorHexMatchComplex', () => {
   test('expect result toBe null', () => {
-    let result: any = colorHexMatch('#FF', ['1']);
+    let result: any = colorHexMatchComplex('#FF', ['1']);
     expect(result).toBe(null);
   });
   it('expect result toBeDefined', () => {
-    let result: any = colorHexMatch('#FFBBCCDD', ['1']);
+    let result: any = colorHexMatchComplex('#FFBBCCDD', ['1']);
     expect(result).toBeDefined();
   });
 
   test('expect result toBe "#FFF"', () => {
-    let result: any = colorHexMatch('#fff', ['#']);
+    let result: any = colorHexMatchComplex('#fff', ['#']);
     expect(result).toBe('#FFF');
   });
   test('from async expect result toBe "#FFF"', async () => {
-    let result: any = await colorHexMatch(Promise.resolve('#fff'), ['#']);
+    let result: any = await colorHexMatchComplex(Promise.resolve('#fff'), [
+      '#',
+    ]);
     expect(result).toBe('#FFF');
   });
   test('from async expect result toBe "#FFF"', async () => {
-    let result: any = await colorHexMatch(Promise.resolve('#fff'), '[#]');
+    let result: any = await colorHexMatchComplex(
+      Promise.resolve('#fff'),
+      '[#]'
+    );
     expect(result).toBe('[#]FFF');
   });
   test('colorExtractHexAsync template: string | [string] | [string, string] = ["", ""] result toBe "#FFF"', async () => {
-    let result: any = await colorHexMatch(Promise.resolve(null));
+    let result: any = await colorHexMatchComplex(Promise.resolve(null));
     expect(result).toBeNull();
   });
 
   test('colorExtractHexAsync template: string | [string] | [string, string] = ["", ""] result toBe "#FFF"', async () => {
-    let result: any = await colorHexMatch(Promise.resolve('#fff'), '');
+    let result: any = await colorHexMatchComplex(Promise.resolve('#fff'), '');
     expect(result).toBe('FFF');
   });
 
   test('colorExtractHexAsync template: string | [string] | [string, string] = ["", ""] result toBe "#FFF"', async () => {
-    let result: any = await colorHexMatch(Promise.resolve('#fff'), ['']);
+    let result: any = await colorHexMatchComplex(Promise.resolve('#fff'), ['']);
     expect(result).toBe('FFF');
   });
 
   test('colorExtractHexAsync template: string | [string] | [string, string] = ["", ""] result toBe "#FFF"', async () => {
-    let result: any = await colorHexMatch(Promise.resolve('#fff'), ['', '']);
+    let result: any = await colorHexMatchComplex(Promise.resolve('#fff'), [
+      '',
+      '',
+    ]);
     expect(result).toBe('FFF');
   });
   test('from async expect result toBe "#FFF"', () => {
-    let result: any = colorHexMatch('#fff', '');
+    let result: any = colorHexMatchComplex('#fff', '');
     expect(result).toBe('FFF');
   });
   test('from async expect result toBe "#FFF"', async () => {
-    let result: any = await colorHexMatch(Promise.resolve('#fff'), ['x', '_']);
+    let result: any = await colorHexMatchComplex(Promise.resolve('#fff'), [
+      'x',
+      '_',
+    ]);
     expect(result).toBe('xFFF_');
   });
   test('from async expect result toBe "#FFF"', () => {
-    let result: any = colorHexMatch(null);
+    let result: any = colorHexMatchComplex(null);
     expect(result).toBeNull();
   });
   test('extractColorInformation result   template: string | [string] | [string, string] = "x" toBe "#FFF"', async () => {

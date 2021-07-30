@@ -11,6 +11,7 @@ import {
 import prettier from 'prettier';
 import { promisify } from 'util';
 import { colorList } from '../color/list';
+import { getTerminalColors } from '../color/lists/terminal';
 export const readFileAsync = promisify(readFile);
 
 export const writeFileAsync = promisify(writeFile);
@@ -53,6 +54,7 @@ export async function writeOutputToFile() {
   colorList.forEach(colorElement => {
     colors = { ...colors, ...colorElement.toObject() };
   });
+  colors = { ...colors, ...getTerminalColors() };
 
   const source = {
     ...jsonParsed,

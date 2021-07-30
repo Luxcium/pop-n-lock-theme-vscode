@@ -1,18 +1,18 @@
 import { ColorElementTuple } from '../types';
 
-export function colorHexMatch(inputString: string | null): string;
-export function colorHexMatch(
+export function colorHexMatchComplex(inputString: string | null): string;
+export function colorHexMatchComplex(
   inputString: string | null,
   template?: string | [string] | [string, string]
 ): string;
-export function colorHexMatch(
+export function colorHexMatchComplex(
   inputString: Promise<string | null>
 ): Promise<string>;
-export function colorHexMatch(
+export function colorHexMatchComplex(
   inputString: Promise<string>,
   template?: string | [string] | [string, string]
 ): Promise<string>;
-export function colorHexMatch(
+export function colorHexMatchComplex(
   inputString: Promise<string | null> | string | null,
   template: string | [string] | [string, string] = ['', '']
 ): Promise<string | null> | string | null {

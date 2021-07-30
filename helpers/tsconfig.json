@@ -1,9 +1,10 @@
 {
   "extends": "../tsconfig.base.json",
-  "include": [
-    "tools",
-    "components",
-  ],
+  // "include": [
+  //   "tools",
+  //   "components",
+  //   "../archives/testers/extract-color-information-complex.tester-ts,bak",
+  // ],
   "compilerOptions": {
     "target": "es5",
     "module": "commonjs",

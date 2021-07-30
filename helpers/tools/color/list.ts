@@ -1,4 +1,4 @@
-import { ColorElement } from '../classes/color-element';
+import { ColorElement } from '../classes';
 import {
   x001111FF,
   x001133FF,
@@ -1219,4 +1219,4 @@ export const colorList = [
   new ColorElement('icon.foreground').setColorHex(xFFCC77CC), // #FFCC77CC
 ];
 
-// console.log(sampling.toObject());
+// console.log(colorList[0]?.toObject());

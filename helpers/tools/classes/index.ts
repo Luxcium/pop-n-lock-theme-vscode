@@ -1,1 +1,1 @@
-export {};
+export { ColorElement } from './color-element';

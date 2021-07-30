@@ -80,6 +80,11 @@
         "path": "./src/themes/Pop-N-Lock.original.json"
       },
       {
+        "label": "TEST ✨✨✨✨✨✨✨✨✨✨",
+        "uiTheme": "vs-dark",
+        "path": "./themes/Pop-N-Lock.original.json"
+      },
+      {
         "label": "Pop N' Lock Theme by Luxcium ✨ Alexis's Black ⛷",
         "uiTheme": "vs-dark",
         "path": "./src/themes/Pop-N-Lock.alexis-black.json"
