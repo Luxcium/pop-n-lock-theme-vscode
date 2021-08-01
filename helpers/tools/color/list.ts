@@ -1,7 +1,6 @@
 import { ColorElement } from '../classes';
 import { cx } from './const';
-// export const sampling = new ColorElement('widget.shadow').setColorHex(cx.x001111FF); // #001111FF
-export const colorList: ColorElement[] = [
+export const colorslist: ColorElement[] = [
   //'widget.shadow'
   void '#001111FF',
   new ColorElement('widget.shadow').setColorHex(cx.x001111FF), //
@@ -1254,7 +1253,6 @@ export const colorList: ColorElement[] = [
   void '#FFCC55EE',
   new ColorElement('editorMarkerNavigationInfo.background').setColorHex(cx.xFFCC55EE), //
 ].filter(cx => cx) as ColorElement[];
-// console.log(colorList[0]?.toObject());
 
 export const foregrounds: ColorElement[] = [
   //'symbolIcon.referenceForeground'
@@ -2065,3 +2063,8 @@ export const foregrounds: ColorElement[] = [
   void '#FFCC77CC',
   new ColorElement('icon.foreground').setColorHex(cx.xFFCC77CC), //
 ].filter(cx => cx) as ColorElement[];
+
+// export const colorList = new ColorElementList(colorslist);
+
+// export const noName1 = colorList.head();
+// if (require?.main?.filename === __filename) console.log(colorList);

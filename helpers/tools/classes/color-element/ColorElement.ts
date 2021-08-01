@@ -76,7 +76,43 @@ export class ColorElement implements IColorElement, _ColorElement {
 
     return this;
   }
+  // public get colorAttributes() {
+  //   const attr = colorHexMatchComplex(this.colorHexValue);
+  //   const len = attr.length;
+  //   if (len === 3)
+  //     return [
+  //       attr[0]! + attr[0]!,
+  //       attr[1]! + attr[1]!,
+  //       attr[2]! + attr[2]!,
+  //       'FF',
+  //     ];
 
+  //   if (len === 4)
+  //     return [
+  //       attr[0]! + attr[0]!,
+  //       attr[1]! + attr[1]!,
+  //       attr[2]! + attr[2]!,
+  //       attr[3]! + attr[3]!,
+  //     ];
+
+  //   if (len === 6)
+  //     return [
+  //       attr[0]! + attr[1]!,
+  //       attr[2]! + attr[3]!,
+  //       attr[4]! + attr[5]!,
+  //       'FF',
+  //     ];
+
+  //   if (len === 8)
+  //     return [
+  //       attr[0]! + attr[1]!,
+  //       attr[2]! + attr[3]!,
+  //       attr[4]! + attr[5]!,
+  //       attr[6]! + attr[7]!,
+  //     ];
+
+  //   return [];
+  // }
   private setInitialNameValue(elementName: string) {
     this.initialElementName_ = elementName;
     this.isVoid = this.initialElementName_ === 'VOID' ? true : false;
@@ -191,6 +227,9 @@ export class ColorElement implements IColorElement, _ColorElement {
       return simpleValue_;
     }
     return new ColorElement(simpleValue_);
+  }
+  public toJson(): _ColorElement {
+    return this.toValue(true);
   }
 }
 

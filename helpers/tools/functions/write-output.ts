@@ -10,7 +10,8 @@ import {
 } from 'fs';
 import prettier from 'prettier';
 import { promisify } from 'util';
-import { colorList } from '../color/list';
+import { ColorElement } from '../classes';
+import { colorslist } from '../color/list';
 import { getTerminalColors } from '../color/lists/terminal';
 export const readFileAsync = promisify(readFile);
 
@@ -51,8 +52,8 @@ export async function writeOutputToFile() {
     .replaceAll(/[\n]+/g, '\n');
   const jsonParsed = JSON.parse(inputString);
   let colors = {};
-  colorList.forEach(colorElement => {
-    colors = { ...colors, ...colorElement.toObject() };
+  colorslist.forEach(colorElement => {
+    colors = { ...colors, ...new ColorElement(colorElement).toObject() };
   });
   colors = { ...colors, ...getTerminalColors() };
 
@@ -69,6 +70,6 @@ export async function writeOutputToFile() {
 
   return myWriter(output);
 }
+// if (require?.main?.filename === __filename) console.log(writeOutputToFile());
 
-writeOutputToFile();
 export { readFileSync, writeFileSync };
