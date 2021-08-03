@@ -1,12 +1,13 @@
-import * as ColorMath from 'color-math';
+import chroma from 'chroma-js';
 import { colorHexMatch } from '.';
-
+import { chromaHex } from './utils';
+chroma;
 export function tsColorConstWriter(
   colorHex: string,
   exporting: boolean = true,
   ts: boolean = true
 ): string {
-  const colorVal = ColorMath.evaluate(colorHex).resultStr;
+  const colorVal = chromaHex(colorHex);
   console.log(colorVal);
   const hex = colorHexMatch(colorHex);
   if (hex === '') {

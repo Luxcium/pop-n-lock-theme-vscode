@@ -8,8 +8,8 @@ export async function splitLines(
     .map(line => {
       return line.split(':') as [string, string];
     })
-    .filter(tuple => tuple[0].trim())
-    .filter(tuple => tuple[1].trim());
+    .filter(tuple => (tuple[0] ?? '').trim())
+    .filter(tuple => (tuple[1] ?? '').trim());
 }
 
 export async function reverseItems<T1, T2>(
