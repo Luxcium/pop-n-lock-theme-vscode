@@ -1,4 +1,5 @@
 import { ColorElement } from '..';
+import { colorslist } from '../../color/list';
 import { IColorElement } from '../../types';
 
 export class ColorElementList {
@@ -36,6 +37,30 @@ export class ColorElementList {
       ...new Set(
         this.list
           .map(colorElement => new ColorElement(colorElement).elementList)
+          .flat()
+      ),
+    ];
+  }
+
+  public get firstAttributeList(): string[] {
+    return [
+      ...new Set(
+        this.list
+          .map(colorElement => [
+            new ColorElement(colorElement).elementsAttributes[0] ?? '',
+          ])
+          .flat()
+      ),
+    ];
+  }
+
+  public get firstElementsList(): string[] {
+    return [
+      ...new Set(
+        this.list
+          .map(colorElement => [
+            new ColorElement(colorElement).elementList[0] ?? '',
+          ])
           .flat()
       ),
     ];
@@ -131,7 +156,9 @@ export class ColorElementList {
 //   console.log('MUST implement tests for  :>> class ColorElements');
 // }
 
-// function main() {
-//   return TESTING();
-// }
-// if (require?.main?.filename === __filename) main();
+function main() {
+  new ColorElementList(colorslist).firstAttributeList.map(item =>
+    console.log(item)
+  ); // return TESTING();
+}
+if (require?.main?.filename === __filename) main();

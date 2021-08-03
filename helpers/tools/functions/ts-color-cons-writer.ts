@@ -18,5 +18,3 @@ export function tsColorConstWriter(
 
   return `${exp_}const x${hex}${ts_} = '#${hex}';\n`;
 }
-
-tsColorConstWriter('00BFBBFF');
