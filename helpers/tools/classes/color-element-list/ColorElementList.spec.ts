@@ -1,6 +1,6 @@
-import { ColorElement } from '..';
 import { cx } from '../../color/const';
-import { ColorElementList } from './ColorElementList';
+import ColorElement from '../color-element';
+import ColorElementList from './ColorElementList';
 
 describe('ColorElementList', () => {
   it('property mainAttributeList should return an array', () => {

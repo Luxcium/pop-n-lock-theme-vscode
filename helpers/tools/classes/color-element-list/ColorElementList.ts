@@ -1,8 +1,8 @@
-import { ColorElement } from '..';
 import { colorslist } from '../../color/list';
-import { IColorElement } from '../../types';
+import { IColorElement } from '../../types/IColorElement';
+import ColorElement from '../color-element';
 
-export class ColorElementList {
+class ColorElementList {
   private list: IColorElement[];
   constructor(colorElementList: IColorElement[]) {
     this.list = colorElementList;
@@ -156,9 +156,16 @@ export class ColorElementList {
 //   console.log('MUST implement tests for  :>> class ColorElements');
 // }
 
-function main() {
+function TESTING() {
   new ColorElementList(colorslist).firstAttributeList.map(item =>
     console.log(item)
   ); // return TESTING();
 }
-if (require?.main?.filename === __filename) main();
+if (require?.main?.filename === __filename) TESTING();
+
+function MAIN() {
+  console.log(ColorElementList);
+}
+if (require?.main?.filename === __filename) MAIN();
+
+export default ColorElementList;

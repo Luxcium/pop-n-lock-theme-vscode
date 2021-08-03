@@ -1,12 +1,8 @@
-import { ColorElement } from './ColorElement';
+import ColorElement from './ColorElement';
 
-function TESTING() {
+function MAIN() {
   console.log(new ColorElement(''));
 }
+if (require?.main?.filename === __filename) MAIN();
 
-function main() {
-  return TESTING();
-}
-if (require?.main?.filename === __filename) main();
-
-export { ColorElement };
+export default ColorElement;

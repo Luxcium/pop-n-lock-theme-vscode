@@ -10,7 +10,7 @@ import {
 } from 'fs';
 import prettier from 'prettier';
 import { promisify } from 'util';
-import { ColorElement } from '../classes';
+import ColorElement from '../classes/color-element';
 import { colorslist } from '../color/list';
 import { getTerminalColors } from '../color/lists/terminal';
 export const readFileAsync = promisify(readFile);

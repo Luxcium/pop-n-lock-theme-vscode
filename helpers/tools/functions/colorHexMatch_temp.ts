@@ -1,4 +1,4 @@
-import { colorHexRegExps } from '.';
+import { colorHexRegExps } from './color-hex-reg-exps';
 
 export function colorHexMatch_(inputString: string): string {
   for (const regexp of colorHexRegExps) {

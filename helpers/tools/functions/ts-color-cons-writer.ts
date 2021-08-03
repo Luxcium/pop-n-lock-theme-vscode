@@ -1,5 +1,5 @@
 import chroma from 'chroma-js';
-import { colorHexMatch } from '.';
+import { colorHexMatch } from './color-hex-match';
 import { chromaHex } from './utils';
 chroma;
 export function tsColorConstWriter(

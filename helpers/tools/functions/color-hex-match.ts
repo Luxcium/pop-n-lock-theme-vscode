@@ -1,4 +1,4 @@
-import { colorHexRegExps } from '.';
+import { colorHexRegExps } from './color-hex-reg-exps';
 
 function _colorHexMatch(colorHexRegExp: RegExp[]) {
   return (inputString: string): string => {

@@ -1,7 +1,12 @@
-import { colorHexMatchComplex, standardize } from '../../functions';
-import { ColorElementTuple, IColorElement, _ColorElement } from '../../types';
+// import { colorHexMatchComplex } from '../../functions/extract-color-information-complex';
+import { colorHexMatchComplex } from '../../functions/extract-color-information-complex';
+import { standardize } from '../../functions/standardize';
+import { chromaHex } from '../../functions/utils';
+import { ColorElementTuple } from '../../types/ColorElementTuple';
+import { IColorElement } from '../../types/IColorElement';
+import { _ColorElement } from '../../types/_ColorElement';
 
-export class ColorElement implements IColorElement, _ColorElement {
+export default class ColorElement implements IColorElement, _ColorElement {
   public elementName: string;
   public colorHexValue: string;
   public isVoid: boolean;
@@ -141,7 +146,7 @@ export class ColorElement implements IColorElement, _ColorElement {
 
   public setColorHex(colorValue: string | null) {
     if (!this.isNull) {
-      this.colorHexValue = colorHexMatchComplex(colorValue, '#');
+      this.colorHexValue = chromaHex(colorValue ?? '');
       this.setInitialColorHex(colorValue);
       return this;
     }

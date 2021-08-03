@@ -1,4 +1,5 @@
-import { ColorElement } from '../classes';
+import ColorElement from '../classes/color-element';
+import ColorElementList from '../classes/color-element-list/ColorElementList';
 import { cx } from './const';
 export const colorslist: ColorElement[] = [
   //'widget.shadow'
@@ -2064,7 +2065,12 @@ export const foregrounds: ColorElement[] = [
   new ColorElement('icon.foreground').setColorHex(cx.xFFCC77CC), //
 ].filter(cx => cx) as ColorElement[];
 
-// export const colorList = new ColorElementList(colorslist);
+export const colorList = new ColorElementList(colorslist);
 
-// export const noName1 = colorList.head();
-// if (require?.main?.filename === __filename) console.log(colorList);
+export const head = colorList.head();
+if (require?.main?.filename === __filename) MAIN();
+
+function MAIN() {
+  console.log(head);
+  console.log(process.argv);
+}

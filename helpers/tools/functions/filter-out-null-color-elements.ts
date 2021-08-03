@@ -1,4 +1,4 @@
-import { ColorElement } from '../classes';
+import ColorElement from '../classes/color-element';
 
 export function filterOutNullColorElements(element: Promise<ColorElement[]>) {
   return async (includeNullElements: boolean = false) =>

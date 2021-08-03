@@ -1,4 +1,4 @@
-import { colorHexMatch } from '../functions';
+import { colorHexMatch } from '../functions/color-hex-match';
 
 export function convert(xFFFFFF: string) {
   const colorHex = colorHexMatch(xFFFFFF);

@@ -1,5 +1,6 @@
-import { standardizeTuple } from '.';
-import { ColorElementTuple, _ColorElement } from '../types';
+import { ColorElementTuple } from '../types/ColorElementTuple';
+import { _ColorElement } from '../types/_ColorElement';
+import { standardizeTuple } from './standardize-tuple';
 
 export function standardize(colorElement: ColorElementTuple): [string, string];
 export function standardize(colorElement: _ColorElement): [string, string];

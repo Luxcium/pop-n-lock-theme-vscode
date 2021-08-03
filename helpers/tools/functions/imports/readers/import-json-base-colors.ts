@@ -8,3 +8,9 @@ async function main() {
   console.log(await getJsonBaseColors());
 }
 if (require?.main?.filename === __filename) main();
+
+if (require?.main?.filename === __filename) MAIN();
+
+function MAIN() {
+  console.log(process.argv);
+}

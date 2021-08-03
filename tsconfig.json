@@ -9,7 +9,7 @@
     /* Emit Options */
     "noEmit": false,
     "noEmitOnError": false,
-    "noEmitHelpers": false,
+    "noEmitHelpers": true,
     "noResolve": false,
     /* Paths */
     "rootDir": "./",

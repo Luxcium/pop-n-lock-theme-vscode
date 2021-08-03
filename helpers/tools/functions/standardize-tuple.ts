@@ -1,5 +1,5 @@
-import { colorHexMatch_ } from '.';
-import { ColorElementTuple } from '../types';
+import { ColorElementTuple } from '../types/ColorElementTuple';
+import { colorHexMatch_ } from './colorHexMatch_temp';
 
 export function standardizeTuple(
   colorElementTuple: ColorElementTuple

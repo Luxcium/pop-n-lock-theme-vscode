@@ -1,5 +1,5 @@
 import * as imp_ from '.';
-import { ColorElementTuple } from '../types';
+import { ColorElementTuple } from '../types/ColorElementTuple';
 void imp_;
 export async function listElementPerColor(
   colorAndElementTuple: Promise<ColorElementTuple[]>
