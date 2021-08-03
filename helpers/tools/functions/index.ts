@@ -7,6 +7,8 @@ export {
 } from './extract-color-information-complex';
 export { standardize } from './standardize';
 export { standardizeTuple } from './standardize-tuple';
+export { tsColorConstWriter } from './ts-color-cons-writer';
+
 // export {
 //   myWriter,
 //   readFileAsync,

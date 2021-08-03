@@ -229,7 +229,9 @@ export class ColorElement implements IColorElement, _ColorElement {
     return new ColorElement(simpleValue_);
   }
   public toJson(): _ColorElement {
-    return this.toValue(true);
+    const colorHexValue = this.toValue(true).colorHexValue;
+    const elementName = this.toValue(true).elementName;
+    return JSON.parse(`{"${elementName}":"${colorHexValue}"}`);
   }
 }
 

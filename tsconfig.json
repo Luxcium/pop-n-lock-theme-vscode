@@ -54,13 +54,11 @@
     "./scripts/",
     "./extensions/**",
     "./archives/**",
+    "**/?(*.)+(spec).[tj]s?(x)",
     "./src/resources/"
   ],
   "include": [
     "./helpers",
-    "src/**/*.ts",
-    "src/TypeScript/terminal-colors.js",
-    "archives/testers/extract-color-information-complex.tester-ts,bak",
     // helpers/index.ts
     // "./node_modules/vscode/lib/*"
     // "./node_modules/vscode/vscode.d.ts",,

@@ -38,6 +38,28 @@ describe('ColorElementList', () => {
       'lines',
     ]);
   });
+  it('method toJson should return an object of all elements', () => {
+    const json = new ColorElementList(shortDummyList()).toJson();
+    const colors = json;
+    // const allAttributeList = colorsList.allAttributeList;
+    expect({ colors }).toStrictEqual({
+      colors: {
+        'button.background': '#771166CC',
+        'button.border': '#FF00FF22',
+        'button.hoverBackground': '#3399CCCC',
+        'button.secondaryBackground': '#00FF0022',
+        'button.secondaryHoverBackground': '#00FF0022',
+        'charts.blue': '#00FF0022',
+        'charts.green': '#00FF0022',
+        'charts.lines': '#00FF0022',
+        'editorGroupHeader.border': '#001133FF',
+        'editorGroupHeader.noTabsBackground': '#1C1C2EFF',
+        'editorGroupHeader.tabsBackground': '#1C1C2EFF',
+        'editorGroupHeader.tabsBorder': '#1D2545FF',
+        'widget.shadow': '#001111FF',
+      },
+    });
+  });
 
   it('property allElementsList should return an array', () => {
     const colorsList = new ColorElementList(shortDummyList());
@@ -167,3 +189,21 @@ function shortDummyList(): ColorElement[] {
     new ColorElement('charts.lines').setColorHex(cx.undefGreen), //
   ].filter(cx => cx) as ColorElement[];
 }
+
+/*
+{
+ "button.background": "#771166CC",
+ "button.border": "#FF00FF22",
+ "button.hoverBackground": "#3399CCCC",
+ "button.secondaryBackground": "#00FF0022",
+ "button.secondaryHoverBackground": "#00FF0022",
+ "charts.blue": "#00FF0022",
+ "charts.green": "#00FF0022",
+ "charts.lines": "#00FF0022",
+ "editorGroupHeader.border": "#001133FF",
+ "editorGroupHeader.noTabsBackground": "#1C1C2EFF",
+ "editorGroupHeader.tabsBackground": "#1C1C2EFF",
+ "editorGroupHeader.tabsBorder": "#1D2545FF",
+ "widget.shadow": "#001111FF"
+ }
+*/

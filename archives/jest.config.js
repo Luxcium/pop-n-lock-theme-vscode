@@ -129,7 +129,7 @@ module.exports = {
   // snapshotSerializers: [],
 
   // The test environment that will be used for testing
-  // testEnvironment: "jest-environment-node",
+  // testEnvironment: 'jest-environment-node',
   testEnvironment: 'node',
 
   // Options that will be passed to the testEnvironment
@@ -141,12 +141,14 @@ module.exports = {
   // The glob patterns Jest uses to detect test files
   testMatch: [
     // './helpers/**/', //__tests__/**/*.[jt]s?(x)',
-    // './helpers/**/?(*.)+(spec|test).[tj]s?(x)',
+    // '**/?(*.)+(spec|test).[tj]s?(x)',
+    '**/?(*.)+(spec).[tj]s?(x)',
+    // '**/?(*.)+(test).[tj]s?(x)',
     // 'helpers/tools/functions/extract-color-information.test.ts',
   ],
 
   // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped
-  // testPathIgnorePatterns: ['/node_modules/', '/extensions/', '/archives/'],
+  testPathIgnorePatterns: ['node_modules'], //, '/extensions/', '/archives/'],
 
   // The regexp pattern or array of patterns that Jest uses to detect test files
   // testRegex: [],

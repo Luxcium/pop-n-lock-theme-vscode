@@ -117,6 +117,14 @@ export class ColorElementList {
         .map((colorElement: IColorElement) => new ColorElement(colorElement))
     );
   }
+  public toJson() {
+    let json = {};
+    this.list
+      .map(colorElement => new ColorElement(colorElement))
+      .map(colorElement => colorElement.toJson())
+      .map(colorElement => (json = { ...json, ...colorElement }));
+    return json;
+  }
 }
 
 // function TESTING() {
