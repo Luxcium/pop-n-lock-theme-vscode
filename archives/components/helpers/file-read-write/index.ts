@@ -1,10 +1,9 @@
-import { readFile, writeFile } from 'fs';
-import { promisify } from 'util';
+import { promises } from 'fs';
 import { readFileAsyncFromPath } from './read-file-async-from-path';
 import { writeFileToPathAsync } from './write-file-to-path-async';
 
-export const readFileAsync = promisify(readFile);
-export const writeFileAsync = promisify(writeFile);
+export const readFileAsync = promises.readFile;
+export const writeFileAsync = promises.writeFile;
 
 export const IO = {
   read: readFileAsyncFromPath,
