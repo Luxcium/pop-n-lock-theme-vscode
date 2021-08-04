@@ -13,7 +13,7 @@ export default async (): Promise<Config.InitialOptions> => {
     // automock: false,
 
     // Stop running tests after `n` failures
-    // bail: 0,
+    bail: 5,
 
     // The directory where Jest should store its cached dependency information
     cacheDirectory: '/tmp/jest_rs',
@@ -70,7 +70,7 @@ export default async (): Promise<Config.InitialOptions> => {
     // globals: {},
 
     // The maximum amount of workers used to run your tests. Can be specified as % or a number. E.g. maxWorkers: 10% will use 10% of your CPU amount + 1 as the maximum worker number. maxWorkers: 2 will use a maximum of 2 workers.
-    // maxWorkers: "50%",
+    maxWorkers: '3',
 
     // An array of directory names to be searched recursively up from the requiring module's location
     // moduleDirectories: [
@@ -94,7 +94,7 @@ export default async (): Promise<Config.InitialOptions> => {
     // modulePathIgnorePatterns: [],
 
     // Activates notifications for test results
-    // notify: false,
+    // notify: true,
 
     // An enum that specifies notification mode. Requires { notify: true }
     // notifyMode: "failure-change",

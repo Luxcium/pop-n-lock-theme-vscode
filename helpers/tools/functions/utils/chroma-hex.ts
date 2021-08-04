@@ -26,7 +26,7 @@ export function templatedChromaHex(
 }
 
 function MAIN() {
-  console.log(templatedChromaHex(['##', ';;'])(''));
+  // console.log(templatedChromaHex(['##', ';;'])(''));
   return void 0;
 }
 if (require?.main?.filename === __filename) MAIN();
