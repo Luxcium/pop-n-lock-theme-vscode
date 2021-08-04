@@ -1,12 +1,18 @@
-export {};
-describe.each([
-  [1, 2],
-  [2, 4],
-])('double(%d)', (input, expected) => {
-  it.skip(`returns ${expected}`, () => {
-    expect(input * 2).toBe(expected);
+import { getColorElementsList } from '../get-color-elements-list';
+
+describe('getColorElementsList', () => {
+  it('should be defined', () => {
+    expect(getColorElementsList).toBeDefined();
   });
 });
+// describe.each([
+//   [1, 2],
+//   [2, 4],
+// ])('double(%d)', (input, expected) => {
+//   it.skip(`returns ${expected}`, () => {
+//     expect(input * 2).toBe(expected);
+//   });
+// });
 // import type { PathLike } from 'fs';
 // import { createColorElementsList } from './create-color-element-list.spec';
 // import { extractColorInformation } from './extract-color-information.spec';

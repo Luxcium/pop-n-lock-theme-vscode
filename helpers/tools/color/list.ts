@@ -1,5 +1,5 @@
 import ColorElement from '../classes/color-element';
-import ColorElementList from '../classes/color-element-list/ColorElementList';
+import { ColorElementList } from '../classes/color-element-list/ColorElementList';
 import { cx } from './const';
 export const colorslist: ColorElement[] = [
   //'widget.shadow'

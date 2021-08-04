@@ -1,10 +1,24 @@
-import { cx } from '../../color/const';
+import ColorElementList from '.';
 import ColorElement from '../color-element';
-import ColorElementList from './ColorElementList';
+import { shortDummyList } from './test/dummy-list';
 
 describe('ColorElementList', () => {
+  it('should exist some ColorElementList', () => {
+    expect(ColorElementList).toBeDefined();
+  });
+
+  it('should exist some shortDummyList', () => {
+    expect(shortDummyList).toBeDefined();
+  });
+
+  it('should exist some ColorElement', () => {
+    expect(ColorElement).toBeDefined();
+  });
+
   it('property mainAttributeList should return an array', () => {
     const colorsList = new ColorElementList(shortDummyList());
+    expect(colorsList).toBeDefined();
+
     const mainAttributeList = colorsList.mainAttributeList;
     expect(mainAttributeList).toEqual([
       'shadow',
@@ -40,24 +54,22 @@ describe('ColorElementList', () => {
   });
   it('method toJson should return an object of all elements', () => {
     const json = new ColorElementList(shortDummyList()).toJson();
-    const colors = json;
+    // const { colors } = json as { colors: any };
     // const allAttributeList = colorsList.allAttributeList;
-    expect({ colors }).toStrictEqual({
-      colors: {
-        'button.background': '#771166CC',
-        'button.border': '#FF00FF22',
-        'button.hoverBackground': '#3399CCCC',
-        'button.secondaryBackground': '#00FF0022',
-        'button.secondaryHoverBackground': '#00FF0022',
-        'charts.blue': '#00FF0022',
-        'charts.green': '#00FF0022',
-        'charts.lines': '#00FF0022',
-        'editorGroupHeader.border': '#001133FF',
-        'editorGroupHeader.noTabsBackground': '#1C1C2EFF',
-        'editorGroupHeader.tabsBackground': '#1C1C2EFF',
-        'editorGroupHeader.tabsBorder': '#1D2545FF',
-        'widget.shadow': '#001111FF',
-      },
+    expect(json).toStrictEqual({
+      'button.background': '#771166CC',
+      'button.border': '#FF00FF21',
+      'button.hoverBackground': '#3399CCCC',
+      'button.secondaryBackground': '#00FF0021',
+      'button.secondaryHoverBackground': '#00FF0021',
+      'charts.blue': '#00FF0021',
+      'charts.green': '#00FF0021',
+      'charts.lines': '#00FF0021',
+      'editorGroupHeader.border': '#001133FF',
+      'editorGroupHeader.noTabsBackground': '#1C1C2EFF',
+      'editorGroupHeader.tabsBackground': '#1C1C2EFF',
+      'editorGroupHeader.tabsBorder': '#1D2545FF',
+      'widget.shadow': '#001111FF',
     });
   });
 
@@ -116,94 +128,3 @@ describe('ColorElementList', () => {
     expect(tail.tail().length).toBe(colorsList.length - 2);
   });
 });
-
-/*
-mainAttributeList
-allAttributeList
-filterAttribute
-countAttribute
-filterColor
-filterElement
-head
-tail
-*/
-
-function shortDummyList(): ColorElement[] {
-  return [
-    //'widget.shadow'
-    void '#001111FF',
-    new ColorElement('widget.shadow').setColorHex(cx.x001111FF), //
-
-    //'editorGroupHeader.border'
-    void '#001133FF',
-    new ColorElement('editorGroupHeader.border').setColorHex(cx.x001133FF), //
-
-    //'editorGroupHeader.noTabsBackground'
-    void '#1C1C2EFF',
-    new ColorElement('editorGroupHeader.noTabsBackground').setColorHex(
-      cx.x1C1C2EFF
-    ), //
-
-    //'editorGroupHeader.tabsBackground'
-    void '#1C1C2EFF',
-    new ColorElement('editorGroupHeader.tabsBackground').setColorHex(
-      cx.x1C1C2EFF
-    ), //
-
-    //'editorGroupHeader.tabsBorder'
-    void '#1D2545FF',
-    new ColorElement('editorGroupHeader.tabsBorder').setColorHex(cx.x1D2545FF), //
-
-    //'button.secondaryBackground'
-    void '#00FF0022', // #00FF00FF
-    new ColorElement('button.secondaryBackground').setColorHex(cx.undefGreen), //
-
-    //'button.secondaryHoverBackground'
-    void '#00FF0022', // #00FF00FF
-    new ColorElement('button.secondaryHoverBackground').setColorHex(
-      cx.undefGreen
-    ), //
-
-    //'button.hoverBackground'
-    void '#3399CCCC',
-    new ColorElement('button.hoverBackground').setColorHex(cx.x3399CCCC), //
-
-    //'button.background'
-    void '#771166CC',
-    new ColorElement('button.background').setColorHex(cx.x771166CC), //
-
-    //'button.border'
-    void '#FF00FF22', // #FF00FFFF
-    new ColorElement('button.border').setColorHex(cx.undefMagenta), //
-
-    //'charts.blue'
-    void '#00FF0022', // #00FF00FF
-    new ColorElement('charts.blue').setColorHex(cx.undefGreen), //
-
-    //'charts.green'
-    void '#00FF0022', // #00FF00FF
-    new ColorElement('charts.green').setColorHex(cx.undefGreen), //
-
-    //'charts.lines'
-    void '#00FF0022', // #00FF00FF
-    new ColorElement('charts.lines').setColorHex(cx.undefGreen), //
-  ].filter(cx => cx) as ColorElement[];
-}
-
-/*
-{
- "button.background": "#771166CC",
- "button.border": "#FF00FF22",
- "button.hoverBackground": "#3399CCCC",
- "button.secondaryBackground": "#00FF0022",
- "button.secondaryHoverBackground": "#00FF0022",
- "charts.blue": "#00FF0022",
- "charts.green": "#00FF0022",
- "charts.lines": "#00FF0022",
- "editorGroupHeader.border": "#001133FF",
- "editorGroupHeader.noTabsBackground": "#1C1C2EFF",
- "editorGroupHeader.tabsBackground": "#1C1C2EFF",
- "editorGroupHeader.tabsBorder": "#1D2545FF",
- "widget.shadow": "#001111FF"
- }
-*/

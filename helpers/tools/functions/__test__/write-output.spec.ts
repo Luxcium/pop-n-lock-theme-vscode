@@ -1,12 +1,18 @@
-export {};
-describe.each([
-  [1, 2],
-  [2, 4],
-])('double(%d)', (input, expected) => {
-  it.skip(`returns ${expected}`, () => {
-    expect(input * 2).toBe(expected);
+import { writeOutputToFile } from '../write-output';
+
+describe('writeOutputToFile', () => {
+  it('should be defined', () => {
+    expect(writeOutputToFile).toBeDefined();
   });
 });
+// describe.each([
+//   [1, 2],
+//   [2, 4],
+// ])('double(%d)', (input, expected) => {
+//   it.skip(`returns ${expected}`, () => {
+//     expect(input * 2).toBe(expected);
+//   });
+// });
 // import EventEmitter from 'events';
 // import {
 //   Mode,

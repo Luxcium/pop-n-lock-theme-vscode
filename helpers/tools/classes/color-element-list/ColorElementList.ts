@@ -1,4 +1,3 @@
-import { colorslist } from '../../color/list';
 import { IColorElement } from '../../types/IColorElement';
 import ColorElement from '../color-element';
 
@@ -156,16 +155,24 @@ class ColorElementList {
 //   console.log('MUST implement tests for  :>> class ColorElements');
 // }
 
-function TESTING() {
-  new ColorElementList(colorslist).firstAttributeList.map(item =>
-    console.log(item)
-  ); // return TESTING();
-}
-if (require?.main?.filename === __filename) TESTING();
+// function TESTING() {
+//   new ColorElementList(colorslist).firstAttributeList.map(item =>
+//     console.log(item)
+//   ); // return TESTING();
+// }
+// if (require?.main?.filename === __filename) TESTING();
 
-function MAIN() {
-  console.log(ColorElementList);
-}
-if (require?.main?.filename === __filename) MAIN();
+// function MAIN() {
+//   console.log(ColorElementList);
+// }
+// if (require?.main?.filename === __filename) MAIN();
 
-export default ColorElementList;
+if (require?.main?.filename === __filename) main();
+
+function main() {
+  // return TESTING();
+  const color1 = new ColorElement(['editorInfo.background', '"XFFEEBBCC"']);
+  console.log(new ColorElementList([color1]));
+}
+
+export { ColorElementList };

@@ -1,12 +1,18 @@
-export {};
-describe.each([
-  [1, 2],
-  [2, 4],
-])('double(%d)', (input, expected) => {
-  it.skip(`returns ${expected}`, () => {
-    expect(input * 2).toBe(expected);
+import { normalizeQuotedStrings } from '../normalize-strings';
+
+describe('normalizeQuotedStrings', () => {
+  it('should be defined', () => {
+    expect(normalizeQuotedStrings).toBeDefined();
   });
 });
+// describe.each([
+//   [1, 2],
+//   [2, 4],
+// ])('double(%d)', (input, expected) => {
+//   it.skip(`returns ${expected}`, () => {
+//     expect(input * 2).toBe(expected);
+//   });
+// });
 // import { ColorElementTuple } from '../types';
 
 // /** Remove any double quotes from the string */

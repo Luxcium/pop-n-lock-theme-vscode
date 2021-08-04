@@ -1,12 +1,18 @@
-export {};
-describe.each([
-  [1, 2],
-  [2, 4],
-])('double(%d)', (input, expected) => {
-  it.skip(`returns ${expected}`, () => {
-    expect(input * 2).toBe(expected);
+import { standardize } from '../standardize';
+
+describe('standardize', () => {
+  it('should be defined', () => {
+    expect(standardize).toBeDefined();
   });
 });
+// describe.each([
+//   [1, 2],
+//   [2, 4],
+// ])('double(%d)', (input, expected) => {
+//   it.skip(`returns ${expected}`, () => {
+//     expect(input * 2).toBe(expected);
+//   });
+// });
 // import { standardizeTuple } from '.';
 // import { ColorElementTuple, _ColorElement } from '../types';
 

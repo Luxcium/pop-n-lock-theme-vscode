@@ -1,4 +1,4 @@
-import ColorElement from './ColorElement';
+import { ColorElement } from './ColorElement';
 
 function MAIN() {
   console.log(new ColorElement(''));

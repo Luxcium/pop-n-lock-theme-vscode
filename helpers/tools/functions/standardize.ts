@@ -1,6 +1,5 @@
 import { ColorElementTuple } from '../types/ColorElementTuple';
 import { _ColorElement } from '../types/_ColorElement';
-import { standardizeTuple } from './standardize-tuple';
 
 export function standardize(colorElement: ColorElementTuple): [string, string];
 export function standardize(colorElement: _ColorElement): [string, string];
@@ -17,7 +16,7 @@ export function standardize(
   let colorValue: string = '';
 
   if (Array.isArray(colorElement)) {
-    [colorElementName, colorValue] = standardizeTuple(colorElement);
+    [colorElementName, colorValue] = colorElement;
     return [colorElementName, colorValue];
   }
 

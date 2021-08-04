@@ -1,12 +1,18 @@
-export {};
-describe.each([
-  [1, 2],
-  [2, 4],
-])('double(%d)', (input, expected) => {
-  it.skip(`returns ${expected}`, () => {
-    expect(input * 2).toBe(expected);
+import { splitLines } from '../split-lines';
+
+describe('splitLines', () => {
+  it('should be defined', () => {
+    expect(splitLines).toBeDefined();
   });
 });
+// describe.each([
+//   [1, 2],
+//   [2, 4],
+// ])('double(%d)', (input, expected) => {
+//   it.skip(`returns ${expected}`, () => {
+//     expect(input * 2).toBe(expected);
+//   });
+// });
 // const empltyLines = /^\s*[{}[\]]$|^\s*$/;
 // export async function splitLines(
 //   lines: Promise<string[]>

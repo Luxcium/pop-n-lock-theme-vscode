@@ -1,12 +1,18 @@
-export {};
-describe.each([
-  [1, 2],
-  [2, 4],
-])('double(%d)', (input, expected) => {
-  it.skip(`returns ${expected}`, () => {
-    expect(input * 2).toBe(expected);
+import { tsColorConstWriter } from '../ts-color-cons-writer';
+
+describe('tsColorConstWriter', () => {
+  it('should be defined', () => {
+    expect(tsColorConstWriter).toBeDefined();
   });
 });
+// describe.each([
+//   [1, 2],
+//   [2, 4],
+// ])('double(%d)', (input, expected) => {
+//   it.skip(`returns ${expected}`, () => {
+//     expect(input * 2).toBe(expected);
+//   });
+// });
 
 // import chroma from 'chroma-js';
 // import { colorHexMatch } from '.';

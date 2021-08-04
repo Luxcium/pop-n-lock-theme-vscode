@@ -1,12 +1,18 @@
-export {};
-describe.each([
-  [1, 2],
-  [2, 4],
-])('double(%d)', (input, expected) => {
-  it.skip(`returns ${expected}`, () => {
-    expect(input * 2).toBe(expected);
+import { extractColorInformation } from '../extract-color-information-complex';
+
+describe('extractColorInformation', () => {
+  it('should be defined', () => {
+    expect(extractColorInformation).toBeDefined();
   });
 });
+// describe.each([
+//   [1, 2],
+//   [2, 4],
+// ])('double(%d)', (input, expected) => {
+//   it.skip(`returns ${expected}`, () => {
+//     expect(input * 2).toBe(expected);
+//   });
+// });
 // import { ColorElementTuple } from '../types';
 
 // export async function extractColorInformation(

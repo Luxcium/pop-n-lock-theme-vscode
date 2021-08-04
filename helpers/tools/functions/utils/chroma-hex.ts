@@ -1,7 +1,12 @@
 import chroma from 'chroma-js';
+import { colorHexMatch } from './color-hex-match';
 
-export const chromaHex = (colorHex: string, prefix: string = '#') =>
-  `${prefix}${chroma(colorHex).hex('rgba').toUpperCase().slice(1)}`;
+export function chromaHex(colorHex: string, prefix: string = '#'): string {
+  const sanitized = colorHexMatch(colorHex);
+  if (chroma.valid(sanitized))
+    return `${prefix}${chroma(sanitized).hex('rgba').toUpperCase().slice(1)}`;
+  return '';
+}
 
 export function templatedChromaHex(
   template: string | [string] | [string, string] = 'x'
@@ -16,10 +21,12 @@ export function templatedChromaHex(
     left = template[0] ?? '';
     right = template[1] ?? '';
   }
-  return (colorHex: string) => `${chromaHex(colorHex, left)}${right}`;
+  return (colorHex: string) =>
+    colorHex ? `${chromaHex(colorHex, left)}${right}` : '';
 }
 
-// function MAIN() {
-//   console.log(chromaHex('FFE1'));
-// }
-// if (require?.main?.filename === __filename) MAIN();
+function MAIN() {
+  console.log(templatedChromaHex(['##', ';;'])(''));
+  return void 0;
+}
+if (require?.main?.filename === __filename) MAIN();

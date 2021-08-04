@@ -1,12 +1,18 @@
-export {};
-describe.each([
-  [1, 2],
-  [2, 4],
-])('double(%d)', (input, expected) => {
-  it.skip(`returns ${expected}`, () => {
-    expect(input * 2).toBe(expected);
+import { colorHexMatchComplex } from '../extract-color-information-complex';
+
+describe('colorHexMatchComplex', () => {
+  it('should be defined', () => {
+    expect(colorHexMatchComplex).toBeDefined();
   });
 });
+// describe.each([
+//   [1, 2],
+//   [2, 4],
+// ])('double(%d)', (input, expected) => {
+//   it.skip(`returns ${expected}`, () => {
+//     expect(input * 2).toBe(expected);
+//   });
+// });
 // import { ColorElementTuple } from '../types';
 
 // export function colorHexMatchComplex(inputString: string | null): string;

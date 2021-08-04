@@ -1,12 +1,11 @@
-// import { colorHexMatchComplex } from '../../functions/extract-color-information-complex';
-import { colorHexMatchComplex } from '../../functions/extract-color-information-complex';
 import { standardize } from '../../functions/standardize';
 import { chromaHex } from '../../functions/utils';
+import { templatedChromaHex } from '../../functions/utils/chroma-hex';
 import { ColorElementTuple } from '../../types/ColorElementTuple';
 import { IColorElement } from '../../types/IColorElement';
 import { _ColorElement } from '../../types/_ColorElement';
 
-export default class ColorElement implements IColorElement, _ColorElement {
+class ColorElement implements IColorElement, _ColorElement {
   public elementName: string;
   public colorHexValue: string;
   public isVoid: boolean;
@@ -82,7 +81,7 @@ export default class ColorElement implements IColorElement, _ColorElement {
     return this;
   }
   // public get colorAttributes() {
-  //   const attr = colorHexMatchComplex(this.colorHexValue);
+  //   const attr = templatedChromaHex(this.colorHexValue);
   //   const len = attr.length;
   //   if (len === 3)
   //     return [
@@ -209,9 +208,8 @@ export default class ColorElement implements IColorElement, _ColorElement {
     space: string | number = 2
   ): string {
     if (simpleString) {
-      return `"${this.initialElementName_}":"${colorHexMatchComplex(
-        this.initialColor_,
-        template
+      return `"${this.initialElementName_}":"${templatedChromaHex(template)(
+        this.initialColor_ ?? ''
       )}"`;
     }
     return `${this.constructor.name} ${JSON.stringify(
@@ -240,12 +238,15 @@ export default class ColorElement implements IColorElement, _ColorElement {
   }
 }
 
-// if (require?.main?.filename === __filename) main();
+if (require?.main?.filename === __filename) main();
 
-// function main() {
-//   return TESTING();
-// }
+function main() {
+  // return TESTING();
+  const color1 = new ColorElement(['editorInfo.background', '"XFFEEBBCC"']);
+  console.log(color1);
+}
 
+export { ColorElement };
 // function TESTING() {
 //   const color1 = new ColorElement(['editorInfo.background', '"XFFEEBBCC"']);
 //   const color2 = new ColorElement(color1);

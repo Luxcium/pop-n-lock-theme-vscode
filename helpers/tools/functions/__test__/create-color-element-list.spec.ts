@@ -1,12 +1,18 @@
-export {};
-describe.each([
-  [1, 2],
-  [2, 4],
-])('double(%d)', (input, expected) => {
-  it.skip(`returns ${expected}`, () => {
-    expect(input * 2).toBe(expected);
+import { createColorElementsList } from '../create-color-element-list';
+
+describe('createColorElementsList', () => {
+  it('should be defined', () => {
+    expect(createColorElementsList).toBeDefined();
   });
 });
+// describe.each([
+//   [1, 2],
+//   [2, 4],
+// ])('double(%d)', (input, expected) => {
+//   it.skip(`returns ${expected}`, () => {
+//     expect(input * 2).toBe(expected);
+//   });
+// });
 // import { ColorElement } from '../classes';
 // import { ColorElementTuple } from '../types';
 
