@@ -10,6 +10,7 @@ import {
 } from 'fs';
 import prettier from 'prettier';
 import { promisify } from 'util';
+import { BASE_COLORS_OUTPUT_PATH } from '../../constants';
 import ColorElement from '../classes/color-element';
 import { colorslist } from '../color/list';
 import { getTerminalColors } from '../color/lists/terminal';
@@ -36,9 +37,7 @@ export function writeFileToPathAsync(path: PathOrFileDescriptor) {
 }
 const modele =
   '/home/luxcium/projects/main-POP-N-LOCK-x1DF2/data/extensions/pop-n-lock-theme-vscode/src/themes/Pop-N-Lock.original.json';
-export const myWriter = writeFileToPathAsync(
-  '/home/luxcium/projects/main-POP-N-LOCK-x1DF2/data/extensions/pop-n-lock-theme-vscode/themes/Pop-N-Lock.original.json'
-);
+export const myWriter = writeFileToPathAsync(BASE_COLORS_OUTPUT_PATH);
 
 export async function writeOutputToFile() {
   const inputData = await readFileAsync(modele, { encoding: 'utf8' });

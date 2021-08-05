@@ -13,6 +13,9 @@ class ColorElement implements IColorElement, _ColorElement {
   private initialColor_: string | null;
   private elementsList_: string[];
   private elementsAttributes_: string[];
+  private id_: Symbol;
+  private uid_: Symbol;
+  private cid_: Symbol;
   public static get void() {
     return new ColorElement('VOID');
   }
@@ -40,6 +43,11 @@ class ColorElement implements IColorElement, _ColorElement {
     this.setInitialNameValue(colorElementName);
     this.setInitialColorHexValue(colorValue);
 
+    this.id_ = Symbol.for(`"${this.colorElementName}"`);
+    this.uid_ = Symbol.for(
+      `"${this.colorElementName}": "${this.colorHexValue}"`
+    );
+    this.cid_ = Symbol.for(`"${this.colorHexValue}"`);
     Object.defineProperties(this, {
       elementName: {
         enumerable: true,
@@ -143,7 +151,22 @@ class ColorElement implements IColorElement, _ColorElement {
       .map(item => item.toLowerCase());
   }
 
+  public get id() {
+    return this.id_;
+  }
+  public get uid() {
+    this.uid_ = Symbol.for(
+      `"${this.colorElementName}": "${this.colorHexValue}"`
+    );
+    return this.uid_;
+  }
+  public get cid() {
+    this.cid_ = Symbol.for(`"${this.colorHexValue}"`);
+    return this.cid_;
+  }
   public setColorHex(colorValue: string | null) {
+    this.uid;
+    this.cid;
     if (!this.isNull) {
       this.colorHexValue = chromaHex(colorValue ?? '');
       this.setInitialColorHex(colorValue);
@@ -184,7 +207,10 @@ class ColorElement implements IColorElement, _ColorElement {
     return !this.isNull ? this.elementsAttributes_ : [];
   }
   get mainAttribute() {
-    return !this.isNull ? this.elementsAttributes_.slice(-1) : [];
+    return !this.isNull ? this.elementsAttributes_.slice(-1) || [] : [];
+  }
+  get mainElement() {
+    return !this.isNull ? this.elementsAttributes_.slice(0, 1) || [] : [];
   }
   public toString(): string;
   public toString(simpleString: true): string;

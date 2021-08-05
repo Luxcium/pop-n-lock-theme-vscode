@@ -1,16 +1,20 @@
 import { BASE_COLORS_INPUT_PATH } from '../../../../constants';
-import { getListElementPerColorObject } from '../../get-list-element-per-color-object';
+import ColorElementList from '../../../classes/color-element-list';
+import { getColorElementsList } from '../../get-color-elements-list';
 
-export const getJsonBaseColors = () =>
-  getListElementPerColorObject(BASE_COLORS_INPUT_PATH);
+const importJsonBaseColorElementList_ = async (
+  baseColorsInputPath: string = BASE_COLORS_INPUT_PATH
+): Promise<ColorElementList> =>
+  new ColorElementList(await getColorElementsList(baseColorsInputPath));
+
+export const importJsonBaseColorElementList =
+  async (): Promise<ColorElementList> => importJsonBaseColorElementList_();
 
 async function main() {
-  console.log(await getJsonBaseColors());
+  console.log(await importJsonBaseColorElementList());
 }
-if (require?.main?.filename === __filename) main();
 
 if (require?.main?.filename === __filename) MAIN();
-
 function MAIN() {
-  console.log(process.argv);
+  main();
 }
