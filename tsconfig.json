@@ -55,7 +55,8 @@
     "./extensions/**",
     "./archives/**",
     "**/?(*.)+(spec).[tj]s?(x)",
-    "./src/resources/"
+    "./src/resources/",
+    "./helpers/tools/classes/color-element-list-bak"
   ],
   "include": [
     "./helpers",

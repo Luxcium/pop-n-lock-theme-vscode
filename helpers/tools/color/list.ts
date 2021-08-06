@@ -2065,7 +2065,7 @@ export const foregrounds: ColorElement[] = [
   new ColorElement('icon.foreground').setColorHex(cx.xFFCC77CC), //
 ].filter(cx => cx) as ColorElement[];
 
-export const colorList = new ColorElementList(colorslist);
+export const colorList = ColorElementList.of(colorslist);
 
 export const head = colorList.head();
 if (require?.main?.filename === __filename) MAIN();

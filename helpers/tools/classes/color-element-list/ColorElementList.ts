@@ -1,7 +1,7 @@
 import { IColorElement } from '../../types/IColorElement';
 import ColorElement from '../color-element';
-// import { shortDummyList } from './test/dummy-list';
-class ColorElementList {
+
+export class ColorElementList {
   private list: IColorElement[];
   private get colorList() {
     return this.list.map(item => new ColorElement(item));
@@ -9,140 +9,43 @@ class ColorElementList {
   private static of_(colorElementList: IColorElement[]) {
     return new ColorElementList(colorElementList);
   }
-
   public static of(...values: IColorElement[] | [IColorElement[]]) {
-    if (values.length === 1) {
-      const value = values[0];
-      if (Array.isArray(value)) {
-        return this.of_(value as IColorElement[]);
-      }
-    }
-    return this.of_(values as IColorElement[]);
+    const value = values.length === 1 ? values[0] : null;
+    return Array.isArray(value)
+      ? this.of_(value as IColorElement[])
+      : this.of_(values as IColorElement[]);
   }
-
-  public constructor(colorElementList: IColorElement[]) {
+  protected constructor(colorElementList: IColorElement[]) {
     this.list = colorElementList;
   }
-
+  public get length() {
+    let returnValue;
+    returnValue = this.list.length;
+    return returnValue;
+  }
+  public get fork(): ColorElement[] {
+    return this.colorList;
+  }
   // #region =======-| Iterator |-==============================================≈
   // iterator ====================================-| *[Symbol.iterator]() |-====
+  /** Whenever an object needs to be iterated (such as at the beginning of a for...of loop), its `@@iterator` method is called with no arguments, and the returned iterator is used to obtain the values to be iterated. */
   public *[Symbol.iterator]() {
     yield* this.list;
   }
   // public =================================================-| entries() |-====
-
   public entries() {
     return this.fork.entries();
   }
-
   // public ====================================================-| keys() |-====
-
   public keys() {
     return this.fork.keys();
   }
-
   // public ==================================================-| values() |-====
   public values() {
     return this.fork.values();
   }
-
-  // ======================================================-| [n: number] |-====
-
   // #endregion =======-| Iterator |-===========================================≈
-  // #region =======-| IterationMethods |-======================================≈
-
-  // void Array.prototype.every; //--+
-  // void Array.prototype.filter; //--+
-  // void Array.prototype.find; //--+
-  // void Array.prototype.findIndex; //--+
-  // void Array.prototype.forEach; //--+
-  // void Array.prototype.map; //--+
-  // void Array.prototype.reduce; //--+
-  // void Array.prototype.reduceRight; //--+
-  // void Array.prototype.some; //--+
-
-  // public ===================================================-| every() |-====
-
-  // public every<S extends ColorElement>(
-  //   predicate: (
-  //     value: ColorElement,
-  //     index: number,
-  //     array: ColorElement[]
-  //   ) => value is S,
-  //   thisArg?: any
-  // ): this is S[];
-  public every(
-    predicate: (
-      value: ColorElement,
-      index: number,
-      array: ColorElement[]
-    ) => unknown,
-    thisArg?: any
-  ): boolean {
-    return this.fork.every(predicate, thisArg);
-  }
-
-  // public ==================================================-| filter() |-====
-
-  // public filter(
-  //   predicate: (
-  //     value: ColorElement,
-  //     index: number,
-  //     array: ColorElement[]
-  //   ) => value is ColorElement,
-  //   thisArg?: any
-  // ): ColorElementList;
-
-  public filter(
-    predicate: (
-      value: ColorElement,
-      index: number,
-      array: ColorElement[]
-    ) => boolean,
-    thisArg?: any
-  ): ColorElementList {
-    return ColorElementList.of([...this.fork.filter(predicate, thisArg)]);
-  }
-
-  // public ====================================================-| find() |-====
-
-  public find(
-    predicate: (
-      this: IColorElement,
-      value: IColorElement,
-      index: number,
-      obj: IColorElement[]
-    ) => value is IColorElement,
-    thisArg?: any
-  ): IColorElement | undefined; // ColorElementList<undefined>;
-
-  find(
-    predicate: (
-      value: IColorElement,
-      index: number,
-      obj: IColorElement[]
-    ) => unknown,
-    thisArg?: any
-  ): IColorElement | undefined {
-    // ColorElementList<T | undefined>
-    return this.fork.find(predicate, thisArg);
-  }
-
-  // public ====================================================-| find() |-====
-
-  findIndex(
-    predicate: (
-      value: IColorElement,
-      index: number,
-      obj: IColorElement[]
-    ) => unknown,
-    thisArg?: any
-  ): number {
-    return this.fork.findIndex(predicate, thisArg);
-  }
-
   // public =================================================-| forEach() |-====
-
   public forEach(
     callbackfn: (
       value: IColorElement,
@@ -153,7 +56,7 @@ class ColorElementList {
   ): void {
     return this.fork.forEach(callbackfn, thisArgument);
   }
-
+  // public =====================================================-| map() |-====
   public map<U>(
     callbackfn: (
       value: IColorElement,
@@ -161,134 +64,90 @@ class ColorElementList {
       array: IColorElement[]
     ) => U,
     thisArgument?: any
-  ) {
+  ): U[] {
     return this.fork.map<U>(callbackfn, thisArgument);
   }
-  // public ==================================================-| reduce() |-====
-
-  public reduce<U>(
-    callbackfn:
-      | ((
-          previousValue: U,
-          currentValue: ColorElement,
-          currentIndex: number,
-          array: ColorElement[]
-        ) => U)
-      | ((
-          previousValue: ColorElement,
-          currentValue: ColorElement,
-          currentIndex: number,
-          array: ColorElement[]
-        ) => IColorElement),
-    initialValue?: U | ColorElement
-  ): U | ColorElement {
-    if (!initialValue) {
-      return this.fork.reduce(callbackfn as CallbackfnT<ColorElement>);
-    }
-    return this.fork.reduce<ColorElement | U>(
-      callbackfn as CallbackfnU<U, ColorElement>,
-      initialValue
-    );
-  }
-
-  // public =============================================-| reduceRight() |-====
-
-  public reduceRight<U>(
-    callbackfn:
-      | ((
-          previousValue: U,
-          currentValue: ColorElement,
-          currentIndex: number,
-          array: ColorElement[]
-        ) => U)
-      | ((
-          previousValue: ColorElement,
-          currentValue: ColorElement,
-          currentIndex: number,
-          array: ColorElement[]
-        ) => ColorElement),
-    initialValue?: U | ColorElement
-  ): U | ColorElement {
-    if (!initialValue) {
-      return this.fork.reduceRight(callbackfn as CallbackfnT<ColorElement>);
-    }
-    return this.fork.reduceRight<ColorElement | U>(
-      callbackfn as CallbackfnU<U, ColorElement>,
-      initialValue
-    );
-  }
-
   // public ====================================================-| some() |-====
-
   public some(
     predicate: (
-      value: IColorElement,
+      value: ColorElement,
       index: number,
-      array: IColorElement[]
+      array: ColorElement[]
     ) => unknown,
     thisArg?: any
   ): boolean {
     return this.fork.some(predicate, thisArg);
   }
-  // #endregion ====-| IterationMethodes |-=====================================≈
-
-  public filterColor(colorHex: string) {
-    return new ColorElementList(
-      this.list.filter(
-        item =>
-          item.colorHexValue ===
-          new ColorElement('null', colorHex).colorHexValue
-      )
-    );
+  // public ==================================================-| filter() |-====
+  // public filter(
+  //   predicate: (
+  //     value: ColorElement,
+  //     index: number,
+  //     array: ColorElement[]
+  //   ) => value is ColorElement,
+  //   thisArg?: any
+  // ): ColorElementList;
+  public filter(
+    predicate: (
+      value: ColorElement,
+      index: number,
+      array: ColorElement[]
+    ) => boolean,
+    thisArg?: any
+  ): ColorElementList {
+    return ColorElementList.of([...this.fork.filter(predicate, thisArg)]);
   }
-
-  public filterAttribute(
-    attribute: string,
-    mainAttributesOnly: boolean = false
-  ) {
-    // let valueToReturn: any = [];
-    if (mainAttributesOnly) {
-      return new ColorElementList(
-        this.list.filter(colorElement =>
-          new ColorElement(colorElement).elementsAttributes
-            .slice(-1)
-            .some(element => element === attribute)
-        )
-      );
-    }
-
-    return new ColorElementList(
-      this.list.filter(colorElement =>
-        new ColorElement(colorElement).elementsAttributes.some(
-          element => element === attribute
-        )
-      )
-    );
-  }
-
-  public countAttribute(
-    attribute: string,
-    mainAttributesOnly: boolean = false
-  ) {
-    return this.filterAttribute(attribute, mainAttributesOnly).length;
-  }
-
-  public filterElement(element: string) {
-    return new ColorElementList(
-      this.list.filter(colorElement =>
-        new ColorElement(colorElement).elementList.some(
-          item => item === element
-        )
-      )
-    );
-
-    // return new ColorElementList(
-    //   this.list.filter(
-    //     item => new ColorElement(item).elementList.filter(predicate) //  === new ColorElement('null', element).colorHexValue
-    //   )
-    // );
-  }
-
+  // public filterColor(colorHex: string) {
+  //   return ColorElementList.of(
+  //     this.list.filter(
+  //       item =>
+  //         item.colorHexValue ===
+  //         new ColorElement('null', colorHex).colorHexValue
+  //     )
+  //   );
+  // }
+  // public filterAttribute(
+  //   attribute: string,
+  //   mainAttributesOnly: boolean = false
+  // ) {
+  //   // let valueToReturn: any = [];
+  //   if (mainAttributesOnly) {
+  //     return ColorElementList.of(
+  //       this.list.filter(colorElement =>
+  //         new ColorElement(colorElement).elementsAttributes
+  //           .slice(-1)
+  //           .some(element => element === attribute)
+  //       )
+  //     );
+  //   }
+  //   return ColorElementList.of(
+  //     this.list.filter(colorElement =>
+  //       new ColorElement(colorElement).elementsAttributes.some(
+  //         element => element === attribute
+  //       )
+  //     )
+  //   );
+  // }
+  // public countAttribute(
+  //   attribute: string,
+  //   mainAttributesOnly: boolean = false
+  // ) {
+  //   return this.filterAttribute(attribute, mainAttributesOnly).length;
+  // }
+  // public filterElement(element: string) {
+  //   return ColorElementList.of(
+  //     this.list.filter(colorElement =>
+  //       new ColorElement(colorElement).elementList.some(
+  //         item => item === element
+  //       )
+  //     )
+  //   );
+  //   // return ColorElementList.of(
+  //   //   this.list.filter(
+  //   //     item => new ColorElement(item).elementList.filter(predicate) //  === new ColorElement('null', element).colorHexValue
+  //   //   )
+  //   // );
+  // }
   public head(index: number = 0) {
     const elementAtIndex = this.list[index];
     if (elementAtIndex != null && this.list.length > index) {
@@ -296,9 +155,8 @@ class ColorElementList {
     }
     return new ColorElement(ColorElement.void).toValue();
   }
-
   public tail(index: number = 0) {
-    return new ColorElementList(
+    return ColorElementList.of(
       this.list
         .slice(index + 1)
         .map((colorElement: IColorElement) => new ColorElement(colorElement))
@@ -312,7 +170,6 @@ class ColorElementList {
       .map(colorElement => (json = { ...json, ...colorElement }));
     return json;
   }
-
   public get mainAttributeList(): string[] {
     return [
       ...new Set(
@@ -335,7 +192,6 @@ class ColorElementList {
       ),
     ];
   }
-
   public get allElementsList(): string[] {
     return [
       ...new Set(
@@ -345,7 +201,6 @@ class ColorElementList {
       ),
     ];
   }
-
   public get firstAttributeList(): string[] {
     return [
       ...new Set(
@@ -357,7 +212,6 @@ class ColorElementList {
       ),
     ];
   }
-
   public get firstElementsList(): string[] {
     return [
       ...new Set(
@@ -369,81 +223,4 @@ class ColorElementList {
       ),
     ];
   }
-
-  public get length() {
-    return this.list.length;
-  }
-  // get |-···―――――――――――――――――――――――――――――――――――――――――――――――···-| fork |-···――― ~
-  public get fork(): ColorElement[] {
-    return this.colorList;
-  }
-  readonly [n: number]: IColorElement;
 }
-
-// export function listPerColor(colorElementList: ColorElementList) {
-//   colorElementList;
-//   void 0;
-// }
-// export function listPerMainElement(colorElementList: ColorElementList) {
-//   colorElementList;
-//   void 0;
-// }
-// export function listPerMainAttribute(colorElementList: ColorElementList) {
-//   colorElementList;
-//   void 0;
-// }
-// function TESTING() {
-//   console.log('MUST implement tests for  :>> class ColorElements');
-// }
-
-// function TESTING() {
-//   new ColorElementList(colorslist).firstAttributeList.map(item =>
-//     console.log(item)
-//   ); // return TESTING();
-// }
-// if (require?.main?.filename === __filename) TESTING();
-
-// function MAIN() {
-//   console.log(ColorElementList);
-// }
-// if (require?.main?.filename === __filename) MAIN();
-
-// if (require?.main?.filename === __filename) main();
-
-// function main() {
-//   // return TESTING();
-//   const color1 = new ColorElement(['editorInfo.background', '"XFFEEBBCC"']);
-//   console.log(new ColorElementList([color1]));
-//   const colorlist = new ColorElementList(shortDummyList());
-//   const keys = colorlist.keys();
-//   for (const key of keys) {
-//     console.log(key);
-//     // expect(keys instanceof ColorElement).toBeTruthy();
-//   }
-//   const values = colorlist.values();
-//   for (const value of values) {
-//     console.log(value);
-//     // expect(keys instanceof ColorElement).toBeTruthy();
-//   }
-//   const entries = colorlist.entries();
-//   for (const entrie of entries) {
-//     const [key, value] = entrie;
-//     expect(key < 13 && key >= 0 && value instanceof ColorElement).toBeTruthy();
-//   }
-// }
-
-export { ColorElementList };
-
-type CallbackfnT<T> = (
-  previousValue: T,
-  currentValue: T,
-  currentIndex: number,
-  array: T[]
-) => T;
-
-type CallbackfnU<U, T> = (
-  previousValue: U | T,
-  currentValue: T,
-  currentIndex: number,
-  array: T[]
-) => U | T;

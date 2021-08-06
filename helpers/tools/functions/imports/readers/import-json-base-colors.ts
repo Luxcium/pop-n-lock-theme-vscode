@@ -5,7 +5,7 @@ import { getColorElementsList } from '../../get-color-elements-list';
 const importJsonBaseColorElementList_ = async (
   baseColorsInputPath: string = BASE_COLORS_INPUT_PATH
 ): Promise<ColorElementList> =>
-  new ColorElementList(await getColorElementsList(baseColorsInputPath));
+  ColorElementList.of(await getColorElementsList(baseColorsInputPath));
 
 export const importJsonBaseColorElementList =
   async (): Promise<ColorElementList> => importJsonBaseColorElementList_();
