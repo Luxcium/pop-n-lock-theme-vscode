@@ -64,7 +64,7 @@ export class ColorElementList {
       array: IColorElement[]
     ) => U,
     thisArgument?: any
-  ) {
+  ): U[] {
     return this.fork.map<U>(callbackfn, thisArgument);
   }
   // public filterColor(colorHex: string) {
