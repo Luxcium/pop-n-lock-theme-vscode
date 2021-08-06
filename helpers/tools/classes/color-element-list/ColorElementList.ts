@@ -1,6 +1,6 @@
 import { IColorElement } from '../../types/IColorElement';
 import ColorElement from '../color-element';
-import { shortDummyList } from './test/dummy-list';
+// import { shortDummyList } from './test/dummy-list';
 class ColorElementList {
   private list: IColorElement[];
   private get colorList() {
@@ -24,23 +24,11 @@ class ColorElementList {
     this.list = colorElementList;
   }
 
-  public get mainAttributeList(): string[] {
-    return [
-      ...new Set(
-        this.list
-          .map(colorElement =>
-            new ColorElement(colorElement).elementsAttributes.slice(-1)
-          )
-          .flat()
-      ),
-    ];
-  }
-  // get |-···―――――――――――――――――――――――――――――――――――――――――――――――···-| fork |-···――― ~
-  public get fork(): ColorElement[] {
-    return this.colorList;
-  }
   // #region =======-| Iterator |-==============================================≈
-
+  // iterator ====================================-| *[Symbol.iterator]() |-====
+  public *[Symbol.iterator]() {
+    yield* this.list;
+  }
   // public =================================================-| entries() |-====
 
   public entries() {
@@ -54,18 +42,12 @@ class ColorElementList {
   }
 
   // public ==================================================-| values() |-====
-
   public values() {
     return this.fork.values();
   }
 
   // ======================================================-| [n: number] |-====
-  readonly [n: number]: IColorElement;
 
-  // iterator ====================================-| *[Symbol.iterator]() |-====
-  public *[Symbol.iterator]() {
-    yield* this.list;
-  }
   // #endregion =======-| Iterator |-===========================================≈
   // #region =======-| IterationMethods |-======================================≈
 
@@ -81,14 +63,14 @@ class ColorElementList {
 
   // public ===================================================-| every() |-====
 
-  public every<S extends ColorElement>(
-    predicate: (
-      value: ColorElement,
-      index: number,
-      array: ColorElement[]
-    ) => value is S,
-    thisArg?: any
-  ): this is S[];
+  // public every<S extends ColorElement>(
+  //   predicate: (
+  //     value: ColorElement,
+  //     index: number,
+  //     array: ColorElement[]
+  //   ) => value is S,
+  //   thisArg?: any
+  // ): this is S[];
   public every(
     predicate: (
       value: ColorElement,
@@ -96,35 +78,27 @@ class ColorElementList {
       array: ColorElement[]
     ) => unknown,
     thisArg?: any
-  ): boolean;
-  public every<S extends ColorElement>(
-    predicate: (
-      value: ColorElement,
-      index: number,
-      array: ColorElement[]
-    ) => value is S,
-    thisArg?: any
-  ): this is S[] | boolean {
+  ): boolean {
     return this.fork.every(predicate, thisArg);
   }
 
   // public ==================================================-| filter() |-====
 
+  // public filter(
+  //   predicate: (
+  //     value: ColorElement,
+  //     index: number,
+  //     array: ColorElement[]
+  //   ) => value is ColorElement,
+  //   thisArg?: any
+  // ): ColorElementList;
+
   public filter(
     predicate: (
-      value: IColorElement,
+      value: ColorElement,
       index: number,
-      array: IColorElement[]
-    ) => value is IColorElement,
-    thisArg?: any
-  ): ColorElementList;
-
-  filter(
-    predicate: (
-      value: IColorElement,
-      index: number,
-      array: IColorElement[]
-    ) => unknown,
+      array: ColorElement[]
+    ) => boolean,
     thisArg?: any
   ): ColorElementList {
     return ColorElementList.of([...this.fork.filter(predicate, thisArg)]);
@@ -257,55 +231,6 @@ class ColorElementList {
     return this.fork.some(predicate, thisArg);
   }
   // #endregion ====-| IterationMethodes |-=====================================≈
-  public get allAttributeList(): string[] {
-    return [
-      ...new Set(
-        this.list
-          .map(
-            colorElement => new ColorElement(colorElement).elementsAttributes
-          )
-          .flat()
-      ),
-    ];
-  }
-
-  public get allElementsList(): string[] {
-    return [
-      ...new Set(
-        this.list
-          .map(colorElement => new ColorElement(colorElement).elementList)
-          .flat()
-      ),
-    ];
-  }
-
-  public get firstAttributeList(): string[] {
-    return [
-      ...new Set(
-        this.list
-          .map(colorElement => [
-            new ColorElement(colorElement).elementsAttributes[0] ?? '',
-          ])
-          .flat()
-      ),
-    ];
-  }
-
-  public get firstElementsList(): string[] {
-    return [
-      ...new Set(
-        this.list
-          .map(colorElement => [
-            new ColorElement(colorElement).elementList[0] ?? '',
-          ])
-          .flat()
-      ),
-    ];
-  }
-
-  public get length() {
-    return this.list.length;
-  }
 
   public filterColor(colorHex: string) {
     return new ColorElementList(
@@ -387,20 +312,86 @@ class ColorElementList {
       .map(colorElement => (json = { ...json, ...colorElement }));
     return json;
   }
+
+  public get mainAttributeList(): string[] {
+    return [
+      ...new Set(
+        this.list
+          .map(colorElement =>
+            new ColorElement(colorElement).elementsAttributes.slice(-1)
+          )
+          .flat()
+      ),
+    ];
+  }
+  public get allAttributeList(): string[] {
+    return [
+      ...new Set(
+        this.list
+          .map(
+            colorElement => new ColorElement(colorElement).elementsAttributes
+          )
+          .flat()
+      ),
+    ];
+  }
+
+  public get allElementsList(): string[] {
+    return [
+      ...new Set(
+        this.list
+          .map(colorElement => new ColorElement(colorElement).elementList)
+          .flat()
+      ),
+    ];
+  }
+
+  public get firstAttributeList(): string[] {
+    return [
+      ...new Set(
+        this.list
+          .map(colorElement => [
+            new ColorElement(colorElement).elementsAttributes[0] ?? '',
+          ])
+          .flat()
+      ),
+    ];
+  }
+
+  public get firstElementsList(): string[] {
+    return [
+      ...new Set(
+        this.list
+          .map(colorElement => [
+            new ColorElement(colorElement).elementList[0] ?? '',
+          ])
+          .flat()
+      ),
+    ];
+  }
+
+  public get length() {
+    return this.list.length;
+  }
+  // get |-···―――――――――――――――――――――――――――――――――――――――――――――――···-| fork |-···――― ~
+  public get fork(): ColorElement[] {
+    return this.colorList;
+  }
+  readonly [n: number]: IColorElement;
 }
 
-export function listPerColor(colorElementList: ColorElementList) {
-  colorElementList;
-  void 0;
-}
-export function listPerMainElement(colorElementList: ColorElementList) {
-  colorElementList;
-  void 0;
-}
-export function listPerMainAttribute(colorElementList: ColorElementList) {
-  colorElementList;
-  void 0;
-}
+// export function listPerColor(colorElementList: ColorElementList) {
+//   colorElementList;
+//   void 0;
+// }
+// export function listPerMainElement(colorElementList: ColorElementList) {
+//   colorElementList;
+//   void 0;
+// }
+// export function listPerMainAttribute(colorElementList: ColorElementList) {
+//   colorElementList;
+//   void 0;
+// }
 // function TESTING() {
 //   console.log('MUST implement tests for  :>> class ColorElements');
 // }
@@ -417,29 +408,29 @@ export function listPerMainAttribute(colorElementList: ColorElementList) {
 // }
 // if (require?.main?.filename === __filename) MAIN();
 
-if (require?.main?.filename === __filename) main();
+// if (require?.main?.filename === __filename) main();
 
-function main() {
-  // return TESTING();
-  const color1 = new ColorElement(['editorInfo.background', '"XFFEEBBCC"']);
-  console.log(new ColorElementList([color1]));
-  const colorlist = new ColorElementList(shortDummyList());
-  const keys = colorlist.keys();
-  for (const key of keys) {
-    console.log(key);
-    // expect(keys instanceof ColorElement).toBeTruthy();
-  }
-  const values = colorlist.values();
-  for (const value of values) {
-    console.log(value);
-    // expect(keys instanceof ColorElement).toBeTruthy();
-  }
-  const entries = colorlist.entries();
-  for (const entrie of entries) {
-    const [key, value] = entrie;
-    expect(key < 13 && key >= 0 && value instanceof ColorElement).toBeTruthy();
-  }
-}
+// function main() {
+//   // return TESTING();
+//   const color1 = new ColorElement(['editorInfo.background', '"XFFEEBBCC"']);
+//   console.log(new ColorElementList([color1]));
+//   const colorlist = new ColorElementList(shortDummyList());
+//   const keys = colorlist.keys();
+//   for (const key of keys) {
+//     console.log(key);
+//     // expect(keys instanceof ColorElement).toBeTruthy();
+//   }
+//   const values = colorlist.values();
+//   for (const value of values) {
+//     console.log(value);
+//     // expect(keys instanceof ColorElement).toBeTruthy();
+//   }
+//   const entries = colorlist.entries();
+//   for (const entrie of entries) {
+//     const [key, value] = entrie;
+//     expect(key < 13 && key >= 0 && value instanceof ColorElement).toBeTruthy();
+//   }
+// }
 
 export { ColorElementList };
 

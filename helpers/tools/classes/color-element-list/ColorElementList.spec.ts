@@ -236,10 +236,7 @@ describe('Specs for "helpers/tools/classes/color-element-list/ColorElementList.t
         expect('identity').toBe('identity');
       });
       it('Method « every » predicate should return true or false', () => {
-        const every = mainColorsList.every<ColorElement>(
-          (value, _index, _array) => !!value,
-          this
-        );
+        const every = mainColorsList.every(value => !!value);
         expect(every).toBeTruthy();
       });
       it('Method « every » predicate have a positive index', () => {
@@ -251,8 +248,16 @@ describe('Specs for "helpers/tools/classes/color-element-list/ColorElementList.t
       });
     });
     describe('Method « filter() »', () => {
-      it.skip('GENERIC TEST TO REMPLACE WITH ACTUAL TEST', () => {
-        expect('identity').toBe('identity');
+      it('Method « filter() »', () => {
+        expect(mainColorsList.filter(item => !item.isNull).length).toBe(13);
+      });
+      it('Method « filter() »', () => {
+        expect(mainColorsList.filter((_item, index) => index >= 0).length).toBe(
+          13
+        );
+      });
+      it('Method « filter() »', () => {
+        expect(mainColorsList.filter(item => !item.isNull).length).toBe(13);
       });
     });
     describe('Method « find() »', () => {
