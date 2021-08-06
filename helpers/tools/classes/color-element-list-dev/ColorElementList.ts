@@ -67,6 +67,36 @@ export class ColorElementList {
   ): U[] {
     return this.fork.map<U>(callbackfn, thisArgument);
   }
+  // public ====================================================-| some() |-====
+  public some(
+    predicate: (
+      value: ColorElement,
+      index: number,
+      array: ColorElement[]
+    ) => unknown,
+    thisArg?: any
+  ): boolean {
+    return this.fork.some(predicate, thisArg);
+  }
+  // public ==================================================-| filter() |-====
+  // public filter(
+  //   predicate: (
+  //     value: ColorElement,
+  //     index: number,
+  //     array: ColorElement[]
+  //   ) => value is ColorElement,
+  //   thisArg?: any
+  // ): ColorElementList;
+  public filter(
+    predicate: (
+      value: ColorElement,
+      index: number,
+      array: ColorElement[]
+    ) => boolean,
+    thisArg?: any
+  ): ColorElementList {
+    return ColorElementList.of([...this.fork.filter(predicate, thisArg)]);
+  }
   // public filterColor(colorHex: string) {
   //   return new ColorElementList(
   //     this.list.filter(
@@ -140,57 +170,57 @@ export class ColorElementList {
       .map(colorElement => (json = { ...json, ...colorElement }));
     return json;
   }
-  // public get mainAttributeList(): string[] {
-  //   return [
-  //     ...new Set(
-  //       this.list
-  //         .map(colorElement =>
-  //           new ColorElement(colorElement).elementsAttributes.slice(-1)
-  //         )
-  //         .flat()
-  //     ),
-  //   ];
-  // }
-  // public get allAttributeList(): string[] {
-  //   return [
-  //     ...new Set(
-  //       this.list
-  //         .map(
-  //           colorElement => new ColorElement(colorElement).elementsAttributes
-  //         )
-  //         .flat()
-  //     ),
-  //   ];
-  // }
-  // public get allElementsList(): string[] {
-  //   return [
-  //     ...new Set(
-  //       this.list
-  //         .map(colorElement => new ColorElement(colorElement).elementList)
-  //         .flat()
-  //     ),
-  //   ];
-  // }
-  // public get firstAttributeList(): string[] {
-  //   return [
-  //     ...new Set(
-  //       this.list
-  //         .map(colorElement => [
-  //           new ColorElement(colorElement).elementsAttributes[0] ?? '',
-  //         ])
-  //         .flat()
-  //     ),
-  //   ];
-  // }
-  // public get firstElementsList(): string[] {
-  //   return [
-  //     ...new Set(
-  //       this.list
-  //         .map(colorElement => [
-  //           new ColorElement(colorElement).elementList[0] ?? '',
-  //         ])
-  //         .flat()
-  //     ),
-  //   ];
-  // }
+  public get mainAttributeList(): string[] {
+    return [
+      ...new Set(
+        this.list
+          .map(colorElement =>
+            new ColorElement(colorElement).elementsAttributes.slice(-1)
+          )
+          .flat()
+      ),
+    ];
+  }
+  public get allAttributeList(): string[] {
+    return [
+      ...new Set(
+        this.list
+          .map(
+            colorElement => new ColorElement(colorElement).elementsAttributes
+          )
+          .flat()
+      ),
+    ];
+  }
+  public get allElementsList(): string[] {
+    return [
+      ...new Set(
+        this.list
+          .map(colorElement => new ColorElement(colorElement).elementList)
+          .flat()
+      ),
+    ];
+  }
+  public get firstAttributeList(): string[] {
+    return [
+      ...new Set(
+        this.list
+          .map(colorElement => [
+            new ColorElement(colorElement).elementsAttributes[0] ?? '',
+          ])
+          .flat()
+      ),
+    ];
+  }
+  public get firstElementsList(): string[] {
+    return [
+      ...new Set(
+        this.list
+          .map(colorElement => [
+            new ColorElement(colorElement).elementList[0] ?? '',
+          ])
+          .flat()
+      ),
+    ];
+  }
 }

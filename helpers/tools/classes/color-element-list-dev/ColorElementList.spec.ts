@@ -20,20 +20,24 @@ describe('Specs for "helpers/tools/classes/color-element-list-dev/ColorElementLi
     const colorElementList = ColorElementList.of(shortDummyList());
     expect(colorElementList).toBeDefined();
   });
+
   it('Static method « of » should create a ColorElementList from ColorElement(s)', () => {
     const colorElementList = ColorElementList.of(...shortDummyList());
     expect(colorElementList).toBeDefined();
   });
+
   it('Property « lenght » should return the amout of item in the ColorElementList', () => {
     const colorElementList = ColorElementList.of(...shortDummyList());
     expect(colorElementList.length).toBe(13);
   });
+
   it('Property « fork » should return internel list from the ColorElementList', () => {
     const colorElementList = ColorElementList.of(...shortDummyList()).fork;
     expect(
       colorElementList.length === 13 && Array.isArray(colorElementList)
     ).toBeTruthy();
   });
+
   it('Method « entries » should iterate over [keys,values]', () => {
     const colorlist = ColorElementList.of(shortDummyList());
     const entries = colorlist.entries();
@@ -44,6 +48,7 @@ describe('Specs for "helpers/tools/classes/color-element-list-dev/ColorElementLi
       ).toBeTruthy();
     }
   });
+
   it('Method « keys » should iterate over keys', () => {
     const colorlist = ColorElementList.of(shortDummyList());
     const keys = colorlist.keys();
@@ -51,6 +56,7 @@ describe('Specs for "helpers/tools/classes/color-element-list-dev/ColorElementLi
       expect(key < 13 && key >= 0).toBeTruthy();
     }
   });
+
   it('Method « values » should iterate over values', () => {
     const colorlist = ColorElementList.of(shortDummyList());
     const values = colorlist.values();
@@ -58,6 +64,7 @@ describe('Specs for "helpers/tools/classes/color-element-list-dev/ColorElementLi
       expect(value instanceof ColorElement).toBeTruthy();
     }
   });
+
   /** Whenever an object needs to be iterated (such as at the beginning of a for...of loop), its `@@iterator` method is called with no arguments, and the returned iterator is used to obtain the values to be iterated. */
   it('ColorElementList should comform to the iterable protocol', () => {
     const colorlist = ColorElementList.of(shortDummyList());
@@ -66,35 +73,54 @@ describe('Specs for "helpers/tools/classes/color-element-list-dev/ColorElementLi
       expect(color instanceof ColorElement).toBeTruthy();
     }
   });
+
   it('Method « forEach » should iterate over items and return nothing (undefined)', () => {
     const colorlist = ColorElementList.of(shortDummyList());
     expect(colorlist.forEach(item => item)).toBeUndefined();
   });
+
   it('Method « map » should iterate over values and return the mapped result', () => {
     const colorlist = ColorElementList.of(shortDummyList());
-    const list = colorlist.map(item => !item);
-    expect(list.length === 13 && list[0] === false).toBeTruthy();
+    const mapped = colorlist.map(item => !item);
+    expect(mapped.length === 13 && mapped[0] === false).toBeTruthy();
   });
+
+  it('Method « some » should iterate over values and return bolean', () => {
+    const colorlist = ColorElementList.of(shortDummyList());
+    const list = colorlist.some(item => !item.isNull);
+    expect(list).toBeTruthy();
+  });
+
+  it('Method « filter » should iterate over values and return new ColorElementList', () => {
+    const colorlist = ColorElementList.of(shortDummyList());
+    const list = colorlist.filter(item => !item.isNull);
+    expect(list).toBeTruthy();
+  });
+
   it('Method « head » should ', () => {
     const colorlist = ColorElementList.of(shortDummyList());
     const head = colorlist.head();
     expect(ColorElementList.of(head).length === 1).toBeTruthy();
   });
+
   it('Method « head » should ', () => {
     const colorlist = ColorElementList.of(shortDummyList());
     const head = colorlist.head(13);
     expect(ColorElementList.of(head).length === 1).toBeTruthy();
   });
+
   it('Method « tail » should ', () => {
     const colorlist = ColorElementList.of(shortDummyList());
     const tail = colorlist.tail();
     expect(tail.length === 12).toBeTruthy();
   });
+
   it('Method « tail » should ', () => {
     const colorlist = ColorElementList.of(shortDummyList());
     const tail = colorlist.tail(2);
     expect(tail.length === 10).toBeTruthy();
   });
+
   it('Method « toJson » should return a JSON compatible value for the ColorElementList', () => {
     const colorlist = ColorElementList.of(shortDummyList());
     const json = colorlist.toJson();
@@ -114,12 +140,97 @@ describe('Specs for "helpers/tools/classes/color-element-list-dev/ColorElementLi
       'widget.shadow': '#001111FF',
     });
   });
+
+  it('Property « mainAttributeList » should be an array ', () => {
+    const colorlist = ColorElementList.of(shortDummyList());
+    const mainAttributeList = colorlist.mainAttributeList;
+    expect(
+      mainAttributeList.length >= 0 && Array.isArray(mainAttributeList)
+    ).toBeTruthy();
+  });
+
+  it('Property « mainAttributeList » should ben an array ', () => {
+    const colorlist = ColorElementList.of(shortDummyList());
+    const mainAttributeList = colorlist.mainAttributeList;
+    expect(mainAttributeList.length).toBe(6);
+  });
+
+  it('Property « allAttributeList » should be an array ', () => {
+    const colorlist = ColorElementList.of(shortDummyList());
+    const allAttributeList = colorlist.allAttributeList;
+    expect(
+      allAttributeList.length >= 0 && Array.isArray(allAttributeList)
+    ).toBeTruthy();
+  });
+
+  it('Property « allAttributeList » should ben an array ', () => {
+    const colorlist = ColorElementList.of(shortDummyList());
+    const allAttributeList = colorlist.allAttributeList;
+    expect(allAttributeList.length).toBe(16);
+  });
+
+  it('Property « allAttributeList » should be an array ', () => {
+    const colorlist = ColorElementList.of(shortDummyList());
+    const allAttributeList = colorlist.allAttributeList;
+    expect(
+      allAttributeList.length >= 0 && Array.isArray(allAttributeList)
+    ).toBeTruthy();
+  });
+
+  it('Property « allAttributeList » should ben an array ', () => {
+    const colorlist = ColorElementList.of(shortDummyList());
+    const allAttributeList = colorlist.allAttributeList;
+    expect(allAttributeList.length).toBe(16);
+  });
+
+  it('Property « allElementsList » should be an array ', () => {
+    const colorlist = ColorElementList.of(shortDummyList());
+    const allElementsList = colorlist.allElementsList;
+    expect(
+      allElementsList.length >= 0 && Array.isArray(allElementsList)
+    ).toBeTruthy();
+  });
+
+  it('Property « allElementsList » should ben an array ', () => {
+    const colorlist = ColorElementList.of(shortDummyList());
+    const allElementsList = colorlist.allElementsList;
+    expect(allElementsList.length).toBe(16);
+  });
+
+  it('Property « firstAttributeList » should be an array ', () => {
+    const colorlist = ColorElementList.of(shortDummyList());
+    const firstAttributeList = colorlist.firstAttributeList;
+    expect(
+      firstAttributeList.length >= 0 && Array.isArray(firstAttributeList)
+    ).toBeTruthy();
+  });
+
+  it('Property « firstAttributeList » should ben an array ', () => {
+    const colorlist = ColorElementList.of(shortDummyList());
+    const firstAttributeList = colorlist.firstAttributeList;
+    expect(firstAttributeList.length).toBe(4);
+  });
+
+  it('Property « firstElementsList » should be an array ', () => {
+    const colorlist = ColorElementList.of(shortDummyList());
+    const firstElementsList = colorlist.firstElementsList;
+    expect(
+      firstElementsList.length >= 0 && Array.isArray(firstElementsList)
+    ).toBeTruthy();
+  });
+
+  it('Property « firstElementsList » should ben an array ', () => {
+    const colorlist = ColorElementList.of(shortDummyList());
+    const firstElementsList = colorlist.firstElementsList;
+    expect(firstElementsList.length).toBe(4);
+  });
 });
 // shortDummyList
 //   it('Constructor « ColorElementList » should be public', () => {
 //     const colorlist = new ColorElementList(shortDummyList());
 //     expect(colorlist).toBeDefined();
 //   });
+
 //   // &%%& mainAttributeList %%%%%
 
 //   // &%%& keys %%%%%
@@ -135,54 +246,63 @@ describe('Specs for "helpers/tools/classes/color-element-list-dev/ColorElementLi
 //     const values = colorlist.values;
 //     expect(values).toBeDefined();
 //   });
+
 //   // &%%& entries %%%%%
 //   it('Method « entries » should be defined', () => {
 //     const colorlist = new ColorElementList(shortDummyList());
 //     const entries = colorlist.entries;
 //     expect(entries).toBeDefined();
 //   });
+
 //   // &%%& every %%%%%
 //   it('Method « every » should be defined', () => {
 //     const colorlist = new ColorElementList(shortDummyList());
 //     const every = colorlist.every;
 //     expect(every).toBeDefined();
 //   });
+
 //   // &%%& filter %%%%%
 //   it('Method « filter » should be defined', () => {
 //     const colorlist = new ColorElementList(shortDummyList());
 //     const filter = colorlist.filter;
 //     expect(filter).toBeDefined();
 //   });
+
 //   // &%%& find %%%%%
 //   it('Method « find » should be defined', () => {
 //     const colorlist = new ColorElementList(shortDummyList());
 //     const find = colorlist.find;
 //     expect(find).toBeDefined();
 //   });
+
 //   // &%%& forEach %%%%%
 //   it('Method « forEach » should be defined', () => {
 //     const colorlist = new ColorElementList(shortDummyList());
 //     const forEach = colorlist.forEach;
 //     expect(forEach).toBeDefined();
 //   });
+
 //   // &%%& map %%%%%
 //   it('Method « map » should be defined', () => {
 //     const colorlist = new ColorElementList(shortDummyList());
 //     const map = colorlist.map;
 //     expect(map).toBeDefined();
 //   });
+
 //   // &%%& reduce %%%%%
 //   it('Method « reduce » should be defined', () => {
 //     const colorlist = new ColorElementList(shortDummyList());
 //     const reduce = colorlist.reduce;
 //     expect(reduce).toBeDefined();
 //   });
+
 //   // &%%& reduceRight %%%%%
 //   it('Method « reduceRight » should be defined', () => {
 //     const colorlist = new ColorElementList(shortDummyList());
 //     const reduceRight = colorlist.reduceRight;
 //     expect(reduceRight).toBeDefined();
 //   });
+
 //   // &%%& some %%%%%
 //   it('Method « some » should be defined', () => {
 //     const colorlist = new ColorElementList(shortDummyList());
@@ -196,36 +316,42 @@ describe('Specs for "helpers/tools/classes/color-element-list-dev/ColorElementLi
 //     const filterColor = colorlist.filterColor;
 //     expect(filterColor).toBeDefined();
 //   });
+
 //   // &%%& filterAttribute %%%%%
 //   it('Method « filterAttribute » should be defined', () => {
 //     const colorlist = new ColorElementList(shortDummyList());
 //     const filterAttribute = colorlist.filterAttribute;
 //     expect(filterAttribute).toBeDefined();
 //   });
+
 //   // &%%& countAttribute %%%%%
 //   it('Method « countAttribute » should be defined', () => {
 //     const colorlist = new ColorElementList(shortDummyList());
 //     const countAttribute = colorlist.countAttribute;
 //     expect(countAttribute).toBeDefined();
 //   });
+
 //   // &%%& filterElement %%%%%
 //   it('Method « filterElement » should be defined', () => {
 //     const colorlist = new ColorElementList(shortDummyList());
 //     const filterElement = colorlist.filterElement;
 //     expect(filterElement).toBeDefined();
 //   });
+
 //   // &%%& head %%%%%
 //   it('Method « head » should be defined', () => {
 //     const colorlist = new ColorElementList(shortDummyList());
 //     const head = colorlist.head;
 //     expect(head).toBeDefined();
 //   });
+
 //   // &%%& tail %%%%%
 //   it('Method « tail » should be defined', () => {
 //     const colorlist = new ColorElementList(shortDummyList());
 //     const tail = colorlist.tail;
 //     expect(tail).toBeDefined();
 //   });
+
 //   // &%%& toJson %%%%%
 //   it('Method « toJson » should be defined', () => {
 //     const colorlist = new ColorElementList(shortDummyList());
@@ -238,30 +364,35 @@ describe('Specs for "helpers/tools/classes/color-element-list-dev/ColorElementLi
 //     const mainAttributeList = colorlist.mainAttributeList;
 //     expect(mainAttributeList).toBeDefined();
 //   });
+
 //   // &%%& allAttributeList %%%%%
 //   it('Property « allAttributeList » should be defined', () => {
 //     const colorlist = new ColorElementList(shortDummyList());
 //     const allAttributeList = colorlist.allAttributeList;
 //     expect(allAttributeList).toBeDefined();
 //   });
+
 //   // &%%& allElementsList %%%%%
 //   it('Property « allElementsList » should be defined', () => {
 //     const colorlist = new ColorElementList(shortDummyList());
 //     const allElementsList = colorlist.allElementsList;
 //     expect(allElementsList).toBeDefined();
 //   });
+
 //   // &%%& firstAttributeList %%%%%
 //   it('Property « firstAttributeList » should be defined', () => {
 //     const colorlist = new ColorElementList(shortDummyList());
 //     const firstAttributeList = colorlist.firstAttributeList;
 //     expect(firstAttributeList).toBeDefined();
 //   });
+
 //   // &%%& firstElementsList %%%%%
 //   it('Property « firstElementsList » should be defined', () => {
 //     const colorlist = new ColorElementList(shortDummyList());
 //     const firstElementsList = colorlist.firstElementsList;
 //     expect(firstElementsList).toBeDefined();
 //   });
+
 //   // &%%& length %%%%%
 //   it('Property « length » should be defined', () => {
 //     const colorlist = new ColorElementList(shortDummyList());
@@ -275,6 +406,7 @@ describe('Specs for "helpers/tools/classes/color-element-list-dev/ColorElementLi
 //     const fork = colorlist.fork;
 //     expect(fork).toBeDefined();
 //   });
+
 // });
 
 // describe('ColorElementList tests to be implemented', () => {
@@ -283,11 +415,14 @@ describe('Specs for "helpers/tools/classes/color-element-list-dev/ColorElementLi
 //     it.skip('GENERIC TEST TO REMPLACE WITH ACTUAL TEST', () => {
 //       expect('identity').toBe('identity');
 //     });
+
 //   });
+
 //   describe('Constructor of new ColorElementList() ', () => {
 //     it.skip('GENERIC TEST TO REMPLACE WITH ACTUAL TEST', () => {
 //       expect('identity').toBe('identity');
 //     });
+
 //   });
 
 //   describe('Method « entries() »', () => {
@@ -301,7 +436,9 @@ describe('Specs for "helpers/tools/classes/color-element-list-dev/ColorElementLi
 //         ).toBeTruthy();
 //       }
 //     });
+
 //   });
+
 //   describe('Method « keys() »', () => {
 //     it('Method « keys » should return {}', () => {
 //       const colorlist = new ColorElementList(shortDummyList());
@@ -310,7 +447,9 @@ describe('Specs for "helpers/tools/classes/color-element-list-dev/ColorElementLi
 //         expect(key < 13 && key >= 0).toBeTruthy();
 //       }
 //     });
+
 //   });
+
 //   describe('Method « values() »', () => {
 //     it('Method « values » should return {}', () => {
 //       const colorlist = new ColorElementList(shortDummyList());
@@ -319,7 +458,9 @@ describe('Specs for "helpers/tools/classes/color-element-list-dev/ColorElementLi
 //         expect(value instanceof ColorElement).toBeTruthy();
 //       }
 //     });
+
 //   });
+
 //   describe('Method « every() » should return: `this is S[] | boolean`', () => {
 //     it('Method « every » should return a list with all but the first element', () => {
 //       mainColorsList.every(
@@ -328,10 +469,12 @@ describe('Specs for "helpers/tools/classes/color-element-list-dev/ColorElementLi
 //       );
 //       expect('identity').toBe('identity');
 //     });
+
 //     it('Method « every » predicate should return true or false', () => {
 //       const every = mainColorsList.every(value => !!value);
 //       expect(every).toBeTruthy();
 //     });
+
 //     it('Method « every » predicate have a positive index', () => {
 //       const every = mainColorsList.every(
 //         (_value, index, _array) => typeof index === 'number' && index >= 0,
@@ -339,51 +482,69 @@ describe('Specs for "helpers/tools/classes/color-element-list-dev/ColorElementLi
 //       );
 //       expect(every).toBeTruthy();
 //     });
+
 //   });
+
 //   describe('Method « filter() »', () => {
 //     it('Method « filter() »', () => {
 //       expect(mainColorsList.filter(item => !item.isNull).length).toBe(13);
 //     });
+
 //     it('Method « filter() »', () => {
 //       expect(mainColorsList.filter((_item, index) => index >= 0).length).toBe(
 //         13
 //       );
 //     });
+
 //     it('Method « filter() »', () => {
 //       expect(mainColorsList.filter(item => !item.isNull).length).toBe(13);
 //     });
+
 //   });
+
 //   describe('Method « find() »', () => {
 //     it.skip('GENERIC TEST TO REMPLACE WITH ACTUAL TEST', () => {
 //       expect('identity').toBe('identity');
 //     });
+
 //   });
+
 //   describe('Method « forEach() »', () => {
 //     it.skip('GENERIC TEST TO REMPLACE WITH ACTUAL TEST', () => {
 //       mainColorsList.forEach(element => element.colorHexValue);
 //       expect('identity').toBe('identity');
 //     });
+
 //   });
+
 //   describe('Method « map() »', () => {
 //     it.skip('GENERIC TEST TO REMPLACE WITH ACTUAL TEST', () => {
 //       expect('identity').toBe('identity');
 //     });
+
 //   });
+
 //   describe('Method « reduce() »', () => {
 //     it.skip('GENERIC TEST TO REMPLACE WITH ACTUAL TEST', () => {
 //       expect('identity').toBe('identity');
 //     });
+
 //   });
+
 //   describe('Method « reduceRight() »', () => {
 //     it.skip('GENERIC TEST TO REMPLACE WITH ACTUAL TEST', () => {
 //       expect('identity').toBe('identity');
 //     });
+
 //   });
+
 //   describe('Method « some() »', () => {
 //     it.skip('GENERIC TEST TO REMPLACE WITH ACTUAL TEST', () => {
 //       expect('identity').toBe('identity');
 //     });
+
 //   });
+
 //   describe('Method « filterColor() »', () => {
 //     describe('Method filterColor should return a subset or an empty set', () => {
 //       const colorsList = new ColorElementList(shortDummyList());
@@ -392,27 +553,37 @@ describe('Specs for "helpers/tools/classes/color-element-list-dev/ColorElementLi
 //         const filteredColors = colorsList.filterColor('#00FF0022');
 //         expect(filteredColors.length).toBe(5);
 //       });
+
 //       it('Method filterColor return an empty set', () => {
 //         const filteredColorsEmptySet = colorsList.filterColor('#00DF0022');
 //         expect(filteredColorsEmptySet.length).toBe(0);
 //       });
+
 //     });
+
 //   });
+
 //   describe('Method « filterAttribute() »', () => {
 //     it.skip('GENERIC TEST TO REMPLACE WITH ACTUAL TEST', () => {
 //       expect('identity').toBe('identity');
 //     });
+
 //   });
+
 //   describe('Method « countAttribute() »', () => {
 //     it.skip('GENERIC TEST TO REMPLACE WITH ACTUAL TEST', () => {
 //       expect('identity').toBe('identity');
 //     });
+
 //   });
+
 //   describe('Method « filterElement() »', () => {
 //     it.skip('GENERIC TEST TO REMPLACE WITH ACTUAL TEST', () => {
 //       expect('identity').toBe('identity');
 //     });
+
 //   });
+
 //   describe('Method « head() »', () => {
 //     it('head method should return the first element from the list', () => {
 //       const colorsList = new ColorElementList(shortDummyList());
@@ -424,14 +595,18 @@ describe('Specs for "helpers/tools/classes/color-element-list-dev/ColorElementLi
 //         })
 //       );
 //     });
+
 //   });
+
 //   describe('Method « tail() »', () => {
 //     it('Method « tail » should return a list with all but the first element', () => {
 //       const colorsList = new ColorElementList(shortDummyList());
 //       const tail = colorsList.tail();
 //       expect(tail.tail().length).toBe(colorsList.length - 2);
 //     });
+
 //   });
+
 //   describe('Method « toJson() »', () => {
 //     it('method toJson should return an object of all elements', () => {
 //       const json = new ColorElementList(shortDummyList()).toJson();
@@ -452,7 +627,9 @@ describe('Specs for "helpers/tools/classes/color-element-list-dev/ColorElementLi
 //         'editorGroupHeader.tabsBorder': '#1D2545FF',
 //         'widget.shadow': '#001111FF',
 //       });
+
 //     });
+
 //   });
 
 //   // --
@@ -472,6 +649,7 @@ describe('Specs for "helpers/tools/classes/color-element-list-dev/ColorElementLi
 //         'lines',
 //       ]);
 //     });
+
 //     // it('property mainAttributeList should return an array', () => {
 //     //   const colorsList = new ColorElementList(shortDummyList());
 //     //   expect(colorsList).toBeDefined();
@@ -487,6 +665,7 @@ describe('Specs for "helpers/tools/classes/color-element-list-dev/ColorElementLi
 //     //   ]);
 //     // });
 //   });
+
 //   describe('Property « fork »', () => {
 //     it('Property « fork » should return', () => {
 //       const colorlist = new ColorElementList(shortDummyList());
@@ -498,7 +677,9 @@ describe('Specs for "helpers/tools/classes/color-element-list-dev/ColorElementLi
 //         fork[0] instanceof ColorElement,
 //       ]).toStrictEqual(['object', true, 13, true]);
 //     });
+
 //   });
+
 //   describe('Property « allAttributeList »', () => {
 //     it('Property « allAttributeList » should return an array', () => {
 //       const colorsList = new ColorElementList(shortDummyList());
@@ -522,7 +703,9 @@ describe('Specs for "helpers/tools/classes/color-element-list-dev/ColorElementLi
 //         'lines',
 //       ]);
 //     });
+
 //   });
+
 //   describe('Property « allElementsList »', () => {
 //     it('Property « allElementsList » should return an array', () => {
 //       const colorsList = new ColorElementList(shortDummyList());
@@ -546,12 +729,15 @@ describe('Specs for "helpers/tools/classes/color-element-list-dev/ColorElementLi
 //         'lines',
 //       ]);
 //     });
+
 //   });
+
 //   describe('Property « firstAttributeList »', () => {
 //     const firstAttributeList = mainColorsList.firstAttributeList;
 //     it('Property « firstAttributeList » should return an array', () => {
 //       expect(Array.isArray(firstAttributeList)).toBeTruthy();
 //     });
+
 //     it('Property « firstAttributeList » should return this array', () => {
 //       expect(firstAttributeList).toStrictEqual([
 //         'widget',
@@ -560,18 +746,23 @@ describe('Specs for "helpers/tools/classes/color-element-list-dev/ColorElementLi
 //         'charts',
 //       ]);
 //     });
+
 //   });
+
 //   describe('Property « firstElementsList »', () => {
 //     it.skip('GENERIC TEST TO REMPLACE WITH ACTUAL TEST', () => {
 //       expect('identity').toBe('identity');
 //     });
+
 //   });
+
 //   describe('Property « length »', () => {
 //     it('Property « length » should return a numeric value', () => {
 //       const colorlist = new ColorElementList(shortDummyList());
 //       const length = colorlist.length;
 //       expect(typeof length === 'number').toBeTruthy();
 //     });
+
 //   });
 
 //   // *[Symbol.iterator]() {
@@ -598,6 +789,8 @@ const mainAttributeList = colorlist.mainAttributeList
 
         );
   });
+
+
 // &%%& fork %%%%%
    it('fork method should be defined', () => {
 const colorsList = new ColorElementList(shortDummyList());
@@ -607,6 +800,8 @@ const fork = colorlist.fork
 
         );
   });
+
+
 // &%%& entries %%%%%
    it('entries method should be defined', () => {
 const colorsList = new ColorElementList(shortDummyList());
@@ -616,6 +811,8 @@ const entries = colorlist.entries
 
         );
   });
+
+
 // &%%& keys %%%%%
    it('keys method should be defined', () => {
 const colorsList = new ColorElementList(shortDummyList());
@@ -625,6 +822,8 @@ const keys = colorlist.keys
 
         );
   });
+
+
 // &%%& values %%%%%
    it('values method should be defined', () => {
 const colorsList = new ColorElementList(shortDummyList());
@@ -634,6 +833,8 @@ const values = colorlist.values
 
         );
   });
+
+
 // &%%& every %%%%%
    it('every method should be defined', () => {
 const colorsList = new ColorElementList(shortDummyList());
@@ -643,6 +844,8 @@ const every = colorlist.every
 
         );
   });
+
+
 // &%%& filter %%%%%
    it('filter method should be defined', () => {
 const colorsList = new ColorElementList(shortDummyList());
@@ -652,6 +855,8 @@ const filter = colorlist.filter
 
         );
   });
+
+
 // &%%& find %%%%%
    it('find method should be defined', () => {
 const colorsList = new ColorElementList(shortDummyList());
@@ -661,6 +866,8 @@ const find = colorlist.find
 
         );
   });
+
+
 // &%%& forEach %%%%%
    it('forEach method should be defined', () => {
 const colorsList = new ColorElementList(shortDummyList());
@@ -670,6 +877,8 @@ const forEach = colorlist.forEach
 
         );
   });
+
+
 // &%%& map %%%%%
    it('map method should be defined', () => {
 const colorsList = new ColorElementList(shortDummyList());
@@ -679,6 +888,8 @@ const map = colorlist.map
 
         );
   });
+
+
 // &%%& reduce %%%%%
    it('reduce method should be defined', () => {
 const colorsList = new ColorElementList(shortDummyList());
@@ -688,6 +899,8 @@ const reduce = colorlist.reduce
 
         );
   });
+
+
 // &%%& reduceRight %%%%%
    it('reduceRight method should be defined', () => {
 const colorsList = new ColorElementList(shortDummyList());
@@ -697,6 +910,8 @@ const reduceRight = colorlist.reduceRight
 
         );
   });
+
+
 // &%%& some %%%%%
    it('some method should be defined', () => {
 const colorsList = new ColorElementList(shortDummyList());
@@ -706,6 +921,8 @@ const some = colorlist.some
 
         );
   });
+
+
 // &%%& allAttributeList %%%%%
    it('allAttributeList method should be defined', () => {
 const colorsList = new ColorElementList(shortDummyList());
@@ -715,6 +932,8 @@ const allAttributeList = colorlist.allAttributeList
 
         );
   });
+
+
 // &%%& allElementsList %%%%%
    it('allElementsList method should be defined', () => {
 const colorsList = new ColorElementList(shortDummyList());
@@ -724,6 +943,8 @@ const allElementsList = colorlist.allElementsList
 
         );
   });
+
+
 // &%%& firstAttributeList %%%%%
    it('firstAttributeList method should be defined', () => {
 const colorsList = new ColorElementList(shortDummyList());
@@ -733,6 +954,8 @@ const firstAttributeList = colorlist.firstAttributeList
 
         );
   });
+
+
 // &%%& firstElementsList %%%%%
    it('firstElementsList method should be defined', () => {
 const colorsList = new ColorElementList(shortDummyList());
@@ -742,6 +965,8 @@ const firstElementsList = colorlist.firstElementsList
 
         );
   });
+
+
 // &%%& length %%%%%
    it('length method should be defined', () => {
 const colorsList = new ColorElementList(shortDummyList());
@@ -751,6 +976,8 @@ const length = colorlist.length
 
         );
   });
+
+
 // &%%& filterColor %%%%%
    it('filterColor method should be defined', () => {
 const colorsList = new ColorElementList(shortDummyList());
@@ -760,6 +987,8 @@ const filterColor = colorlist.filterColor
 
         );
   });
+
+
 // &%%& filterAttribute %%%%%
    it('filterAttribute method should be defined', () => {
 const colorsList = new ColorElementList(shortDummyList());
@@ -769,6 +998,8 @@ const filterAttribute = colorlist.filterAttribute
 
         );
   });
+
+
 // &%%& countAttribute %%%%%
    it('countAttribute method should be defined', () => {
 const colorsList = new ColorElementList(shortDummyList());
@@ -778,6 +1009,8 @@ const countAttribute = colorlist.countAttribute
 
         );
   });
+
+
 // &%%& filterElement %%%%%
    it('filterElement method should be defined', () => {
 const colorsList = new ColorElementList(shortDummyList());
@@ -787,6 +1020,8 @@ const filterElement = colorlist.filterElement
 
         );
   });
+
+
 // &%%& head %%%%%
    it('head method should be defined', () => {
 const colorsList = new ColorElementList(shortDummyList());
@@ -796,6 +1031,8 @@ const head = colorlist.head
 
         );
   });
+
+
 // &%%& tail %%%%%
    it('tail method should be defined', () => {
 const colorsList = new ColorElementList(shortDummyList());
@@ -805,6 +1042,8 @@ const tail = colorlist.tail
 
         );
   });
+
+
 // &%%& toJson %%%%%
    it('toJson method should be defined', () => {
 const colorsList = new ColorElementList(shortDummyList());
@@ -814,4 +1053,6 @@ const toJson = colorlist.toJson
 
         );
   });
+
+
  */

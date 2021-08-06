@@ -1,13 +1,13 @@
 // // #region =======-| IterationMethods |-======================================≈
 // // void Array.prototype.every; //--+
-// // void Array.prototype.filter; //--+
+// // void Array.prototype.filter; //--+$
 // // void Array.prototype.find; //--+
 // // void Array.prototype.findIndex; //--+
-// // void Array.prototype.forEach; //--+
-// // void Array.prototype.map; //--+
+// // void Array.prototype.forEach; //--+$
+// // void Array.prototype.map; //--+$
 // // void Array.prototype.reduce; //--+
 // // void Array.prototype.reduceRight; //--+
-// // void Array.prototype.some; //--+
+// // void Array.prototype.some; //--+$
 // // public ===================================================-| every() |-====
 // // public every<S extends ColorElement>(
 // //   predicate: (
@@ -129,17 +129,7 @@
 //     initialValue
 //   );
 // }
-// // public ====================================================-| some() |-====
-// public some(
-//   predicate: (
-//     value: IColorElement,
-//     index: number,
-//     array: IColorElement[]
-//   ) => unknown,
-//   thisArg?: any
-// ): boolean {
-//   return this.fork.some(predicate, thisArg);
-// }
+
 // // #endregion ====-| IterationMethodes |-=====================================≈
 
 // }
