@@ -16,12 +16,15 @@ describe('Specs for "helpers/tools/classes/color-element-list-dev/ColorElementLi
     });
   });
 
-  // describe("ColorElementList's folowing attributs properties and methods shoud be defined", () => {
-  //   it('Static method « of » should be defined', () => {
-  //     const of_ = ColorElementList.of;
-  //     // const mainAttributeList = colorlist.mainAttributeList;
-  //     expect(of_).toBeDefined();
-  //   });
+  describe("ColorElementList's folowing attributs properties and methods shoud be defined", () => {
+        it('Static method « of » should be defined', () => {
+      const of_ = ColorElementList.of;
+      // const mainAttributeList = colorlist.mainAttributeList;
+      expect(of_).toBeDefined();
+    });
+
+  }
+
 
   //   it('Constructor « ColorElementList » should be public', () => {
   //     const colorlist = new ColorElementList(shortDummyList());
