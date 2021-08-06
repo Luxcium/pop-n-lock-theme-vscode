@@ -6,11 +6,22 @@ export class ColorElementList {
   private get colorList() {
     return this.list.map(item => new ColorElement(item));
   }
-  public constructor(colorElementList: IColorElement[]) {
+  private static of_(colorElementList: IColorElement[]) {
+    return new ColorElementList(colorElementList);
+  }
+  public static of(...values: IColorElement[] | [IColorElement[]]) {
+    const value = values.length === 1 ? values[0] : null;
+    return Array.isArray(value)
+      ? this.of_(value as IColorElement[])
+      : this.of_(values as IColorElement[]);
+  }
+  protected constructor(colorElementList: IColorElement[]) {
     this.list = colorElementList;
   }
   public get length() {
-    return this.list.length;
+    let returnValue;
+    returnValue = this.list.length;
+    return returnValue;
   }
   // get |-···―――――――――――――――――――――――――――――――――――――――――――――――···-| fork |-···――― ~
   public get fork(): ColorElement[] {

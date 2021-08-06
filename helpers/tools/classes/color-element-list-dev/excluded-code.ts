@@ -1,16 +1,3 @@
-// private static of_(colorElementList: IColorElement[]) {
-//   return new ColorElementList(colorElementList);
-// }
-// public static of(...values: IColorElement[] | [IColorElement[]]) {
-//   if (values.length === 1) {
-//     const value = values[0];
-//     if (Array.isArray(value)) {
-//       return this.of_(value as IColorElement[]);
-//     }
-//   }
-//   return this.of_(values as IColorElement[]);
-// }
-
 // // #region =======-| Iterator |-==============================================≈
 // // iterator ====================================-| *[Symbol.iterator]() |-====
 // public *[Symbol.iterator]() {
