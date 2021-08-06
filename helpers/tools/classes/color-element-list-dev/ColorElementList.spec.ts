@@ -16,21 +16,12 @@ describe('Specs for "helpers/tools/classes/color-element-list-dev/ColorElementLi
     });
   });
 
-  describe("ColorElementList's folowing attributs properties and methods shoud be defined", () => {
-    it('Static method « of » should be defined', () => {
-      const of_ = ColorElementList.of;
-      // const mainAttributeList = colorlist.mainAttributeList;
-      expect(of_).toBeDefined();
-    });
-  });
-  it('Static method « of » should be used to create a list', () => {
+  it('Static method « of » should create a ColorElementList from a ColorElement list', () => {
     const colorElementList = ColorElementList.of(shortDummyList());
-    // const mainAttributeList = colorlist.mainAttributeList;
     expect(colorElementList).toBeDefined();
   });
-  it('Static method « of » should be used to create a list', () => {
-    const colorElementList = ColorElementList.of(shortDummyList());
-    // const mainAttributeList = colorlist.mainAttributeList;
+  it('Static method « of » should create a ColorElementList from ColorElement(s)', () => {
+    const colorElementList = ColorElementList.of(...shortDummyList());
     expect(colorElementList).toBeDefined();
   });
   it('Property « lenght » should return the amout of item in the ColorElementList', () => {
@@ -39,7 +30,89 @@ describe('Specs for "helpers/tools/classes/color-element-list-dev/ColorElementLi
   });
   it('Property « fork » should return internel list from the ColorElementList', () => {
     const colorElementList = ColorElementList.of(...shortDummyList()).fork;
-    expect(colorElementList.length).toBe(13);
+    expect(
+      colorElementList.length === 13 && Array.isArray(colorElementList)
+    ).toBeTruthy();
+  });
+  it('Method « entries » should iterate over [keys,values]', () => {
+    const colorlist = ColorElementList.of(shortDummyList());
+    const entries = colorlist.entries();
+    for (const entrie of entries) {
+      const [key, value] = entrie;
+      expect(
+        key < 13 && key >= 0 && value instanceof ColorElement
+      ).toBeTruthy();
+    }
+  });
+  it('Method « keys » should iterate over keys', () => {
+    const colorlist = ColorElementList.of(shortDummyList());
+    const keys = colorlist.keys();
+    for (const key of keys) {
+      expect(key < 13 && key >= 0).toBeTruthy();
+    }
+  });
+  it('Method « values » should iterate over values', () => {
+    const colorlist = ColorElementList.of(shortDummyList());
+    const values = colorlist.values();
+    for (const value of values) {
+      expect(value instanceof ColorElement).toBeTruthy();
+    }
+  });
+  /** Whenever an object needs to be iterated (such as at the beginning of a for...of loop), its `@@iterator` method is called with no arguments, and the returned iterator is used to obtain the values to be iterated. */
+  it('ColorElementList should comform to the iterable protocol', () => {
+    const colorlist = ColorElementList.of(shortDummyList());
+    // const values = colorlist.values();
+    for (const color of colorlist) {
+      expect(color instanceof ColorElement).toBeTruthy();
+    }
+  });
+  it('Method « forEach » should iterate over items and return nothing (undefined)', () => {
+    const colorlist = ColorElementList.of(shortDummyList());
+    expect(colorlist.forEach(item => item)).toBeUndefined();
+  });
+  it('Method « map » should iterate over values and return the mapped result', () => {
+    const colorlist = ColorElementList.of(shortDummyList());
+    const list = colorlist.map(item => !item);
+    expect(list.length === 13 && list[0] === false).toBeTruthy();
+  });
+  it('Method « head » should ', () => {
+    const colorlist = ColorElementList.of(shortDummyList());
+    const head = colorlist.head();
+    expect(ColorElementList.of(head).length === 1).toBeTruthy();
+  });
+  it('Method « head » should ', () => {
+    const colorlist = ColorElementList.of(shortDummyList());
+    const head = colorlist.head(13);
+    expect(ColorElementList.of(head).length === 1).toBeTruthy();
+  });
+  it('Method « tail » should ', () => {
+    const colorlist = ColorElementList.of(shortDummyList());
+    const tail = colorlist.tail();
+    expect(tail.length === 12).toBeTruthy();
+  });
+  it('Method « tail » should ', () => {
+    const colorlist = ColorElementList.of(shortDummyList());
+    const tail = colorlist.tail(2);
+    expect(tail.length === 10).toBeTruthy();
+  });
+  it('Method « toJson » should return a JSON compatible value for the ColorElementList', () => {
+    const colorlist = ColorElementList.of(shortDummyList());
+    const json = colorlist.toJson();
+    expect(json).toStrictEqual({
+      'button.background': '#771166CC',
+      'button.border': '#FF00FF21',
+      'button.hoverBackground': '#3399CCCC',
+      'button.secondaryBackground': '#00FF0021',
+      'button.secondaryHoverBackground': '#00FF0021',
+      'charts.blue': '#00FF0021',
+      'charts.green': '#00FF0021',
+      'charts.lines': '#00FF0021',
+      'editorGroupHeader.border': '#001133FF',
+      'editorGroupHeader.noTabsBackground': '#1C1C2EFF',
+      'editorGroupHeader.tabsBackground': '#1C1C2EFF',
+      'editorGroupHeader.tabsBorder': '#1D2545FF',
+      'widget.shadow': '#001111FF',
+    });
   });
 });
 // shortDummyList

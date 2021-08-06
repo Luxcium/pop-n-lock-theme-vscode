@@ -23,8 +23,174 @@ export class ColorElementList {
     returnValue = this.list.length;
     return returnValue;
   }
-  // get |-···―――――――――――――――――――――――――――――――――――――――――――――――···-| fork |-···――― ~
   public get fork(): ColorElement[] {
     return this.colorList;
   }
+  // #region =======-| Iterator |-==============================================≈
+  // iterator ====================================-| *[Symbol.iterator]() |-====
+  /** Whenever an object needs to be iterated (such as at the beginning of a for...of loop), its `@@iterator` method is called with no arguments, and the returned iterator is used to obtain the values to be iterated. */
+  public *[Symbol.iterator]() {
+    yield* this.list;
+  }
+  // public =================================================-| entries() |-====
+  public entries() {
+    return this.fork.entries();
+  }
+  // public ====================================================-| keys() |-====
+  public keys() {
+    return this.fork.keys();
+  }
+  // public ==================================================-| values() |-====
+  public values() {
+    return this.fork.values();
+  }
+  // #endregion =======-| Iterator |-===========================================≈
+  // public =================================================-| forEach() |-====
+  public forEach(
+    callbackfn: (
+      value: IColorElement,
+      index: number,
+      array: IColorElement[]
+    ) => void,
+    thisArgument?: any
+  ): void {
+    return this.fork.forEach(callbackfn, thisArgument);
+  }
+  // public =====================================================-| map() |-====
+  public map<U>(
+    callbackfn: (
+      value: IColorElement,
+      index: number,
+      array: IColorElement[]
+    ) => U,
+    thisArgument?: any
+  ) {
+    return this.fork.map<U>(callbackfn, thisArgument);
+  }
+  // public filterColor(colorHex: string) {
+  //   return new ColorElementList(
+  //     this.list.filter(
+  //       item =>
+  //         item.colorHexValue ===
+  //         new ColorElement('null', colorHex).colorHexValue
+  //     )
+  //   );
+  // }
+  // public filterAttribute(
+  //   attribute: string,
+  //   mainAttributesOnly: boolean = false
+  // ) {
+  //   // let valueToReturn: any = [];
+  //   if (mainAttributesOnly) {
+  //     return new ColorElementList(
+  //       this.list.filter(colorElement =>
+  //         new ColorElement(colorElement).elementsAttributes
+  //           .slice(-1)
+  //           .some(element => element === attribute)
+  //       )
+  //     );
+  //   }
+  //   return new ColorElementList(
+  //     this.list.filter(colorElement =>
+  //       new ColorElement(colorElement).elementsAttributes.some(
+  //         element => element === attribute
+  //       )
+  //     )
+  //   );
+  // }
+  // public countAttribute(
+  //   attribute: string,
+  //   mainAttributesOnly: boolean = false
+  // ) {
+  //   return this.filterAttribute(attribute, mainAttributesOnly).length;
+  // }
+  // public filterElement(element: string) {
+  //   return new ColorElementList(
+  //     this.list.filter(colorElement =>
+  //       new ColorElement(colorElement).elementList.some(
+  //         item => item === element
+  //       )
+  //     )
+  //   );
+  //   // return new ColorElementList(
+  //   //   this.list.filter(
+  //   //     item => new ColorElement(item).elementList.filter(predicate) //  === new ColorElement('null', element).colorHexValue
+  //   //   )
+  //   // );
+  // }
+  public head(index: number = 0) {
+    const elementAtIndex = this.list[index];
+    if (elementAtIndex != null && this.list.length > index) {
+      return new ColorElement(elementAtIndex).toValue();
+    }
+    return new ColorElement(ColorElement.void).toValue();
+  }
+  public tail(index: number = 0) {
+    return new ColorElementList(
+      this.list
+        .slice(index + 1)
+        .map((colorElement: IColorElement) => new ColorElement(colorElement))
+    );
+  }
+  public toJson() {
+    let json = {};
+    this.list
+      .map(colorElement => new ColorElement(colorElement))
+      .map(colorElement => colorElement.toJson())
+      .map(colorElement => (json = { ...json, ...colorElement }));
+    return json;
+  }
+  // public get mainAttributeList(): string[] {
+  //   return [
+  //     ...new Set(
+  //       this.list
+  //         .map(colorElement =>
+  //           new ColorElement(colorElement).elementsAttributes.slice(-1)
+  //         )
+  //         .flat()
+  //     ),
+  //   ];
+  // }
+  // public get allAttributeList(): string[] {
+  //   return [
+  //     ...new Set(
+  //       this.list
+  //         .map(
+  //           colorElement => new ColorElement(colorElement).elementsAttributes
+  //         )
+  //         .flat()
+  //     ),
+  //   ];
+  // }
+  // public get allElementsList(): string[] {
+  //   return [
+  //     ...new Set(
+  //       this.list
+  //         .map(colorElement => new ColorElement(colorElement).elementList)
+  //         .flat()
+  //     ),
+  //   ];
+  // }
+  // public get firstAttributeList(): string[] {
+  //   return [
+  //     ...new Set(
+  //       this.list
+  //         .map(colorElement => [
+  //           new ColorElement(colorElement).elementsAttributes[0] ?? '',
+  //         ])
+  //         .flat()
+  //     ),
+  //   ];
+  // }
+  // public get firstElementsList(): string[] {
+  //   return [
+  //     ...new Set(
+  //       this.list
+  //         .map(colorElement => [
+  //           new ColorElement(colorElement).elementList[0] ?? '',
+  //         ])
+  //         .flat()
+  //     ),
+  //   ];
+  // }
 }
