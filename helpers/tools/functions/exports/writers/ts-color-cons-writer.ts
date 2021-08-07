@@ -1,4 +1,4 @@
-import { colorHexMatch } from '../../utils/color-hex-match';
+import { colorHexMatch } from '../../utils/color-hex-match/color-hex-match';
 function tsColorConstWriter(
   colorHex: string,
   exporting: boolean = true,

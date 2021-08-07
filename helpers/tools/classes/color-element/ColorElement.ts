@@ -1,6 +1,7 @@
 import { standardize } from '../../functions/standardize';
-import { chromaHex } from '../../functions/utils';
-import { templatedChromaHex } from '../../functions/utils/chroma-hex';
+import { colorHexMatch } from '../../functions/utils';
+// import { chromaHex } from '../../functions/utils';
+import { templatedChromaHex } from '../../functions/utils/chroma-hex/chroma-hex';
 import { ColorElementTuple } from '../../types/ColorElementTuple';
 import { IColorElement } from '../../types/IColorElement';
 import { _ColorElement } from '../../types/_ColorElement';
@@ -135,7 +136,8 @@ class ColorElement implements IColorElement, _ColorElement {
     this.uid;
     this.cid;
     if (!this.isNull) {
-      this.colorHexValue = chromaHex(colorValue ?? '');
+      const cVal = colorHexMatch(colorValue ?? '');
+      this.colorHexValue = cVal ? `#${cVal}` : '';
       this.setInitialColorHex(colorValue);
       return this;
     }

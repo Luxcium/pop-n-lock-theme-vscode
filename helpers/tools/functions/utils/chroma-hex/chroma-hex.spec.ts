@@ -1,4 +1,4 @@
-import { chromaHex, templatedChromaHex } from '../../utils/chroma-hex';
+import { chromaHex, templatedChromaHex } from './chroma-hex';
 
 describe.each([
   ['x' as string, 'CAFE', 'xCCAAFFED'],

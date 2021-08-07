@@ -1,4 +1,4 @@
-import { colorHexRegExps } from '../utils/color-hex-reg-exps';
+import { colorHexRegExps } from '../utils/color-hex-match/templates/color-hex-reg-exps';
 
 describe('colorHexRegExps', () => {
   it('should be defined', () => {

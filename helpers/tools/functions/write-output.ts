@@ -1,74 +1,65 @@
-import EventEmitter from 'events';
-import {
-  Mode,
-  ObjectEncodingOptions,
-  PathOrFileDescriptor,
-  readFile,
-  readFileSync,
-  writeFile,
-  writeFileSync,
-} from 'fs';
-import prettier from 'prettier';
+import { readFile } from 'fs';
 import { promisify } from 'util';
 import { BASE_COLORS_OUTPUT_PATH } from '../../constants';
 import ColorElement from '../classes/color-element';
-import { colorslist } from '../color/list';
+import { colorslist as colorslist_ } from '../color/list';
 import { getTerminalColors } from '../color/lists/terminal';
+import { unCommentJSONC } from './jsonc-to-json-parser';
+import { prettifyJsonString } from './prettify-json-string';
+import { writeFileToPathAsync } from './write-file-to-path-async';
 export const readFileAsync = promisify(readFile);
 
-export const writeFileAsync = promisify(writeFile);
-
-export function writeFileToPathAsync(path: PathOrFileDescriptor) {
-  return (
-    data: string | NodeJS.ArrayBufferView,
-    options?:
-      | (ObjectEncodingOptions &
-          EventEmitter.Abortable & {
-            mode?: Mode;
-            flag?: string;
-          })
-      | string
-  ): Promise<void> =>
-    writeFileAsync(
-      path,
-      data,
-      typeof options === 'object' ? { ...options } : options
-    );
-}
-const modele =
-  '/home/luxcium/projects/main-POP-N-LOCK-x1DF2/data/extensions/pop-n-lock-theme-vscode/src/themes/Pop-N-Lock.original.json';
+const model =
+  '/home/luxcium/projects/main-POP-N-LOCK-x1DF2/data/extensions/pop-n-lock-theme-vscode/helpers/templates/imports/JSON/Pop-N-Lock.original.json';
 export const myWriter = writeFileToPathAsync(BASE_COLORS_OUTPUT_PATH);
 
-export async function writeOutputToFile() {
-  const inputData = await readFileAsync(modele, { encoding: 'utf8' });
-  const inputString = inputData
-    .toString()
-    .replaceAll(/\/\*[^]*?\*\//g, '')
-    .replaceAll(/[^:]\/\/.*/g, '')
-    .replaceAll(/^\s*[\n\r]*$/gm, '')
-    .replaceAll(/,\s*[\n\r]*[\]]/g, ']')
-    .replaceAll(/,(\s*[\n\r]*)?[}]/g, '}')
-    .replaceAll(/[\n]+/g, '\n');
-  const jsonParsed = JSON.parse(inputString);
+async function getInputData(
+  path: string = model,
+  options: ReadOptions = { encoding: 'utf8' }
+): Promise<string> {
+  return (await readFileAsync(path, options)).toString();
+}
+
+function colorElementsAgregator(colorslist: ColorElement[] = colorslist_) {
   let colors = {};
   colorslist.forEach(colorElement => {
-    colors = { ...colors, ...new ColorElement(colorElement).toObject() };
+    colors = { ...colors, ...new ColorElement(colorElement).toJson() };
   });
-  colors = { ...colors, ...getTerminalColors() };
+  return colors;
+}
+// prettify-json-string.ts
 
+async function buildOutput() {
+  const inputData = await getInputData();
+  const parsedJsonBase = unCommentJSONC(inputData);
   const source = {
-    ...jsonParsed,
+    ...parsedJsonBase,
     $schema: 'vscode://schemas/color-theme',
     name: 'Pop N Lock Theme by Luxcium',
     type: 'dark',
-    colors,
+    colors: {
+      ...colorElementsAgregator(),
+      ...getTerminalColors(),
+    },
   };
-  const output = prettier.format(JSON.stringify(source, null, 2), {
-    parser: 'json-stringify',
-  });
-
-  return myWriter(output);
+  return prettifyJsonString(source);
 }
-// if (require?.main?.filename === __filename) console.log(writeOutputToFile());
 
-export { readFileSync, writeFileSync };
+export async function writeOutputToFile() {
+  return myWriter(await buildOutput());
+}
+
+if (require?.main?.filename === __filename) main();
+
+function main() {
+  writeOutputToFile();
+}
+
+type ReadOptions =
+  | {
+      encoding?: BufferEncoding | null | undefined;
+      flag?: string | undefined;
+    }
+  | string
+  | null
+  | undefined;
