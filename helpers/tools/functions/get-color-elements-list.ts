@@ -1,10 +1,10 @@
 import type { PathLike } from 'fs';
 import { createColorElementsList } from './create-color-element-list';
 import { extractColorInformation } from './extract-color-information';
-import { filterOutNullColorElements } from './filter-out-null-color-elements';
 import { readLines } from './imports/readers';
 import { normalizeQuotedStrings } from './normalize-strings';
 import { splitLines } from './split-lines';
+import { filterOutNullColorElements } from './utils/filter-out-null-color-elements/filter-out-null-color-elements';
 
 export async function getColorElementsList(
   pathToJsonColours: PathLike,

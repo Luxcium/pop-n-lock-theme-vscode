@@ -5,8 +5,8 @@ import ColorElement from '../classes/color-element';
 import { colorslist as colorslist_ } from '../color/list';
 import { getTerminalColors } from '../color/lists/terminal';
 import { unCommentJSONC } from './jsonc-to-json-parser';
-import { prettifyJsonString } from './prettify-json-string';
-import { writeFileToPathAsync } from './write-file-to-path-async';
+import { prettifyJsonString } from './utils/prettify-json-string';
+import { writeFileToPathAsync } from './utils/write-file-to-path-async/write-file-to-path-async';
 export const readFileAsync = promisify(readFile);
 
 const model =
@@ -27,7 +27,6 @@ function colorElementsAgregator(colorslist: ColorElement[] = colorslist_) {
   });
   return colors;
 }
-// prettify-json-string.ts
 
 async function buildOutput() {
   const inputData = await getInputData();
