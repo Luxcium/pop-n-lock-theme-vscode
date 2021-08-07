@@ -206,7 +206,7 @@ export class ColorElementList {
       ...new Set(
         this.list
           .map(colorElement => [
-            new ColorElement(colorElement).elementsAttributes[0] ?? '',
+            new ColorElement(colorElement).elementsAttributes[0]!, // as string // ?? '',
           ])
           .flat()
       ),
@@ -217,7 +217,7 @@ export class ColorElementList {
       ...new Set(
         this.list
           .map(colorElement => [
-            new ColorElement(colorElement).elementList[0] ?? '',
+            new ColorElement(colorElement).elementList[0]!, // as string // ?? '',
           ])
           .flat()
       ),
