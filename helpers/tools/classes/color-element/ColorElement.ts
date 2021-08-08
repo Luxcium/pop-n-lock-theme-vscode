@@ -185,6 +185,21 @@ class ColorElement implements IColorElement, _ColorElement {
     return !this.isNull ? this.elementsAttributes_.slice(0, 1) || [] : [];
   }
 
+  public toObject(): _ColorElement {
+    const tempString = `{"elementName": "${this.elementName}", "colorHexValue": "${this.colorHexValue}"}`;
+    return JSON.parse(tempString);
+  }
+
+  public toJson(): { readonly [key: string]: string } {
+    const colorHexValue = this.toObject().colorHexValue;
+    const elementName = this.toObject().elementName;
+    return JSON.parse(`{"${elementName}":"${colorHexValue}"}`);
+  }
+
+  public toValue(): ColorElement {
+    return new ColorElement(this.toObject());
+  }
+
   public toString(): string;
   public toString(simpleString: boolean): string;
   public toString(
@@ -214,21 +229,6 @@ class ColorElement implements IColorElement, _ColorElement {
       space
     )}`;
   }
-
-  public toObject(): _ColorElement {
-    const tempString = `{"elementName": "${this.elementName}", "colorHexValue": "${this.colorHexValue}"}`;
-    return JSON.parse(tempString);
-  }
-
-  public toJson(): { readonly [key: string]: string } {
-    const colorHexValue = this.toObject().colorHexValue;
-    const elementName = this.toObject().elementName;
-    return JSON.parse(`{"${elementName}":"${colorHexValue}"}`);
-  }
-
-  public toValue(): ColorElement {
-    return new ColorElement(this.toObject());
-  }
 }
 
 if (require?.main?.filename === __filename) main();
@@ -236,6 +236,7 @@ if (require?.main?.filename === __filename) main();
 function main() {
   const color1 = new ColorElement(['editorInfo.background', '"XFFEEBBCC"']);
   console.log(color1);
+  // util.inspect(box);
 }
 
 export { ColorElement };

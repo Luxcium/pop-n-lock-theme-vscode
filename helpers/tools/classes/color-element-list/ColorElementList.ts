@@ -30,7 +30,7 @@ export class ColorElementList {
   // iterator ====================================-| *[Symbol.iterator]() |-====
   /** Whenever an object needs to be iterated (such as at the beginning of a for...of loop), its `@@iterator` method is called with no arguments, and the returned iterator is used to obtain the values to be iterated. */
   public *[Symbol.iterator]() {
-    yield* this.list;
+    yield* this.colorList;
   }
   // public =================================================-| entries() |-====
   public entries() {

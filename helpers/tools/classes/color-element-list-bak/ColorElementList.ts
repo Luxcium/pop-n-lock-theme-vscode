@@ -27,7 +27,7 @@ class ColorElementList {
   // #region =======-| Iterator |-==============================================≈
   // iterator ====================================-| *[Symbol.iterator]() |-====
   public *[Symbol.iterator]() {
-    yield* this.list;
+    yield* this.colorList;
   }
   // public =================================================-| entries() |-====
 
