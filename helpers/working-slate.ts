@@ -1,5 +1,5 @@
-import colorElement from '../classes/color-element';
-import { importJsonBaseColorElementList } from './imports';
+import colorElement from './tools/classes/color-element';
+import { importJsonBaseColorElementList } from './tools/functions/imports';
 
 async function main() {
   const baseColorElementList = await importJsonBaseColorElementList();
@@ -11,13 +11,13 @@ async function main() {
       memoizedKeys[attribute] = [];
     }
   }
-  for (const attrtibute of firstAttributeList) {
-    console.log(attrtibute);
-    if (attrtibute in memoizedKeys === false) {
-      memoizedKeys[attrtibute] = [];
-    }
-  }
-  console.log(firstAttributeList.length);
+  // for (const attrtibute of firstAttributeList) {
+  //   console.log(attrtibute);
+  //   if (attrtibute in memoizedKeys === false) {
+  //     memoizedKeys[attrtibute] = [];
+  //   }
+  // }
+  // console.log(firstAttributeList.length);
 
   // console.log(baseColorElementList);
 
@@ -27,7 +27,13 @@ Cannot find name '
 attrtibute'. Did you mean '
 attribute'?
 
+if (require?.main?.filename === __filename) main();
 
+function main() {
+  const color1 = new ColorElement(['editorInfo.background', '"XFFEEBBCC"']);
+  console.log(color1);
+  // util.inspect(box);
+}
 
 
 

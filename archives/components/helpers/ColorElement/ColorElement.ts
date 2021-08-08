@@ -8,7 +8,7 @@ export class ColorElement implements IColorElement, ColorElement_ {
   private initialElementName_: string;
   private initialColor_: string | null;
   private elementsList_: string[];
-  private elementsAttributes_: string[];
+  private attributeList_: string[];
   public static get void() {
     return new ColorElement('VOID');
   }
@@ -24,7 +24,7 @@ export class ColorElement implements IColorElement, ColorElement_ {
     this.colorHexValue = '';
     this.isVoid = true;
     this.elementsList_ = [''];
-    this.elementsAttributes_ = [''];
+    this.attributeList_ = [''];
     this.initialElementName_ = 'VOID';
     this.initialColor_ = null;
 
@@ -62,7 +62,7 @@ export class ColorElement implements IColorElement, ColorElement_ {
       elementsList_: {
         enumerable: false,
       },
-      elementsAttributes_: {
+      attributeList_: {
         enumerable: false,
       },
       initialColor_: {
@@ -75,7 +75,7 @@ export class ColorElement implements IColorElement, ColorElement_ {
         elementsList_: {
           enumerable: true,
         },
-        elementsAttributes_: {
+        attributeList_: {
           enumerable: true,
         },
         isVoid: {
@@ -106,7 +106,7 @@ export class ColorElement implements IColorElement, ColorElement_ {
   private setElementsAttributes(
     elementName: string = this.initialElementName_
   ) {
-    this.elementsAttributes_ = elementName
+    this.attributeList_ = elementName
       .replaceAll(/[.]?([a-z][a-z0-9]*|[A-Z][a-z0-9]*)/g, '.$1')
       .split(/[.]/)
       .filter((item, _i, _list) => {
@@ -148,10 +148,10 @@ export class ColorElement implements IColorElement, ColorElement_ {
   }
 
   get elementsAttributes() {
-    return !this.isNull ? this.elementsAttributes_ : [];
+    return !this.isNull ? this.attributeList_ : [];
   }
   get mainAttribute() {
-    return !this.isNull ? this.elementsAttributes_.slice(-1) : [];
+    return !this.isNull ? this.attributeList_.slice(-1) : [];
   }
   public toString(): string;
   public toString(simpleString: true): string;

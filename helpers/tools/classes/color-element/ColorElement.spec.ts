@@ -24,11 +24,11 @@ describe('Specs for "helpers/tools/classes/color-element/ColorElement.ts"', () =
       ).toBeDefined();
     });
 
-    it('Property initialColor should be defined', () => {
-      expect(
-        new ColorElement('colorElement.name', '"0xFFEEBBCC"').initialColor
-      ).toBeDefined();
-    });
+    // it('Property initialColor should be defined', () => {
+    //   expect(
+    //     new ColorElement('colorElement.name', '"0xFFEEBBCC"').initialColor
+    //   ).toBeDefined();
+    // });
 
     it('Property colorElementName should be defined', () => {
       expect(
@@ -50,7 +50,7 @@ describe('Specs for "helpers/tools/classes/color-element/ColorElement.ts"', () =
 
     it('Property elementsAttributes should be defined', () => {
       expect(
-        new ColorElement('colorElement.name', '"0xFFEEBBCC"').elementsAttributes
+        new ColorElement('colorElement.name', '"0xFFEEBBCC"').attributeList
       ).toBeDefined();
     });
 
@@ -207,7 +207,7 @@ describe('Specs for "helpers/tools/classes/color-element/ColorElement.ts"', () =
 //   private initialElementName_: string;
 //   private initialColor_: string | null;
 //   private elementsList_: string[];
-//   private elementsAttributes_: string[];
+//   private attributeList_: string[];
 //   private id_: Symbol;
 //   private uid_: Symbol;
 //   private cid_: Symbol;
@@ -231,7 +231,7 @@ describe('Specs for "helpers/tools/classes/color-element/ColorElement.ts"', () =
 //     this.colorHexValue = '';
 //     this.isVoid = true;
 //     this.elementsList_ = [''];
-//     this.elementsAttributes_ = [''];
+//     this.attributeList_ = [''];
 //     this.initialElementName_ = 'VOID';
 //     this.initialColor_ = '';
 
@@ -259,7 +259,7 @@ describe('Specs for "helpers/tools/classes/color-element/ColorElement.ts"', () =
 //       elementsList_: {
 //         enumerable: false,
 //       },
-//       elementsAttributes_: {
+//       attributeList_: {
 //         enumerable: false,
 //       },
 //       initialColor_: {
@@ -272,7 +272,7 @@ describe('Specs for "helpers/tools/classes/color-element/ColorElement.ts"', () =
 //         elementsList_: {
 //           enumerable: true,
 //         },
-//         elementsAttributes_: {
+//         attributeList_: {
 //           enumerable: true,
 //         },
 //         isVoid: {
@@ -338,7 +338,7 @@ describe('Specs for "helpers/tools/classes/color-element/ColorElement.ts"', () =
 //     this.elementsList_ = this.initialElementName_.split('.');
 //   }
 //   private setElementsAttributes() {
-//     this.elementsAttributes_ = this.initialElementName_
+//     this.attributeList_ = this.initialElementName_
 //       .replaceAll(/[.]?([a-z][a-z0-9]*|[A-Z][a-z0-9]*)/g, '.$1')
 //       .split(/[.]/)
 //       .filter((item, _i, _list) => {
@@ -400,13 +400,13 @@ describe('Specs for "helpers/tools/classes/color-element/ColorElement.ts"', () =
 //   }
 
 //   get elementsAttributes() {
-//     return !this.isNull ? this.elementsAttributes_ : [];
+//     return !this.isNull ? this.attributeList_ : [];
 //   }
 //   get mainAttribute() {
-//     return !this.isNull ? this.elementsAttributes_.slice(-1) || [] : [];
+//     return !this.isNull ? this.attributeList_.slice(-1) || [] : [];
 //   }
 //   get mainElement() {
-//     return !this.isNull ? this.elementsAttributes_.slice(0, 1) || [] : [];
+//     return !this.isNull ? this.attributeList_.slice(0, 1) || [] : [];
 //   }
 //   public toString(): string;
 //   public toString(simpleString: true): string;

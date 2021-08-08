@@ -6,20 +6,52 @@ import { ColorElementTuple } from '../../types/ColorElementTuple';
 import { IColorElement } from '../../types/IColorElement';
 import { _ColorElement } from '../../types/_ColorElement';
 
-class ColorElement implements IColorElement, _ColorElement {
-  public elementName: string;
-  public colorHexValue: string;
-  public isVoid: boolean;
-  private initialElementName_: string;
-  private initialColor_: string | null;
-  private elementsList_: string[];
-  private elementsAttributes_: string[];
-  private id_: Symbol;
-  private uid_: Symbol;
-  private cid_: Symbol;
+export class ColorElement implements IColorElement, _ColorElement {
   public static get void() {
     return new ColorElement('VOID');
   }
+
+  private initialElementName_: string;
+  private initialColor_: string | null;
+  private elementsList_: string[];
+  private attributeList_: string[];
+  private id_: Symbol;
+  private uid_: Symbol;
+  private cid_: Symbol;
+  private setInitialNameValue(elementName: string) {
+    this.initialElementName_ = elementName;
+    this.isVoid = this.initialElementName_ === 'VOID' ? true : false;
+    this.elementName = this.initialElementName_;
+    this.setElementList();
+    this.setElementsAttributes();
+  }
+
+  private setInitialColorHexValue(colorValue: string | null) {
+    this.initialColor_ = colorValue;
+    this.setColorHex(colorValue);
+  }
+
+  private setElementList() {
+    this.elementsList_ = this.initialElementName_.split('.');
+  }
+
+  private setElementsAttributes() {
+    this.attributeList_ = this.initialElementName_
+      .replaceAll(/[.]?([a-z][a-z0-9]*|[A-Z][a-z0-9]*)/g, '.$1')
+      .split(/[.]/)
+      .filter((item, _i, _list) => {
+        return item;
+      })
+      .map(item => item.toLowerCase());
+  }
+
+  private setInitialColorHex(colorValue: string | null) {
+    this.initialColor_ = this.initialColor_ ? this.initialColor_ : colorValue;
+  }
+
+  public elementName: string;
+  public colorHexValue: string;
+  public isVoid: boolean;
   constructor(colorElement: ColorElementTuple);
   constructor(colorElement: _ColorElement);
   constructor(colorElement: string | null);
@@ -37,7 +69,7 @@ class ColorElement implements IColorElement, _ColorElement {
     this.colorHexValue = '';
     this.isVoid = true;
     this.elementsList_ = [''];
-    this.elementsAttributes_ = [''];
+    this.attributeList_ = [''];
     this.initialElementName_ = 'VOID';
     this.initialColor_ = '';
 
@@ -65,7 +97,7 @@ class ColorElement implements IColorElement, _ColorElement {
       elementsList_: {
         enumerable: false,
       },
-      elementsAttributes_: {
+      attributeList_: {
         enumerable: false,
       },
       initialColor_: {
@@ -78,7 +110,7 @@ class ColorElement implements IColorElement, _ColorElement {
         elementsList_: {
           enumerable: true,
         },
-        elementsAttributes_: {
+        attributeList_: {
           enumerable: true,
         },
         isVoid: {
@@ -88,101 +120,6 @@ class ColorElement implements IColorElement, _ColorElement {
     }
 
     return this;
-  }
-
-  private setInitialNameValue(elementName: string) {
-    this.initialElementName_ = elementName;
-    this.isVoid = this.initialElementName_ === 'VOID' ? true : false;
-    this.elementName = this.initialElementName_;
-    this.setElementList();
-    this.setElementsAttributes();
-  }
-
-  private setInitialColorHexValue(colorValue: string | null) {
-    this.initialColor_ = colorValue;
-    this.setColorHex(colorValue);
-  }
-
-  private setElementList() {
-    this.elementsList_ = this.initialElementName_.split('.');
-  }
-  private setElementsAttributes() {
-    this.elementsAttributes_ = this.initialElementName_
-      .replaceAll(/[.]?([a-z][a-z0-9]*|[A-Z][a-z0-9]*)/g, '.$1')
-      .split(/[.]/)
-      .filter((item, _i, _list) => {
-        return item;
-      })
-      .map(item => item.toLowerCase());
-  }
-
-  public get id() {
-    return this.id_;
-  }
-
-  public get uid() {
-    this.uid_ = Symbol.for(
-      `"${this.colorElementName}": "${this.colorHexValue}"`
-    );
-    return this.uid_;
-  }
-
-  public get cid() {
-    this.cid_ = Symbol.for(`"${this.colorHexValue}"`);
-    return this.cid_;
-  }
-
-  public setColorHex(colorValue: string | null) {
-    this.uid;
-    this.cid;
-    if (!this.isNull) {
-      const cVal = colorHexMatch(colorValue ?? '');
-      this.colorHexValue = cVal ? `#${cVal}` : '';
-      this.setInitialColorHex(colorValue);
-      return this;
-    }
-    this.colorHexValue = '';
-    return this;
-  }
-  private setInitialColorHex(colorValue: string | null) {
-    this.initialColor_ = this.initialColor_ ? this.initialColor_ : colorValue;
-  }
-
-  public get initialColor() {
-    return this.initialColor_;
-  }
-
-  public get colorHex() {
-    return this.colorHexValue;
-  }
-
-  public set colorHex(colorValue: string) {
-    const setValue = !this.isNull ? colorValue : null;
-    this.setColorHex(setValue ? colorValue : this.initialColor);
-  }
-
-  public get colorElementName() {
-    return this.initialElementName_;
-  }
-
-  public get isNull() {
-    return this.initialElementName_ === 'VOID' ? true : false;
-  }
-
-  public get elementList() {
-    return !this.isNull ? this.elementsList_ : [];
-  }
-
-  public get elementsAttributes() {
-    return !this.isNull ? this.elementsAttributes_ : [];
-  }
-
-  public get mainAttribute() {
-    return !this.isNull ? this.elementsAttributes_.slice(-1) || [] : [];
-  }
-
-  public get mainElement() {
-    return !this.isNull ? this.elementsAttributes_.slice(0, 1) || [] : [];
   }
 
   public toObject(): _ColorElement {
@@ -229,14 +166,76 @@ class ColorElement implements IColorElement, _ColorElement {
       space
     )}`;
   }
+
+  public setColorHex(colorValue: string | null) {
+    this.uid;
+    this.cid;
+    if (!this.isNull) {
+      const cVal = colorHexMatch(colorValue ?? '');
+      this.colorHexValue = cVal ? `#${cVal}` : '';
+      this.setInitialColorHex(colorValue);
+      return this;
+    }
+    this.colorHexValue = '';
+    return this;
+  }
+
+  public get colorHex() {
+    return this.colorHexValue;
+  }
+
+  public set colorHex(colorValue: string) {
+    const setValue = !this.isNull ? colorValue : null;
+    this.setColorHex(setValue ? colorValue : this.initialColor);
+  }
+
+  public get id() {
+    return this.id_;
+  }
+
+  public get uid() {
+    this.uid_ = Symbol.for(
+      `"${this.colorElementName}": "${this.colorHexValue}"`
+    );
+    return this.uid_;
+  }
+
+  public get cid() {
+    this.cid_ = Symbol.for(`"${this.colorHexValue}"`);
+    return this.cid_;
+  }
+
+  private get initialColor() {
+    return this.initialColor_;
+  }
+
+  public get colorElementName() {
+    return this.initialElementName_;
+  }
+
+  public get isNull() {
+    return this.initialElementName_ === 'VOID' ? true : false;
+  }
+
+  public get elementList() {
+    return this.isNull ? [] : this.elementsList_;
+  }
+
+  public get attributeList() {
+    return this.isNull ? [] : this.attributeList_;
+  }
+
+  public get mainAttribute(): string {
+    return this.isNull ? '' : this.attributeList_.slice(-1)[0] || '';
+  }
+
+  public get firstElement(): string {
+    return this.isNull ? '' : this.attributeList_.slice(0, 1)[0] || '';
+  }
+
+  public get mainElement(): string {
+    return this.isNull ? '' : this.elementsList_.slice(0, 1)[0] || '';
+  }
 }
 
-if (require?.main?.filename === __filename) main();
-
-function main() {
-  const color1 = new ColorElement(['editorInfo.background', '"XFFEEBBCC"']);
-  console.log(color1);
-  // util.inspect(box);
-}
-
-export { ColorElement };
+// export { ColorElement };
