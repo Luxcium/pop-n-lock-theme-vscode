@@ -1,3 +1,4 @@
+import { NULL_COLOR } from '../../../constants';
 import { standardize } from '../../functions/standardize';
 import { colorHexMatch } from '../../functions/utils';
 // import { chromaHex } from '../../functions/utils';
@@ -47,6 +48,10 @@ export class ColorElement implements IColorElement, _ColorElement {
 
   private setInitialColorHex(colorValue: string | null) {
     this.initialColor_ = this.initialColor_ ? this.initialColor_ : colorValue;
+  }
+
+  private get initialColor() {
+    return this.initialColor_;
   }
 
   public elementName: string;
@@ -105,7 +110,7 @@ export class ColorElement implements IColorElement, _ColorElement {
       },
     });
 
-    if (!this.isNull) {
+    if (this.isValid) {
       Object.defineProperties(this, {
         elementsList_: {
           enumerable: true,
@@ -130,7 +135,7 @@ export class ColorElement implements IColorElement, _ColorElement {
   public toJson(): { readonly [key: string]: string } {
     const colorHexValue = this.toObject().colorHexValue;
     const elementName = this.toObject().elementName;
-    return JSON.parse(`{"${elementName}":"${colorHexValue}"}`);
+    return JSON.parse(`{"${elementName}": "${colorHexValue}"}`);
   }
 
   public toValue(): ColorElement {
@@ -170,13 +175,14 @@ export class ColorElement implements IColorElement, _ColorElement {
   public setColorHex(colorValue: string | null) {
     this.uid;
     this.cid;
-    if (!this.isNull) {
-      const cVal = colorHexMatch(colorValue ?? '');
-      this.colorHexValue = cVal ? `#${cVal}` : '';
-      this.setInitialColorHex(colorValue);
+    if (this.isNull) {
+      this.colorHexValue = '';
       return this;
     }
-    this.colorHexValue = '';
+
+    const cVal = colorHexMatch(colorValue ?? NULL_COLOR);
+    this.colorHexValue = cVal ? `#${cVal}` : NULL_COLOR;
+    this.setInitialColorHex(colorValue);
     return this;
   }
 
@@ -185,7 +191,7 @@ export class ColorElement implements IColorElement, _ColorElement {
   }
 
   public set colorHex(colorValue: string) {
-    const setValue = !this.isNull ? colorValue : null;
+    const setValue = this.isValid ? colorValue : null;
     this.setColorHex(setValue ? colorValue : this.initialColor);
   }
 
@@ -205,37 +211,38 @@ export class ColorElement implements IColorElement, _ColorElement {
     return this.cid_;
   }
 
-  private get initialColor() {
-    return this.initialColor_;
-  }
-
   public get colorElementName() {
     return this.initialElementName_;
+  }
+
+  public get isValid() {
+    return !this.isNull && !(this.colorHex === NULL_COLOR);
   }
 
   public get isNull() {
     return this.initialElementName_ === 'VOID' ? true : false;
   }
 
-  public get elementList() {
-    return this.isNull ? [] : this.elementsList_;
+  public get elementList(): string[] {
+    return this.isValid ? this.elementsList_ : [];
   }
 
-  public get attributeList() {
-    return this.isNull ? [] : this.attributeList_;
+  public get attributeList(): string[] {
+    return this.isValid ? this.attributeList_ : [];
   }
 
   public get mainAttribute(): string {
-    return this.isNull ? '' : this.attributeList_.slice(-1)[0] || '';
+    return this.isValid ? this.attributeList_.slice(-1)[0] || '' : '';
   }
 
   public get firstElement(): string {
-    return this.isNull ? '' : this.attributeList_.slice(0, 1)[0] || '';
+    return this.isValid ? this.attributeList_.slice(0, 1)[0] || '' : '';
   }
 
   public get mainElement(): string {
-    return this.isNull ? '' : this.elementsList_.slice(0, 1)[0] || '';
+    return this.isValid ? this.elementsList_.slice(0, 1)[0] || '' : '';
   }
 }
 
 // export { ColorElement };
+// #00ff40
