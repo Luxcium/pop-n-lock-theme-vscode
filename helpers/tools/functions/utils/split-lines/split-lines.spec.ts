@@ -1,4 +1,4 @@
-import { splitLinesAsync } from '../utils/split-lines';
+import { splitLinesAsync } from '.';
 
 describe('splitLines', () => {
   it('should be defined', () => {

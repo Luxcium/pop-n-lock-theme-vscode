@@ -1,7 +1,9 @@
 import {
   stripBraces,
+  stripBrackets,
   stripComas,
   stripJson,
+  stripParens,
   stripQuotes,
   stripSpaces,
 } from '.';
@@ -9,7 +11,23 @@ import {
 describe('String parsers', () => {
   it('should stripBraces', () => {
     expect(stripBraces('([{" ,strip}{Braces, "}])')).toBe(
-      '(" ,stripBraces, ")'
+      '([" ,stripBraces, "])'
+    );
+  });
+
+  it('should stripBrackets', () => {
+    expect(stripBrackets('([{" ,[strip][Brackets], "}])')).toBe(
+      '({" ,stripBrackets, "})'
+    );
+  });
+  it('should stripParen', () => {
+    expect(stripParens('([{" ,(strip)(Parens), "}])')).toBe(
+      '[{" ,stripParens, "}]'
+    );
+  });
+  it('should stripBraces', () => {
+    expect(stripBraces('([{" ,strip}{Braces, "}])')).toBe(
+      '([" ,stripBraces, "])'
     );
   });
   it('should stripComas', () => {
@@ -17,7 +35,7 @@ describe('String parsers', () => {
   });
   it('should stripJson', () => {
     expect(stripJson('([{" ,strip,Json, "}]), "stripJson",')).toBe(
-      '(,strip,Json,),stripJson,'
+      '([,strip,Json,]),stripJson,'
     );
   });
   it('should stripQuotes', () => {
