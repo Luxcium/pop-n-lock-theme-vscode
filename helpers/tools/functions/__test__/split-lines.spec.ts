@@ -1,4 +1,4 @@
-import { splitLines } from '../split-lines';
+import { splitLines } from '../utils/split-lines';
 
 describe('splitLines', () => {
   it('should be defined', () => {

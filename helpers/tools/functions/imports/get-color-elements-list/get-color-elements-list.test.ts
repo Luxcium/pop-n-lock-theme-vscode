@@ -3,8 +3,8 @@ import { BASE_COLORS_INPUT_PATH } from '../../../../constants';
 import { createColorElementsList } from '../../create-color-element-list';
 import { extractColorInformation } from '../../extract-color-information';
 import { normalizeQuotedStrings } from '../../normalize-strings';
-import { splitLines } from '../../split-lines';
 import { filterOutNullColorElements } from '../../utils/filter-out-null-color-elements/filter-out-null-color-elements';
+import { splitLines } from '../../utils/split-lines';
 import { readLines } from '../readers';
 
 describe('Get Base Colors from JSON', () => {
