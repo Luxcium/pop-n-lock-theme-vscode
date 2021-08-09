@@ -4,7 +4,7 @@ import { createColorElementsList } from '../../create-color-element-list';
 import { extractColorInformation } from '../../extract-color-information';
 import { normalizeQuotedStrings } from '../../normalize-strings';
 import { filterOutNullColorElements } from '../../utils/filter-out-null-color-elements/filter-out-null-color-elements';
-import { splitLines } from '../../utils/split-lines';
+import { splitLinesAsync } from '../../utils/split-lines';
 import { readLines } from '../readers';
 
 describe('Get Base Colors from JSON', () => {
@@ -90,7 +90,7 @@ export async function getColorElementsList(
   template: string | [string] | [string, string] = '#'
 ) {
   const step1 = readLines(pathToJsonColours);
-  const step2 = splitLines(step1);
+  const step2 = splitLinesAsync(step1);
   const step3 = extractColorInformation(step2, template);
   const step4 = normalizeQuotedStrings(step3);
   const step5 = createColorElementsList(step4);

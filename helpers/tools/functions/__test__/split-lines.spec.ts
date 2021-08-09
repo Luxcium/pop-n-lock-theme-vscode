@@ -1,8 +1,8 @@
-import { splitLines } from '../utils/split-lines';
+import { splitLinesAsync } from '../utils/split-lines';
 
 describe('splitLines', () => {
   it('should be defined', () => {
-    expect(splitLines).toBeDefined();
+    expect(splitLinesAsync).toBeDefined();
   });
 });
 // describe.each([

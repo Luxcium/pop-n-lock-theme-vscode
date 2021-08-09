@@ -3,13 +3,13 @@ import { extractColorInformation } from './extract-color-information-complex';
 import { readLines } from './imports/readers';
 import { listElementPerColor } from './list-element-per-color';
 import { normalizeQuotedStrings } from './normalize-strings';
-import { reversedSplitLines } from './utils/split-lines';
+import { reversedSplitLinesAsync } from './utils/split-lines';
 
 export async function getListElementPerColorObject(
   pathToJsonColours: PathLike
 ) {
   const step1 = readLines;
-  const step2 = reversedSplitLines;
+  const step2 = reversedSplitLinesAsync;
   const step3 = extractColorInformation;
   const step4 = normalizeQuotedStrings;
   const step5 = listElementPerColor;

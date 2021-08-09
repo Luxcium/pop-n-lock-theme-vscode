@@ -1,8 +1,8 @@
 export {
   reversedSplitLines,
-  reversedSplitLinesSync,
+  reversedSplitLinesAsync,
   reverseItems,
-  reverseItemsSync,
+  reverseItemsAsync,
   splitLines,
-  splitLinesSync,
+  splitLinesAsync,
 } from './split-lines';
