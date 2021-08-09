@@ -235,7 +235,7 @@ export class ColorElement implements IColorElement, _ColorElement {
     return this.isValid ? this.attributeList_.slice(-1)[0] || '' : '';
   }
 
-  public get firstElement(): string {
+  public get firstAttribut(): string {
     return this.isValid ? this.attributeList_.slice(0, 1)[0] || '' : '';
   }
 

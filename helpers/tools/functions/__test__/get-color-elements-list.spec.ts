@@ -1,4 +1,4 @@
-import { getColorElementsList } from '../get-color-elements-list';
+import { getColorElementsList } from '../imports/get-color-elements-list/get-color-elements-list';
 
 describe('getColorElementsList', () => {
   it('should be defined', () => {

@@ -238,7 +238,7 @@ describe('Specs for "helpers/tools/classes/color-element/ColorElement.ts"', () =
 
     /* 4 */ it('Property « firstElement » should return a value of type string', () => {
       expect(
-        new ColorElement('colorElement.name', '0xFFEEBBCC').firstElement
+        new ColorElement('colorElement.name', '0xFFEEBBCC').firstAttribut
       ).toBe('color');
     });
 

@@ -1,16 +1,18 @@
-import colorElement from './tools/classes/color-element';
 import { importJsonBaseColorElementList } from './tools/functions/imports';
 
 async function main() {
   const baseColorElementList = await importJsonBaseColorElementList();
-  // const firstAttributeList = baseColorElementList.firstAttributeList;
-  let memoizedKeys: { [k: string]: colorElement[] } = {};
-  for (const colorElement of baseColorElementList) {
-    const attribute = colorElement.elementName;
-    if (attribute in memoizedKeys === false) {
-      memoizedKeys[attribute] = [];
-    }
-  }
+  console.log(baseColorElementList);
+  // let memoizedKeys: { [k: string]: colorElement[] } = {};
+  // for (const colorElement of baseColorElementList) {
+  //   const attribute = colorElement.firstAttribut;
+  //   console.log(attribute);
+  //   if (!(attribute in memoizedKeys)) {
+  //     memoizedKeys[attribute] = [];
+  //   }
+  //   memoizedKeys[attribute]?.push(colorElement);
+  // }
+  // return memoizedKeys;
   // for (const attrtibute of firstAttributeList) {
   //   console.log(attrtibute);
   //   if (attrtibute in memoizedKeys === false) {
@@ -48,5 +50,6 @@ function main() {
 
 function MAIN() {
   main();
+  // (async () => console.log(await main()))();
 }
 if (require?.main?.filename === __filename) MAIN();

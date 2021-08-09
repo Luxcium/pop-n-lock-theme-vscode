@@ -1,4 +1,5 @@
 import { ColorElementTuple } from '../types/ColorElementTuple';
+import { stripQuotes } from './utils/strings';
 
 /** Remove any double quotes from the string */
 export function normalizeQuotedStrings(
@@ -23,20 +24,4 @@ export function normalizeQuotedStrings(
       const [str1, str2] = list;
       return [stripQuotes(str1), stripQuotes(str2)];
     }))();
-}
-
-export function stripQuotes(str: string): string {
-  return str?.replaceAll('"', '');
-}
-
-export function stripComas(str: string): string {
-  return str?.replaceAll(',', '');
-}
-
-export function stripBraces(str: string): string {
-  return str?.replaceAll(/[\{\}\[\]\s]/g, '');
-}
-
-export function stripJson(str: string): string {
-  return stripQuotes(stripBraces(str));
 }

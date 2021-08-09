@@ -1,6 +1,6 @@
 import { BASE_COLORS_INPUT_PATH } from '../../../../constants';
 import ColorElementList from '../../../classes/color-element-list';
-import { getColorElementsList } from '../../get-color-elements-list';
+import { getColorElementsList } from '../get-color-elements-list/get-color-elements-list';
 
 const importJsonBaseColorElementList_ = async (
   baseColorsInputPath: string = BASE_COLORS_INPUT_PATH
