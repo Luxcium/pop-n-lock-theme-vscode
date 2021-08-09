@@ -5,14 +5,14 @@ import { extractColorInformation } from '../../extract-color-information';
 import { normalizeQuotedStrings } from '../../normalize-strings';
 import { filterOutNullColorElements } from '../../utils/filter-out-null-color-elements/filter-out-null-color-elements';
 import { splitLinesAsync } from '../../utils/split-lines';
-import { readLinesSync } from '../readers';
+import { readLinesAsync } from '../readers';
 
 export async function getColorElementsList(
   pathToJsonColours: PathLike,
   includeNullElements: boolean = false,
   template: string | [string] | [string, string] = '#'
 ) {
-  const step1 = readLinesSync(pathToJsonColours);
+  const step1 = readLinesAsync(pathToJsonColours);
   const step2 = splitLinesAsync(step1);
   const step3 = extractColorInformation(step2, template);
   const step4 = normalizeQuotedStrings(step3);

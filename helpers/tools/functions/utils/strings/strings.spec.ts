@@ -1,19 +1,33 @@
-import { stripBraces, stripComas, stripJson, stripQuotes } from '.';
+import {
+  stripBraces,
+  stripComas,
+  stripJson,
+  stripQuotes,
+  stripSpaces,
+} from '.';
 
 describe('String parsers', () => {
   it('should stripBraces', () => {
-    expect(stripBraces('( /[\\{\\}\\[\\]\\s]/g )')).toBe('(/\\\\\\\\\\s/g)');
+    expect(stripBraces('([{" ,strip}{Braces, "}])')).toBe(
+      '(" ,stripBraces, ")'
+    );
   });
   it('should stripComas', () => {
-    expect(stripComas('stripComas,')).toBe('stripComas');
+    expect(stripComas('([{" ,strip,Comas, "}])')).toBe('([{" stripComas "}])');
   });
   it('should stripJson', () => {
-    expect(stripJson('"( /[\\{\\}\\[\\]\\s]/g )", "stripComas",')).toBe(
-      '(/\\\\\\\\\\s/g),stripComas,'
+    expect(stripJson('([{" ,strip,Json, "}]), "stripJson",')).toBe(
+      '(,strip,Json,),stripJson,'
     );
   });
   it('should stripQuotes', () => {
-    expect(stripQuotes('"stripQuotes"')).toBe('stripQuotes');
+    expect(stripQuotes('([{" strip"Quotes ",}])')).toBe('([{ stripQuotes ,}])');
+  });
+
+  it('should stripSpaces', () => {
+    expect(stripSpaces('([{ " strip Spaces ", }])')).toBe(
+      '([{"stripSpaces",}])'
+    );
   });
 });
 

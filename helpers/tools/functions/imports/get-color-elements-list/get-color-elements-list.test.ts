@@ -4,15 +4,15 @@ import { createColorElementsList } from '../../create-color-element-list';
 import { extractColorInformation } from '../../extract-color-information';
 import { normalizeQuotedStrings } from '../../normalize-strings';
 import { filterOutNullColorElements } from '../../utils/filter-out-null-color-elements/filter-out-null-color-elements';
-import { splitLinesAsync } from '../../utils/split-lines';
-import { readLines } from '../readers';
+import { splitLines, splitLinesAsync } from '../../utils/split-lines';
+import { readLines, readLinesAsync } from '../readers';
 
 describe('Get Base Colors from JSON', () => {
   let pathToJsonColours: PathLike = BASE_COLORS_INPUT_PATH;
   // let template: string | [string] | [string, string] = '#';
   // let includeNullElements: boolean = false;
-  let step1: Promise<string[]>;
-  // let step2: Promise<[string, string][]>;
+  let step1: string[];
+  let step2: [string, string][];
   // let step3: Promise<ColorElementTuple[]>;
   // let step4: Promise<ColorElementTuple[]>;
   // let step5: Promise<ColorElement[]>;
@@ -24,29 +24,21 @@ describe('Get Base Colors from JSON', () => {
   it('Step 1 readLines return a string[]', async () => {
     expect(true).toBe(true);
     step1 = readLines(pathToJsonColours);
-    const awaited = await step1;
     expect(
-      Array.isArray(awaited) && awaited.every(item => typeof item === 'string')
+      Array.isArray(step1) && step1.every(item => typeof item === 'string')
     ).toBe(true);
-  });
-
-  it('Step 1 readLines return a string[]', async () => {
-    expect(true).toBe(true);
-    // step1 = readLines(pathToJsonColours);
-    // const awaited = await step1;
-    // expect(
-    //   Array.isArray(awaited) && awaited.every(item => typeof item === 'string')
-    // ).toBe(true);
   });
 
   it('Step 2 splitLines', async () => {
     expect(true).toBe(true);
     // process.nextTick(() => splitLines(step1));
-    // step2 = splitLines(step1);
+    step2 = splitLines(step1);
     // const awaited = await step2;
-    // expect(
-    // Array.isArray(awaited) && awaited.every(item => item.length === 2) //typeof item === 'string')
-    // ).toBe(true);
+    if (typeof step2 === 'undefined') throw new Error('step2 is undefined');
+    expect(
+      Array.isArray(step2) && step2.every(item => Array.isArray(item))
+    ) /* item.length === 2)) */
+      .toBe(true);
   });
   it('Step 3 extractColorInformation', () => {
     expect(true).toBe(true);
@@ -89,7 +81,7 @@ export async function getColorElementsList(
   includeNullElements: boolean = false,
   template: string | [string] | [string, string] = '#'
 ) {
-  const step1 = readLines(pathToJsonColours);
+  const step1 = readLinesAsync(pathToJsonColours);
   const step2 = splitLinesAsync(step1);
   const step3 = extractColorInformation(step2, template);
   const step4 = normalizeQuotedStrings(step3);

@@ -1,11 +1,13 @@
 import { PathLike, promises, readFileSync } from 'fs';
 
-export async function readLines(path: PathLike): Promise<string[]> {
-  const stringBuff = (await promises.readFile(path)).toString();
-  return stringBuff.split(/\r?\n/);
+export async function readLinesAsync(path: PathLike): Promise<string[]> {
+  return readLines_(await promises.readFile(path));
 }
 
-export async function readLinesSync(path: PathLike): Promise<string[]> {
-  const stringBuff = readFileSync(path).toString();
-  return stringBuff.split(/\r?\n/);
+export function readLines(path: PathLike): string[] {
+  return readLines_(readFileSync(path));
+}
+
+function readLines_(stringBuff: Buffer): string[] {
+  return stringBuff.toString().split(/\r?\n/);
 }

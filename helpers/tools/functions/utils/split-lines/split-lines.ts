@@ -1,3 +1,5 @@
+import { stripComas } from '../strings';
+
 const empltyLines = /^\s*[{}[\]]$|^\s*$/;
 export async function splitLinesAsync(
   lines: Promise<string[]>
@@ -18,6 +20,7 @@ export function splitLines(lines: string[]): [string, string][] {
   return lines
     .filter(line => line)
     .filter(line => !empltyLines.test(line))
+    .map(lines => stripComas(lines))
     .map(line => {
       return line.split(':') as [string, string];
     })
