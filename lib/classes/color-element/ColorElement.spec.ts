@@ -1,5 +1,5 @@
 import ColorElement from '.';
-import { NULL_COLOR } from '../../../constants';
+import { NULL_COLOR } from '../../constants';
 
 describe('Specs for "lib/tools/classes/color-element/ColorElement.ts"', () => {
   describe('The tools required to processe this spec suit of ColorElement:', () => {

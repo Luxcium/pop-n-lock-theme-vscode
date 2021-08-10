@@ -1,11 +1,11 @@
-import { NULL_COLOR } from '../../../constants';
-import { ColorElementTuple } from '../../../types/ColorElementTuple';
-import { IColorElement } from '../../../types/IColorElement';
-import { _ColorElement } from '../../../types/_ColorElement';
+import { NULL_COLOR } from '../../constants';
 import { standardize } from '../../functions/standardize';
 import { colorHexMatch } from '../../functions/utils';
 // import { chromaHex } from '../../functions/utils';
 import { templatedChromaHex } from '../../functions/utils/chroma-hex/chroma-hex';
+import { ColorElementTuple } from '../../types/ColorElementTuple';
+import { IColorElement } from '../../types/IColorElement';
+import { _ColorElement } from '../../types/_ColorElement';
 
 export class ColorElement implements IColorElement, _ColorElement {
   public static get void() {
