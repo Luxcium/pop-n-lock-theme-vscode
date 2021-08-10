@@ -1,4 +1,4 @@
-import { ColorElementTuple } from '../types/ColorElementTuple';
+import { ColorElementTuple } from '../../types/ColorElementTuple';
 import { stripQuotes } from './utils/strings';
 
 /** Remove any double quotes from the string */

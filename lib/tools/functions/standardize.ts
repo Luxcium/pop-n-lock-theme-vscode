@@ -1,5 +1,5 @@
-import { ColorElementTuple } from '../types/ColorElementTuple';
-import { _ColorElement } from '../types/_ColorElement';
+import { ColorElementTuple } from '../../types/ColorElementTuple';
+import { _ColorElement } from '../../types/_ColorElement';
 import { stripJson } from './utils/strings';
 
 export function standardize(colorElement: ColorElementTuple): [string, string];
