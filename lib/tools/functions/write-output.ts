@@ -10,7 +10,7 @@ import { prettifyJsonString } from './utils/prettify-json-string';
 export const readFileAsync = promisify(readFile);
 
 const model =
-  '/home/luxcium/projects/main-POP-N-LOCK-x1DF2/data/extensions/pop-n-lock-theme-vscode/helpers/templates/imports/JSON/Pop-N-Lock.original.json';
+  '/home/luxcium/projects/main-POP-N-LOCK-x1DF2/data/extensions/pop-n-lock-theme-vscode/lib/templates/imports/JSON/Pop-N-Lock.original.json';
 export const myWriter = writeFileToPathAsync(BASE_COLORS_OUTPUT_PATH);
 
 async function getInputData(

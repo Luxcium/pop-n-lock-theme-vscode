@@ -1,7 +1,7 @@
 import ColorElement from '.';
 import { NULL_COLOR } from '../../../constants';
 
-describe('Specs for "helpers/tools/classes/color-element/ColorElement.ts"', () => {
+describe('Specs for "lib/tools/classes/color-element/ColorElement.ts"', () => {
   describe('The tools required to processe this spec suit of ColorElement:', () => {
     it('Should include the « ColorElement » class', () => {
       expect(ColorElement).toBeDefined();

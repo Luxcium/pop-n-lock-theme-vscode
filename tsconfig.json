@@ -13,10 +13,10 @@
     "noResolve": false,
     /* Paths */
     "rootDir": "./",
-    "outDir": "./out/",
-    "declarationDir": "./out/typings",
-    "tsBuildInfoFile": "./out/.tsbuildinfo.lib",
-    "generateCpuProfile": "./out/profile.cpuprofile",
+    "outDir": "./build/",
+    "declarationDir": "./build/typings",
+    "tsBuildInfoFile": "./build/.tsbuildinfo.lib",
+    "generateCpuProfile": "./build/profile.cpuprofile",
     /* Declaration and Map Options */
     "declaration": true,
     "inlineSourceMap": true,
@@ -56,10 +56,9 @@
     "./archives/**",
     "**/?(*.)+(spec).[tj]s?(x)",
     "./src/resources/",
-    "./helpers/tools/classes/color-element-list-bak"
   ],
   "include": [
-    "./helpers",
+    "./lib",
     // helpers/index.ts
     // "./node_modules/vscode/lib/*"
     // "./node_modules/vscode/vscode.d.ts",,

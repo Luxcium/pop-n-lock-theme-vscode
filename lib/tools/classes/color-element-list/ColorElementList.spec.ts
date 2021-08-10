@@ -1,7 +1,7 @@
 import ColorElementList from '.';
 import { shortDummyList } from '../../../tests/mock/dummy-list';
 import ColorElement from '../color-element';
-describe('Specs for "helpers/tools/classes/color-element-list/ColorElementList.ts"', () => {
+describe('Specs for "lib/tools/classes/color-element-list/ColorElementList.ts"', () => {
   describe('The tools required to processe this spec suit of ColorElementList:', () => {
     it('Should include the « ColorElementList » class', () => {
       expect(ColorElementList).toBeDefined();
