@@ -1,5 +1,5 @@
-import ColorElement from '../classes/color-element';
-import { ColorElementList } from '../classes/color-element-list/ColorElementList';
+import ColorElement from '../tools/classes/color-element';
+import ColorElementList from '../tools/classes/color-element-list';
 import { cx } from './const';
 export const colorslist: ColorElement[] = [
   //'widget.shadow'
@@ -12,11 +12,15 @@ export const colorslist: ColorElement[] = [
 
   //'editorGroupHeader.noTabsBackground'
   void '#1C1C2EFF',
-  new ColorElement('editorGroupHeader.noTabsBackground').setColorHex(cx.x1C1C2EFF), //
+  new ColorElement('editorGroupHeader.noTabsBackground').setColorHex(
+    cx.x1C1C2EFF
+  ), //
 
   //'editorGroupHeader.tabsBackground'
   void '#1C1C2EFF',
-  new ColorElement('editorGroupHeader.tabsBackground').setColorHex(cx.x1C1C2EFF), //
+  new ColorElement('editorGroupHeader.tabsBackground').setColorHex(
+    cx.x1C1C2EFF
+  ), //
 
   //'editorGroupHeader.tabsBorder'
   void '#1D2545FF',
@@ -28,7 +32,9 @@ export const colorslist: ColorElement[] = [
 
   //'button.secondaryHoverBackground'
   void '#00FF0022', // #00FF00FF
-  new ColorElement('button.secondaryHoverBackground').setColorHex(cx.undefGreen), //
+  new ColorElement('button.secondaryHoverBackground').setColorHex(
+    cx.undefGreen
+  ), //
 
   //'button.hoverBackground'
   void '#3399CCCC',
@@ -88,11 +94,15 @@ export const colorslist: ColorElement[] = [
 
   //'editor.findRangeHighlightBackground'
   void '#22335555',
-  new ColorElement('editor.findRangeHighlightBackground').setColorHex(cx.x22335555), //
+  new ColorElement('editor.findRangeHighlightBackground').setColorHex(
+    cx.x22335555
+  ), //
 
   //'editor.focusedStackFrameHighlightBackground'
   void '#22335555',
-  new ColorElement('editor.focusedStackFrameHighlightBackground').setColorHex(cx.x22335555), //
+  new ColorElement('editor.focusedStackFrameHighlightBackground').setColorHex(
+    cx.x22335555
+  ), //
 
   //'editor.rangeHighlightBackground'
   void '#22335555',
@@ -100,23 +110,33 @@ export const colorslist: ColorElement[] = [
 
   //'editor.stackFrameHighlightBackground'
   void '#22335555',
-  new ColorElement('editor.stackFrameHighlightBackground').setColorHex(cx.x22335555), //
+  new ColorElement('editor.stackFrameHighlightBackground').setColorHex(
+    cx.x22335555
+  ), //
 
   //'editor.snippetTabstopHighlightBackground'
   void '#22335577',
-  new ColorElement('editor.snippetTabstopHighlightBackground').setColorHex(cx.x22335577), //
+  new ColorElement('editor.snippetTabstopHighlightBackground').setColorHex(
+    cx.x22335577
+  ), //
 
   //'editor.snippetFinalTabstopHighlightBackground'
   void '#22335599',
-  new ColorElement('editor.snippetFinalTabstopHighlightBackground').setColorHex(cx.x22335599), //
+  new ColorElement('editor.snippetFinalTabstopHighlightBackground').setColorHex(
+    cx.x22335599
+  ), //
 
   //'editor.snippetFinalTabstopHighlightBorder'
   void '#223355AA',
-  new ColorElement('editor.snippetFinalTabstopHighlightBorder').setColorHex(cx.x223355AA), //
+  new ColorElement('editor.snippetFinalTabstopHighlightBorder').setColorHex(
+    cx.x223355AA
+  ), //
 
   //'editor.snippetTabstopHighlightBorder'
   void '#223355CC',
-  new ColorElement('editor.snippetTabstopHighlightBorder').setColorHex(cx.x223355CC), //
+  new ColorElement('editor.snippetTabstopHighlightBorder').setColorHex(
+    cx.x223355CC
+  ), //
 
   //'editor.findMatchBorder'
   void '#3333FFAA',
@@ -124,7 +144,9 @@ export const colorslist: ColorElement[] = [
 
   //'editor.inactiveSelectionBackground'
   void '#3388DD77',
-  new ColorElement('editor.inactiveSelectionBackground').setColorHex(cx.x3388DD77), //
+  new ColorElement('editor.inactiveSelectionBackground').setColorHex(
+    cx.x3388DD77
+  ), //
 
   //'editor.hoverHighlightBackground'
   void '#3399CC33',
@@ -132,7 +154,9 @@ export const colorslist: ColorElement[] = [
 
   //'editor.findMatchHighlightBackground'
   void '#3399CC44',
-  new ColorElement('editor.findMatchHighlightBackground').setColorHex(cx.x3399CC44), //
+  new ColorElement('editor.findMatchHighlightBackground').setColorHex(
+    cx.x3399CC44
+  ), //
 
   //'editor.findMatchBackground'
   void '#3399CC66',
@@ -144,7 +168,9 @@ export const colorslist: ColorElement[] = [
 
   //'editor.symbolHighlightBackground'
   void '#4422EE77',
-  new ColorElement('editor.symbolHighlightBackground').setColorHex(cx.x4422EE77), //
+  new ColorElement('editor.symbolHighlightBackground').setColorHex(
+    cx.x4422EE77
+  ), //
 
   //'editor.selectionBackground'
   void '#4422EE77',
@@ -152,7 +178,9 @@ export const colorslist: ColorElement[] = [
 
   //'editor.selectionHighlightBackground'
   void '#55227766',
-  new ColorElement('editor.selectionHighlightBackground').setColorHex(cx.x55227766), //
+  new ColorElement('editor.selectionHighlightBackground').setColorHex(
+    cx.x55227766
+  ), //
 
   //'editor.findRangeHighlightBorder'
   void '#5522AA55',
@@ -184,15 +212,21 @@ export const colorslist: ColorElement[] = [
 
   //'editor.wordHighlightStrongBackground'
   void '#EE447733',
-  new ColorElement('editor.wordHighlightStrongBackground').setColorHex(cx.xEE447733), //
+  new ColorElement('editor.wordHighlightStrongBackground').setColorHex(
+    cx.xEE447733
+  ), //
 
   //'editor.wordHighlightStrongBorder'
   void '#EE4477BB',
-  new ColorElement('editor.wordHighlightStrongBorder').setColorHex(cx.xEE4477BB), //
+  new ColorElement('editor.wordHighlightStrongBorder').setColorHex(
+    cx.xEE4477BB
+  ), //
 
   //'editor.inlineValuesBackground'
   void '#FF00FF22', // #FF00FFFF
-  new ColorElement('editor.inlineValuesBackground').setColorHex(cx.undefMagenta), //
+  new ColorElement('editor.inlineValuesBackground').setColorHex(
+    cx.undefMagenta
+  ), //
 
   //'editorError.background'
   void '#00FF0022', // #00FF00FF
@@ -236,7 +270,9 @@ export const colorslist: ColorElement[] = [
 
   //'list.inactiveSelectionBackground'
   void '#3333DD77',
-  new ColorElement('list.inactiveSelectionBackground').setColorHex(cx.x3333DD77), //
+  new ColorElement('list.inactiveSelectionBackground').setColorHex(
+    cx.x3333DD77
+  ), //
 
   //'list.dropBackground'
   void '#3399CC33',
@@ -264,7 +300,9 @@ export const colorslist: ColorElement[] = [
 
   //'notebook.cellInsertionIndicator'
   void '#00FF0022', // #00FF00FF
-  new ColorElement('notebook.cellInsertionIndicator').setColorHex(cx.undefGreen), //
+  new ColorElement('notebook.cellInsertionIndicator').setColorHex(
+    cx.undefGreen
+  ), //
 
   //'notebook.cellToolbarSeparator'
   void '#00FF0022', // #00FF00FF
@@ -284,15 +322,21 @@ export const colorslist: ColorElement[] = [
 
   //'notebook.inactiveFocusedCellBorder'
   void '#00FF0022', // #00FF00FF
-  new ColorElement('notebook.inactiveFocusedCellBorder').setColorHex(cx.undefGreen), //
+  new ColorElement('notebook.inactiveFocusedCellBorder').setColorHex(
+    cx.undefGreen
+  ), //
 
   //'notebook.inactiveSelectedCellBorder'
   void '#00FF0022', // #00FF00FF
-  new ColorElement('notebook.inactiveSelectedCellBorder').setColorHex(cx.undefGreen), //
+  new ColorElement('notebook.inactiveSelectedCellBorder').setColorHex(
+    cx.undefGreen
+  ), //
 
   //'notebook.selectedCellBackground'
   void '#00FF0022', // #00FF00FF
-  new ColorElement('notebook.selectedCellBackground').setColorHex(cx.undefGreen), //
+  new ColorElement('notebook.selectedCellBackground').setColorHex(
+    cx.undefGreen
+  ), //
 
   //'notebook.selectedCellBorder'
   void '#00FF0022', // #00FF00FF
@@ -300,7 +344,9 @@ export const colorslist: ColorElement[] = [
 
   //'notebook.symbolHighlightBackground'
   void '#00FF0022', // #00FF00FF
-  new ColorElement('notebook.symbolHighlightBackground').setColorHex(cx.undefGreen), //
+  new ColorElement('notebook.symbolHighlightBackground').setColorHex(
+    cx.undefGreen
+  ), //
 
   //'notebook.cellBorderColor'
   void '#FF000022', // #FF0000FF
@@ -308,27 +354,39 @@ export const colorslist: ColorElement[] = [
 
   //'notebook.cellStatusBarItemHoverBackground'
   void '#FF000022', // #FF0000FF
-  new ColorElement('notebook.cellStatusBarItemHoverBackground').setColorHex(cx.undefRed), //
+  new ColorElement('notebook.cellStatusBarItemHoverBackground').setColorHex(
+    cx.undefRed
+  ), //
 
   //'notebook.outputContainerBackgroundColor'
   void '#FF000022', // #FF0000FF
-  new ColorElement('notebook.outputContainerBackgroundColor').setColorHex(cx.undefRed), //
+  new ColorElement('notebook.outputContainerBackgroundColor').setColorHex(
+    cx.undefRed
+  ), //
 
   //'notebook.cellEditorBackground'
   void '#FF00FF22', // #FF00FFFF
-  new ColorElement('notebook.cellEditorBackground').setColorHex(cx.undefMagenta), //
+  new ColorElement('notebook.cellEditorBackground').setColorHex(
+    cx.undefMagenta
+  ), //
 
   //'notebookScrollbarSlider.activeBackground'
   void '#00FF0022', // #00FF00FF
-  new ColorElement('notebookScrollbarSlider.activeBackground').setColorHex(cx.undefGreen), //
+  new ColorElement('notebookScrollbarSlider.activeBackground').setColorHex(
+    cx.undefGreen
+  ), //
 
   //'notebookScrollbarSlider.background'
   void '#00FF0022', // #00FF00FF
-  new ColorElement('notebookScrollbarSlider.background').setColorHex(cx.undefGreen), //
+  new ColorElement('notebookScrollbarSlider.background').setColorHex(
+    cx.undefGreen
+  ), //
 
   //'notebookScrollbarSlider.hoverBackground'
   void '#00FF0022', // #00FF00FF
-  new ColorElement('notebookScrollbarSlider.hoverBackground').setColorHex(cx.undefGreen), //
+  new ColorElement('notebookScrollbarSlider.hoverBackground').setColorHex(
+    cx.undefGreen
+  ), //
 
   //'quickInputList.focusBackground'
   void '#00FF0022', // #00FF00FF
@@ -404,7 +462,9 @@ export const colorslist: ColorElement[] = [
 
   //'statusBarItem.prominentHoverBackground'
   void '#1C1C2EFF',
-  new ColorElement('statusBarItem.prominentHoverBackground').setColorHex(cx.x1C1C2EFF), //
+  new ColorElement('statusBarItem.prominentHoverBackground').setColorHex(
+    cx.x1C1C2EFF
+  ), //
 
   //'statusBarItem.activeBackground'
   void '#1C1C2EFF',
@@ -412,7 +472,9 @@ export const colorslist: ColorElement[] = [
 
   //'statusBarItem.prominentBackground'
   void '#669944FF',
-  new ColorElement('statusBarItem.prominentBackground').setColorHex(cx.x669944FF), //
+  new ColorElement('statusBarItem.prominentBackground').setColorHex(
+    cx.x669944FF
+  ), //
 
   //'statusBarItem.remoteBackground'
   void '#FF000022', // #FF0000FF
@@ -480,11 +542,15 @@ export const colorslist: ColorElement[] = [
 
   //'tab.unfocusedInactiveModifiedBorder'
   void '#FF445555',
-  new ColorElement('tab.unfocusedInactiveModifiedBorder').setColorHex(cx.xFF445555), //
+  new ColorElement('tab.unfocusedInactiveModifiedBorder').setColorHex(
+    cx.xFF445555
+  ), //
 
   //'tab.unfocusedActiveModifiedBorder'
   void '#FF445599',
-  new ColorElement('tab.unfocusedActiveModifiedBorder').setColorHex(cx.xFF445599), //
+  new ColorElement('tab.unfocusedActiveModifiedBorder').setColorHex(
+    cx.xFF445599
+  ), //
 
   //'tab.inactiveModifiedBorder'
   void '#FF445599',
@@ -540,7 +606,9 @@ export const colorslist: ColorElement[] = [
 
   //'welcomePage.tileHoverBackground'
   void '#00FF0022', // #00FF00FF
-  new ColorElement('welcomePage.tileHoverBackground').setColorHex(cx.undefGreen), //
+  new ColorElement('welcomePage.tileHoverBackground').setColorHex(
+    cx.undefGreen
+  ), //
 
   //'tileShadow.'
   void '#00FF0022', // #00FF00FF
@@ -552,7 +620,9 @@ export const colorslist: ColorElement[] = [
 
   //'welcomePage.buttonHoverBackground'
   void '#3399CCCC',
-  new ColorElement('welcomePage.buttonHoverBackground').setColorHex(cx.x3399CCCC), //
+  new ColorElement('welcomePage.buttonHoverBackground').setColorHex(
+    cx.x3399CCCC
+  ), //
 
   //'welcomePage.buttonBackground'
   void '#771166CC',
@@ -588,7 +658,9 @@ export const colorslist: ColorElement[] = [
 
   //'editorHoverWidget.statusBarBackground'
   void '#1C1C2EFF',
-  new ColorElement('editorHoverWidget.statusBarBackground').setColorHex(cx.x1C1C2EFF), //
+  new ColorElement('editorHoverWidget.statusBarBackground').setColorHex(
+    cx.x1C1C2EFF
+  ), //
 
   //'editorHoverWidget.background'
   void '#1D2555EE',
@@ -784,7 +856,9 @@ export const colorslist: ColorElement[] = [
 
   //'inputValidation.warningBackground'
   void '#77552233',
-  new ColorElement('inputValidation.warningBackground').setColorHex(cx.x77552233), //
+  new ColorElement('inputValidation.warningBackground').setColorHex(
+    cx.x77552233
+  ), //
 
   //'inputValidation.errorBorder'
   void '#BB3355FF',
@@ -804,11 +878,15 @@ export const colorslist: ColorElement[] = [
 
   //'peekViewEditor.matchHighlightBackground'
   void '#552266FF',
-  new ColorElement('peekViewEditor.matchHighlightBackground').setColorHex(cx.x552266FF), //
+  new ColorElement('peekViewEditor.matchHighlightBackground').setColorHex(
+    cx.x552266FF
+  ), //
 
   //'peekViewEditor.matchHighlightBorder'
   void '#661188FF',
-  new ColorElement('peekViewEditor.matchHighlightBorder').setColorHex(cx.x661188FF), //
+  new ColorElement('peekViewEditor.matchHighlightBorder').setColorHex(
+    cx.x661188FF
+  ), //
 
   //'editorSuggestWidget.background'
   void '#223355DD',
@@ -816,7 +894,9 @@ export const colorslist: ColorElement[] = [
 
   //'editorSuggestWidget.selectedBackground'
   void '#44AAEE44',
-  new ColorElement('editorSuggestWidget.selectedBackground').setColorHex(cx.x44AAEE44), //
+  new ColorElement('editorSuggestWidget.selectedBackground').setColorHex(
+    cx.x44AAEE44
+  ), //
 
   //'editorSuggestWidget.border'
   void '#66BBFFDD',
@@ -824,7 +904,9 @@ export const colorslist: ColorElement[] = [
 
   //'editorMarkerNavigation.background'
   void '#223355FF',
-  new ColorElement('editorMarkerNavigation.background').setColorHex(cx.x223355FF), //
+  new ColorElement('editorMarkerNavigation.background').setColorHex(
+    cx.x223355FF
+  ), //
 
   //'editorCursor.background'
   void '#22991155',
@@ -844,7 +926,9 @@ export const colorslist: ColorElement[] = [
 
   //'walkThrough.embeddedEditorBackground'
   void '#2C203CFF',
-  new ColorElement('walkThrough.embeddedEditorBackground').setColorHex(cx.x2C203CFF), //
+  new ColorElement('walkThrough.embeddedEditorBackground').setColorHex(
+    cx.x2C203CFF
+  ), //
 
   //'debugToolBar.background'
   void '#2C203CFF',
@@ -876,7 +960,9 @@ export const colorslist: ColorElement[] = [
 
   //'notificationCenterHeader.background'
   void '#2C203CFF',
-  new ColorElement('notificationCenterHeader.background').setColorHex(cx.x2C203CFF), //
+  new ColorElement('notificationCenterHeader.background').setColorHex(
+    cx.x2C203CFF
+  ), //
 
   //'textBlockQuote.background'
   void '#2C203CFF',
@@ -928,11 +1014,15 @@ export const colorslist: ColorElement[] = [
 
   //'peekViewResult.matchHighlightBackground'
   void '#3399CC55',
-  new ColorElement('peekViewResult.matchHighlightBackground').setColorHex(cx.x3399CC55), //
+  new ColorElement('peekViewResult.matchHighlightBackground').setColorHex(
+    cx.x3399CC55
+  ), //
 
   //'peekViewResult.selectionBackground'
   void '#4422BB44',
-  new ColorElement('peekViewResult.selectionBackground').setColorHex(cx.x4422BB44), //
+  new ColorElement('peekViewResult.selectionBackground').setColorHex(
+    cx.x4422BB44
+  ), //
 
   //'peekViewResult.background'
   void '#5522AA22',
@@ -944,7 +1034,9 @@ export const colorslist: ColorElement[] = [
 
   //'scrollbarSlider.activeBackground'
   void '#88BB33AA',
-  new ColorElement('scrollbarSlider.activeBackground').setColorHex(cx.x88BB33AA), //
+  new ColorElement('scrollbarSlider.activeBackground').setColorHex(
+    cx.x88BB33AA
+  ), //
 
   //'scrollbarSlider.hoverBackground'
   void '#FFCC66CC',
@@ -960,7 +1052,9 @@ export const colorslist: ColorElement[] = [
 
   //'minimapGutter.modifiedBackground'
   void '#3399CCCC',
-  new ColorElement('minimapGutter.modifiedBackground').setColorHex(cx.x3399CCCC), //
+  new ColorElement('minimapGutter.modifiedBackground').setColorHex(
+    cx.x3399CCCC
+  ), //
 
   //'minimapGutter.addedBackground'
   void '#88BB33CC',
@@ -1000,11 +1094,15 @@ export const colorslist: ColorElement[] = [
 
   //'extensionButton.prominentBackground'
   void '#3399CCFF',
-  new ColorElement('extensionButton.prominentBackground').setColorHex(cx.x3399CCFF), //
+  new ColorElement('extensionButton.prominentBackground').setColorHex(
+    cx.x3399CCFF
+  ), //
 
   //'extensionButton.prominentHoverBackground'
   void '#771166CC',
-  new ColorElement('extensionButton.prominentHoverBackground').setColorHex(cx.x771166CC), //
+  new ColorElement('extensionButton.prominentHoverBackground').setColorHex(
+    cx.x771166CC
+  ), //
 
   //'listFilterWidget.background'
   void '#442266DD',
@@ -1012,7 +1110,9 @@ export const colorslist: ColorElement[] = [
 
   //'listFilterWidget.noMatchesOutline'
   void '#442266DD',
-  new ColorElement('listFilterWidget.noMatchesOutline').setColorHex(cx.x442266DD), //
+  new ColorElement('listFilterWidget.noMatchesOutline').setColorHex(
+    cx.x442266DD
+  ), //
 
   //'listFilterWidget.outline'
   void '#442266DD',
@@ -1024,7 +1124,9 @@ export const colorslist: ColorElement[] = [
 
   //'editorIndentGuide.activeBackground'
   void '#44AAEE33',
-  new ColorElement('editorIndentGuide.activeBackground').setColorHex(cx.x44AAEE33), //
+  new ColorElement('editorIndentGuide.activeBackground').setColorHex(
+    cx.x44AAEE33
+  ), //
 
   //'selection.background'
   void '#669988AA',
@@ -1044,11 +1146,15 @@ export const colorslist: ColorElement[] = [
 
   //'diffEditor.insertedTextBackground'
   void '#88DDAA33',
-  new ColorElement('diffEditor.insertedTextBackground').setColorHex(cx.x88DDAA33), //
+  new ColorElement('diffEditor.insertedTextBackground').setColorHex(
+    cx.x88DDAA33
+  ), //
 
   //'diffEditor.removedTextBackground'
   void '#EE447733',
-  new ColorElement('diffEditor.removedTextBackground').setColorHex(cx.xEE447733), //
+  new ColorElement('diffEditor.removedTextBackground').setColorHex(
+    cx.xEE447733
+  ), //
 
   //'diffEditor.diagonalFill'
   void '#FF000022', // #FF0000FF
@@ -1096,7 +1202,9 @@ export const colorslist: ColorElement[] = [
 
   //'searchEditor.findMatchBackground'
   void '#99336655',
-  new ColorElement('searchEditor.findMatchBackground').setColorHex(cx.x99336655), //
+  new ColorElement('searchEditor.findMatchBackground').setColorHex(
+    cx.x99336655
+  ), //
 
   //'searchEditor.findMatchBorder'
   void '#CC33CCAA',
@@ -1124,7 +1232,9 @@ export const colorslist: ColorElement[] = [
 
   //'editorMarkerNavigationError.background'
   void '#BB3355BB',
-  new ColorElement('editorMarkerNavigationError.background').setColorHex(cx.xBB3355BB), //
+  new ColorElement('editorMarkerNavigationError.background').setColorHex(
+    cx.xBB3355BB
+  ), //
 
   //'quickInput.background'
   void '#FF000022', // #FF0000FF
@@ -1136,7 +1246,9 @@ export const colorslist: ColorElement[] = [
 
   //'editorMarkerNavigationWarning.background'
   void '#D8CDB4BB',
-  new ColorElement('editorMarkerNavigationWarning.background').setColorHex(cx.xD8CDB4BB), //
+  new ColorElement('editorMarkerNavigationWarning.background').setColorHex(
+    cx.xD8CDB4BB
+  ), //
 
   //'debugTokenExpression.boolean'
   void '#FF000022', // #FF0000FF
@@ -1164,7 +1276,9 @@ export const colorslist: ColorElement[] = [
 
   //'debugView.exceptionLabelBackground'
   void '#FF000022', // #FF0000FF
-  new ColorElement('debugView.exceptionLabelBackground').setColorHex(cx.undefRed), //
+  new ColorElement('debugView.exceptionLabelBackground').setColorHex(
+    cx.undefRed
+  ), //
 
   //'debugView.stateLabelBackground'
   void '#FF000022', // #FF0000FF
@@ -1252,7 +1366,9 @@ export const colorslist: ColorElement[] = [
 
   //'editorMarkerNavigationInfo.background'
   void '#FFCC55EE',
-  new ColorElement('editorMarkerNavigationInfo.background').setColorHex(cx.xFFCC55EE), //
+  new ColorElement('editorMarkerNavigationInfo.background').setColorHex(
+    cx.xFFCC55EE
+  ), //
 ].filter(cx => cx) as ColorElement[];
 
 export const foregrounds: ColorElement[] = [
@@ -1286,7 +1402,9 @@ export const foregrounds: ColorElement[] = [
 
   //'symbolIcon.enumeratorMemberForeground'
   void '#66BBFFDD',
-  new ColorElement('symbolIcon.enumeratorMemberForeground').setColorHex(cx.x66BBFFDD), //
+  new ColorElement('symbolIcon.enumeratorMemberForeground').setColorHex(
+    cx.x66BBFFDD
+  ), //
 
   //'symbolIcon.structForeground'
   void '#66BBFFDD',
@@ -1330,7 +1448,9 @@ export const foregrounds: ColorElement[] = [
 
   //'symbolIcon.typeParameterForeground'
   void '#C4BDB5DD',
-  new ColorElement('symbolIcon.typeParameterForeground').setColorHex(cx.xC4BDB5DD), //
+  new ColorElement('symbolIcon.typeParameterForeground').setColorHex(
+    cx.xC4BDB5DD
+  ), //
 
   //'symbolIcon.colorForeground'
   void '#C4BDB5DD',
@@ -1362,7 +1482,9 @@ export const foregrounds: ColorElement[] = [
 
   //'symbolIcon.constructorForeground'
   void '#EE11AAEE',
-  new ColorElement('symbolIcon.constructorForeground').setColorHex(cx.xEE11AAEE), //
+  new ColorElement('symbolIcon.constructorForeground').setColorHex(
+    cx.xEE11AAEE
+  ), //
 
   //'symbolIcon.numberForeground'
   void '#EE6677FF',
@@ -1390,43 +1512,63 @@ export const foregrounds: ColorElement[] = [
 
   //'gitDecoration.ignoredResourceForeground'
   void '#0099CCDD',
-  new ColorElement('gitDecoration.ignoredResourceForeground').setColorHex(cx.x0099CCDD), //
+  new ColorElement('gitDecoration.ignoredResourceForeground').setColorHex(
+    cx.x0099CCDD
+  ), //
 
   //'gitDecoration.renamedResourceForeground'
   void '#00FF0022', // #00FF00FF
-  new ColorElement('gitDecoration.renamedResourceForeground').setColorHex(cx.undefGreen), //
+  new ColorElement('gitDecoration.renamedResourceForeground').setColorHex(
+    cx.undefGreen
+  ), //
 
   //'gitDecoration.stageDeletedResourceForeground'
   void '#00FF0022', // #00FF00FF
-  new ColorElement('gitDecoration.stageDeletedResourceForeground').setColorHex(cx.undefGreen), //
+  new ColorElement('gitDecoration.stageDeletedResourceForeground').setColorHex(
+    cx.undefGreen
+  ), //
 
   //'gitDecoration.stageModifiedResourceForeground'
   void '#00FF0022', // #00FF00FF
-  new ColorElement('gitDecoration.stageModifiedResourceForeground').setColorHex(cx.undefGreen), //
+  new ColorElement('gitDecoration.stageModifiedResourceForeground').setColorHex(
+    cx.undefGreen
+  ), //
 
   //'gitDecoration.addedResourceForeground'
   void '#33CC00DD',
-  new ColorElement('gitDecoration.addedResourceForeground').setColorHex(cx.x33CC00DD), //
+  new ColorElement('gitDecoration.addedResourceForeground').setColorHex(
+    cx.x33CC00DD
+  ), //
 
   //'gitDecoration.deletedResourceForeground'
   void '#993366FF',
-  new ColorElement('gitDecoration.deletedResourceForeground').setColorHex(cx.x993366FF), //
+  new ColorElement('gitDecoration.deletedResourceForeground').setColorHex(
+    cx.x993366FF
+  ), //
 
   //'gitDecoration.submoduleResourceForeground'
   void '#CC33CCDD',
-  new ColorElement('gitDecoration.submoduleResourceForeground').setColorHex(cx.xCC33CCDD), //
+  new ColorElement('gitDecoration.submoduleResourceForeground').setColorHex(
+    cx.xCC33CCDD
+  ), //
 
   //'gitDecoration.conflictingResourceForeground'
   void '#FF2200DD',
-  new ColorElement('gitDecoration.conflictingResourceForeground').setColorHex(cx.xFF2200DD), //
+  new ColorElement('gitDecoration.conflictingResourceForeground').setColorHex(
+    cx.xFF2200DD
+  ), //
 
   //'gitDecoration.untrackedResourceForeground'
   void '#FF9900DD',
-  new ColorElement('gitDecoration.untrackedResourceForeground').setColorHex(cx.xFF9900DD), //
+  new ColorElement('gitDecoration.untrackedResourceForeground').setColorHex(
+    cx.xFF9900DD
+  ), //
 
   //'gitDecoration.modifiedResourceForeground'
   void '#FFBB00DD',
-  new ColorElement('gitDecoration.modifiedResourceForeground').setColorHex(cx.xFFBB00DD), //
+  new ColorElement('gitDecoration.modifiedResourceForeground').setColorHex(
+    cx.xFFBB00DD
+  ), //
 
   //'button.secondaryForeground'
   void '#00FF0022', // #00FF00FF
@@ -1450,7 +1592,9 @@ export const foregrounds: ColorElement[] = [
 
   //'editor.inlineValuesForeground'
   void '#FF00FF22', // #FF00FFFF
-  new ColorElement('editor.inlineValuesForeground').setColorHex(cx.undefMagenta), //
+  new ColorElement('editor.inlineValuesForeground').setColorHex(
+    cx.undefMagenta
+  ), //
 
   //'editorError.foreground'
   void '#FF3366FF',
@@ -1478,7 +1622,9 @@ export const foregrounds: ColorElement[] = [
 
   //'list.inactiveSelectionForeground'
   void '#D2C8BEDD',
-  new ColorElement('list.inactiveSelectionForeground').setColorHex(cx.xD2C8BEDD), //
+  new ColorElement('list.inactiveSelectionForeground').setColorHex(
+    cx.xD2C8BEDD
+  ), //
 
   //'list.hoverForeground'
   void '#D2C8BEDD',
@@ -1494,15 +1640,21 @@ export const foregrounds: ColorElement[] = [
 
   //'list.activeSelectionIconForeground'
   void '#FF00FF22', // #FF00FFFF
-  new ColorElement('list.activeSelectionIconForeground').setColorHex(cx.undefMagenta), //
+  new ColorElement('list.activeSelectionIconForeground').setColorHex(
+    cx.undefMagenta
+  ), //
 
   //'list.focusHighlightForeground'
   void '#FF00FF22', // #FF00FFFF
-  new ColorElement('list.focusHighlightForeground').setColorHex(cx.undefMagenta), //
+  new ColorElement('list.focusHighlightForeground').setColorHex(
+    cx.undefMagenta
+  ), //
 
   //'list.inactiveSelectionIconForeground'
   void '#FF00FF22', // #FF00FFFF
-  new ColorElement('list.inactiveSelectionIconForeground').setColorHex(cx.undefMagenta), //
+  new ColorElement('list.inactiveSelectionIconForeground').setColorHex(
+    cx.undefMagenta
+  ), //
 
   //'list.errorForeground'
   void '#FF3366FF',
@@ -1518,11 +1670,15 @@ export const foregrounds: ColorElement[] = [
 
   //'quickInputList.focusForeground'
   void '#FF00FF22', // #FF00FFFF
-  new ColorElement('quickInputList.focusForeground').setColorHex(cx.undefMagenta), //
+  new ColorElement('quickInputList.focusForeground').setColorHex(
+    cx.undefMagenta
+  ), //
 
   //'quickInputList.focusIconForeground'
   void '#FF00FF22', // #FF00FFFF
-  new ColorElement('quickInputList.focusIconForeground').setColorHex(cx.undefMagenta), //
+  new ColorElement('quickInputList.focusIconForeground').setColorHex(
+    cx.undefMagenta
+  ), //
 
   //'settings.dropdownForeground'
   void '#D2C8BEDD',
@@ -1550,7 +1706,9 @@ export const foregrounds: ColorElement[] = [
 
   //'statusBarItem.prominentForeground'
   void '#D2C8BEDD',
-  new ColorElement('statusBarItem.prominentForeground').setColorHex(cx.xD2C8BEDD), //
+  new ColorElement('statusBarItem.prominentForeground').setColorHex(
+    cx.xD2C8BEDD
+  ), //
 
   //'statusBarItem.remoteForeground'
   void '#FF000022', // #FF0000FF
@@ -1618,15 +1776,21 @@ export const foregrounds: ColorElement[] = [
 
   //'editorGutter.commentRangeForeground'
   void '#5533EEAA',
-  new ColorElement('editorGutter.commentRangeForeground').setColorHex(cx.x5533EEAA), //
+  new ColorElement('editorGutter.commentRangeForeground').setColorHex(
+    cx.x5533EEAA
+  ), //
 
   //'editorGutter.foldingControlForeground'
   void '#FFCC77CC',
-  new ColorElement('editorGutter.foldingControlForeground').setColorHex(cx.xFFCC77CC), //
+  new ColorElement('editorGutter.foldingControlForeground').setColorHex(
+    cx.xFFCC77CC
+  ), //
 
   //'breadcrumb.activeSelectionForeground'
   void '#C9BDB0DD',
-  new ColorElement('breadcrumb.activeSelectionForeground').setColorHex(cx.xC9BDB0DD), //
+  new ColorElement('breadcrumb.activeSelectionForeground').setColorHex(
+    cx.xC9BDB0DD
+  ), //
 
   //'breadcrumb.foreground'
   void '#D2C8BEAA',
@@ -1662,11 +1826,15 @@ export const foregrounds: ColorElement[] = [
 
   //'inputValidation.warningForeground'
   void '#C9BDB0DD',
-  new ColorElement('inputValidation.warningForeground').setColorHex(cx.xC9BDB0DD), //
+  new ColorElement('inputValidation.warningForeground').setColorHex(
+    cx.xC9BDB0DD
+  ), //
 
   //'editorSuggestWidget.highlightForeground'
   void '#66BBFFDD',
-  new ColorElement('editorSuggestWidget.highlightForeground').setColorHex(cx.x66BBFFDD), //
+  new ColorElement('editorSuggestWidget.highlightForeground').setColorHex(
+    cx.x66BBFFDD
+  ), //
 
   //'editorSuggestWidget.foreground'
   void '#C4BDB5DD',
@@ -1674,15 +1842,21 @@ export const foregrounds: ColorElement[] = [
 
   //'editorSuggestWidget.focusHighlightForeground'
   void '#FF00FF22', // #FF00FFFF
-  new ColorElement('editorSuggestWidget.focusHighlightForeground').setColorHex(cx.undefMagenta), //
+  new ColorElement('editorSuggestWidget.focusHighlightForeground').setColorHex(
+    cx.undefMagenta
+  ), //
 
   //'editorSuggestWidget.selectedForeground'
   void '#FF00FF22', // #FF00FFFF
-  new ColorElement('editorSuggestWidget.selectedForeground').setColorHex(cx.undefMagenta), //
+  new ColorElement('editorSuggestWidget.selectedForeground').setColorHex(
+    cx.undefMagenta
+  ), //
 
   //'editorSuggestWidget.selectedIconForeground'
   void '#FF00FF22', // #FF00FFFF
-  new ColorElement('editorSuggestWidget.selectedIconForeground').setColorHex(cx.undefMagenta), //
+  new ColorElement('editorSuggestWidget.selectedIconForeground').setColorHex(
+    cx.undefMagenta
+  ), //
 
   //'editorCursor.foreground'
   void '#FF3333FF',
@@ -1702,7 +1876,9 @@ export const foregrounds: ColorElement[] = [
 
   //'notificationCenterHeader.foreground'
   void '#D2C8BEDD',
-  new ColorElement('notificationCenterHeader.foreground').setColorHex(cx.xD2C8BEDD), //
+  new ColorElement('notificationCenterHeader.foreground').setColorHex(
+    cx.xD2C8BEDD
+  ), //
 
   //'input.placeholderForeground'
   void '#FFEEDD88',
@@ -1714,7 +1890,9 @@ export const foregrounds: ColorElement[] = [
 
   //'peekViewResult.selectionForeground'
   void '#C4BDB5DD',
-  new ColorElement('peekViewResult.selectionForeground').setColorHex(cx.xC4BDB5DD), //
+  new ColorElement('peekViewResult.selectionForeground').setColorHex(
+    cx.xC4BDB5DD
+  ), //
 
   //'peekViewResult.fileForeground'
   void '#C4BDB5DD',
@@ -1726,63 +1904,93 @@ export const foregrounds: ColorElement[] = [
 
   //'editorOverviewRuler.currentContentForeground'
   void '#3399CCAA',
-  new ColorElement('editorOverviewRuler.currentContentForeground').setColorHex(cx.x3399CCAA), //
+  new ColorElement('editorOverviewRuler.currentContentForeground').setColorHex(
+    cx.x3399CCAA
+  ), //
 
   //'editorOverviewRuler.modifiedForeground'
   void '#3399CCAA',
-  new ColorElement('editorOverviewRuler.modifiedForeground').setColorHex(cx.x3399CCAA), //
+  new ColorElement('editorOverviewRuler.modifiedForeground').setColorHex(
+    cx.x3399CCAA
+  ), //
 
   //'editorOverviewRuler.findMatchForeground'
   void '#3399CCFF',
-  new ColorElement('editorOverviewRuler.findMatchForeground').setColorHex(cx.x3399CCFF), //
+  new ColorElement('editorOverviewRuler.findMatchForeground').setColorHex(
+    cx.x3399CCFF
+  ), //
 
   //'editorOverviewRuler.addedForeground'
   void '#88BB33AA',
-  new ColorElement('editorOverviewRuler.addedForeground').setColorHex(cx.x88BB33AA), //
+  new ColorElement('editorOverviewRuler.addedForeground').setColorHex(
+    cx.x88BB33AA
+  ), //
 
   //'editorOverviewRuler.commonContentForeground'
   void '#88DDAAAA',
-  new ColorElement('editorOverviewRuler.commonContentForeground').setColorHex(cx.x88DDAAAA), //
+  new ColorElement('editorOverviewRuler.commonContentForeground').setColorHex(
+    cx.x88DDAAAA
+  ), //
 
   //'editorOverviewRuler.wordHighlightForeground'
   void '#88DDAAFF',
-  new ColorElement('editorOverviewRuler.wordHighlightForeground').setColorHex(cx.x88DDAAFF), //
+  new ColorElement('editorOverviewRuler.wordHighlightForeground').setColorHex(
+    cx.x88DDAAFF
+  ), //
 
   //'editorOverviewRuler.bracketMatchForeground'
   void '#AAEE44FF',
-  new ColorElement('editorOverviewRuler.bracketMatchForeground').setColorHex(cx.xAAEE44FF), //
+  new ColorElement('editorOverviewRuler.bracketMatchForeground').setColorHex(
+    cx.xAAEE44FF
+  ), //
 
   //'editorOverviewRuler.deletedForeground'
   void '#BB3355AA',
-  new ColorElement('editorOverviewRuler.deletedForeground').setColorHex(cx.xBB3355AA), //
+  new ColorElement('editorOverviewRuler.deletedForeground').setColorHex(
+    cx.xBB3355AA
+  ), //
 
   //'editorOverviewRuler.warningForeground'
   void '#CCFF33FF',
-  new ColorElement('editorOverviewRuler.warningForeground').setColorHex(cx.xCCFF33FF), //
+  new ColorElement('editorOverviewRuler.warningForeground').setColorHex(
+    cx.xCCFF33FF
+  ), //
 
   //'editorOverviewRuler.incomingContentForeground'
   void '#DD2255EE',
-  new ColorElement('editorOverviewRuler.incomingContentForeground').setColorHex(cx.xDD2255EE), //
+  new ColorElement('editorOverviewRuler.incomingContentForeground').setColorHex(
+    cx.xDD2255EE
+  ), //
 
   //'editorOverviewRuler.wordHighlightStrongForeground'
   void '#EE4477FF',
-  new ColorElement('editorOverviewRuler.wordHighlightStrongForeground').setColorHex(cx.xEE4477FF), //
+  new ColorElement(
+    'editorOverviewRuler.wordHighlightStrongForeground'
+  ).setColorHex(cx.xEE4477FF), //
 
   //'editorOverviewRuler.errorForeground'
   void '#FF3366FF',
-  new ColorElement('editorOverviewRuler.errorForeground').setColorHex(cx.xFF3366FF), //
+  new ColorElement('editorOverviewRuler.errorForeground').setColorHex(
+    cx.xFF3366FF
+  ), //
 
   //'editorOverviewRuler.rangeHighlightForeground'
   void '#FF7733CC',
-  new ColorElement('editorOverviewRuler.rangeHighlightForeground').setColorHex(cx.xFF7733CC), //
+  new ColorElement('editorOverviewRuler.rangeHighlightForeground').setColorHex(
+    cx.xFF7733CC
+  ), //
 
   //'editorOverviewRuler.infoForeground'
   void '#FFCC55EE',
-  new ColorElement('editorOverviewRuler.infoForeground').setColorHex(cx.xFFCC55EE), //
+  new ColorElement('editorOverviewRuler.infoForeground').setColorHex(
+    cx.xFFCC55EE
+  ), //
 
   //'editorOverviewRuler.selectionHighlightForeground'
   void '#FFCC55EE',
-  new ColorElement('editorOverviewRuler.selectionHighlightForeground').setColorHex(cx.xFFCC55EE), //
+  new ColorElement(
+    'editorOverviewRuler.selectionHighlightForeground'
+  ).setColorHex(cx.xFFCC55EE), //
 
   //'panelTitle.inactiveForeground'
   void '#D2C8BEAA',
@@ -1802,11 +2010,15 @@ export const foregrounds: ColorElement[] = [
 
   //'editorLightBulbAutoFix.foreground'
   void '#3399CCDD',
-  new ColorElement('editorLightBulbAutoFix.foreground').setColorHex(cx.x3399CCDD), //
+  new ColorElement('editorLightBulbAutoFix.foreground').setColorHex(
+    cx.x3399CCDD
+  ), //
 
   //'extensionButton.prominentForeground'
   void '#FFEECCEE',
-  new ColorElement('extensionButton.prominentForeground').setColorHex(cx.xFFEECCEE), //
+  new ColorElement('extensionButton.prominentForeground').setColorHex(
+    cx.xFFEECCEE
+  ), //
 
   //'textLink.activeForeground'
   void '#6644CCDD',
@@ -1842,7 +2054,9 @@ export const foregrounds: ColorElement[] = [
 
   //'peekViewTitleDescription.foreground'
   void '#C4BDB5DD',
-  new ColorElement('peekViewTitleDescription.foreground').setColorHex(cx.xC4BDB5DD), //
+  new ColorElement('peekViewTitleDescription.foreground').setColorHex(
+    cx.xC4BDB5DD
+  ), //
 
   //'peekViewTitleLabel.foreground'
   void '#C4BDB5DD',
@@ -1854,7 +2068,9 @@ export const foregrounds: ColorElement[] = [
 
   //'notificationsWarningIcon.foreground'
   void '#CCFF33FF',
-  new ColorElement('notificationsWarningIcon.foreground').setColorHex(cx.xCCFF33FF), //
+  new ColorElement('notificationsWarningIcon.foreground').setColorHex(
+    cx.xCCFF33FF
+  ), //
 
   //'problemsWarningIcon.foreground'
   void '#CCFF33FF',
@@ -1874,7 +2090,9 @@ export const foregrounds: ColorElement[] = [
 
   //'editorLineNumber.activeForeground'
   void '#D2C8BEDD',
-  new ColorElement('editorLineNumber.activeForeground').setColorHex(cx.xD2C8BEDD), //
+  new ColorElement('editorLineNumber.activeForeground').setColorHex(
+    cx.xD2C8BEDD
+  ), //
 
   //'errorForeground'
   void '#D2C8BEBB',
@@ -1926,11 +2144,15 @@ export const foregrounds: ColorElement[] = [
 
   //'debugIcon.breakpointCurrentStackframeForeground'
   void '#FF000022', // #FF0000FF
-  new ColorElement('debugIcon.breakpointCurrentStackframeForeground').setColorHex(cx.undefRed), //
+  new ColorElement(
+    'debugIcon.breakpointCurrentStackframeForeground'
+  ).setColorHex(cx.undefRed), //
 
   //'debugIcon.breakpointDisabledForeground'
   void '#FF000022', // #FF0000FF
-  new ColorElement('debugIcon.breakpointDisabledForeground').setColorHex(cx.undefRed), //
+  new ColorElement('debugIcon.breakpointDisabledForeground').setColorHex(
+    cx.undefRed
+  ), //
 
   //'debugIcon.breakpointForeground'
   void '#FF000022', // #FF0000FF
@@ -1938,11 +2160,15 @@ export const foregrounds: ColorElement[] = [
 
   //'debugIcon.breakpointStackframeForeground'
   void '#FF000022', // #FF0000FF
-  new ColorElement('debugIcon.breakpointStackframeForeground').setColorHex(cx.undefRed), //
+  new ColorElement('debugIcon.breakpointStackframeForeground').setColorHex(
+    cx.undefRed
+  ), //
 
   //'debugIcon.breakpointUnverifiedForeground'
   void '#FF000022', // #FF0000FF
-  new ColorElement('debugIcon.breakpointUnverifiedForeground').setColorHex(cx.undefRed), //
+  new ColorElement('debugIcon.breakpointUnverifiedForeground').setColorHex(
+    cx.undefRed
+  ), //
 
   //'debugIcon.continueForeground'
   void '#FF000022', // #FF0000FF
@@ -1986,7 +2212,9 @@ export const foregrounds: ColorElement[] = [
 
   //'debugView.exceptionLabelForeground'
   void '#FF000022', // #FF0000FF
-  new ColorElement('debugView.exceptionLabelForeground').setColorHex(cx.undefRed), //
+  new ColorElement('debugView.exceptionLabelForeground').setColorHex(
+    cx.undefRed
+  ), //
 
   //'debugView.stateLabelForeground'
   void '#FF000022', // #FF0000FF
@@ -1994,15 +2222,21 @@ export const foregrounds: ColorElement[] = [
 
   //'notebookStatusErrorIcon.foreground'
   void '#FF000022', // #FF0000FF
-  new ColorElement('notebookStatusErrorIcon.foreground').setColorHex(cx.undefRed), //
+  new ColorElement('notebookStatusErrorIcon.foreground').setColorHex(
+    cx.undefRed
+  ), //
 
   //'notebookStatusRunningIcon.foreground'
   void '#FF000022', // #FF0000FF
-  new ColorElement('notebookStatusRunningIcon.foreground').setColorHex(cx.undefRed), //
+  new ColorElement('notebookStatusRunningIcon.foreground').setColorHex(
+    cx.undefRed
+  ), //
 
   //'notebookStatusSuccessIcon.foreground'
   void '#FF000022', // #FF0000FF
-  new ColorElement('notebookStatusSuccessIcon.foreground').setColorHex(cx.undefRed), //
+  new ColorElement('notebookStatusSuccessIcon.foreground').setColorHex(
+    cx.undefRed
+  ), //
 
   //'checkbox.foreground'
   void '#FF000022', // #FF0000FF
@@ -2034,7 +2268,9 @@ export const foregrounds: ColorElement[] = [
 
   //'ports.iconRunningProcessForeground'
   void '#FF00FF22', // #FF00FFFF
-  new ColorElement('ports.iconRunningProcessForeground').setColorHex(cx.undefMagenta), //
+  new ColorElement('ports.iconRunningProcessForeground').setColorHex(
+    cx.undefMagenta
+  ), //
 
   //'problemsErrorIcon.foreground'
   void '#FF3366FF',
@@ -2042,7 +2278,9 @@ export const foregrounds: ColorElement[] = [
 
   //'notificationsErrorIcon.foreground'
   void '#FF3366FF',
-  new ColorElement('notificationsErrorIcon.foreground').setColorHex(cx.xFF3366FF), //
+  new ColorElement('notificationsErrorIcon.foreground').setColorHex(
+    cx.xFF3366FF
+  ), //
 
   //'editorLightBulb.foreground'
   void '#FFCC33DD',
@@ -2058,7 +2296,9 @@ export const foregrounds: ColorElement[] = [
 
   //'notificationsInfoIcon.foreground'
   void '#FFCC55FF',
-  new ColorElement('notificationsInfoIcon.foreground').setColorHex(cx.xFFCC55FF), //
+  new ColorElement('notificationsInfoIcon.foreground').setColorHex(
+    cx.xFFCC55FF
+  ), //
 
   //'icon.foreground'
   void '#FFCC77CC',

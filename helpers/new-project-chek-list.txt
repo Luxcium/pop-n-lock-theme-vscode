@@ -1,0 +1,11 @@
+# new-project-chek-list.txt
+
+touch .gitignore
+git init
+npm init -y
+tsc --init
+wget https://git.io/JRwfG#.prettierrc -O .prettierrc
+wget https://git.io/JRwJK#.editorconfig -O .editorconfig
+wget https://git.io/JRwUy#LICENSE -O LICENSE
+npm i --save-dev eslint@latest typescript@latest @typescript-eslint/parser @typescript-eslint/eslint-plugin eslint-plugin-jest eslint-plugin-node eslint-plugin-import
+.vscode/tasks.json
