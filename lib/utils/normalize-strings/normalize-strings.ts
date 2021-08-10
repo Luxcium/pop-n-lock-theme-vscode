@@ -1,5 +1,5 @@
 import { ColorElementTuple } from '../../types/ColorElementTuple';
-import { stripQuotes } from './utils/strings';
+import { stripQuotes } from '../strings';
 
 /** Remove any double quotes from the string */
 export function normalizeQuotedStrings(

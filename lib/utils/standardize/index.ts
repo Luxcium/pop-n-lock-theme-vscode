@@ -1,0 +1,1 @@
+export { standardize } from './standardize';

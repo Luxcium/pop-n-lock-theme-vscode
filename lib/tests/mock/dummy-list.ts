@@ -1,5 +1,5 @@
+import ColorElement from '../../classes/color-element';
 import { cx } from '../../color/const';
-import ColorElement from '../../tools/classes/color-element';
 
 export function shortDummyList(): ColorElement[] {
   return [

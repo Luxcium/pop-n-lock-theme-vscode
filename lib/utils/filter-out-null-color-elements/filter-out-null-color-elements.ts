@@ -1,5 +1,5 @@
-import { NULL_COLOR } from '../../../../constants';
-import ColorElement from '../../../classes/color-element';
+import ColorElement from '../../classes/color-element';
+import { NULL_COLOR } from '../../constants';
 
 export function filterOutNullColorElements(
   elementList: Promise<ColorElement[]>

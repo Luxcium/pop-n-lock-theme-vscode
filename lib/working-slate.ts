@@ -1,4 +1,4 @@
-import { importJsonBaseColorElementList } from './tools/functions/imports';
+import { importJsonBaseColorElementList } from './imports';
 
 async function main() {
   const baseColorElementList = await importJsonBaseColorElementList();

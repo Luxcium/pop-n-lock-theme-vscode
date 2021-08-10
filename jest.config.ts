@@ -155,7 +155,7 @@ export default async (): Promise<Config.InitialOptions> => {
     testMatch: [
       // '**/__tests__/**/*.[jt]s?(x)',
       // '**/?(*.)+(spec|test).[tj]s?(x)',
-      '<rootDir>/helpers/**/?(*.)+(spec|test).[tj]s?(x)',
+      '<rootDir>/lib/**/?(*.)+(spec|test).[tj]s?(x)',
     ], // <rootDir>/
 
     // An array of regexp pattern strings that are matched against all test paths, matched tests are skipped

@@ -1,5 +1,5 @@
 import { consts } from '../constants';
-import { importJsonBaseColorElementList } from './functions/imports';
+import { importJsonBaseColorElementList } from '../imports';
 
 async function main() {
   void consts;

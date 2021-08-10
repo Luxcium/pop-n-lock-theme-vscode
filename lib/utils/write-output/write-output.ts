@@ -1,12 +1,12 @@
 import { readFile } from 'fs';
 import { promisify } from 'util';
+import ColorElement from '../../classes/color-element';
 import { colorslist as colorslist_ } from '../../color/list';
 import { getTerminalColors } from '../../color/lists/terminal';
 import { BASE_COLORS_OUTPUT_PATH } from '../../constants';
-import ColorElement from '../classes/color-element';
-import { writeFileToPathAsync } from './exports/write-file-to-path-async/write-file-to-path-async';
-import { unCommentJSONC } from './jsonc-to-json-parser';
-import { prettifyJsonString } from './utils/prettify-json-string';
+import { writeFileToPathAsync } from '../../exports';
+import { unCommentJSONC } from '../jsonc-to-json-parser/jsonc-to-json-parser';
+import { prettifyJsonString } from '../prettify-json-string';
 export const readFileAsync = promisify(readFile);
 
 const model =

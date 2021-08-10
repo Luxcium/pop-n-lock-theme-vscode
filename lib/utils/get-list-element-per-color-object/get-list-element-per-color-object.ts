@@ -1,9 +1,9 @@
 import { PathLike } from 'fs';
-import { extractColorInformation } from './extract-color-information-complex';
-import { readLinesAsync } from './imports/readers';
-import { listElementPerColor } from './list-element-per-color';
-import { normalizeQuotedStrings } from './normalize-strings';
-import { reversedSplitLinesAsync } from './utils/split-lines';
+import { readLinesAsync } from '../../imports';
+import { extractColorInformation } from '../extract-color-information-complex';
+import { listElementPerColor } from '../list-element-per-color';
+import { normalizeQuotedStrings } from '../normalize-strings';
+import { reversedSplitLinesAsync } from '../split-lines';
 
 export async function getListElementPerColorObject(
   pathToJsonColours: PathLike

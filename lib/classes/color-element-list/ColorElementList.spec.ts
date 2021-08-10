@@ -1,5 +1,5 @@
 import ColorElementList from '.';
-import { shortDummyList } from '../../../tests/mock/dummy-list';
+import { shortDummyList } from '../../tests';
 import ColorElement from '../color-element';
 describe('Specs for "lib/tools/classes/color-element-list/ColorElementList.ts"', () => {
   describe('The tools required to processe this spec suit of ColorElementList:', () => {

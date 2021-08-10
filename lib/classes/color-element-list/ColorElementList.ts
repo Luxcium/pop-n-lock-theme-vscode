@@ -1,4 +1,4 @@
-import { IColorElement } from '../../../types/IColorElement';
+import { IColorElement } from '../../types/IColorElement';
 import ColorElement from '../color-element';
 
 export class ColorElementList {

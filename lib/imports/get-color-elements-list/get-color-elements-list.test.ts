@@ -1,9 +1,9 @@
 import type { PathLike } from 'fs';
-import { BASE_COLORS_INPUT_PATH } from '../../../../constants';
-import { createColorElementsList } from '../../create-color-element-list';
-import { extractColorInformation } from '../../extract-color-information';
-import { normalizeQuotedStrings } from '../../normalize-strings';
+import { BASE_COLORS_INPUT_PATH } from '../../constants';
+import { createColorElementsList } from '../../utils/create-color-element-list';
+import { extractColorInformation } from '../../utils/extract-color-information-complex';
 import { filterOutNullColorElements } from '../../utils/filter-out-null-color-elements/filter-out-null-color-elements';
+import { normalizeQuotedStrings } from '../../utils/normalize-strings';
 import { splitLines, splitLinesAsync } from '../../utils/split-lines';
 import { readLines, readLinesAsync } from '../readers';
 

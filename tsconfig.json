@@ -48,7 +48,6 @@
     "**/out/",
     "./examples/",
     "./images/",
-    "./lib/",
     "**/node_modules/",
     "./resources/",
     "./scripts/",

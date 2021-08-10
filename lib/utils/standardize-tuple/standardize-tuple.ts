@@ -1,4 +1,4 @@
-import { ColorElementTuple } from '../types/ColorElementTuple';
+import { ColorElementTuple } from '../../types/ColorElementTuple';
 
 void function standardizeTuple(
   colorElementTuple: ColorElementTuple

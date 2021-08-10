@@ -1,5 +1,5 @@
 import { filterOutNullColorElements } from '.';
-import { shortDummyList } from '../../../../tests';
+import { shortDummyList } from '../../tests';
 void shortDummyList;
 
 describe('filterOutNullColorElements', () => {

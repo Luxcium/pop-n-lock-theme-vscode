@@ -1,4 +1,4 @@
-import { ColorElementTuple } from '../types/ColorElementTuple';
+import { ColorElementTuple } from '../../types/ColorElementTuple';
 
 export function colorHexMatchComplex(inputString: string | null): string;
 export function colorHexMatchComplex(
