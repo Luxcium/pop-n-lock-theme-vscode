@@ -1,10 +1,9 @@
 import { filterOutNullColorElements } from '.';
 import { shortDummyList } from '../../tests';
-void shortDummyList;
 
 describe('filterOutNullColorElements', () => {
   it('should be defined', () => {
-    const awaitedList = filterOutNullColorElements(shortDummyList())(false);
+    const awaitedList = filterOutNullColorElements(shortDummyList())();
     expect(awaitedList.length).toBe(13);
   });
   it('should be defined', () => {

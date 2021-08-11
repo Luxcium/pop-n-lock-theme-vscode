@@ -12,6 +12,7 @@ function getColorElementsListSync(
   template: string | [string] | [string, string] = '#'
 ): ColorElement[] {
   const step1 = readLines(pathToJsonColours);
+
   const step2 = splitLines(step1);
   const step3 = extractColorInformation(step2, template);
   const step4 = normalizeQuotedStrings(step3);
@@ -62,7 +63,7 @@ async function getColorElementsListAsync(
 }
 
 async function main() {
-  console.log(getColorElementsList(BASE_COLORS_INPUT_PATH));
+  /*   console.log */ getColorElementsList(BASE_COLORS_INPUT_PATH);
 }
 
 if (require?.main?.filename === __filename) MAIN();
