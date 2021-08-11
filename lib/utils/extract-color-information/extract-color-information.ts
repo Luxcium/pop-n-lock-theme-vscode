@@ -1,6 +1,28 @@
 import { ColorElementTuple } from '../../types/ColorElementTuple';
+import { colorExtractHex } from '../extract-color-information-complex/extract-color-information';
 
-export async function extractColorInformation(
+export function extractColorInformation(
+  colorElementTupleList: ColorElementTuple[],
+  template?: string | [string] | [string, string]
+): ColorElementTuple[];
+export function extractColorInformation(
+  colorElementTupleList: ColorElementTuple[],
+  template?: string | [string] | [string, string]
+): ColorElementTuple[];
+export function extractColorInformation(
+  colorElementTupleList: ColorElementTuple[],
+  template: string | [string] | [string, string] = 'x'
+): ColorElementTuple[] {
+  return colorElementTupleList.map(colorElementTuple => {
+    const [colorElementName, colorHexValue] = colorElementTuple;
+    return [
+      colorElementName,
+      colorExtractHex(colorHexValue, template),
+    ] as ColorElementTuple;
+  });
+}
+
+export async function extractColorInformationAsync(
   colorElementTupleList: Promise<ColorElementTuple[]>,
   template: string | [string] | [string, string] = 'x'
 ): Promise<ColorElementTuple[]> {
@@ -15,6 +37,18 @@ export async function extractColorInformation(
   );
 }
 
+export function extractColorInformationSync(
+  colorElementTupleList: ColorElementTuple[],
+  template: string | [string] | [string, string] = 'x'
+): ColorElementTuple[] {
+  return colorElementTupleList.map(colorElementTuple => {
+    const [colorElementName, colorHexValue] = colorElementTuple;
+    return [
+      colorElementName,
+      colorExtractHex(colorHexValue, template),
+    ] as ColorElementTuple;
+  });
+}
 export function colorHexMatch(inputString: string | null): string;
 export function colorHexMatch(
   inputString: string | null,

@@ -1,19 +1,18 @@
-import type { PathLike } from 'fs';
+import ColorElement from '../../classes/color-element';
 import { BASE_COLORS_INPUT_PATH } from '../../constants';
 import { createColorElementsList } from '../../utils/create-color-element-list';
 import { extractColorInformation } from '../../utils/extract-color-information-complex';
 import { filterOutNullColorElements } from '../../utils/filter-out-null-color-elements/filter-out-null-color-elements';
 import { normalizeQuotedStrings } from '../../utils/normalize-strings';
-import { splitLinesAsync } from '../../utils/split-lines';
-import { readLinesAsync } from '../readers';
-
-export async function getColorElementsList(
-  pathToJsonColours: PathLike,
+import { splitLines } from '../../utils/split-lines';
+import { readLines } from '../readers';
+function getColorElementsListSync(
+  pathToJsonColours: string,
   includeNullElements: boolean = false,
   template: string | [string] | [string, string] = '#'
-) {
-  const step1 = readLinesAsync(pathToJsonColours);
-  const step2 = splitLinesAsync(step1);
+): ColorElement[] {
+  const step1 = readLines(pathToJsonColours);
+  const step2 = splitLines(step1);
   const step3 = extractColorInformation(step2, template);
   const step4 = normalizeQuotedStrings(step3);
   const step5 = createColorElementsList(step4);
@@ -21,8 +20,49 @@ export async function getColorElementsList(
   return step6;
 }
 
+export function getColorElementsList(
+  pathToJsonColours: string,
+  includeNullElements?: boolean,
+  template?: string | [string] | [string, string]
+): ColorElement[];
+export function getColorElementsList(
+  pathToJsonColours: Promise<string>,
+  includeNullElements?: boolean,
+  template?: string | [string] | [string, string]
+): Promise<ColorElement[]>;
+export function getColorElementsList(
+  pathToJsonColours: string | Promise<string>,
+  includeNullElements: boolean = false,
+  template: string | [string] | [string, string] = '#'
+): ColorElement[] | Promise<ColorElement[]> {
+  if (pathToJsonColours instanceof Promise) {
+    return getColorElementsListAsync(
+      pathToJsonColours,
+      includeNullElements,
+      template
+    );
+  }
+  return getColorElementsListSync(
+    pathToJsonColours,
+    includeNullElements,
+    template
+  );
+}
+
+async function getColorElementsListAsync(
+  pathToJsonColours: Promise<string>,
+  includeNullElements: boolean = false,
+  template: string | [string] | [string, string] = '#'
+): Promise<ColorElement[]> {
+  return getColorElementsListSync(
+    await pathToJsonColours,
+    includeNullElements,
+    template
+  );
+}
+
 async function main() {
-  console.log(await getColorElementsList(BASE_COLORS_INPUT_PATH));
+  console.log(getColorElementsList(BASE_COLORS_INPUT_PATH));
 }
 
 if (require?.main?.filename === __filename) MAIN();
@@ -72,3 +112,5 @@ export async function getColorElementsList(
   );
 }
  */
+
+// 514-923-1012

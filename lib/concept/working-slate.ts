@@ -1,4 +1,4 @@
-import { importJsonBaseColorElementList } from './imports';
+import { importJsonBaseColorElementList } from '../imports';
 
 async function main() {
   const baseColorElementList = await importJsonBaseColorElementList();
@@ -9,7 +9,6 @@ async function main() {
   //   console.log(attribute);
   //   if (!(attribute in memoizedKeys)) {
   //     memoizedKeys[attribute] = [];
-  //   }
   //   memoizedKeys[attribute]?.push(colorElement);
   // }
   // return memoizedKeys;

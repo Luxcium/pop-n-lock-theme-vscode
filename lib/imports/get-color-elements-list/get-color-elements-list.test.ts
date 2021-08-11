@@ -1,14 +1,9 @@
-import type { PathLike } from 'fs';
 import { BASE_COLORS_INPUT_PATH } from '../../constants';
-import { createColorElementsList } from '../../utils/create-color-element-list';
-import { extractColorInformation } from '../../utils/extract-color-information-complex';
-import { filterOutNullColorElements } from '../../utils/filter-out-null-color-elements/filter-out-null-color-elements';
-import { normalizeQuotedStrings } from '../../utils/normalize-strings';
-import { splitLines, splitLinesAsync } from '../../utils/split-lines';
-import { readLines, readLinesAsync } from '../readers';
+import { splitLines } from '../../utils/split-lines';
+import { readLines } from '../readers';
 
 describe('Get Base Colors from JSON', () => {
-  let pathToJsonColours: PathLike = BASE_COLORS_INPUT_PATH;
+  let pathToJsonColours: string = BASE_COLORS_INPUT_PATH;
   // let template: string | [string] | [string, string] = '#';
   // let includeNullElements: boolean = false;
   let step1: string[];
@@ -76,28 +71,28 @@ filterOutNullColorElements
    */
 });
 
-export async function getColorElementsList(
-  pathToJsonColours: PathLike,
-  includeNullElements: boolean = false,
-  template: string | [string] | [string, string] = '#'
-) {
-  const step1 = readLinesAsync(pathToJsonColours);
-  const step2 = splitLinesAsync(step1);
-  const step3 = extractColorInformation(step2, template);
-  const step4 = normalizeQuotedStrings(step3);
-  const step5 = createColorElementsList(step4);
-  const step6 = filterOutNullColorElements(step5)(includeNullElements);
-  return step6;
-}
+// export async function getColorElementsList(
+//   pathToJsonColours: string,
+//   includeNullElements: boolean = false,
+//   template: string | [string] | [string, string] = '#'
+// ) {
+//   const step1 = readLinesAsync(pathToJsonColours);
+//   const step2 = splitLinesAsync(step1);
+//   const step3 = extractColorInformation(step2, template);
+//   const step4 = normalizeQuotedStrings(step3);
+//   const step5 = createColorElementsList(step4);
+//   const step6 = filterOutNullColorElements(step5)(includeNullElements);
+//   return step6;
+// }
 
-async function main() {
-  console.log(await getColorElementsList(BASE_COLORS_INPUT_PATH));
-}
+// async function main() {
+//   console.log(await getColorElementsList(BASE_COLORS_INPUT_PATH));
+// }
 
-if (require?.main?.filename === __filename) MAIN();
-function MAIN() {
-  main();
-}
+// if (require?.main?.filename === __filename) MAIN();
+// function MAIN() {
+//   main();
+// }
 
 /*
 import type { PathLike } from 'fs';
