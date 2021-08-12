@@ -1,36 +1,33 @@
 import ColorElementList from '../../classes/color-element-list';
 import { BASE_COLORS_INPUT_PATH } from '../../constants';
 import { getColorElementsList } from '../get-color-elements-list/get-color-elements-list';
-// = BASE_COLORS_INPUT_PATH
-export const importJsonBaseColorElementListAsync = async (
+
+export const importJsonBaseColorAsync = async (
   baseColorsInputPath: Promise<string>
 ): Promise<ColorElementList> =>
   ColorElementList.of(await getColorElementsList(baseColorsInputPath));
 
-export const importJsonBaseColorElementListSync = (
+export const importJsonBaseColorSync = (
   baseColorsInputPath: string = BASE_COLORS_INPUT_PATH
 ): ColorElementList =>
   ColorElementList.of(getColorElementsList(baseColorsInputPath));
-//
+
 export const importJsonBaseColor = (
   baseColorsInputPath: string | Promise<string> = BASE_COLORS_INPUT_PATH
 ): ColorElementList | Promise<ColorElementList> => {
   if (baseColorsInputPath instanceof Promise) {
-    return importJsonBaseColorElementListAsync(baseColorsInputPath);
-    // return ColorElementList.of(
-    //   getColorElementsList( Promise.resolve(baseColorsInputPath))
-    // );
+    return importJsonBaseColorAsync(baseColorsInputPath);
   }
-  return importJsonBaseColorElementListSync(baseColorsInputPath); //  ColorElementList.of(getColorElementsList(baseColorsInputPath));
+  return importJsonBaseColorSync(baseColorsInputPath);
 };
-const importJsonBaseColorElementList_ = async (
+const importJsonBaseColor_ = async (
   baseColorsInputPath: string = BASE_COLORS_INPUT_PATH
 ): Promise<ColorElementList> =>
   ColorElementList.of(getColorElementsList(baseColorsInputPath));
 
 export const importJsonBaseColorElementList = ():
   | ColorElementList
-  | Promise<ColorElementList> => importJsonBaseColorElementList_();
+  | Promise<ColorElementList> => importJsonBaseColor_();
 
 async function main() {
   console.log(await importJsonBaseColorElementList());

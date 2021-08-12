@@ -5,15 +5,17 @@ export function readLines(path: Promise<string>): Promise<string[]>;
 export function readLines(
   path: string | Promise<string>
 ): string[] | Promise<string[]> {
-  if (typeof path === 'string') return readLines_(readFileSync(path));
-  return readLinesAsync(Promise.resolve(path));
+  if (path instanceof Promise) {
+    return readLinesAsync(Promise.resolve(path));
+  }
+  return readLinesSync(path);
 }
 
-export function readLinesSync(path: string): string[] {
+  function readLinesSync(path: string): string[] {
   return readLines_(readFileSync(path));
 }
 
-export async function readLinesAsync(path: Promise<string>): Promise<string[]> {
+  async function readLinesAsync(path: Promise<string>): Promise<string[]> {
   return readLines_(await promises.readFile(await path));
 }
 

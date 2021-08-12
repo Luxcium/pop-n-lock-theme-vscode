@@ -6,7 +6,8 @@ import { filterOutNullColorElements } from '../../utils/filter-out-null-color-el
 import { normalizeQuotedStrings } from '../../utils/normalize-strings';
 import { splitLines } from '../../utils/split-lines';
 import { readLines } from '../readers';
-function getColorElementsListSync(
+
+function getColorJsonListSync(
   pathToJsonColours: string,
   includeNullElements: boolean = false,
   template: string | [string] | [string, string] = '#'
@@ -18,7 +19,20 @@ function getColorElementsListSync(
   const step4 = normalizeQuotedStrings(step3);
   const step5 = createColorElementsList(step4);
   const step6 = filterOutNullColorElements(step5)(includeNullElements);
+  console.log('step6 :>> ', step6);
   return step6;
+}
+
+async function getColorElementsListAsync(
+  pathToJsonColours: Promise<string>,
+  includeNullElements: boolean = false,
+  template: string | [string] | [string, string] = '#'
+): Promise<ColorElement[]> {
+  return getColorJsonListSync(
+    await pathToJsonColours,
+    includeNullElements,
+    template
+  );
 }
 
 export function getColorElementsList(
@@ -43,27 +57,11 @@ export function getColorElementsList(
       template
     );
   }
-  return getColorElementsListSync(
-    pathToJsonColours,
-    includeNullElements,
-    template
-  );
-}
-
-async function getColorElementsListAsync(
-  pathToJsonColours: Promise<string>,
-  includeNullElements: boolean = false,
-  template: string | [string] | [string, string] = '#'
-): Promise<ColorElement[]> {
-  return getColorElementsListSync(
-    await pathToJsonColours,
-    includeNullElements,
-    template
-  );
+  return getColorJsonListSync(pathToJsonColours, includeNullElements, template);
 }
 
 async function main() {
-  /*   console.log */ getColorElementsList(BASE_COLORS_INPUT_PATH);
+  console.log(getColorElementsList(BASE_COLORS_INPUT_PATH));
 }
 
 if (require?.main?.filename === __filename) MAIN();
