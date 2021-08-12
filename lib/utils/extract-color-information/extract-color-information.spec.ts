@@ -1,14 +1,13 @@
-import { colorHexMatch, extractColorInformation } from '.';
-import {
-  extractColorInformationAsync,
-  extractColorInformationSync,
-} from './extract-color-information';
+import { extractColorInformation } from '.';
+import { colorHexMatchTemplated } from '../color-hex-match';
+import { extractColorInformationAsync } from './async';
+import { extractColorInformationSync } from './sync';
 
 describe('DUMMY TEST', () => {
   it.skip('extractColorInformation', () => {
-    const some = extractColorInformation;
+    const result = extractColorInformation;
 
-    expect(some).toBeDefined();
+    expect(result).toBeDefined();
   });
 
   it.skip('extractColorInformationAsync', () => {
@@ -24,7 +23,7 @@ describe('DUMMY TEST', () => {
   });
 
   it.skip('colorHexMatch', () => {
-    const some = colorHexMatch;
+    const some = colorHexMatchTemplated;
 
     expect(some).toBeDefined();
   });

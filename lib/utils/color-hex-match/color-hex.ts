@@ -1,4 +1,12 @@
-import { colorHexRegExps } from './templates/color-hex-reg-exps';
+import { colorHexRegExps } from '../../templates/reg-exp/color-hex-reg-exps';
+
+/**
+ * Match the `inputString` against hexadecimal regExps
+ * [`rrgbbbaa`, `rrggbb`, `rgba`, `rgb`] return the upperCase or emptyString
+ * @returns string
+ */
+export const colorHexMatch = (inputString: string): string =>
+  _colorHexMatch(colorHexRegExps)(inputString);
 
 function _colorHexMatch(colorHexRegExp: RegExp[]) {
   return (inputString: string): string => {
@@ -12,10 +20,3 @@ function _colorHexMatch(colorHexRegExp: RegExp[]) {
     return '';
   };
 }
-/**
- * Match the `inputString` against hexadecimal regExps
- * [`rrgbbbaa`, `rrggbb`, `rgba`, `rgb`] return the upperCase or emptyString
- * @returns string
- */
-export const colorHexMatch = (inputString: string): string =>
-  _colorHexMatch(colorHexRegExps)(inputString);

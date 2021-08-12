@@ -1,5 +1,5 @@
 import chroma from 'chroma-js';
-import { colorHexMatch } from '../color-hex-match/color-hex-match';
+import { colorHexMatch } from '../color-hex-match';
 
 /** @deprecated */
 export function chromaHex(colorHex: string, prefix: string = '#'): string {

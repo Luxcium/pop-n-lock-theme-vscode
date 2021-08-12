@@ -25,7 +25,9 @@
   },
   "scripts": {
     "test": "jest",
-    "ts-coverage": "tsc && jest && typescript-coverage-report",
+    "precoverage": "tsc",
+    "coverage": "jest",
+    "postcoverage": "typescript-coverage-report",
     "postinstall": "#pwd; sh scripts/postinstall.sh",
     "unpdate:code": "yarn add -D --force --ignore-scripts --ignore-engines @types/vscode@1.34.0; vsce -V",
     "update:global": "yarn global add --force --ignore-scripts --ignore-engines npm@latest yarn@latest vsce@latest",

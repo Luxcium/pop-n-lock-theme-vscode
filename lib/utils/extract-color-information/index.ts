@@ -1,4 +1,1 @@
-export {
-  colorHexMatch,
-  extractColorInformation,
-} from './extract-color-information';
+export { extractColorInformation } from './main';

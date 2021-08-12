@@ -1,5 +1,5 @@
 import { ColorElementTuple } from '../../types/ColorElementTuple';
-import { colorHexMatch } from '../color-hex-match';
+import { colorHexMatchTemplated } from '../color-hex-match';
 
 export function extractColorInformation(
   colorElementTupleList: ColorElementTuple[],
@@ -39,7 +39,7 @@ function colorHexMatch_(
   inputString: string,
   template: string | [string] | [string, string]
 ): string {
-  const extractedHex = colorHexMatch(inputString).toUpperCase();
+  const extractedHex = colorHexMatchTemplated(inputString).toUpperCase();
 
   if (typeof template === 'string') return template + extractedHex;
   if (Array.isArray(template)) {

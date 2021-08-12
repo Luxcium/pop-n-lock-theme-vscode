@@ -2,14 +2,19 @@ import ColorElement from '../../classes/color-element';
 import { NULL_COLOR } from '../../constants';
 
 export function filterOutNullColorElements(elementList: ColorElement[]) {
-  return (
-    includeNullElements: boolean = false,
-    removeNullColor: boolean = true
-  ) =>
+  return (keepNullElements: boolean = false, keepNullColor: boolean = false) =>
     elementList.filter(
       item =>
-        (includeNullElements || !item.isNull) &&
-        removeNullColor &&
-        item.colorHex !== NULL_COLOR
+        (keepNullElements || !item.isNull) &&
+        (keepNullColor || item.colorHex !== NULL_COLOR)
     );
 }
+
+export const filterOutNulls = (elementList: ColorElement[]) =>
+  filterOutNullColorElements(elementList)(false, false);
+
+export const filterOutNullElements = (elementList: ColorElement[]) =>
+  filterOutNullColorElements(elementList)(false, true);
+
+export const filterOutNullColors = (elementList: ColorElement[]) =>
+  filterOutNullColorElements(elementList)(true, false);

@@ -3,7 +3,7 @@ import { ColorElementTuple } from '../../types/ColorElementTuple';
 import { IColorElement } from '../../types/IColorElement';
 import { _ColorElement } from '../../types/_ColorElement';
 import { templatedChromaHex } from '../../utils/chroma-hex';
-import { colorHexMatch } from '../../utils/color-hex-match';
+import { colorHexMatchTemplated } from '../../utils/color-hex-match';
 import { standardize } from '../../utils/standardize';
 
 export class ColorElement implements IColorElement, _ColorElement {
@@ -179,7 +179,7 @@ export class ColorElement implements IColorElement, _ColorElement {
       return this;
     }
 
-    const cVal = colorHexMatch(colorValue ?? NULL_COLOR);
+    const cVal = colorHexMatchTemplated(colorValue ?? NULL_COLOR);
     this.colorHexValue = cVal ? `#${cVal}` : NULL_COLOR;
     this.setInitialColorHex(colorValue);
     return this;

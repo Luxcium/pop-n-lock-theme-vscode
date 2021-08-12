@@ -1,5 +1,76 @@
 import ColorElement from '../../classes/color-element';
 import { cx } from '../../color/const';
+import { NULL_COLOR } from '../../constants';
+
+export function shortDummyListNullEllements(): ColorElement[] {
+  return [
+    ...shortDummyList(),
+
+    //'editorGroupHeader.tabsBorder'
+    // void '#1D2545FF',
+    new ColorElement('editorGroupHeader.tabsBorder').setColorHex(cx.x1D2545FF), //
+
+    //'button.secondaryBackground'
+    // void '#00FF0022', // #00FF00FF
+    new ColorElement('button.secondaryBackground').setColorHex(cx.undefGreen), //
+
+    // (VOID ELEMENT)
+    ColorElement.void,
+
+    // (VOID ELEMENT)
+    ColorElement.void.setColorHex('#00FF0022'),
+  ];
+}
+
+export function shortDummyListNullColors(): ColorElement[] {
+  return [
+    ...shortDummyList(),
+
+    //'editorGroupHeader.tabsBorder'
+    // void '#1D2545FF',
+    new ColorElement('editorGroupHeader.tabsBorder').setColorHex(cx.x1D2545FF), //
+
+    //'button.secondaryBackground'
+    new ColorElement('button.secondaryBackground').setColorHex(NULL_COLOR), //
+
+    //'button.secondaryHoverBackground'
+    new ColorElement('button.secondaryHoverBackground').setColorHex(NULL_COLOR), //
+  ];
+}
+
+export function shortDummyListNulls(): ColorElement[] {
+  return [
+    ...shortDummyList(),
+
+    //'editorGroupHeader.tabsBorder'
+    // void '#1D2545FF',
+    new ColorElement('editorGroupHeader.tabsBorder').setColorHex(cx.x1D2545FF), //
+
+    //'button.secondaryBackground'
+    // void '#00FF0022', // #00FF00FF
+    new ColorElement('button.secondaryBackground').setColorHex(cx.undefGreen), //
+
+    //'button.secondaryHoverBackground'
+    // void '#00FF0022', // #00FF00FF
+    new ColorElement('button.secondaryHoverBackground').setColorHex(
+      cx.undefGreen
+    ),
+
+    //'button.secondaryBackground'
+    new ColorElement('button.secondaryBackground').setColorHex(NULL_COLOR), //
+
+    //'button.secondaryBackground'
+    new ColorElement('button.secondaryBackground')
+      .setColorHex(NULL_COLOR)
+      .setColorHex('FFFFFF'), //
+
+    // (VOID ELEMENT)
+    ColorElement.void,
+
+    // (VOID ELEMENT)
+    ColorElement.void.setColorHex('#00FF0022'),
+  ];
+}
 
 export function shortDummyList(): ColorElement[] {
   return [

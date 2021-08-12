@@ -1,28 +1,28 @@
-import { colorHexMatch } from '.';
+import { colorHexMatchTemplated } from '.';
 
 describe('colorHexMatch Match the `inputString` against hexadecimal regExps [`rrgbbbaa`, `rrggbb`, `rgba`, `rgb`] return the upperCase or emptyString', () => {
   it('should match rgb', () => {
-    const resultString = colorHexMatch('fbc');
+    const resultString = colorHexMatchTemplated('fbc');
     expect(resultString).toBe('FBC');
   });
 
   it('should match rgba', () => {
-    const resultString = colorHexMatch('fbca');
+    const resultString = colorHexMatchTemplated('fbca');
     expect(resultString).toBe('FBCA');
   });
 
   it('should match rrggbb', () => {
-    const resultString = colorHexMatch('ffbbcc');
+    const resultString = colorHexMatchTemplated('ffbbcc');
     expect(resultString).toBe('FFBBCC');
   });
 
   it('should match rrgbbbaa', () => {
-    const resultString = colorHexMatch('ffbbccaa');
+    const resultString = colorHexMatchTemplated('ffbbccaa');
     expect(resultString).toBe('FFBBCCAA');
   });
 
   it('should return an empty string if invalid', () => {
-    const resultString = colorHexMatch('fgfbybctcaua');
+    const resultString = colorHexMatchTemplated('fgfbybctcaua');
     expect(resultString).toBe('');
   });
 });

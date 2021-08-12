@@ -1,1 +1,6 @@
-export { shortDummyList } from './mock/dummy-list';
+export {
+  shortDummyList,
+  shortDummyListNullColors,
+  shortDummyListNullEllements,
+  shortDummyListNulls,
+} from './mock/dummy-list';
