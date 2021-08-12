@@ -31,4 +31,5 @@ function MAIN() {
   // console.log(templatedChromaHex(['##', ';;'])(''));
   return void 0;
 }
+/* istanbul ignore if */
 if (require?.main?.filename === __filename) MAIN();

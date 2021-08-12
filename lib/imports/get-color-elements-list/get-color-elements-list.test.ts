@@ -89,6 +89,7 @@ filterOutNullColorElements
 //   console.log(await getColorElementsList(BASE_COLORS_INPUT_PATH));
 // }
 
+/* istanbul ignore if */
 // if (require?.main?.filename === __filename) MAIN();
 // function MAIN() {
 //   main();

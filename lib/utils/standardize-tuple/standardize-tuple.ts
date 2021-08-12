@@ -23,4 +23,5 @@ void function standardizeTuple(
 function MAIN() {
   // console.log(new ColorElement(''));
 }
+/* istanbul ignore if */
 if (require?.main?.filename === __filename) MAIN();

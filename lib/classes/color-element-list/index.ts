@@ -1,10 +1,9 @@
 import { ColorElementList } from './ColorElementList';
 
+/* istanbul ignore if */
+// if (require?.main?.filename === __filename) MAIN();
 // function MAIN() {
 //   console.log(ColorElementList);
 // }
-// if (require?.main?.filename === __filename) MAIN();
 
 export default ColorElementList;
-
-export {};

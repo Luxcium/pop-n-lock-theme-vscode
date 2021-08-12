@@ -75,6 +75,7 @@ export function getColorElementsList(
   );
 }
 
+/* istanbul ignore next */
 async function main() {
   console.log(getColorElementsList(BASE_COLORS_INPUT_PATH));
 }

@@ -2308,6 +2308,7 @@ export const foregrounds: ColorElement[] = [
 export const colorList = ColorElementList.of(colorslist);
 
 export const head = colorList.head();
+/* istanbul ignore if */
 if (require?.main?.filename === __filename) MAIN();
 
 function MAIN() {

@@ -33,6 +33,7 @@ async function main() {
   console.log(await importJsonBaseColorElementList());
 }
 
+/* istanbul ignore if */
 if (require?.main?.filename === __filename) MAIN();
 function MAIN() {
   main();

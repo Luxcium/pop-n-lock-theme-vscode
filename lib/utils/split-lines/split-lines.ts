@@ -1,6 +1,5 @@
+import { empltyLine } from '../../templates/reg-exp/lines';
 import { stripComas } from '../strings';
-
-const empltyLines = /^\s*[{}[\]]$|^\s*$/;
 
 export function splitLines(lines: string[]): [string, string][];
 export function splitLines(
@@ -22,7 +21,7 @@ export async function splitLinesAsync(
 export function splitLinesSync(lines: string[]): [string, string][] {
   return lines
     .filter(line => line)
-    .filter(line => !empltyLines.test(line))
+    .filter(line => !empltyLine.test(line))
     .map(lines => stripComas(lines))
     .map(line => {
       return line.split(':') as [string, string];

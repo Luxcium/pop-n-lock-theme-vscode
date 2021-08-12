@@ -42,6 +42,7 @@ describe.each([['CAFE', '#CCAAFFED']])(
 // function MAIN() {
 //   console.log(chromaHex('FFE1'));
 // }
+/* istanbul ignore if */
 // if (require?.main?.filename === __filename) MAIN();
 
 // // template: string | [string] | [string, string] = 'x'

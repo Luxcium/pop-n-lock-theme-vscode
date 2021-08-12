@@ -51,4 +51,5 @@ function MAIN() {
   main();
   // (async () => console.log(await main()))();
 }
+/* istanbul ignore if */
 if (require?.main?.filename === __filename) MAIN();
