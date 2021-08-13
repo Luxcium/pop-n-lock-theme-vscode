@@ -92,9 +92,7 @@ export class ColorElement implements IColorElement, _ColorElement {
       colorHexValue: {
         enumerable: true,
       },
-      isVoid: {
-        enumerable: true,
-      },
+
       initialElementName_: {
         enumerable: false,
       },
@@ -117,12 +115,11 @@ export class ColorElement implements IColorElement, _ColorElement {
         attributeList_: {
           enumerable: true,
         },
-        isVoid: {
-          enumerable: false,
-        },
       });
     }
-
+    // this.isVoid = false;
+    // this.isValid = true;
+    // this.isNull = false;
     return this;
   }
 
@@ -214,11 +211,13 @@ export class ColorElement implements IColorElement, _ColorElement {
     return this.initialElementName_;
   }
 
-  public get isValid() {
-    return !this.isNull && !(this.colorHex === NULL_COLOR);
+  public get isValid(): boolean {
+    return (
+      !this.isNull && !(this.colorHex === NULL_COLOR || this.colorHex === '')
+    );
   }
 
-  public get isNull() {
+  public get isNull(): boolean {
     return this.initialElementName_ === 'VOID' ? true : false;
   }
 
@@ -241,7 +240,17 @@ export class ColorElement implements IColorElement, _ColorElement {
   public get mainElement(): string {
     return this.isValid ? this.elementsList_.slice(0, 1)[0] || '' : '';
   }
+
+  readonly [s: string]: any;
 }
 
-// export { ColorElement };
-// #00ff40
+/* istanbul ignore if */
+if (require?.main?.filename === __filename) main();
+/* istanbul ignore next */
+async function main() {
+  const cElm = new ColorElement('c.elem', 'ffff');
+  console.log(cElm);
+  console.log('isVoid: ,', cElm.isVoid);
+  console.log('isValid: ,', cElm.isValid);
+  console.log('isNull: ', cElm.isNull);
+}

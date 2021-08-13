@@ -87,6 +87,14 @@ describe('filterOutNullColorElements', () => {
 });
 
 /*
+
+  const cElm = new ColorElement('c.elem', 'ffff');
+  console.log(cElm);
+  console.log('isVoid: ,', cElm.isVoid);
+  console.log('isValid: ,', cElm.isValid);
+  console.log('isNull: ', cElm.isNull);
+
+
 filterOutNulls
 filterOutNullElements
 filterOutNullColors

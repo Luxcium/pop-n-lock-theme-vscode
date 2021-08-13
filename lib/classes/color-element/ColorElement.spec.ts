@@ -247,18 +247,87 @@ describe('Specs for "lib/tools/classes/color-element/ColorElement.ts"', () => {
         new ColorElement('colorElement.name', '0xFFEEBBCC').mainElement
       ).toBe('colorElement');
     });
+
+    // describe.each([
+    //   // '0xFFEEBBCC'
+    //   [1, 2],
+    //   [2, 4],
+    // ],(
+    //   'double(%d)',
+    //   (
+    //     colorElementName: any,
+    //     colorHexValue: any,
+    //     expected: any,
+    //     property: string
+    //   ) => {
+    describe.each([
+      // nullity or validity and voidness
+      ['colorElement.name', '0xFFEEBBCC', false, true, false],
+      ['', '0xFFEEBBCC', true, false, true],
+      ['VOID', '0xFFEEBBCC', true, false, true],
+      ['colorElement.name', NULL_COLOR, false, false, false],
+      ['VOID', NULL_COLOR, true, false, true],
+      ['', NULL_COLOR, true, false, true],
+
+      /*
+      'colorElement.name', '0xFFEEBBCC'
+'', '0xFFEEBBCC'
+'VOID', '0xFFEEBBCC'
+       */
+    ])(
+      'Testing `new ColorElement(%s, %s)` for nullity or validity and voidness',
+      (
+        colorElementName: string,
+        colorHexValue: string,
+        isNull: boolean,
+        isValid: boolean,
+        isVoid: boolean
+      ) => {
+        /* A */ it('Property « isNull » should return a value of type boolean', () => {
+          const element = new ColorElement(colorElementName, colorHexValue);
+          const value: any = element.isNull;
+          expect(value).toBe(isNull);
+        });
+
+        /* B */ it('Property « isValid » should return a value of type boolean', () => {
+          const element = new ColorElement(colorElementName, colorHexValue);
+          const value: any = element.isValid;
+          expect(value).toBe(isValid);
+        });
+
+        /* C */ it('Property « isVoid » should return a value of type boolean', () => {
+          const element = new ColorElement(colorElementName, colorHexValue);
+          const value: any = element.isVoid;
+          expect(value).toBe(isVoid);
+        });
+      }
+    );
   });
-
-  // it('Should include the « ColorElementList » class', () => {
-  //   expect(ColorElementList).toBeDefined();
-  // });
-
-  // it('Should include the « shortDummyList » function', () => {
-  //   expect(shortDummyList).toBeDefined();
-  // });
+  /* 1 */ it('Property « isNull » should return a value of type boolean', () => {
+    expect(ColorElement.void.isNull).toBe(true);
+  });
 });
 
 /*
+
+describe.each
+
+// describe.each([
+//  [1, 2],
+//  [2, 4],
+// ])('double(%d)', (input, expected) => {
+//  it.skip(`returns ${expected}`, () => {
+//   expect(input * 2).toBe(expected);
+//  });
+// });
+
+
+  const cElm = new ColorElement('c.elem', 'ffff');
+  console.log(cElm);
+  console.log('isVoid: ,', cElm.isVoid);
+  console.log('isValid: ,', cElm.isValid);
+  console.log('isNull: ', cElm.isNull);
+
   public static get void() {
   public elementName: string;
   public colorHexValue: string;

@@ -1,8 +1,20 @@
-import { importJsonBaseColorElementList } from '../imports';
+// import { importJsonBaseColorElementList } from '../imports';
+
+import ColorElementList from '../classes/color-element-list';
+import { shortDummyList } from '../tests';
+
+/* istanbul ignore if */
+if (require?.main?.filename === __filename) MAIN();
+function MAIN() {
+  main();
+}
 
 async function main() {
-  const baseColorElementList = await importJsonBaseColorElementList();
-  console.log(baseColorElementList);
+  // const baseColorElementList = await importJsonBaseColorElementList();
+  console.log(
+    (ColorElementList.of(shortDummyList()).setAllAlphasTo = 'FFFFFF00')
+  );
+  // console.log(ColorElementList);
   // let memoizedKeys: { [k: string]: colorElement[] } = {};
   // for (const colorElement of baseColorElementList) {
   //   const attribute = colorElement.firstAttribut;
@@ -46,10 +58,3 @@ function main() {
 
   */
 }
-
-function MAIN() {
-  main();
-  // (async () => console.log(await main()))();
-}
-/* istanbul ignore if */
-if (require?.main?.filename === __filename) MAIN();

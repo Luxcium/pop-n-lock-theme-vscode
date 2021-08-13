@@ -1,7 +1,9 @@
+import { createColorElementsList } from '.';
+
 export {};
 
-describe.skip('DUMMY TEST', () => {
-  it('should match rgb', () => {
-    expect('DUMMY').toBe('DUMMY');
+describe('createColorElementsList', () => {
+  it('should be defined', () => {
+    expect(createColorElementsList).toBeDefined();
   });
 });

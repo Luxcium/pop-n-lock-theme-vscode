@@ -2,15 +2,13 @@ import ColorElement from '../../classes/color-element';
 import { BASE_COLORS_INPUT_PATH } from '../../constants';
 import { createColorElementsList } from '../../utils/create-color-element-list';
 import { extractColorInformation } from '../../utils/extract-color-information-complex';
-import { filterOutNullColorElements } from '../../utils/filter-out-null-color-elements/filter-out-null-color-elements';
+import { filterOutNullColorElements } from '../../utils/filter-out-null-color-elements';
 import { normalizeQuotedStrings } from '../../utils/normalize-strings';
 import { splitLines } from '../../utils/split-lines';
 import { readLines } from '../readers';
 
 function getColorJsonListSync(
   pathToJsonColours: string,
-  keepNullElements: boolean = false,
-  keepNullColor: boolean = false,
   template: string | [string] | [string, string] = '#'
 ): ColorElement[] {
   const step1 = readLines(pathToJsonColours);
@@ -19,58 +17,40 @@ function getColorJsonListSync(
   const step3 = extractColorInformation(step2, template);
   const step4 = normalizeQuotedStrings(step3);
   const step5 = createColorElementsList(step4);
-  const step6 = filterOutNullColorElements(step5)(
-    keepNullElements,
-    keepNullColor
-  );
+  const step6 = filterOutNullColorElements(step5)(true, true);
   // console.log('step6 :>> ', step6);
   return step6;
 }
 
 async function getColorElementsListAsync(
   pathToJsonColours: Promise<string>,
-  keepNullElements: boolean = false,
-  keepNullColor: boolean = false,
   template: string | [string] | [string, string] = '#'
 ): Promise<ColorElement[]> {
-  return getColorJsonListSync(
-    await pathToJsonColours,
-    keepNullElements,
-    keepNullColor,
-    template
-  );
+  return getColorJsonListSync(await pathToJsonColours, template);
 }
 
 export function getColorElementsList(
   pathToJsonColours: string,
-  keepNullElements?: boolean,
-  keepNullColor?: boolean,
   template?: string | [string] | [string, string]
 ): ColorElement[];
 export function getColorElementsList(
   pathToJsonColours: Promise<string>,
-  keepNullElements?: boolean,
-  keepNullColor?: boolean,
   template?: string | [string] | [string, string]
 ): Promise<ColorElement[]>;
 export function getColorElementsList(
   pathToJsonColours: string | Promise<string>,
-  keepNullElements: boolean = false,
-  keepNullColor: boolean = false,
   template: string | [string] | [string, string] = '#'
 ): ColorElement[] | Promise<ColorElement[]> {
   if (pathToJsonColours instanceof Promise) {
     return getColorElementsListAsync(
       pathToJsonColours,
-      keepNullElements,
-      keepNullColor,
+
       template
     );
   }
   return getColorJsonListSync(
     pathToJsonColours,
-    keepNullElements,
-    keepNullColor,
+
     template
   );
 }

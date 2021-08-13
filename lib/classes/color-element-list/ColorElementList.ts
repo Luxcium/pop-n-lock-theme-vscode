@@ -26,26 +26,27 @@ export class ColorElementList {
   public get fork(): ColorElement[] {
     return this.colorList;
   }
-  // #region =======-| Iterator |-==============================================≈
-  // iterator ====================================-| *[Symbol.iterator]() |-====
+  // #region =======================================-| Iterator |-====≈
+  // iterator ==========================-| *[Symbol.iterator]() |-====
   /** Whenever an object needs to be iterated (such as at the beginning of a for...of loop), its `@@iterator` method is called with no arguments, and the returned iterator is used to obtain the values to be iterated. */
   public *[Symbol.iterator]() {
     yield* this.colorList;
   }
-  // public =================================================-| entries() |-====
+  readonly [n: number]: any;
+  // public =======================================-| entries() |-====
   public entries() {
     return this.fork.entries();
   }
-  // public ====================================================-| keys() |-====
+  // public ==========================================-| keys() |-====
   public keys() {
     return this.fork.keys();
   }
-  // public ==================================================-| values() |-====
+  // public ========================================-| values() |-====
   public values() {
     return this.fork.values();
   }
-  // #endregion =======-| Iterator |-===========================================≈
-  // public =================================================-| forEach() |-====
+  // #endregion ====================================-| Iterator |-====≈
+  // public =======================================-| forEach() |-====
   public forEach(
     callbackfn: (
       value: IColorElement,
@@ -56,7 +57,7 @@ export class ColorElementList {
   ): void {
     return this.fork.forEach(callbackfn, thisArgument);
   }
-  // public =====================================================-| map() |-====
+  // public ===========================================-| map() |-====
   public map<U>(
     callbackfn: (
       value: IColorElement,
@@ -67,7 +68,7 @@ export class ColorElementList {
   ): U[] {
     return this.fork.map<U>(callbackfn, thisArgument);
   }
-  // public ====================================================-| some() |-====
+  // public ==========================================-| some() |-====
   public some(
     predicate: (
       value: ColorElement,
@@ -78,7 +79,7 @@ export class ColorElementList {
   ): boolean {
     return this.fork.some(predicate, thisArg);
   }
-  // public ==================================================-| filter() |-====
+  // public ========================================-| filter() |-====
   // public filter(
   //   predicate: (
   //     value: ColorElement,
@@ -220,5 +221,80 @@ export class ColorElementList {
           .flat()
       ),
     ];
+  }
+  // public ==============================-| chageAllAlphasTo() |-====
+
+  /** Will mutate the current object */
+  public set setAllAlphasTo(eightPositionHex: string) {
+    this.chageAllAlphasTo_(eightPositionHex, true);
+  }
+
+  /** Will return a new object object */
+  public chageAllAlphasTo(eightPositionHex: string) {
+    return this.chageAllAlphasTo_(eightPositionHex, false);
+  }
+
+  /** Only the last 2 positions of the 8 position hex will be used */
+  private chageAllAlphasTo_(eightPositionHex: string, mutate: boolean) {
+    const colorTransposed = new ColorElement('temp.DUMMY', eightPositionHex);
+    if (colorTransposed.isValid) {
+      let transposedList: ColorElement[] = this.colorList;
+      const color = colorTransposed.colorHexValue;
+      if (color.length === 9) {
+        const slice1 = color.slice(7);
+        const colorList = this.colorList;
+        transposedList = colorList.map(colorElement => {
+          let colorValue = colorElement.colorHexValue;
+          if (colorValue.length === 9) {
+            const slice2 = colorValue.slice(0, 7);
+            colorValue = `${slice2}${slice1}`;
+            colorElement.colorHex = colorValue;
+          }
+          return colorElement;
+        });
+      }
+
+      if (mutate === true) {
+        this.list = transposedList;
+        return this;
+      }
+      return ColorElementList.of(transposedList);
+    }
+    console.warn(
+      eightPositionHex,
+      'is not a valid color hex or a probleme occured'
+    );
+    return this;
+  }
+
+  // public ==============================-| chageAllColorsTo() |-====
+  /** Will return a new object object */
+  public chageAllColorsTo(eightPositionHex: string) {
+    return this.chageAllColorsTo_(eightPositionHex, false);
+  }
+  /** Will mutate the current object */
+  public set setAllColorsTo(eightPositionHex: string) {
+    this.chageAllColorsTo_(eightPositionHex, true);
+  }
+
+  private chageAllColorsTo_(eightPositionHex: string, mutate: boolean) {
+    const colorTransposed = new ColorElement('temp.DUMMY', eightPositionHex);
+    if (colorTransposed.isValid) {
+      const color = colorTransposed.colorHexValue;
+      let colorList: ColorElement[];
+      colorList = this.colorList;
+
+      const transposedList = colorList.map(colorElement => {
+        colorElement.colorHex = color;
+        return colorElement;
+      });
+      if (mutate === true) {
+        this.list = transposedList;
+        return this;
+      }
+      return ColorElementList.of(transposedList);
+    }
+    console.warn(eightPositionHex, 'is not a valid color hex');
+    return this;
   }
 }

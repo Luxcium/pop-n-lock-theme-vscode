@@ -1,5 +1,5 @@
 import ColorElementList from '.';
-import { shortDummyList } from '../../tests';
+import { shortDummyList, shortDummyListNulls } from '../../tests';
 import ColorElement from '../color-element';
 describe('Specs for "lib/tools/classes/color-element-list/ColorElementList.ts"', () => {
   describe('The tools required to processe this spec suit of ColorElementList:', () => {
@@ -177,7 +177,7 @@ describe('Specs for "lib/tools/classes/color-element-list/ColorElementList.ts"',
     ).toBeTruthy();
   });
 
-  it('Property « allAttributeList » should ben an array ', () => {
+  it('Property « allAttributeList » should be an array ', () => {
     const colorlist = ColorElementList.of(shortDummyList());
     const allAttributeList = colorlist.allAttributeList;
     expect(allAttributeList.length).toBe(16);
@@ -219,12 +219,112 @@ describe('Specs for "lib/tools/classes/color-element-list/ColorElementList.ts"',
     ).toBeTruthy();
   });
 
-  it('Property « firstElementsList » should ben an array ', () => {
+  it('Property « firstElementsList » should be an array ', () => {
+    const colorlist = ColorElementList.of(shortDummyList());
+    const firstElementsList = colorlist.firstElementsList;
+    expect(firstElementsList.length).toBe(4);
+  });
+  it('Method « chageAllAlphasTo » should not mutate', () => {
+    const colorlist = ColorElementList.of(shortDummyList());
+    const chageAllAlphasTo = colorlist.chageAllAlphasTo('FFFFFFCC');
+    const reduced1 = colorlist.filter(
+      element => element.colorHex.slice(7, 9) === 'CC'
+    );
+    const reduced2 = chageAllAlphasTo.filter(
+      element => element.colorHex.slice(7, 9) === 'CC'
+    );
+    expect(reduced1.length).toBe(2);
+    expect(reduced2.length).toBe(13);
+  });
+
+  it('Method « chageAllAlphasTo » should not mutate', () => {
+    const colorlist = ColorElementList.of(shortDummyListNulls());
+
+    const tester = (colorlist_: ColorElementList) => () =>
+      colorlist_.filter(element => element.colorHex.slice(7, 9) === 'CC');
+
+    const testing = tester(colorlist);
+    const reduced1 = testing();
+
+    colorlist.chageAllAlphasTo('FFFFFFCC');
+    const reduced2 = testing();
+
+    const reduced3 = colorlist
+      .chageAllAlphasTo('FFFFFFCC')
+      .filter(element => element.colorHex.slice(7, 9) === 'CC');
+
+    expect(reduced1.length).toBe(2);
+    expect(reduced2.length).toBe(2);
+
+    expect(reduced3.length).toBe(16);
+  });
+
+  it('Property « setAllAlphasTo » should change in place (mutate)', () => {
+    const colorlist = ColorElementList.of(shortDummyListNulls());
+
+    const tester = (colorlist_: ColorElementList) => () =>
+      colorlist_.filter(element => element.colorHex.slice(7, 9) === 'CC');
+
+    const testing = tester(colorlist);
+    const reduced1 = testing();
+
+    colorlist.setAllAlphasTo = 'FFFFFFCC';
+    const reduced2 = testing();
+
+    expect(reduced1.length).toBe(2);
+    expect(reduced2.length).toBe(16);
+  });
+
+  it('Method « chageAllColorsTo » should not mutate', () => {
+    const colorlist = ColorElementList.of(shortDummyListNulls());
+
+    const tester = (colorlist_: ColorElementList) => () =>
+      colorlist_.filter(
+        element => element.colorHex.slice(0, 9) === '#3399CCCC'
+      );
+
+    const testing = tester(colorlist);
+    const reduced1 = testing();
+
+    colorlist.chageAllColorsTo('#3399CCCC');
+    const reduced2 = testing();
+
+    const reduced3 = colorlist
+      .chageAllColorsTo('#3399CCCC')
+      .filter(element => element.colorHex.slice(0, 9) === '#3399CCCC');
+
+    expect(reduced1.length).toBe(1);
+    expect(reduced2.length).toBe(1);
+
+    expect(reduced3.length).toBe(17);
+  });
+
+  it('Property « setAllColorsTo » should change in place (mutate)', () => {
+    const colorlist = ColorElementList.of(shortDummyListNulls());
+
+    const tester = (colorlist_: ColorElementList) => () =>
+      colorlist_.filter(
+        element => element.colorHex.slice(0, 9) === '#3399CCCC'
+      );
+
+    const testing = tester(colorlist);
+    const reduced1 = testing();
+
+    colorlist.setAllColorsTo = '#3399CCCC';
+    const reduced2 = testing();
+
+    expect(reduced1.length).toBe(1);
+    expect(reduced2.length).toBe(17);
+  });
+  it('Property « setAllColorsTo » should be an array ', () => {
     const colorlist = ColorElementList.of(shortDummyList());
     const firstElementsList = colorlist.firstElementsList;
     expect(firstElementsList.length).toBe(4);
   });
 });
+
+//
+//
 // shortDummyList
 //   it('Constructor « ColorElementList » should be public', () => {
 //     const colorlist = ColorElementList.of(shortDummyList());

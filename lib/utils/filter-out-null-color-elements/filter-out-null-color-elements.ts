@@ -9,12 +9,3 @@ export function filterOutNullColorElements(elementList: ColorElement[]) {
         (keepNullColor || item.colorHex !== NULL_COLOR)
     );
 }
-
-export const filterOutNulls = (elementList: ColorElement[]) =>
-  filterOutNullColorElements(elementList)(false, false);
-
-export const filterOutNullElements = (elementList: ColorElement[]) =>
-  filterOutNullColorElements(elementList)(false, true);
-
-export const filterOutNullColors = (elementList: ColorElement[]) =>
-  filterOutNullColorElements(elementList)(true, false);
