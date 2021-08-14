@@ -3,6 +3,7 @@
   "name": "Pop N Lock Theme by Luxcium",
   "type": "dark",
   "colors": {
+
     "widget.shadow": "#001111FF",
     "editorGroupHeader.border": "#001133FF",
     "editorGroupHeader.noTabsBackground": "#1C1C2EFF",

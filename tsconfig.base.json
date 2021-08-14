@@ -27,7 +27,6 @@
     "declarationMap": false,
     "inlineSourceMap": false,
     "inlineSources": false,
-    "downlevelIteration": false,
     "emitDeclarationOnly": false,
     /*                                                                       */
     "noResolve": false,
@@ -48,6 +47,7 @@
     "composite": true,
     "esModuleInterop": true,
     "isolatedModules": true,
+    "downlevelIteration": true,
     "incremental": true,
     "allowSyntheticDefaultImports": true,
     /*                                                                       */

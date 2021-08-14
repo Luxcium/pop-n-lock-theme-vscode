@@ -2,7 +2,7 @@
   "extends": "./tsconfig.base.json",
   "compilerOptions": {
     /* Basic Options */
-    "target": "es6",
+    "target": "es5",
     "module": "commonjs",
     "moduleResolution": "Node",
     "importHelpers": true,
@@ -22,6 +22,7 @@
     "inlineSourceMap": true,
     "inlineSources": true,
     "declarationMap": true,
+    "downlevelIteration": true,
     /* Compilation Options */
     // "noLib": false,
     "allowJs": true,

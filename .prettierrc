@@ -15,9 +15,22 @@
   "useTabs": false,
   "overrides": [
     {
-      "files": "helpers/tools/color/**/*.*",
+      "files": [
+        "lib/tools/color/**/*.*",
+        "lib/tests/mock/dummy-list.ts"
+      ],
       "options": {
         "printWidth": 120,
+        "semi": true
+      }
+    },
+    {
+      "files": [
+        "lib/classes/color-element-list/ColorElementList.ts",
+        "lib/classes/color-element/ColorElement.ts"
+      ],
+      "options": {
+        "printWidth": 70,
         "semi": true
       }
     }
