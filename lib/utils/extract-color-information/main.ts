@@ -22,7 +22,10 @@ export function extractColorInformation(
       template
     );
   }
-  return extractColorInformationSync(colorElementTupleList, template);
+  return extractColorInformationSync(
+    colorElementTupleList,
+    template
+  );
 
   // return colorElementTupleList.map(colorElementTuple => {
   //   const [colorElementName, colorHexValue] = colorElementTuple;

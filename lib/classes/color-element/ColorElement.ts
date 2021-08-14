@@ -6,7 +6,9 @@ import { templatedChromaHex } from '../../utils/chroma-hex';
 import { colorHexMatchTemplated } from '../../utils/color-hex-match';
 import { standardize } from '../../utils/standardize';
 
-export class ColorElement implements IColorElement, _ColorElement {
+export class ColorElement
+  implements IColorElement, _ColorElement
+{
   public static get void() {
     return new ColorElement('VOID');
   }
@@ -20,7 +22,8 @@ export class ColorElement implements IColorElement, _ColorElement {
   private cid_: Symbol;
   private setInitialNameValue(elementName: string) {
     this.initialElementName_ = elementName;
-    this.isVoid = this.initialElementName_ === 'VOID' ? true : false;
+    this.isVoid =
+      this.initialElementName_ === 'VOID' ? true : false;
     this.elementName = this.initialElementName_;
     this.setElementList();
     this.setElementsAttributes();
@@ -66,7 +69,11 @@ export class ColorElement implements IColorElement, _ColorElement {
     colorHexValue: string | null
   );
   constructor(
-    colorElement: ColorElementTuple | _ColorElement | string | null,
+    colorElement:
+      | ColorElementTuple
+      | _ColorElement
+      | string
+      | null,
     colorHexValue?: string | null
   ) {
     const [colorElementName, colorValue] = standardize(
@@ -162,9 +169,11 @@ export class ColorElement implements IColorElement, _ColorElement {
     space: string | number = 2
   ): string {
     if (simpleString) {
-      return `"${this.initialElementName_}":"${templatedChromaHex(
-        template ?? '#'
-      )(this.colorHex ?? '')}"`;
+      return `"${
+        this.initialElementName_
+      }":"${templatedChromaHex(template ?? '#')(
+        this.colorHex ?? ''
+      )}"`;
     }
     return `${this.constructor.name} ${JSON.stringify(
       this.toValue(),
@@ -181,7 +190,9 @@ export class ColorElement implements IColorElement, _ColorElement {
       return this;
     }
 
-    const cVal = colorHexMatchTemplated(colorValue ?? NULL_COLOR);
+    const cVal = colorHexMatchTemplated(
+      colorValue ?? NULL_COLOR
+    );
     this.colorHexValue = cVal ? `#${cVal}` : NULL_COLOR;
     this.setInitialColorHex(colorValue);
     return this;
@@ -236,7 +247,9 @@ export class ColorElement implements IColorElement, _ColorElement {
   }
 
   public get mainAttribute(): string {
-    return this.isValid ? this.attributeList_.slice(-1)[0] || '' : '';
+    return this.isValid
+      ? this.attributeList_.slice(-1)[0] || ''
+      : '';
   }
 
   public get firstAttribut(): string {

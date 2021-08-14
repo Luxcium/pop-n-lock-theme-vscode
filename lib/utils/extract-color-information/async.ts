@@ -6,12 +6,15 @@ export async function extractColorInformationAsync(
   template: string | [string] | [string, string] = 'x'
 ): Promise<ColorElementTuple[]> {
   return Promise.all(
-    (await colorElementTupleList).map(async colorElementTuple => {
-      const [colorElementName, colorHexValue] = colorElementTuple;
-      return [
-        colorElementName,
-        colorHexMatchTemplated(colorHexValue, template),
-      ] as ColorElementTuple;
-    })
+    (await colorElementTupleList).map(
+      async colorElementTuple => {
+        const [colorElementName, colorHexValue] =
+          colorElementTuple;
+        return [
+          colorElementName,
+          colorHexMatchTemplated(colorHexValue, template),
+        ] as ColorElementTuple;
+      }
+    )
   );
 }

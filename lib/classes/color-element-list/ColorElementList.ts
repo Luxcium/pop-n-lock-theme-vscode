@@ -10,7 +10,9 @@ export class ColorElementList {
   private static of_(colorElementList: IColorElement[]) {
     return new ColorElementList(colorElementList);
   }
-  public static of(...values: IColorElement[] | [IColorElement[]]) {
+  public static of(
+    ...values: IColorElement[] | [IColorElement[]]
+  ) {
     const value = values.length === 1 ? values[0] : null;
     return Array.isArray(value)
       ? this.of_(value as IColorElement[])
@@ -37,7 +39,12 @@ export class ColorElementList {
         }
       }
     }
-    console.log('list2.length:', list2.length, '/', list1.length);
+    console.log(
+      'list2.length:',
+      list2.length,
+      '/',
+      list1.length
+    );
   }
   protected constructor(colorElementList: IColorElement[]) {
     this.removeDuplicates;
@@ -211,7 +218,9 @@ export class ColorElementList {
     this.list
       .map(colorElement => new ColorElement(colorElement))
       .map(colorElement => colorElement.toJson())
-      .map(colorElement => (json = { ...json, ...colorElement }));
+      .map(
+        colorElement => (json = { ...json, ...colorElement })
+      );
     return json;
   }
   public get mainAttributeList(): string[] {
@@ -219,7 +228,9 @@ export class ColorElementList {
       ...new Set(
         this.list
           .map(colorElement =>
-            new ColorElement(colorElement).attributeList.slice(-1)
+            new ColorElement(colorElement).attributeList.slice(
+              -1
+            )
           )
           .flat()
       ),
@@ -242,7 +253,8 @@ export class ColorElementList {
       ...new Set(
         this.list
           .map(
-            colorElement => new ColorElement(colorElement).elementList
+            colorElement =>
+              new ColorElement(colorElement).elementList
           )
           .flat()
       ),
@@ -363,5 +375,7 @@ export class ColorElementList {
 if (require?.main?.filename === __filename) main();
 /* istanbul ignore next */
 async function main() {
-  ColorElementList.of(duplicatesDummyListNulls()).removeDuplicates();
+  ColorElementList.of(
+    duplicatesDummyListNulls()
+  ).removeDuplicates();
 }
