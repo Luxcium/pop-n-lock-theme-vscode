@@ -2,15 +2,25 @@ import { ColorElementTuple } from '../../types/ColorElementTuple';
 import { _ColorElement } from '../../types/_ColorElement';
 import { stripJson } from '../strings';
 
-export function standardize(colorElement: ColorElementTuple): [string, string];
-export function standardize(colorElement: _ColorElement): [string, string];
-export function standardize(colorElement: string | null): [string, string];
+export function standardize(
+  colorElement: ColorElementTuple
+): [string, string];
+export function standardize(
+  colorElement: _ColorElement
+): [string, string];
+export function standardize(
+  colorElement: string | null
+): [string, string];
 export function standardize(
   colorElement: string | null,
   colorHexValue: string | null
 ): [string, string];
 export function standardize(
-  colorElement: ColorElementTuple | _ColorElement | string | null,
+  colorElement:
+    | ColorElementTuple
+    | _ColorElement
+    | string
+    | null,
   colorHexValue?: string | null
 ): [string, string] {
   let colorElementName: string = 'VOID';
@@ -26,7 +36,10 @@ export function standardize(
     colorValue = colorElement.colorHexValue || '';
     return [colorElementName, colorValue];
   }
-  if (!!colorElement === true && typeof colorElement === 'string') {
+  if (
+    !!colorElement === true &&
+    typeof colorElement === 'string'
+  ) {
     const splits = stripJson(colorElement).split(/[,:]/);
     if (splits.length === 2) {
       return [splits[0] || 'VOID', splits[1] || ''];

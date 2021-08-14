@@ -3,7 +3,8 @@ import { importJsonBaseColorElementList } from '../imports';
 
 async function main() {
   void consts;
-  const BaseColorElementList = await importJsonBaseColorElementList();
+  const BaseColorElementList =
+    await importJsonBaseColorElementList();
   const toLog = [
     BaseColorElementList.head().id,
     BaseColorElementList.head().uid,

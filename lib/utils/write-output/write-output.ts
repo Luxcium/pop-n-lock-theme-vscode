@@ -11,7 +11,9 @@ export const readFileAsync = promisify(readFile);
 
 const model =
   '/home/luxcium/projects/main-POP-N-LOCK-x1DF2/data/extensions/pop-n-lock-theme-vscode/lib/templates/imports/JSON/Pop-N-Lock.original.json';
-export const myWriter = writeFileToPathAsync(BASE_COLORS_OUTPUT_PATH);
+export const myWriter = writeFileToPathAsync(
+  BASE_COLORS_OUTPUT_PATH
+);
 
 async function getInputData(
   path: string = model,
@@ -20,10 +22,15 @@ async function getInputData(
   return (await readFileAsync(path, options)).toString();
 }
 
-function colorElementsAgregator(colorslist: ColorElement[] = colorslist_) {
+function colorElementsAgregator(
+  colorslist: ColorElement[] = colorslist_
+) {
   let colors = {};
   colorslist.forEach(colorElement => {
-    colors = { ...colors, ...new ColorElement(colorElement).toJson() };
+    colors = {
+      ...colors,
+      ...new ColorElement(colorElement).toJson(),
+    };
   });
   return colors;
 }

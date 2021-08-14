@@ -1,14 +1,5 @@
-import {
-  filterOutNullColorElements,
-  filterOutNullColors,
-  filterOutNullElements,
-  filterOutNulls,
-} from '.';
-import {
-  shortDummyList,
-  shortDummyListNullEllements,
-  shortDummyListNulls,
-} from '../../tests';
+import { filterOutNullColorElements, filterOutNullColors, filterOutNullElements, filterOutNulls } from '.';
+import { shortDummyList, shortDummyListNullEllements, shortDummyListNulls } from '../../tests';
 
 describe('filterOutNullColorElements', () => {
   let keepNullElements: boolean = true;
@@ -18,60 +9,31 @@ describe('filterOutNullColorElements', () => {
     expect(awaitedList.length).toBe(13);
   });
   it('should be defined', () => {
-    expect(
-      filterOutNullColorElements(shortDummyListNullEllements())
-    ).toBeDefined();
+    expect(filterOutNullColorElements(shortDummyListNullEllements())).toBeDefined();
   });
 
   it('should be defined', () => {
-    expect(
-      filterOutNullColorElements(shortDummyListNullEllements())(true)
-    ).toBeDefined();
+    expect(filterOutNullColorElements(shortDummyListNullEllements())(true)).toBeDefined();
   });
 
   it('filterOutNullColorElements', () => {
-    expect(
-      filterOutNullColorElements(shortDummyListNulls())(
-        !keepNullElements,
-        !keepNullColor
-      ).length
-    ).toBe(17);
+    expect(filterOutNullColorElements(shortDummyListNulls())(!keepNullElements, !keepNullColor).length).toBe(17);
   });
 
   it('filterOutNullColorElements', () => {
-    expect(
-      filterOutNullColorElements(shortDummyListNulls())(
-        !keepNullElements,
-        keepNullColor
-      ).length
-    ).toBe(18);
+    expect(filterOutNullColorElements(shortDummyListNulls())(!keepNullElements, keepNullColor).length).toBe(18);
   });
 
   it('filterOutNullColorElements', () => {
-    expect(
-      filterOutNullColorElements(shortDummyListNulls())(
-        keepNullElements,
-        !keepNullColor
-      ).length
-    ).toBe(19);
+    expect(filterOutNullColorElements(shortDummyListNulls())(keepNullElements, !keepNullColor).length).toBe(19);
   });
 
   it('filterOutNullColorElements', () => {
-    expect(
-      filterOutNullColorElements(shortDummyListNulls())(
-        keepNullElements,
-        keepNullColor
-      ).length
-    ).toBe(20);
+    expect(filterOutNullColorElements(shortDummyListNulls())(keepNullElements, keepNullColor).length).toBe(20);
   });
 
   it('filterOutNullColorElements', () => {
-    expect(
-      filterOutNullColorElements(shortDummyListNulls())(
-        !keepNullElements,
-        !keepNullColor
-      ).length
-    ).toBe(17);
+    expect(filterOutNullColorElements(shortDummyListNulls())(!keepNullElements, !keepNullColor).length).toBe(17);
   });
 
   it('(filterOutNulls(shortDummyListNulls()).length).toBe(17)', () => {

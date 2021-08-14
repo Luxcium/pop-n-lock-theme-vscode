@@ -20,7 +20,8 @@ describe('Get Base Colors from JSON', () => {
     expect(true).toBe(true);
     step1 = readLines(pathToJsonColours);
     expect(
-      Array.isArray(step1) && step1.every(item => typeof item === 'string')
+      Array.isArray(step1) &&
+        step1.every(item => typeof item === 'string')
     ).toBe(true);
   });
 
@@ -29,9 +30,11 @@ describe('Get Base Colors from JSON', () => {
     // process.nextTick(() => splitLines(step1));
     step2 = splitLines(step1);
     // const awaited = await step2;
-    if (typeof step2 === 'undefined') throw new Error('step2 is undefined');
+    if (typeof step2 === 'undefined')
+      throw new Error('step2 is undefined');
     expect(
-      Array.isArray(step2) && step2.every(item => Array.isArray(item))
+      Array.isArray(step2) &&
+        step2.every(item => Array.isArray(item))
     ) /* item.length === 2)) */
       .toBe(true);
   });

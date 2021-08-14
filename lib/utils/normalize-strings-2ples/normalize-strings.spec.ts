@@ -6,27 +6,20 @@ describe('normalizeQuotedStrings', () => {
   });
 
   it('Function « normalizeQuotedStrings » should remove quotes in a string 2-plet', () => {
-    expect(normalizeQuotedStrings([['"BOB"', 'AND "ALICE"']])).toStrictEqual([
+    expect(normalizeQuotedStrings([['"BOB"', 'AND "ALICE"']])).toStrictEqual([['BOB', 'AND ALICE']]);
+  });
+
+  it('Function « normalizeQuotedStrings » should remove quotes in a string 2-plet', () => {
+    expect(normalizeQuotedStrings(['"BOB"', 'AND "ALICE"'])).toStrictEqual(['BOB', 'AND ALICE']);
+  });
+
+  it('Function « normalizeQuotedStrings » should remove quotes in a string 2-plet', async () => {
+    expect(normalizeQuotedStrings(await Promise.resolve([['"BOB"', 'AND "ALICE"']]))).toStrictEqual([
       ['BOB', 'AND ALICE'],
     ]);
   });
 
-  it('Function « normalizeQuotedStrings » should remove quotes in a string 2-plet', () => {
-    expect(normalizeQuotedStrings(['"BOB"', 'AND "ALICE"'])).toStrictEqual([
-      'BOB',
-      'AND ALICE',
-    ]);
-  });
-
   it('Function « normalizeQuotedStrings » should remove quotes in a string 2-plet', async () => {
-    expect(
-      normalizeQuotedStrings(await Promise.resolve([['"BOB"', 'AND "ALICE"']]))
-    ).toStrictEqual([['BOB', 'AND ALICE']]);
-  });
-
-  it('Function « normalizeQuotedStrings » should remove quotes in a string 2-plet', async () => {
-    expect(
-      normalizeQuotedStrings(await Promise.resolve(['"BOB"', 'AND "ALICE"']))
-    ).toStrictEqual(['BOB', 'AND ALICE']);
+    expect(normalizeQuotedStrings(await Promise.resolve(['"BOB"', 'AND "ALICE"']))).toStrictEqual(['BOB', 'AND ALICE']);
   });
 });

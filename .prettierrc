@@ -16,16 +16,6 @@
   "overrides": [
     {
       "options": {
-        "printWidth": 120,
-        "semi": true
-      },
-      "files": [
-        "lib/tools/color/**/*.*",
-        "lib/tests/mock/dummy-list.ts"
-      ]
-    },
-    {
-      "options": {
         "printWidth": 65,
         "semi": true
       },
@@ -33,8 +23,20 @@
         "lib/utils/**/main.ts",
         "lib/utils/**/sync.ts",
         "lib/utils/**/async.ts",
+        "lib/**/*.ts",
         "lib/classes/color-element-list/ColorElementList.ts",
         "lib/classes/color-element/ColorElement.ts"
+      ]
+    },
+    {
+      "options": {
+        "printWidth": 120,
+        "semi": true
+      },
+      "files": [
+        "lib/tools/color/**/*.*",
+        "lib/**/*.spec.ts",
+        "lib/tests/mock/dummy-list.ts"
       ]
     }
   ]

@@ -28,9 +28,7 @@ describe('Specs for "lib/tools/classes/color-element/ColorElement.ts"', () => {
     // });
 
     it('Constructor for « ColorElement » takes ColorElementTuple', () => {
-      expect(
-        new ColorElement(['colorElement.name', '0xFFEEBBCC']).elementList
-      ).toBeDefined();
+      expect(new ColorElement(['colorElement.name', '0xFFEEBBCC']).elementList).toBeDefined();
     });
 
     it('Constructor for « ColorElement » takes _ColorElement', () => {
@@ -43,117 +41,82 @@ describe('Specs for "lib/tools/classes/color-element/ColorElement.ts"', () => {
     });
 
     it('Constructor for « ColorElement » takes string | null', () => {
-      const str = new ColorElement(
-        'colorElement.name',
-        '0xFFEEBBCC'
-      ).toString();
+      const str = new ColorElement('colorElement.name', '0xFFEEBBCC').toString();
       const frmStrColorElement = new ColorElement(str).toString();
       expect(frmStrColorElement).toBe('"colorElement.name":"#FFEEBBCC"');
     });
     it('Constructor for « ColorElement » takes string | null', () => {
-      const str =
-        '{"elementName": "colorElement.name" , "colorHexValue": "#FFEEBBCC"}';
+      const str = '{"elementName": "colorElement.name" , "colorHexValue": "#FFEEBBCC"}';
       const frmStrColorElement = new ColorElement(str).toString();
       expect(frmStrColorElement).toBe('"colorElement.name":"#FFEEBBCC"');
     });
 
     it('Constructor for « ColorElement » takes string | null, colorHexValue: string | null', () => {
-      expect(
-        new ColorElement('colorElement.name', '0xFFEEBBCC').elementList
-      ).toBeDefined();
+      expect(new ColorElement('colorElement.name', '0xFFEEBBCC').elementList).toBeDefined();
     });
 
     it('Property elementList should be defined', () => {
-      expect(
-        new ColorElement('colorElement.name', '0xFFEEBBCC').elementList
-      ).toBeDefined();
+      expect(new ColorElement('colorElement.name', '0xFFEEBBCC').elementList).toBeDefined();
     });
 
     it('Property elementsAttributes should be defined', () => {
-      expect(
-        new ColorElement('colorElement.name', '0xFFEEBBCC').attributeList
-      ).toBeDefined();
+      expect(new ColorElement('colorElement.name', '0xFFEEBBCC').attributeList).toBeDefined();
     });
 
     it('Property mainAttribute should be defined', () => {
-      expect(
-        new ColorElement('colorElement.name', '0xFFEEBBCC').mainAttribute
-      ).toBeDefined();
+      expect(new ColorElement('colorElement.name', '0xFFEEBBCC').mainAttribute).toBeDefined();
     });
 
     it('Property mainElement should be defined', () => {
-      expect(
-        new ColorElement('colorElement.name', '0xFFEEBBCC').mainElement
-      ).toBeDefined();
+      expect(new ColorElement('colorElement.name', '0xFFEEBBCC').mainElement).toBeDefined();
     });
 
     it('Method toString should be defined', () => {
-      expect(
-        new ColorElement('colorElement.name', '0xFFEEBBCC').toString(true)
-      ).toBeDefined();
+      expect(new ColorElement('colorElement.name', '0xFFEEBBCC').toString(true)).toBeDefined();
     });
 
     it('Method toString should be defined', () => {
-      expect(
-        new ColorElement('colorElement.name', '0xFFEEBBCC').toString(true, [
-          'x',
-        ])
-      ).toBeDefined();
+      expect(new ColorElement('colorElement.name', '0xFFEEBBCC').toString(true, ['x'])).toBeDefined();
     });
 
     it('Method toObject should be defined', () => {
-      expect(
-        new ColorElement('colorElement.name', '0xFFEEBBCC').toObject()
-      ).toStrictEqual({
+      expect(new ColorElement('colorElement.name', '0xFFEEBBCC').toObject()).toStrictEqual({
         elementName: 'colorElement.name',
         colorHexValue: '#FFEEBBCC',
       });
     });
 
     it('Method toJson should be defined', () => {
-      expect(
-        new ColorElement('colorElement.name', '0xFFEEBBCC').toJson()
-      ).toStrictEqual({ 'colorElement.name': '#FFEEBBCC' });
+      expect(new ColorElement('colorElement.name', '0xFFEEBBCC').toJson()).toStrictEqual({
+        'colorElement.name': '#FFEEBBCC',
+      });
     });
 
     it('Method toValue should be defined', () => {
-      expect(
-        new ColorElement('colorElement.name', '0xFFEEBBCC').toValue()
-      ).toBeDefined();
+      expect(new ColorElement('colorElement.name', '0xFFEEBBCC').toValue()).toBeDefined();
     });
 
     it('Method toString should be defined', () => {
-      expect(
-        new ColorElement('colorElement.name', '0xFFEEBBCC').toString(true)
-      ).toBe('"colorElement.name":"#FFEEBBCC"');
+      expect(new ColorElement('colorElement.name', '0xFFEEBBCC').toString(true)).toBe(
+        '"colorElement.name":"#FFEEBBCC"'
+      );
     });
 
     it('Method toString should be defined', () => {
-      expect(
-        new ColorElement('colorElement.name', '0xFFEEBBCC').toString(false)
-      ).toBeDefined();
+      expect(new ColorElement('colorElement.name', '0xFFEEBBCC').toString(false)).toBeDefined();
     });
 
     it('Method « setColorHex » should set a new colorHex', () => {
-      expect(
-        new ColorElement('colorElement.name', '0xFFEEBBCC').setColorHex(
-          '0xFFBBAADD'
-        ).colorHex
-      ).toBe('#FFBBAADD');
+      expect(new ColorElement('colorElement.name', '0xFFEEBBCC').setColorHex('0xFFBBAADD').colorHex).toBe('#FFBBAADD');
     });
 
     it('Method « setColorHex » should set a new colorHex', () => {
-      expect(
-        new ColorElement('colorElement.name', '0xFFEEBBCC').setColorHex(null)
-          .colorHex
-      ).toBe(NULL_COLOR);
+      expect(new ColorElement('colorElement.name', '0xFFEEBBCC').setColorHex(null).colorHex).toBe(NULL_COLOR);
     });
     // "button.background": "#771166CC"
 
     it('Property °getter° « colorHex » should be an hexadecimal color string', () => {
-      expect(new ColorElement('colorElement.name', '0x771166CC').colorHex).toBe(
-        '#771166CC'
-      );
+      expect(new ColorElement('colorElement.name', '0x771166CC').colorHex).toBe('#771166CC');
     });
 
     it('Property °setter° « colorHex » should set an hexadecimal color string', () => {
@@ -163,9 +126,7 @@ describe('Specs for "lib/tools/classes/color-element/ColorElement.ts"', () => {
     });
 
     /* 1 */ it('Property id should be defined', () => {
-      expect(new ColorElement('colorElement.name', '0xFFEEBBCC').id).toBe(
-        Symbol.for(`"colorElement.name"`)
-      );
+      expect(new ColorElement('colorElement.name', '0xFFEEBBCC').id).toBe(Symbol.for(`"colorElement.name"`));
     });
 
     /* 2 */ it('Property uid should be defined', () => {
@@ -175,21 +136,15 @@ describe('Specs for "lib/tools/classes/color-element/ColorElement.ts"', () => {
     });
 
     /* 3 */ it('Property cid should be defined', () => {
-      expect(new ColorElement('colorElement.name', '0xFFEEBBCC').cid).toBe(
-        Symbol.for(`"#FFEEBBCC"`)
-      );
+      expect(new ColorElement('colorElement.name', '0xFFEEBBCC').cid).toBe(Symbol.for(`"#FFEEBBCC"`));
     });
 
     it('Property « isValid » should be false', () => {
-      expect(new ColorElement('colorElement.name', '0xFFEEBBCC').isValid).toBe(
-        true
-      );
+      expect(new ColorElement('colorElement.name', '0xFFEEBBCC').isValid).toBe(true);
     });
 
     it('Property « isValid » should be false if the color is NULL_COLOR', () => {
-      expect(new ColorElement('colorElement.name', NULL_COLOR).isValid).toBe(
-        false
-      );
+      expect(new ColorElement('colorElement.name', NULL_COLOR).isValid).toBe(false);
     });
 
     it('Property « isNull » should be true if the name is invalid', () => {
@@ -197,21 +152,15 @@ describe('Specs for "lib/tools/classes/color-element/ColorElement.ts"', () => {
     });
 
     it('Property « isNull » should be false', () => {
-      expect(new ColorElement('colorElement.name', '0xFFEEBBCC').isNull).toBe(
-        false
-      );
+      expect(new ColorElement('colorElement.name', '0xFFEEBBCC').isNull).toBe(false);
     });
 
     it('Property « isNull » should be false when it recive NULL_COLOR but the name is valid', () => {
-      expect(new ColorElement('colorElement.name', NULL_COLOR).isNull).toBe(
-        false
-      );
+      expect(new ColorElement('colorElement.name', NULL_COLOR).isNull).toBe(false);
     });
 
     it('Property colorElementName should be defined', () => {
-      expect(
-        new ColorElement('button.background', '0x771166CC').colorElementName
-      ).toBe('button.background');
+      expect(new ColorElement('button.background', '0x771166CC').colorElementName).toBe('button.background');
     });
 
     it('Property « isNull » should be true', () => {
@@ -219,33 +168,27 @@ describe('Specs for "lib/tools/classes/color-element/ColorElement.ts"', () => {
     });
 
     /* 1 */ it('Property « elementList » should return a value of type array', () => {
-      expect(
-        new ColorElement('colorElement.name', '0xFFEEBBCC').elementList
-      ).toStrictEqual(['colorElement', 'name']);
+      expect(new ColorElement('colorElement.name', '0xFFEEBBCC').elementList).toStrictEqual(['colorElement', 'name']);
     });
 
     /* 2 */ it('Property « attributeList » should return a value of type array', () => {
-      expect(
-        new ColorElement('colorElement.name', '0xFFEEBBCC').attributeList
-      ).toStrictEqual(['color', 'element', 'name']);
+      expect(new ColorElement('colorElement.name', '0xFFEEBBCC').attributeList).toStrictEqual([
+        'color',
+        'element',
+        'name',
+      ]);
     });
 
     /* 3 */ it('Property « mainAttribute » should return a value of type string', () => {
-      expect(
-        new ColorElement('colorElement.name', '0xFFEEBBCC').mainAttribute
-      ).toBe('name');
+      expect(new ColorElement('colorElement.name', '0xFFEEBBCC').mainAttribute).toBe('name');
     });
 
     /* 4 */ it('Property « firstElement » should return a value of type string', () => {
-      expect(
-        new ColorElement('colorElement.name', '0xFFEEBBCC').firstAttribut
-      ).toBe('color');
+      expect(new ColorElement('colorElement.name', '0xFFEEBBCC').firstAttribut).toBe('color');
     });
 
     /* 5 */ it('Property « mainElement » should return a value of type string', () => {
-      expect(
-        new ColorElement('colorElement.name', '0xFFEEBBCC').mainElement
-      ).toBe('colorElement');
+      expect(new ColorElement('colorElement.name', '0xFFEEBBCC').mainElement).toBe('colorElement');
     });
 
     // describe.each([
@@ -276,13 +219,7 @@ describe('Specs for "lib/tools/classes/color-element/ColorElement.ts"', () => {
        */
     ])(
       'Testing `new ColorElement(%s, %s)` for nullity or validity and voidness',
-      (
-        colorElementName: string,
-        colorHexValue: string,
-        isNull: boolean,
-        isValid: boolean,
-        isVoid: boolean
-      ) => {
+      (colorElementName: string, colorHexValue: string, isNull: boolean, isValid: boolean, isVoid: boolean) => {
         /* A */ it('Property « isNull » should return a value of type boolean', () => {
           const element = new ColorElement(colorElementName, colorHexValue);
           const value: any = element.isNull;

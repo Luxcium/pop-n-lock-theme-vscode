@@ -1,51 +1,31 @@
-import {
-  stripBraces,
-  stripBrackets,
-  stripComas,
-  stripJson,
-  stripParens,
-  stripQuotes,
-  stripSpaces,
-} from '.';
+import { stripBraces, stripBrackets, stripComas, stripJson, stripParens, stripQuotes, stripSpaces } from '.';
 
 describe('String parsers', () => {
   it('should stripBraces', () => {
-    expect(stripBraces('([{" ,strip}{Braces, "}])')).toBe(
-      '([" ,stripBraces, "])'
-    );
+    expect(stripBraces('([{" ,strip}{Braces, "}])')).toBe('([" ,stripBraces, "])');
   });
 
   it('should stripBrackets', () => {
-    expect(stripBrackets('([{" ,[strip][Brackets], "}])')).toBe(
-      '({" ,stripBrackets, "})'
-    );
+    expect(stripBrackets('([{" ,[strip][Brackets], "}])')).toBe('({" ,stripBrackets, "})');
   });
   it('should stripParen', () => {
-    expect(stripParens('([{" ,(strip)(Parens), "}])')).toBe(
-      '[{" ,stripParens, "}]'
-    );
+    expect(stripParens('([{" ,(strip)(Parens), "}])')).toBe('[{" ,stripParens, "}]');
   });
   it('should stripBraces', () => {
-    expect(stripBraces('([{" ,strip}{Braces, "}])')).toBe(
-      '([" ,stripBraces, "])'
-    );
+    expect(stripBraces('([{" ,strip}{Braces, "}])')).toBe('([" ,stripBraces, "])');
   });
   it('should stripComas', () => {
     expect(stripComas('([{" ,strip,Comas, "}])')).toBe('([{" stripComas "}])');
   });
   it('should stripJson', () => {
-    expect(stripJson('([{" ,strip,Json, "}]), "stripJson",')).toBe(
-      '([,strip,Json,]),stripJson,'
-    );
+    expect(stripJson('([{" ,strip,Json, "}]), "stripJson",')).toBe('([,strip,Json,]),stripJson,');
   });
   it('should stripQuotes', () => {
     expect(stripQuotes('([{" strip"Quotes ",}])')).toBe('([{ stripQuotes ,}])');
   });
 
   it('should stripSpaces', () => {
-    expect(stripSpaces('([{ " strip Spaces ", }])')).toBe(
-      '([{"stripSpaces",}])'
-    );
+    expect(stripSpaces('([{ " strip Spaces ", }])')).toBe('([{"stripSpaces",}])');
   });
 });
 

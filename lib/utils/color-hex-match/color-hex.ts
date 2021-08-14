@@ -12,7 +12,11 @@ function _colorHexMatch(colorHexRegExp: RegExp[]) {
   return (inputString: string): string => {
     for (const regexp of colorHexRegExp) {
       const match = inputString.match(regexp);
-      if (match != null && match.length === 1 && typeof match[0] === 'string') {
+      if (
+        match != null &&
+        match.length === 1 &&
+        typeof match[0] === 'string'
+      ) {
         const extractedHex = match[0].toUpperCase();
         return extractedHex;
       }

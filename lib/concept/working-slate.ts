@@ -12,7 +12,8 @@ function MAIN() {
 async function main() {
   // const baseColorElementList = await importJsonBaseColorElementList();
   console.log(
-    (ColorElementList.of(shortDummyList()).setAllAlphasTo = 'FFFFFF00')
+    (ColorElementList.of(shortDummyList()).setAllAlphasTo =
+      'FFFFFF00')
   );
   // console.log(ColorElementList);
   // let memoizedKeys: { [k: string]: colorElement[] } = {};

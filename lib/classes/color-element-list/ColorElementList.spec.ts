@@ -33,9 +33,7 @@ describe('Specs for "lib/tools/classes/color-element-list/ColorElementList.ts"',
 
   it('Property « fork » should return internel list from the ColorElementList', () => {
     const colorElementList = ColorElementList.of(...shortDummyList()).fork;
-    expect(
-      colorElementList.length === 13 && Array.isArray(colorElementList)
-    ).toBeTruthy();
+    expect(colorElementList.length === 13 && Array.isArray(colorElementList)).toBeTruthy();
   });
 
   it('Method « entries » should iterate over [keys,values]', () => {
@@ -43,9 +41,7 @@ describe('Specs for "lib/tools/classes/color-element-list/ColorElementList.ts"',
     const entries = colorlist.entries();
     for (const entrie of entries) {
       const [key, value] = entrie;
-      expect(
-        key < 13 && key >= 0 && value instanceof ColorElement
-      ).toBeTruthy();
+      expect(key < 13 && key >= 0 && value instanceof ColorElement).toBeTruthy();
     }
   });
 
@@ -144,9 +140,7 @@ describe('Specs for "lib/tools/classes/color-element-list/ColorElementList.ts"',
   it('Property « mainAttributeList » should be an array ', () => {
     const colorlist = ColorElementList.of(shortDummyList());
     const mainAttributeList = colorlist.mainAttributeList;
-    expect(
-      mainAttributeList.length >= 0 && Array.isArray(mainAttributeList)
-    ).toBeTruthy();
+    expect(mainAttributeList.length >= 0 && Array.isArray(mainAttributeList)).toBeTruthy();
   });
 
   it('Property « mainAttributeList » should ben an array ', () => {
@@ -158,9 +152,7 @@ describe('Specs for "lib/tools/classes/color-element-list/ColorElementList.ts"',
   it('Property « allAttributeList » should be an array ', () => {
     const colorlist = ColorElementList.of(shortDummyList());
     const allAttributeList = colorlist.allAttributeList;
-    expect(
-      allAttributeList.length >= 0 && Array.isArray(allAttributeList)
-    ).toBeTruthy();
+    expect(allAttributeList.length >= 0 && Array.isArray(allAttributeList)).toBeTruthy();
   });
 
   it('Property « allAttributeList » should ben an array ', () => {
@@ -172,9 +164,7 @@ describe('Specs for "lib/tools/classes/color-element-list/ColorElementList.ts"',
   it('Property « allAttributeList » should be an array ', () => {
     const colorlist = ColorElementList.of(shortDummyList());
     const allAttributeList = colorlist.allAttributeList;
-    expect(
-      allAttributeList.length >= 0 && Array.isArray(allAttributeList)
-    ).toBeTruthy();
+    expect(allAttributeList.length >= 0 && Array.isArray(allAttributeList)).toBeTruthy();
   });
 
   it('Property « allAttributeList » should be an array ', () => {
@@ -186,9 +176,7 @@ describe('Specs for "lib/tools/classes/color-element-list/ColorElementList.ts"',
   it('Property « allElementsList » should be an array ', () => {
     const colorlist = ColorElementList.of(shortDummyList());
     const allElementsList = colorlist.allElementsList;
-    expect(
-      allElementsList.length >= 0 && Array.isArray(allElementsList)
-    ).toBeTruthy();
+    expect(allElementsList.length >= 0 && Array.isArray(allElementsList)).toBeTruthy();
   });
 
   it('Property « allElementsList » should ben an array ', () => {
@@ -200,9 +188,7 @@ describe('Specs for "lib/tools/classes/color-element-list/ColorElementList.ts"',
   it('Property « firstAttributeList » should be an array ', () => {
     const colorlist = ColorElementList.of(shortDummyList());
     const firstAttributeList = colorlist.firstAttributeList;
-    expect(
-      firstAttributeList.length >= 0 && Array.isArray(firstAttributeList)
-    ).toBeTruthy();
+    expect(firstAttributeList.length >= 0 && Array.isArray(firstAttributeList)).toBeTruthy();
   });
 
   it('Property « firstAttributeList » should ben an array ', () => {
@@ -214,9 +200,7 @@ describe('Specs for "lib/tools/classes/color-element-list/ColorElementList.ts"',
   it('Property « firstElementsList » should be an array ', () => {
     const colorlist = ColorElementList.of(shortDummyList());
     const firstElementsList = colorlist.firstElementsList;
-    expect(
-      firstElementsList.length >= 0 && Array.isArray(firstElementsList)
-    ).toBeTruthy();
+    expect(firstElementsList.length >= 0 && Array.isArray(firstElementsList)).toBeTruthy();
   });
 
   it('Property « firstElementsList » should be an array ', () => {
@@ -227,12 +211,8 @@ describe('Specs for "lib/tools/classes/color-element-list/ColorElementList.ts"',
   it('Method « chageAllAlphasTo » should not mutate', () => {
     const colorlist = ColorElementList.of(shortDummyList());
     const chageAllAlphasTo = colorlist.chageAllAlphasTo('FFFFFFCC');
-    const reduced1 = colorlist.filter(
-      element => element.colorHex.slice(7, 9) === 'CC'
-    );
-    const reduced2 = chageAllAlphasTo.filter(
-      element => element.colorHex.slice(7, 9) === 'CC'
-    );
+    const reduced1 = colorlist.filter(element => element.colorHex.slice(7, 9) === 'CC');
+    const reduced2 = chageAllAlphasTo.filter(element => element.colorHex.slice(7, 9) === 'CC');
     expect(reduced1.length).toBe(2);
     expect(reduced2.length).toBe(13);
   });
@@ -249,9 +229,7 @@ describe('Specs for "lib/tools/classes/color-element-list/ColorElementList.ts"',
     colorlist.chageAllAlphasTo('FFFFFFCC');
     const reduced2 = testing();
 
-    const reduced3 = colorlist
-      .chageAllAlphasTo('FFFFFFCC')
-      .filter(element => element.colorHex.slice(7, 9) === 'CC');
+    const reduced3 = colorlist.chageAllAlphasTo('FFFFFFCC').filter(element => element.colorHex.slice(7, 9) === 'CC');
 
     expect(reduced1.length).toBe(2);
     expect(reduced2.length).toBe(2);
@@ -279,9 +257,7 @@ describe('Specs for "lib/tools/classes/color-element-list/ColorElementList.ts"',
     const colorlist = ColorElementList.of(shortDummyListNulls());
 
     const tester = (colorlist_: ColorElementList) => () =>
-      colorlist_.filter(
-        element => element.colorHex.slice(0, 9) === '#3399CCCC'
-      );
+      colorlist_.filter(element => element.colorHex.slice(0, 9) === '#3399CCCC');
 
     const testing = tester(colorlist);
     const reduced1 = testing();
@@ -303,9 +279,7 @@ describe('Specs for "lib/tools/classes/color-element-list/ColorElementList.ts"',
     const colorlist = ColorElementList.of(shortDummyListNulls());
 
     const tester = (colorlist_: ColorElementList) => () =>
-      colorlist_.filter(
-        element => element.colorHex.slice(0, 9) === '#3399CCCC'
-      );
+      colorlist_.filter(element => element.colorHex.slice(0, 9) === '#3399CCCC');
 
     const testing = tester(colorlist);
     const reduced1 = testing();

@@ -1,1 +1,5 @@
-export { myWriter, readFileAsync, writeOutputToFile } from './write-output';
+export {
+  myWriter,
+  readFileAsync,
+  writeOutputToFile,
+} from './write-output';

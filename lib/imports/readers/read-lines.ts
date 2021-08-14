@@ -1,7 +1,9 @@
 import { promises, readFileSync } from 'fs';
 
 export function readLines(path: string): string[];
-export function readLines(path: Promise<string>): Promise<string[]>;
+export function readLines(
+  path: Promise<string>
+): Promise<string[]>;
 export function readLines(
   path: string | Promise<string>
 ): string[] | Promise<string[]> {
@@ -15,7 +17,9 @@ function readLinesSync(path: string): string[] {
   return readLines_(readFileSync(path));
 }
 
-async function readLinesAsync(path: Promise<string>): Promise<string[]> {
+async function readLinesAsync(
+  path: Promise<string>
+): Promise<string[]> {
   return readLines_(await promises.readFile(await path));
 }
 
