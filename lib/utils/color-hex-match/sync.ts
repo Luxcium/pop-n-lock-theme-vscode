@@ -5,7 +5,9 @@ export function colorHexTemplatedSync(
   template: string | [string] | [string, string] = ['', '']
 ): string {
   const extractedHex = colorHexMatch(inputString);
-  if (extractedHex === '') return extractedHex;
+  if (extractedHex === '' || typeof extractedHex !== 'string') {
+    return '';
+  }
   if (Array.isArray(template)) {
     return template.length === 1
       ? template[0] + extractedHex

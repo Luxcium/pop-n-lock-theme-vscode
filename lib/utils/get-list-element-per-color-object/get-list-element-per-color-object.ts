@@ -1,7 +1,7 @@
 import { readLines } from '../../imports/readers';
 import { extractColorInformation } from '../extract-color-information-complex';
 import { listElementPerColor } from '../list-element-per-color';
-import { normalizeQuotedStrings } from '../normalize-strings';
+import { normalizeQuotedStrings } from '../normalize-strings-2ples';
 import { reversedSplitLines } from '../split-lines';
 
 export async function getListElementPerColorObject(pathToJsonColours: string) {

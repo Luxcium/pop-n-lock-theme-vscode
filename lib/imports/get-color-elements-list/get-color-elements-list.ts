@@ -3,7 +3,7 @@ import { BASE_COLORS_INPUT_PATH } from '../../constants';
 import { createColorElementsList } from '../../utils/create-color-element-list';
 import { extractColorInformation } from '../../utils/extract-color-information-complex';
 import { filterOutNullColorElements } from '../../utils/filter-out-null-color-elements';
-import { normalizeQuotedStrings } from '../../utils/normalize-strings';
+import { normalizeQuotedStrings } from '../../utils/normalize-strings-2ples';
 import { splitLines } from '../../utils/split-lines';
 import { readLines } from '../readers';
 
@@ -18,7 +18,6 @@ function getColorJsonListSync(
   const step4 = normalizeQuotedStrings(step3);
   const step5 = createColorElementsList(step4);
   const step6 = filterOutNullColorElements(step5)(true, true);
-  // console.log('step6 :>> ', step6);
   return step6;
 }
 
