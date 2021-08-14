@@ -26,7 +26,7 @@
     },
     {
       "options": {
-        "printWidth": 70,
+        "printWidth": 65,
         "semi": true
       },
       "files": [
