@@ -1,1 +1,1 @@
-export { createFolder } from './create-folder';
+export { createFolder } from './main';

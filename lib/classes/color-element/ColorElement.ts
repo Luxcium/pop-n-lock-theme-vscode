@@ -46,7 +46,9 @@ export class ColorElement implements IColorElement, _ColorElement {
   }
 
   private setInitialColorHex(colorValue: string | null) {
-    this.initialColor_ = this.initialColor_ ? this.initialColor_ : colorValue;
+    this.initialColor_ = this.initialColor_
+      ? this.initialColor_
+      : colorValue;
   }
 
   private get initialColor() {
@@ -59,7 +61,10 @@ export class ColorElement implements IColorElement, _ColorElement {
   constructor(colorElement: ColorElementTuple);
   constructor(colorElement: _ColorElement);
   constructor(colorElement: string | null);
-  constructor(colorElement: string | null, colorHexValue: string | null);
+  constructor(
+    colorElement: string | null,
+    colorHexValue: string | null
+  );
   constructor(
     colorElement: ColorElementTuple | _ColorElement | string | null,
     colorHexValue?: string | null
@@ -213,7 +218,8 @@ export class ColorElement implements IColorElement, _ColorElement {
 
   public get isValid(): boolean {
     return (
-      !this.isNull && !(this.colorHex === NULL_COLOR || this.colorHex === '')
+      !this.isNull &&
+      !(this.colorHex === NULL_COLOR || this.colorHex === '')
     );
   }
 
@@ -234,11 +240,28 @@ export class ColorElement implements IColorElement, _ColorElement {
   }
 
   public get firstAttribut(): string {
-    return this.isValid ? this.attributeList_.slice(0, 1)[0] || '' : '';
+    return this.isValid
+      ? this.attributeList_.slice(0, 1)[0] || ''
+      : '';
   }
 
   public get mainElement(): string {
-    return this.isValid ? this.elementsList_.slice(0, 1)[0] || '' : '';
+    return this.isValid
+      ? this.elementsList_.slice(0, 1)[0] || ''
+      : '';
+  }
+
+  public toComponents() {
+    const red = this.colorHex.substr(0, 2);
+    const green = this.colorHex.substr(3, 2);
+    const blue = this.colorHex.substr(5, 2);
+    const alpha = this.colorHex.substr(7, 2);
+    return {
+      red,
+      green,
+      blue,
+      alpha,
+    };
   }
 
   readonly [s: string]: any;
@@ -248,8 +271,9 @@ export class ColorElement implements IColorElement, _ColorElement {
 if (require?.main?.filename === __filename) main();
 /* istanbul ignore next */
 async function main() {
-  const cElm = new ColorElement('c.elem', 'ffff');
-  console.log(cElm);
+  const cElm = new ColorElement('c.elem', 'fff');
+  console.log(cElm.toComponents());
+  console.log(cElm.colorHex.length);
   console.log('isVoid: ,', cElm.isVoid);
   console.log('isValid: ,', cElm.isValid);
   console.log('isNull: ', cElm.isNull);

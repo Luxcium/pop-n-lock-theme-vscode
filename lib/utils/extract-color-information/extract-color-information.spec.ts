@@ -4,25 +4,25 @@ import { extractColorInformationAsync } from './async';
 import { extractColorInformationSync } from './sync';
 
 describe('DUMMY TEST', () => {
-  it.skip('extractColorInformation', () => {
+  it('extractColorInformation', () => {
     const result = extractColorInformation;
 
     expect(result).toBeDefined();
   });
 
-  it.skip('extractColorInformationAsync', () => {
+  it('extractColorInformationAsync', () => {
     const some = extractColorInformationAsync;
 
     expect(some).toBeDefined();
   });
 
-  it.skip('extractColorInformationSync', () => {
+  it('extractColorInformationSync', () => {
     const some = extractColorInformationSync;
 
     expect(some).toBeDefined();
   });
 
-  it.skip('colorHexMatch', () => {
+  it('colorHexMatch', () => {
     const some = colorHexMatchTemplated;
 
     expect(some).toBeDefined();

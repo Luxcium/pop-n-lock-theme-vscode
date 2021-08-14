@@ -40,7 +40,7 @@ export default async (): Promise<Config.InitialOptions> => {
     maxWorkers: '5',
 
     // Indicates which provider should be used to instrument code for coverage
-    // coverageProvider: 'v8',
+    coverageProvider: 'v8',
 
     // A list of reporter names that Jest uses when writing coverage reports
     // coverageReporters: [
@@ -69,8 +69,29 @@ export default async (): Promise<Config.InitialOptions> => {
     // globalTeardown: undefined,
 
     // A set of global variables that need to be available in all test environments
-    // globals: {},
+    globals: {
+      'ts-jest': {
+        // TypeScript module to use as compiler. (string) "typescript"
+        compiler: 'typescript',
+        // TypeScript compiler related configuration. (string|object|boolean) auto
+        tsconfig: { target: 'es5' },
+        // Disable type-checking (boolean) disabled
+        isolatedModules: true,
+        // Custom TypeScript AST transformers (object) auto
+        // astTransformers
+        // Diagnostics related configuration. (boolean|object) enabled
+        // diagnostics
+        // Babel(Jest) related configuration. (boolean|string|object) disabled
+        // babelConfig
+        // Files which will become modules returning self content. (string|RegExp) disabled
+        // stringifyContentPathRegex
+        // Enable ESM support (boolean) auto
+        // useESM
+      },
+    },
+    /*
 
+ */
     // An array of directory names to be searched recursively up from the requiring module's location
     moduleDirectories: ['node_modules'],
 

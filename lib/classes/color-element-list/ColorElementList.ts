@@ -1,3 +1,4 @@
+import { duplicatesDummyListNulls } from '../../tests/mock/dummy-list';
 import { IColorElement } from '../../types/IColorElement';
 import ColorElement from '../color-element';
 
@@ -15,8 +16,40 @@ export class ColorElementList {
       ? this.of_(value as IColorElement[])
       : this.of_(values as IColorElement[]);
   }
+  public removeDuplicates() {
+    const list1 = this.list.slice();
+    const list2 = this.list.slice();
+    let count = 1;
+    for (let i = 0; i < list1.length; i++) {
+      const elementName1 = list1[i]?.elementName;
+      for (let j = i + 1; j < list2.length; j++) {
+        const elementName2 = list2[j]?.elementName;
+        if (elementName1 === elementName2) {
+          console.log(
+            count++,
+            '/',
+            list1.length,
+            elementName1,
+            '===',
+            elementName2
+          );
+          console.log(list2.splice(j, 1).pop()?.colorHexValue);
+        }
+      }
+    }
+    console.log('list2.length:', list2.length, '/', list1.length);
+  }
   protected constructor(colorElementList: IColorElement[]) {
+    this.removeDuplicates;
     this.list = colorElementList;
+  }
+  public push(colorElement: ColorElementList | ColorElement) {
+    if (colorElement instanceof ColorElementList) {
+      const list = colorElement.list;
+      this.list.concat(list);
+      return this;
+    }
+    return this;
   }
   public get length() {
     let returnValue;
@@ -26,7 +59,12 @@ export class ColorElementList {
   public get fork(): ColorElement[] {
     return this.colorList;
   }
-  // #region =======================================-| Iterator |-====≈
+
+  public toArray(): ColorElement[] {
+    return this.colorList;
+  }
+
+  // #region =======================================-| Iterator |-====
   // iterator ==========================-| *[Symbol.iterator]() |-====
   /** Whenever an object needs to be iterated (such as at the beginning of a for...of loop), its `@@iterator` method is called with no arguments, and the returned iterator is used to obtain the values to be iterated. */
   public *[Symbol.iterator]() {
@@ -45,7 +83,7 @@ export class ColorElementList {
   public values() {
     return this.fork.values();
   }
-  // #endregion ====================================-| Iterator |-====≈
+  // #endregion ====================================-| Iterator |-====
   // public =======================================-| forEach() |-====
   public forEach(
     callbackfn: (
@@ -96,7 +134,9 @@ export class ColorElementList {
     ) => boolean,
     thisArg?: any
   ): ColorElementList {
-    return ColorElementList.of([...this.fork.filter(predicate, thisArg)]);
+    return ColorElementList.of([
+      ...this.fork.filter(predicate, thisArg),
+    ]);
   }
   // public filterColor(colorHex: string) {
   //   return ColorElementList.of(
@@ -160,7 +200,10 @@ export class ColorElementList {
     return ColorElementList.of(
       this.list
         .slice(index + 1)
-        .map((colorElement: IColorElement) => new ColorElement(colorElement))
+        .map(
+          (colorElement: IColorElement) =>
+            new ColorElement(colorElement)
+        )
     );
   }
   public toJson() {
@@ -186,7 +229,10 @@ export class ColorElementList {
     return [
       ...new Set(
         this.list
-          .map(colorElement => new ColorElement(colorElement).attributeList)
+          .map(
+            colorElement =>
+              new ColorElement(colorElement).attributeList
+          )
           .flat()
       ),
     ];
@@ -195,7 +241,9 @@ export class ColorElementList {
     return [
       ...new Set(
         this.list
-          .map(colorElement => new ColorElement(colorElement).elementList)
+          .map(
+            colorElement => new ColorElement(colorElement).elementList
+          )
           .flat()
       ),
     ];
@@ -205,7 +253,7 @@ export class ColorElementList {
       ...new Set(
         this.list
           .map(colorElement => [
-            new ColorElement(colorElement).attributeList[0]!, // as string // ?? '',
+            new ColorElement(colorElement).attributeList[0]!,
           ])
           .flat()
       ),
@@ -216,7 +264,7 @@ export class ColorElementList {
       ...new Set(
         this.list
           .map(colorElement => [
-            new ColorElement(colorElement).elementList[0]!, // as string // ?? '',
+            new ColorElement(colorElement).elementList[0]!,
           ])
           .flat()
       ),
@@ -235,8 +283,14 @@ export class ColorElementList {
   }
 
   /** Only the last 2 positions of the 8 position hex will be used */
-  private chageAllAlphasTo_(eightPositionHex: string, mutate: boolean) {
-    const colorTransposed = new ColorElement('temp.DUMMY', eightPositionHex);
+  private chageAllAlphasTo_(
+    eightPositionHex: string,
+    mutate: boolean
+  ) {
+    const colorTransposed = new ColorElement(
+      'temp.DUMMY',
+      eightPositionHex
+    );
     if (colorTransposed.isValid) {
       let transposedList: ColorElement[] = this.colorList;
       const color = colorTransposed.colorHexValue;
@@ -277,8 +331,14 @@ export class ColorElementList {
     this.chageAllColorsTo_(eightPositionHex, true);
   }
 
-  private chageAllColorsTo_(eightPositionHex: string, mutate: boolean) {
-    const colorTransposed = new ColorElement('temp.DUMMY', eightPositionHex);
+  private chageAllColorsTo_(
+    eightPositionHex: string,
+    mutate: boolean
+  ) {
+    const colorTransposed = new ColorElement(
+      'temp.DUMMY',
+      eightPositionHex
+    );
     if (colorTransposed.isValid) {
       const color = colorTransposed.colorHexValue;
       let colorList: ColorElement[];
@@ -297,4 +357,11 @@ export class ColorElementList {
     console.warn(eightPositionHex, 'is not a valid color hex');
     return this;
   }
+}
+
+/* istanbul ignore if */
+if (require?.main?.filename === __filename) main();
+/* istanbul ignore next */
+async function main() {
+  ColorElementList.of(duplicatesDummyListNulls()).removeDuplicates();
 }

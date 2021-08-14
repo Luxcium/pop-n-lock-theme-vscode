@@ -52,23 +52,44 @@ export function shortDummyListNulls(): ColorElement[] {
 
     //'button.secondaryHoverBackground'
     // void '#00FF0022', // #00FF00FF
-    new ColorElement('button.secondaryHoverBackground').setColorHex(
-      cx.undefGreen
-    ),
+    new ColorElement('button.secondaryHoverBackground').setColorHex(cx.undefGreen),
 
     //'button.secondaryBackground'
     new ColorElement('button.secondaryBackground').setColorHex(NULL_COLOR), //
 
     //'button.secondaryBackground'
-    new ColorElement('button.secondaryBackground')
-      .setColorHex(NULL_COLOR)
-      .setColorHex('FFFFFF'), //
+    new ColorElement('button.secondaryBackground').setColorHex(NULL_COLOR).setColorHex('FFFFFF'), //
 
     // (VOID ELEMENT)
     ColorElement.void,
 
     // (VOID ELEMENT)
     ColorElement.void.setColorHex('#00FF0022'),
+  ];
+}
+
+export function duplicatesDummyListNulls(): ColorElement[] {
+  return [
+    /* 1 */ new ColorElement('button.testLastDuplicate').setColorHex('#AA6ABA'),
+    /* 2 */ new ColorElement('button.testDuplicates').setColorHex('#A060B0'),
+    /* 3 */ new ColorElement('editorGroupHeader.tabsBorder').setColorHex(cx.x1D2545FF), //
+    /* 4 */ new ColorElement('button.secondaryBackground').setColorHex(cx.undefGreen), //
+    /* 5 */ new ColorElement('button.secondaryHoverBackground').setColorHex('#A161B1'),
+    /* 6 */ new ColorElement('button.secondaryBackground').setColorHex(NULL_COLOR), //
+    /* 7 */ new ColorElement('button.secondaryBackground').setColorHex(NULL_COLOR).setColorHex('FFFFFF'),
+    /* 8 */ ColorElement.void,
+    /* 9 */ ColorElement.void.setColorHex('#00FF0022'),
+    /* 10 */ new ColorElement('editorGroupHeader.tabsBorder').setColorHex(cx.x1D2545FF), //
+    /* 11 */ new ColorElement('button.secondaryBackground').setColorHex(cx.undefGreen), //
+    /* 12 */ new ColorElement('button.secondaryHoverBackground').setColorHex(cx.undefGreen),
+    /* 13 */ new ColorElement('button.secondaryBackground').setColorHex(NULL_COLOR), //
+    /* 14 */ new ColorElement('button.secondaryBackground').setColorHex(NULL_COLOR).setColorHex('FFFFFF'),
+    /* 15 */ ColorElement.void,
+    /* 16 */ ColorElement.void.setColorHex('#00FF0022'),
+    /* 17 */ new ColorElement('button.testDuplicates').setColorHex('#A161B1'),
+    /* 18 */ new ColorElement('button.testDuplicates').setColorHex('#A262B2'),
+    /* 19 */ new ColorElement('button.testDuplicates').setColorHex('#A363B3'),
+    /* 20 */ new ColorElement('button.testLastDuplicate').setColorHex('#AF6FBF'),
   ];
 }
 
@@ -84,15 +105,11 @@ export function shortDummyList(): ColorElement[] {
 
     //'editorGroupHeader.noTabsBackground'
     void '#1C1C2EFF',
-    new ColorElement('editorGroupHeader.noTabsBackground').setColorHex(
-      cx.x1C1C2EFF
-    ), //
+    new ColorElement('editorGroupHeader.noTabsBackground').setColorHex(cx.x1C1C2EFF), //
 
     //'editorGroupHeader.tabsBackground'
     void '#1C1C2EFF',
-    new ColorElement('editorGroupHeader.tabsBackground').setColorHex(
-      cx.x1C1C2EFF
-    ), //
+    new ColorElement('editorGroupHeader.tabsBackground').setColorHex(cx.x1C1C2EFF), //
 
     //'editorGroupHeader.tabsBorder'
     void '#1D2545FF',
@@ -104,9 +121,7 @@ export function shortDummyList(): ColorElement[] {
 
     //'button.secondaryHoverBackground'
     void '#00FF0022', // #00FF00FF
-    new ColorElement('button.secondaryHoverBackground').setColorHex(
-      cx.undefGreen
-    ), //
+    new ColorElement('button.secondaryHoverBackground').setColorHex(cx.undefGreen), //
 
     //'button.hoverBackground'
     void '#3399CCCC',

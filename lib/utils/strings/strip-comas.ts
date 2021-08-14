@@ -1,3 +1,3 @@
 export function stripComas(str: string): string {
-  return str?.replaceAll(',', '');
+  return str.replaceAll(',', '');
 }

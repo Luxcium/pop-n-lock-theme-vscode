@@ -61,6 +61,7 @@
     "babel-jest": "^27.0.6",
     "jest": "^27.0.6",
     "npm": "latest",
+    "nyc": "^15.1.0",
     "prettier": "latest",
     "rewire": "^5.0.0",
     "rimraf": "latest",
