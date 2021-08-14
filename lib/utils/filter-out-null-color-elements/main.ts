@@ -10,7 +10,9 @@ import {
   filterOutNullsSync,
 } from './sync';
 
-export function filterOutNulls(elementList: ColorElement[]): ColorElement[];
+export function filterOutNulls(
+  elementList: ColorElement[]
+): ColorElement[];
 export function filterOutNulls(
   elementList: ColorElement[]
 ): Promise<ColorElement[]>;

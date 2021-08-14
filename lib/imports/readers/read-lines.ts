@@ -11,11 +11,11 @@ export function readLines(
   return readLinesSync(path);
 }
 
-  function readLinesSync(path: string): string[] {
+function readLinesSync(path: string): string[] {
   return readLines_(readFileSync(path));
 }
 
-  async function readLinesAsync(path: Promise<string>): Promise<string[]> {
+async function readLinesAsync(path: Promise<string>): Promise<string[]> {
   return readLines_(await promises.readFile(await path));
 }
 
