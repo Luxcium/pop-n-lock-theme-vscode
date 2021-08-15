@@ -1,4 +1,4 @@
-import { standardizeColorHex } from '../color-hex-match';
+import { standardizeColorHex } from '../standardize-color-hex';
 
 export function reduceHex(colorHex: string) {
   const color = standardizeColorHex(colorHex);

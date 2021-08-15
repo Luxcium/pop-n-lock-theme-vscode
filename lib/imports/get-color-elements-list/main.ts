@@ -1,32 +1,7 @@
 import ColorElement from '../../classes/color-element';
 import { BASE_COLORS_INPUT_PATH } from '../../constants';
-import { createColorElementsList } from '../../utils/create-color-element-list';
-import { extractColorInformation } from '../../utils/extract-color-information-complex';
-import { filterOutNullColorElements } from '../../utils/filter-out-null-color-elements';
-import { normalizeQuotedStrings } from '../../utils/normalize-strings-2ples';
-import { splitLines } from '../../utils/split-lines';
-import { readLines } from '../readers';
-
-function getColorJsonListSync(
-  pathToJsonColours: string,
-  template: string | [string] | [string, string] = '#'
-): ColorElement[] {
-  const step1 = readLines(pathToJsonColours);
-
-  const step2 = splitLines(step1);
-  const step3 = extractColorInformation(step2, template);
-  const step4 = normalizeQuotedStrings(step3);
-  const step5 = createColorElementsList(step4);
-  const step6 = filterOutNullColorElements(step5)(true, true);
-  return step6;
-}
-
-async function getColorElementsListAsync(
-  pathToJsonColours: Promise<string>,
-  template: string | [string] | [string, string] = '#'
-): Promise<ColorElement[]> {
-  return getColorJsonListSync(await pathToJsonColours, template);
-}
+import { getColorElementsListAsync } from './async';
+import { getColorJsonListSync } from './sync';
 
 export function getColorElementsList(
   pathToJsonColours: string,
@@ -41,17 +16,9 @@ export function getColorElementsList(
   template: string | [string] | [string, string] = '#'
 ): ColorElement[] | Promise<ColorElement[]> {
   if (pathToJsonColours instanceof Promise) {
-    return getColorElementsListAsync(
-      pathToJsonColours,
-
-      template
-    );
+    return getColorElementsListAsync(pathToJsonColours, template);
   }
-  return getColorJsonListSync(
-    pathToJsonColours,
-
-    template
-  );
+  return getColorJsonListSync(pathToJsonColours, template);
 }
 
 /* istanbul ignore next */
@@ -107,5 +74,3 @@ export async function getColorElementsList(
   );
 }
  */
-
-// 514-923-1012

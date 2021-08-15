@@ -10,9 +10,7 @@ export class ColorElementList {
   private static of_(colorElementList: IColorElement[]) {
     return new ColorElementList(colorElementList);
   }
-  public static of(
-    ...values: IColorElement[] | [IColorElement[]]
-  ) {
+  public static of(...values: IColorElement[] | [IColorElement[]]) {
     const value = values.length === 1 ? values[0] : null;
     return Array.isArray(value)
       ? this.of_(value as IColorElement[])
@@ -21,30 +19,20 @@ export class ColorElementList {
   public removeDuplicates() {
     const list1 = this.list.slice();
     const list2 = this.list.slice();
-    let count = 1;
+    const list3 = [];
+    // let count = 1;
     for (let i = 0; i < list1.length; i++) {
       const elementName1 = list1[i]?.elementName;
       for (let j = i + 1; j < list2.length; j++) {
         const elementName2 = list2[j]?.elementName;
         if (elementName1 === elementName2) {
-          console.log(
-            count++,
-            '/',
-            list1.length,
-            elementName1,
-            '===',
-            elementName2
-          );
-          console.log(list2.splice(j, 1).pop()?.colorHexValue);
+          list3.push(list2.splice(j, 1));
         }
       }
     }
-    console.log(
-      'list2.length:',
-      list2.length,
-      '/',
-      list1.length
-    );
+    this.list = list2;
+
+    return list3;
   }
   protected constructor(colorElementList: IColorElement[]) {
     this.removeDuplicates;
@@ -71,27 +59,27 @@ export class ColorElementList {
     return this.colorList;
   }
 
-  // #region =======================================-| Iterator |-====
-  // iterator ==========================-| *[Symbol.iterator]() |-====
+  // #region ==================================-| Iterator |-====
+  // iterator =====================-| *[Symbol.iterator]() |-====
   /** Whenever an object needs to be iterated (such as at the beginning of a for...of loop), its `@@iterator` method is called with no arguments, and the returned iterator is used to obtain the values to be iterated. */
   public *[Symbol.iterator]() {
     yield* this.colorList;
   }
   readonly [n: number]: any;
-  // public =======================================-| entries() |-====
+  // public ==================================-| entries() |-====
   public entries() {
     return this.fork.entries();
   }
-  // public ==========================================-| keys() |-====
+  // public =====================================-| keys() |-====
   public keys() {
     return this.fork.keys();
   }
-  // public ========================================-| values() |-====
+  // public ===================================-| values() |-====
   public values() {
     return this.fork.values();
   }
-  // #endregion ====================================-| Iterator |-====
-  // public =======================================-| forEach() |-====
+  // #endregion ===============================-| Iterator |-====
+  // public ==================================-| forEach() |-====
   public forEach(
     callbackfn: (
       value: IColorElement,
@@ -102,10 +90,10 @@ export class ColorElementList {
   ): void {
     return this.fork.forEach(callbackfn, thisArgument);
   }
-  // public ===========================================-| map() |-====
+  // public ======================================-| map() |-====
   public map<U>(
     callbackfn: (
-      value: IColorElement,
+      value: ColorElement,
       index: number,
       array: IColorElement[]
     ) => U,
@@ -113,7 +101,8 @@ export class ColorElementList {
   ): U[] {
     return this.fork.map<U>(callbackfn, thisArgument);
   }
-  // public ==========================================-| some() |-====
+
+  // public =====================================-| some() |-====
   public some(
     predicate: (
       value: ColorElement,
@@ -124,7 +113,7 @@ export class ColorElementList {
   ): boolean {
     return this.fork.some(predicate, thisArg);
   }
-  // public ========================================-| filter() |-====
+  // public ===================================-| filter() |-====
   // public filter(
   //   predicate: (
   //     value: ColorElement,
@@ -136,8 +125,8 @@ export class ColorElementList {
   public filter(
     predicate: (
       value: ColorElement,
-      index: number,
-      array: ColorElement[]
+      index?: number,
+      array?: ColorElement[]
     ) => boolean,
     thisArg?: any
   ): ColorElementList {
@@ -145,6 +134,42 @@ export class ColorElementList {
       ...this.fork.filter(predicate, thisArg),
     ]);
   }
+  public selectByMainAttribute(attribute: string) {
+    return this.filter(
+      element =>
+        element.mainAttribute.toLowerCase() ===
+        attribute.toLowerCase()
+    );
+  }
+  public selectByFirstAttribut(attribute: string) {
+    return this.filter(
+      element =>
+        element.firstAttribut.toLowerCase() ===
+        attribute.toLowerCase()
+    );
+  }
+  public selectByMainElement(elementName: string) {
+    return this.filter(
+      element =>
+        element.mainElement.toLowerCase() ===
+        elementName.toLowerCase()
+    );
+  }
+  public selectByElementName(elementName: string) {
+    return this.filter(
+      element =>
+        element.elementName.toLowerCase() ===
+        elementName.toLowerCase()
+    );
+  }
+  public selectByColorHexValue(colorHexValue: string) {
+    return this.filter(
+      element =>
+        element.colorHexValue.toLowerCase() ===
+        colorHexValue.toLowerCase()
+    );
+  }
+
   // public filterColor(colorHex: string) {
   //   return ColorElementList.of(
   //     this.list.filter(
@@ -218,9 +243,8 @@ export class ColorElementList {
     this.list
       .map(colorElement => new ColorElement(colorElement))
       .map(colorElement => colorElement.toJson())
-      .map(
-        colorElement => (json = { ...json, ...colorElement })
-      );
+      .map(colorElement => (json = { ...json, ...colorElement }));
+
     return json;
   }
   public get mainAttributeList(): string[] {
@@ -228,9 +252,7 @@ export class ColorElementList {
       ...new Set(
         this.list
           .map(colorElement =>
-            new ColorElement(colorElement).attributeList.slice(
-              -1
-            )
+            new ColorElement(colorElement).attributeList.slice(-1)
           )
           .flat()
       ),
@@ -253,8 +275,7 @@ export class ColorElementList {
       ...new Set(
         this.list
           .map(
-            colorElement =>
-              new ColorElement(colorElement).elementList
+            colorElement => new ColorElement(colorElement).elementList
           )
           .flat()
       ),
@@ -282,7 +303,7 @@ export class ColorElementList {
       ),
     ];
   }
-  // public ==============================-| chageAllAlphasTo() |-====
+  // public =========================-| chageAllAlphasTo() |-====
 
   /** Will mutate the current object */
   public set setAllAlphasTo(eightPositionHex: string) {
@@ -294,7 +315,10 @@ export class ColorElementList {
     return this.chageAllAlphasTo_(eightPositionHex, false);
   }
 
-  /** Only the last 2 positions of the 8 position hex will be used */
+  /**
+   * Only the last 2 positions of the
+   * 8 position hex will be used
+   */
   private chageAllAlphasTo_(
     eightPositionHex: string,
     mutate: boolean
@@ -333,7 +357,7 @@ export class ColorElementList {
     return this;
   }
 
-  // public ==============================-| chageAllColorsTo() |-====
+  // public =========================-| chageAllColorsTo() |-====
   /** Will return a new object object */
   public chageAllColorsTo(eightPositionHex: string) {
     return this.chageAllColorsTo_(eightPositionHex, false);
@@ -375,7 +399,5 @@ export class ColorElementList {
 if (require?.main?.filename === __filename) main();
 /* istanbul ignore next */
 async function main() {
-  ColorElementList.of(
-    duplicatesDummyListNulls()
-  ).removeDuplicates();
+  ColorElementList.of(duplicatesDummyListNulls()).removeDuplicates();
 }

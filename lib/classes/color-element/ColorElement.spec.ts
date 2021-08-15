@@ -180,7 +180,7 @@ describe('Specs for "lib/tools/classes/color-element/ColorElement.ts"', () => {
     });
 
     /* 3 */ it('Property « mainAttribute » should return a value of type string', () => {
-      expect(new ColorElement('colorElement.name', '0xFFEEBBCC').mainAttribute).toBe('name');
+      expect(new ColorElement('colorElement.longVersionName', '0xFFEEBBCC').mainAttribute).toBe('name');
     });
 
     /* 4 */ it('Property « firstElement » should return a value of type string', () => {

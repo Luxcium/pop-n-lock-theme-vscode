@@ -1,9 +1,7 @@
 import { colorHexTemplatedAsync } from './async';
 import { colorHexTemplatedSync } from './sync';
 
-export function colorHexMatchTemplated(
-  inputString: string
-): string;
+export function colorHexMatchTemplated(inputString: string): string;
 export function colorHexMatchTemplated(
   inputString: string,
   template?: string | [string] | [string, string]

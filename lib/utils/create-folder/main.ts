@@ -2,9 +2,7 @@ import { createFolderAsync } from './async';
 import { createFolderSync } from './sync';
 
 export function createFolder(path: string): void;
-export function createFolder(
-  path: Promise<string>
-): Promise<void>;
+export function createFolder(path: Promise<string>): Promise<void>;
 export function createFolder(
   path: string | Promise<string>
 ): void | Promise<void> {

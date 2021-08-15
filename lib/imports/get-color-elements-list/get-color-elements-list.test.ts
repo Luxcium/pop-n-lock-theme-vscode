@@ -33,8 +33,7 @@ describe('Get Base Colors from JSON', () => {
     if (typeof step2 === 'undefined')
       throw new Error('step2 is undefined');
     expect(
-      Array.isArray(step2) &&
-        step2.every(item => Array.isArray(item))
+      Array.isArray(step2) && step2.every(item => Array.isArray(item))
     ) /* item.length === 2)) */
       .toBe(true);
   });

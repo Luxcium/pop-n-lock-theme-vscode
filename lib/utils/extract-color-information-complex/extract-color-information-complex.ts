@@ -30,13 +30,11 @@ export function colorHexMatch_(
   if (colorMatch && colorMatch.length === 1 && colorMatch[0]) {
     const extractedHex = colorMatch[0].toUpperCase();
     if (Array.isArray(template)) {
-      if (template.length === 1)
-        return template[0] + extractedHex;
+      if (template.length === 1) return template[0] + extractedHex;
       if (template.length === 2)
         return template[0] + extractedHex + template[1];
     }
-    if (typeof template === 'string')
-      return template + extractedHex;
+    if (typeof template === 'string') return template + extractedHex;
   }
   return null;
 }

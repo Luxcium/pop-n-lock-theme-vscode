@@ -45,8 +45,7 @@ function colorHexMatch_(
   const extractedHex =
     colorHexMatchTemplated(inputString).toUpperCase();
 
-  if (typeof template === 'string')
-    return template + extractedHex;
+  if (typeof template === 'string') return template + extractedHex;
   if (Array.isArray(template)) {
     if (template.length === 1) return template[0] + extractedHex;
     if (template.length === 2)

@@ -16,11 +16,7 @@ export function standardize(
   colorHexValue: string | null
 ): [string, string];
 export function standardize(
-  colorElement:
-    | ColorElementTuple
-    | _ColorElement
-    | string
-    | null,
+  colorElement: ColorElementTuple | _ColorElement | string | null,
   colorHexValue?: string | null
 ): [string, string] {
   let colorElementName: string = 'VOID';
@@ -36,10 +32,7 @@ export function standardize(
     colorValue = colorElement.colorHexValue || '';
     return [colorElementName, colorValue];
   }
-  if (
-    !!colorElement === true &&
-    typeof colorElement === 'string'
-  ) {
+  if (!!colorElement === true && typeof colorElement === 'string') {
     const splits = stripJson(colorElement).split(/[,:]/);
     if (splits.length === 2) {
       return [splits[0] || 'VOID', splits[1] || ''];

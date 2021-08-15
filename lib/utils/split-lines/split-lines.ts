@@ -18,9 +18,7 @@ export async function splitLinesAsync(
   return splitLines(await lines);
 }
 
-export function splitLinesSync(
-  lines: string[]
-): [string, string][] {
+export function splitLinesSync(lines: string[]): [string, string][] {
   return lines
     .filter(line => line)
     .filter(line => !empltyLine.test(line))
@@ -32,9 +30,7 @@ export function splitLinesSync(
     .filter(tuple => (tuple[1] ?? '').trim());
 }
 
-export function reverseItems<T1, T2>(
-  tuples: [T1, T2][]
-): [T2, T1][] {
+export function reverseItems<T1, T2>(tuples: [T1, T2][]): [T2, T1][] {
   return tuples.map(tuple => tuple.reverse() as [T2, T1]);
 }
 

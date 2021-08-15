@@ -90,9 +90,42 @@ describe('Specs for "lib/tools/classes/color-element-list/ColorElementList.ts"',
   it('Method « filter » should iterate over values and return ColorElementList.of', () => {
     const colorlist = ColorElementList.of(shortDummyList());
     const list = colorlist.filter(item => !item.isNull);
-    expect(list).toBeTruthy();
+    expect(list.length).toBe(13);
   });
 
+  it('Method « selectByMainAttribute » should iterate over values and return ColorElementList.of', () => {
+    const colorlist = ColorElementList.of(shortDummyList());
+    const list = colorlist.selectByMainAttribute('Background');
+    expect(list.length).toBe(6);
+  });
+  it('Method « selectByFirstAttribut » should iterate over values and return ColorElementList.of', () => {
+    const colorlist = ColorElementList.of(shortDummyList());
+    const list = colorlist.selectByFirstAttribut('editor');
+    expect(list.length).toBe(4);
+  });
+  it('Method « selectByMainElement » should iterate over values and return ColorElementList.of', () => {
+    const colorlist = ColorElementList.of(shortDummyList());
+    const list = colorlist.selectByMainElement('editorGroupHeader');
+    expect(list.length).toBe(4);
+  });
+  it('Method « selectByElementName » should iterate over values and return ColorElementList.of', () => {
+    const colorlist = ColorElementList.of(shortDummyList());
+    const list = colorlist.selectByElementName('editorGroupHeader.border');
+    expect(list.length).toBe(1);
+  });
+  it('Method « selectByColorHexValue » should iterate over values and return ColorElementList.of', () => {
+    const colorlist = ColorElementList.of(shortDummyList());
+    const list = colorlist.selectByColorHexValue('#00FF0022');
+    expect(list.length).toBe(5);
+  });
+  /*
+selectByColorHexValue
+selectByMainAttribute
+selectByFirstAttribut
+selectByMainElement
+selectByElementName
+selectByColorHexValue
+ */
   it('Method « head » should ', () => {
     const colorlist = ColorElementList.of(shortDummyList());
     const head = colorlist.head();
