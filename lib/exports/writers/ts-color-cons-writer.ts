@@ -1,4 +1,4 @@
-import { colorHexMatch } from '../../utils/color-hex-match';
+import { colorHexCatch } from '../../utils/color-hex-match';
 
 function tsColorConstWriter(
   colorHex: string,
@@ -8,7 +8,7 @@ function tsColorConstWriter(
 ): string {
   // const colorVal = chromaHex(colorHex);
   // console.log(colorVal);
-  const hex = colorHexMatch(colorHex);
+  const hex = colorHexCatch(colorHex);
   if (hex === '') {
     return hex;
   }

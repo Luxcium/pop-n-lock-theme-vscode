@@ -1,1 +1,1 @@
-export { standardizeColorHex } from '../color-hex-match';
+export { standardizeColorHex } from './main';

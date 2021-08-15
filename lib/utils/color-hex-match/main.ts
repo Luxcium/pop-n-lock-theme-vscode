@@ -24,3 +24,10 @@ export function colorHexMatchTemplated(
   }
   return colorHexTemplatedAsync(inputString, template);
 }
+
+/* istanbul ignore if */
+if (require?.main?.filename === __filename) main();
+/* istanbul ignore next */
+async function main() {
+  console.log(__filename, require?.main?.filename);
+}

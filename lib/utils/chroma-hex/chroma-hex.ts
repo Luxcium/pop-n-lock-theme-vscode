@@ -1,12 +1,12 @@
 import chroma from 'chroma-js';
-import { colorHexMatch } from '../color-hex-match';
+import { colorHexCatch } from '../color-hex-match';
 
 /** @deprecated */
 export function chromaHex(
   colorHex: string,
   prefix: string = '#'
 ): string {
-  const sanitized = colorHexMatch(colorHex);
+  const sanitized = colorHexCatch(colorHex);
   if (chroma.valid(sanitized))
     return `${prefix}${chroma(sanitized)
       .hex('rgba')

@@ -1,10 +1,10 @@
-import { colorHexMatch } from '.';
+import { colorHexCatch } from '.';
 
 export function colorHexTemplatedSync(
   inputString: string,
   template: string | [string] | [string, string] = ['', '']
 ): string {
-  const extractedHex = colorHexMatch(inputString);
+  const extractedHex = colorHexCatch(inputString);
   if (extractedHex === '' || typeof extractedHex !== 'string') {
     return '';
   }
@@ -24,7 +24,7 @@ export function colorHexTemplatedSync_(
   inputString: string,
   template: string | [string] | [string, string] = ['', '']
 ): string {
-  if (inputString == null) return '';
+  if (!!inputString === false) return '';
   const colorMatch: RegExpMatchArray | null =
     inputString.match(/[0-9a-f]{3,8}/gi);
   if (colorMatch && colorMatch.length === 1 && colorMatch[0]) {
