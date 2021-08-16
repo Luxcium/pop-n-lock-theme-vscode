@@ -2,15 +2,9 @@ import { ColorElementTuple } from '../../types/ColorElementTuple';
 import { _ColorElement } from '../../types/_ColorElement';
 import { stripJson } from '../strings';
 
-export function standardize(
-  colorElement: ColorElementTuple
-): [string, string];
-export function standardize(
-  colorElement: _ColorElement
-): [string, string];
-export function standardize(
-  colorElement: string | null
-): [string, string];
+export function standardize(colorElement: ColorElementTuple): [string, string];
+export function standardize(colorElement: _ColorElement): [string, string];
+export function standardize(colorElement: string | null): [string, string];
 export function standardize(
   colorElement: string | null,
   colorHexValue: string | null

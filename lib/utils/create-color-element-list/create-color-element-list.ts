@@ -6,10 +6,11 @@ export function createColorElementsList(
 ): ColorElement[] {
   return thenColorElementTupleList.map(colorElementTuple => {
     const [colorElementName, colorHexValue] = colorElementTuple;
-    const trimedValue = colorElementName?.trim();
-    if (trimedValue && colorHexValue) {
-      const colorElement = new ColorElement(trimedValue);
-      colorElement.colorHex = colorHexValue;
+
+    if (colorElementName) {
+      const colorElement = new ColorElement(colorElementName).setColorHex(
+        colorHexValue
+      );
       return colorElement;
     }
     return new ColorElement('VOID');

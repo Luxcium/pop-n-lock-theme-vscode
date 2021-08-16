@@ -15,9 +15,7 @@ export function colorHexTemplatedSync(
       ? template[0] + extractedHex + template[1]
       : '';
   }
-  return typeof template === 'string'
-    ? template + extractedHex
-    : extractedHex;
+  return typeof template === 'string' ? template + extractedHex : extractedHex;
 }
 
 export function colorHexTemplatedSync_(

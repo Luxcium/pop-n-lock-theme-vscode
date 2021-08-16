@@ -43,6 +43,5 @@ export async function reverseItemsAsync<T1, T2>(
   return reverseItems(await tuples);
 }
 
-export const reversedSplitLinesAsync = async (
-  lines: Promise<string[]>
-) => reversedSplitLines(await lines);
+export const reversedSplitLinesAsync = async (lines: Promise<string[]>) =>
+  reversedSplitLines(await lines);

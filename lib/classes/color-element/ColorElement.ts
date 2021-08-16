@@ -48,9 +48,7 @@ export class ColorElement implements IColorElement, _ColorElement {
   }
 
   private setInitialColorHex(colorValue: string | null) {
-    this.initialColor_ = this.initialColor_
-      ? this.initialColor_
-      : colorValue;
+    this.initialColor_ = this.initialColor_ ? this.initialColor_ : colorValue;
   }
 
   private get initialColor() {
@@ -63,10 +61,7 @@ export class ColorElement implements IColorElement, _ColorElement {
   constructor(colorElement: ColorElementTuple);
   constructor(colorElement: _ColorElement);
   constructor(colorElement: string | null);
-  constructor(
-    colorElement: string | null,
-    colorHexValue: string | null
-  );
+  constructor(colorElement: string | null, colorHexValue: string | null);
   constructor(
     colorElement: ColorElementTuple | _ColorElement | string | null,
     colorHexValue?: string | null
@@ -220,8 +215,7 @@ export class ColorElement implements IColorElement, _ColorElement {
 
   public get isValid(): boolean {
     return (
-      this.isNotNull &&
-      !(this.colorHex === NULL_COLOR || this.colorHex === '')
+      this.isNotNull && !(this.colorHex === NULL_COLOR || this.colorHex === '')
     );
   }
 
@@ -238,21 +232,15 @@ export class ColorElement implements IColorElement, _ColorElement {
   }
 
   public get mainAttribute(): string {
-    return this.isNotNull
-      ? this.attributeList_.slice(-1)[0] || ''
-      : '';
+    return this.isNotNull ? this.attributeList_.slice(-1)[0] || '' : '';
   }
 
   public get firstAttribut(): string {
-    return this.isNotNull
-      ? this.attributeList_.slice(0, 1)[0] || ''
-      : '';
+    return this.isNotNull ? this.attributeList_.slice(0, 1)[0] || '' : '';
   }
 
   public get mainElement(): string {
-    return this.isNotNull
-      ? this.elementsList_.slice(0, 1)[0] || ''
-      : '';
+    return this.isNotNull ? this.elementsList_.slice(0, 1)[0] || '' : '';
   }
 
   public toComponents() {

@@ -11,24 +11,11 @@ export function extractColorInformation(
   template?: string | [string] | [string, string]
 ): Promise<ColorElementTuple[]>;
 export function extractColorInformation(
-  colorElementTupleList:
-    | ColorElementTuple[]
-    | Promise<ColorElementTuple[]>,
+  colorElementTupleList: ColorElementTuple[] | Promise<ColorElementTuple[]>,
   template: string | [string] | [string, string] = 'x'
 ): ColorElementTuple[] | Promise<ColorElementTuple[]> {
   if (colorElementTupleList instanceof Promise) {
-    return extractColorInformationAsync(
-      colorElementTupleList,
-      template
-    );
+    return extractColorInformationAsync(colorElementTupleList, template);
   }
   return extractColorInformationSync(colorElementTupleList, template);
-
-  // return colorElementTupleList.map(colorElementTuple => {
-  //   const [colorElementName, colorHexValue] = colorElementTuple;
-  //   return [
-  //     colorElementName,
-  //     colorExtractHex(colorHexValue, template),
-  //   ] as ColorElementTuple;
-  // });
 }

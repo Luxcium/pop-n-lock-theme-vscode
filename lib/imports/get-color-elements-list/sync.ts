@@ -5,6 +5,7 @@ import { extractColorInformation } from '../../utils/extract-color-information';
 import { filterOutNullColorElements } from '../../utils/filter-out-null-color-elements';
 import { normalizeQuotedStrings } from '../../utils/normalize-strings-2ples';
 import { splitLines } from '../../utils/split-lines';
+import { standardizeColorInTuple } from '../../utils/standardize-color-hex/standardize-color-tuple';
 
 export function getColorJsonListSync(
   pathToJsonColours: string,
@@ -14,7 +15,8 @@ export function getColorJsonListSync(
   const step2 = splitLines(step1);
   const step3 = extractColorInformation(step2, template);
   const step4 = normalizeQuotedStrings(step3);
-  const step5 = createColorElementsList(step4);
-  const step6 = filterOutNullColorElements(step5)(true, true);
-  return step6;
+  const step5 = standardizeColorInTuple(step4);
+  const step6 = createColorElementsList(step5);
+  const step7 = filterOutNullColorElements(step6)(true, true);
+  return step7;
 }

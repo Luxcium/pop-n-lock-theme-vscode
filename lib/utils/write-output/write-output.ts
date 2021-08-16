@@ -20,9 +20,7 @@ async function getInputData(
   return (await readFileAsync(path, options)).toString();
 }
 
-function colorElementsAgregator(
-  colorslist: ColorElement[] = colorslist_
-) {
+function colorElementsAgregator(colorslist: ColorElement[] = colorslist_) {
   let colors = {};
   colorslist.forEach(colorElement => {
     colors = {

@@ -14,18 +14,13 @@ export const colorHexCatch = (inputString: string): string =>
 export const colorHexMatch = (inputString: string): string =>
   _colorHexMatch([colorHexRexp])(inputString);
 
-const regexp_ =
-  /^(?:[0-9a-fA-F]{3}){1,2}$|^(?:[0-9a-fA-F]{3,4}){1,2}$/;
+const regexp_ = /^(?:[0-9a-fA-F]{3}){1,2}$|^(?:[0-9a-fA-F]{3,4}){1,2}$/;
 
 function _colorHexMatch(colorHexRegExp: RegExp[]) {
   return (inputString: string): string => {
     for (const regexp of colorHexRegExp) {
       const match = inputString.match(regexp);
-      if (
-        match != null &&
-        match.length === 1 &&
-        typeof match[0] === 'string'
-      ) {
+      if (match != null && match.length === 1 && typeof match[0] === 'string') {
         const extractedHex = match[0].toUpperCase();
         return extractedHex;
       }
@@ -39,11 +34,7 @@ export function __colorHexMatch(colorHexRegExp: RegExp[]) {
   return (inputString: string): string => {
     // for (const regexp of colorHexRegExp) {
     const match = inputString.match(regexp_);
-    if (
-      match != null &&
-      match.length === 1 &&
-      typeof match[0] === 'string'
-    ) {
+    if (match != null && match.length === 1 && typeof match[0] === 'string') {
       const extractedHex = match[0].toUpperCase();
       return extractedHex;
     }

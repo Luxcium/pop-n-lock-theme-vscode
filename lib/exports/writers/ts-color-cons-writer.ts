@@ -19,7 +19,6 @@ function tsColorConstWriter(
   return `${exp_}const x${hex}${ts_} = '#${hex}'${semi}`;
 }
 
-const colorConstWriter = (colorHex: string) =>
-  tsColorConstWriter(colorHex);
+const colorConstWriter = (colorHex: string) => tsColorConstWriter(colorHex);
 
 export { colorConstWriter, tsColorConstWriter };

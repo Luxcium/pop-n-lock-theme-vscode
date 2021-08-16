@@ -20,9 +20,7 @@ export function normalizeQuotedStrings(
   stringsTupleList: Promise<ColorElementTuple[]>
 ): Promise<ColorElementTuple[]>;
 export function normalizeQuotedStrings(
-  stringsTupleList:
-    | Promise<ColorElementTupleOrList>
-    | ColorElementTupleOrList
+  stringsTupleList: Promise<ColorElementTupleOrList> | ColorElementTupleOrList
 ): Promise<ColorElementTupleOrList> | ColorElementTupleOrList {
   if (stringsTupleList instanceof Promise) {
     return normalizeQuotedStringsAsync(stringsTupleList);

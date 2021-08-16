@@ -6,12 +6,8 @@ export function listElementPerColor(
   colorAndElementTuple: Promise<ColorElementTuple[]>
 ): Promise<{ [key: string]: string[] }>;
 export function listElementPerColor(
-  colorAndElementTuple:
-    | ColorElementTuple[]
-    | Promise<ColorElementTuple[]>
-):
-  | { [key: string]: string[] }
-  | Promise<{ [key: string]: string[] }> {
+  colorAndElementTuple: ColorElementTuple[] | Promise<ColorElementTuple[]>
+): { [key: string]: string[] } | Promise<{ [key: string]: string[] }> {
   if (colorAndElementTuple instanceof Promise) {
     return listElementPerColorAsync(colorAndElementTuple);
   }
@@ -54,9 +50,7 @@ export function listElementPerColorSync(
           const A = [];
           A.push(trimedValue);
           obj[colorName] = A;
-        } else if (
-          Array.isArray(obj[colorName] && obj[colorName] != null)
-        ) {
+        } else if (Array.isArray(obj[colorName] && obj[colorName] != null)) {
           obj[colorName]?.push(trimedValue);
         }
       }

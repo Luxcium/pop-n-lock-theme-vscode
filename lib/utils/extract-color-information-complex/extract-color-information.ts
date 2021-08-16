@@ -9,7 +9,7 @@ export function extractColorInformation(
     const [colorElementName, colorHexValue] = colorElementTuple;
     return [
       colorElementName,
-      colorExtractHex(colorHexValue, template),
+      templatedColorExtractHex(colorHexValue, template),
     ] as ColorElementTuple;
   });
 }
@@ -21,7 +21,7 @@ export function extractColorInformation(
 ): Promise<ColorElementTuple[]> {
  */
 
-export function colorExtractHex(
+export function templatedColorExtractHex(
   inputString: string,
   template: string | [string] | [string, string]
 ): string {
@@ -32,7 +32,7 @@ export async function colorExtractHexAsync(
   inputString: Promise<string> | string,
   template: string | [string] | [string, string]
 ): Promise<string> {
-  return colorExtractHex(
+  return templatedColorExtractHex(
     (await Promise.resolve(inputString)) || '',
     template
   );
@@ -42,14 +42,12 @@ function colorHexMatch_(
   inputString: string,
   template: string | [string] | [string, string]
 ): string {
-  const extractedHex =
-    colorHexMatchTemplated(inputString).toUpperCase();
+  const extractedHex = colorHexMatchTemplated(inputString).toUpperCase();
 
   if (typeof template === 'string') return template + extractedHex;
   if (Array.isArray(template)) {
     if (template.length === 1) return template[0] + extractedHex;
-    if (template.length === 2)
-      return template[0] + extractedHex + template[1];
+    if (template.length === 2) return template[0] + extractedHex + template[1];
   }
 
   return '';

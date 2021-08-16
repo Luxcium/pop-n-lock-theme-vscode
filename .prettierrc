@@ -16,7 +16,7 @@
   "overrides": [
     {
       "options": {
-        "printWidth": 70,
+        "printWidth": 80,
         "semi": true
       },
       "files": [

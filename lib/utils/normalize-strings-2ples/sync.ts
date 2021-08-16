@@ -1,9 +1,7 @@
 import type { ColorElementTuple } from '../../types/ColorElementTuple';
 import { stripQuotes } from '../strings';
 
-export type ColorElementTupleOrList =
-  | ColorElementTuple[]
-  | ColorElementTuple;
+export type ColorElementTupleOrList = ColorElementTuple[] | ColorElementTuple;
 
 export function normalizeQuotedStringsSync(
   stringsTupleList: ColorElementTupleOrList
@@ -15,10 +13,7 @@ export function normalizeQuotedStringsSync(
       }
       if (list.length === 2) {
         const [str1, str2] = list;
-        return [stripQuotes(str1), stripQuotes(str2)] as [
-          string,
-          string
-        ];
+        return [stripQuotes(str1), stripQuotes(str2)] as [string, string];
       }
       return list;
     }) as any as ColorElementTupleOrList;

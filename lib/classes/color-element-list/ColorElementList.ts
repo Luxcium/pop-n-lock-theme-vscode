@@ -5,7 +5,10 @@ import ColorElement from '../color-element';
 export class ColorElementList {
   private list: IColorElement[];
   private get colorList() {
-    return this.list.map(item => new ColorElement(item));
+    return this.list.map(item => {
+      // console.log(item.colorHexValue);
+      return new ColorElement(item.elementName).setColorHex(item.colorHexValue);
+    });
   }
   private static of_(colorElementList: IColorElement[]) {
     return new ColorElementList(colorElementList);
@@ -35,7 +38,7 @@ export class ColorElementList {
     return list3;
   }
   protected constructor(colorElementList: IColorElement[]) {
-    this.removeDuplicates;
+    // this.removeDuplicates;
     this.list = colorElementList;
   }
   public push(colorElement: ColorElementList | ColorElement) {
@@ -130,43 +133,32 @@ export class ColorElementList {
     ) => boolean,
     thisArg?: any
   ): ColorElementList {
-    return ColorElementList.of([
-      ...this.fork.filter(predicate, thisArg),
-    ]);
+    return ColorElementList.of([...this.fork.filter(predicate, thisArg)]);
   }
   public selectByMainAttribute(attribute: string) {
     return this.filter(
-      element =>
-        element.mainAttribute.toLowerCase() ===
-        attribute.toLowerCase()
+      element => element.mainAttribute.toLowerCase() === attribute.toLowerCase()
     );
   }
   public selectByFirstAttribut(attribute: string) {
     return this.filter(
-      element =>
-        element.firstAttribut.toLowerCase() ===
-        attribute.toLowerCase()
+      element => element.firstAttribut.toLowerCase() === attribute.toLowerCase()
     );
   }
   public selectByMainElement(elementName: string) {
     return this.filter(
-      element =>
-        element.mainElement.toLowerCase() ===
-        elementName.toLowerCase()
+      element => element.mainElement.toLowerCase() === elementName.toLowerCase()
     );
   }
   public selectByElementName(elementName: string) {
     return this.filter(
-      element =>
-        element.elementName.toLowerCase() ===
-        elementName.toLowerCase()
+      element => element.elementName.toLowerCase() === elementName.toLowerCase()
     );
   }
   public selectByColorHexValue(colorHexValue: string) {
     return this.filter(
       element =>
-        element.colorHexValue.toLowerCase() ===
-        colorHexValue.toLowerCase()
+        element.colorHexValue.toLowerCase() === colorHexValue.toLowerCase()
     );
   }
 
@@ -232,10 +224,7 @@ export class ColorElementList {
     return ColorElementList.of(
       this.list
         .slice(index + 1)
-        .map(
-          (colorElement: IColorElement) =>
-            new ColorElement(colorElement)
-        )
+        .map((colorElement: IColorElement) => new ColorElement(colorElement))
     );
   }
   public toJson() {
@@ -262,10 +251,7 @@ export class ColorElementList {
     return [
       ...new Set(
         this.list
-          .map(
-            colorElement =>
-              new ColorElement(colorElement).attributeList
-          )
+          .map(colorElement => new ColorElement(colorElement).attributeList)
           .flat()
       ),
     ];
@@ -274,9 +260,7 @@ export class ColorElementList {
     return [
       ...new Set(
         this.list
-          .map(
-            colorElement => new ColorElement(colorElement).elementList
-          )
+          .map(colorElement => new ColorElement(colorElement).elementList)
           .flat()
       ),
     ];
@@ -296,9 +280,7 @@ export class ColorElementList {
     return [
       ...new Set(
         this.list
-          .map(colorElement => [
-            new ColorElement(colorElement).elementList[0]!,
-          ])
+          .map(colorElement => [new ColorElement(colorElement).elementList[0]!])
           .flat()
       ),
     ];
@@ -319,14 +301,8 @@ export class ColorElementList {
    * Only the last 2 positions of the
    * 8 position hex will be used
    */
-  private chageAllAlphasTo_(
-    eightPositionHex: string,
-    mutate: boolean
-  ) {
-    const colorTransposed = new ColorElement(
-      'temp.DUMMY',
-      eightPositionHex
-    );
+  private chageAllAlphasTo_(eightPositionHex: string, mutate: boolean) {
+    const colorTransposed = new ColorElement('temp.DUMMY', eightPositionHex);
     if (colorTransposed.isValid) {
       let transposedList: ColorElement[] = this.colorList;
       const color = colorTransposed.colorHexValue;
@@ -367,14 +343,8 @@ export class ColorElementList {
     this.chageAllColorsTo_(eightPositionHex, true);
   }
 
-  private chageAllColorsTo_(
-    eightPositionHex: string,
-    mutate: boolean
-  ) {
-    const colorTransposed = new ColorElement(
-      'temp.DUMMY',
-      eightPositionHex
-    );
+  private chageAllColorsTo_(eightPositionHex: string, mutate: boolean) {
+    const colorTransposed = new ColorElement('temp.DUMMY', eightPositionHex);
     if (colorTransposed.isValid) {
       const color = colorTransposed.colorHexValue;
       let colorList: ColorElement[];
