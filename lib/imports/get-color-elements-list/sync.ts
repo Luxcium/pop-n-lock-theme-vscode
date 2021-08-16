@@ -11,7 +11,6 @@ export function getColorJsonListSync(
   template: string | [string] | [string, string] = '#'
 ): ColorElement[] {
   const step1 = readLines(pathToJsonColours);
-
   const step2 = splitLines(step1);
   const step3 = extractColorInformation(step2, template);
   const step4 = normalizeQuotedStrings(step3);
