@@ -25,7 +25,9 @@ export class ColorElement implements IColorElement, _ColorElement {
     this.setElementList();
     this.setElementsAttributes();
   }
-
+  private get isNotNull() {
+    return !this.isNull;
+  }
   private setInitialColorHexValue(colorValue: string | null) {
     this.initialColor_ = colorValue;
     this.setColorHex(colorValue);
@@ -218,7 +220,7 @@ export class ColorElement implements IColorElement, _ColorElement {
 
   public get isValid(): boolean {
     return (
-      !this.isNull &&
+      this.isNotNull &&
       !(this.colorHex === NULL_COLOR || this.colorHex === '')
     );
   }
@@ -228,25 +230,27 @@ export class ColorElement implements IColorElement, _ColorElement {
   }
 
   public get elementList(): string[] {
-    return this.isValid ? this.elementsList_ : [];
+    return this.isNotNull ? this.elementsList_ : [];
   }
 
   public get attributeList(): string[] {
-    return this.isValid ? this.attributeList_ : [];
+    return this.isNotNull ? this.attributeList_ : [];
   }
 
   public get mainAttribute(): string {
-    return this.isValid ? this.attributeList_.slice(-1)[0] || '' : '';
+    return this.isNotNull
+      ? this.attributeList_.slice(-1)[0] || ''
+      : '';
   }
 
   public get firstAttribut(): string {
-    return this.isValid
+    return this.isNotNull
       ? this.attributeList_.slice(0, 1)[0] || ''
       : '';
   }
 
   public get mainElement(): string {
-    return this.isValid
+    return this.isNotNull
       ? this.elementsList_.slice(0, 1)[0] || ''
       : '';
   }
