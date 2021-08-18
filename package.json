@@ -12,7 +12,7 @@
   "engines": {
     "node": ">= 12",
     "npm": ">= 6",
-    "vscode": "^1.36.0"
+    "vscode": "^1.48"
   },
   "homepage": "https://github.com/luxcium/pop-n-lock-theme-vscode/#readme",
   "bugs": {

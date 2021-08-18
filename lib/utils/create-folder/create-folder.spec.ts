@@ -7,7 +7,7 @@ describe('createFolder', () => {
 
   it('createFolderSync should throw', () => {
     try {
-      expect(createFolder(`/dev/null/${Date.now()}`)).toThrow();
+      expect(createFolder(`/tmp/null/${Date.now()}`)).toThrow();
     } catch (error) {}
   });
 
@@ -17,7 +17,10 @@ describe('createFolder', () => {
 
   it('createFolderAsync should throw', async () => {
     try {
-      expect(await createFolder(Promise.resolve(`/dev/null/${Date.now()}`))).toThrow();
+      const folderCreated = createFolder(Promise.resolve(`/tmp/null/${Date.now()}`))
+        .then(ok => console.log('Creating path:', ok))
+        .catch(err => console.error(`Error:${err}`));
+      expect(await folderCreated).toThrow();
     } catch (error) {}
   });
 });

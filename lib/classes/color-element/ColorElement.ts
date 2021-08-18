@@ -232,11 +232,12 @@ export class ColorElement implements IColorElement, _ColorElement {
   }
 
   public get mainAttribute(): string {
-    return this.isNotNull ? this.attributeList_.slice(-1)[0] || '' : '';
+    // console.log(this.attributeList_);
+    return this.isNotNull ? this.attributeList_.slice().pop() || '' : '';
   }
 
   public get firstAttribut(): string {
-    return this.isNotNull ? this.attributeList_.slice(0, 1)[0] || '' : '';
+    return this.isNotNull ? this.attributeList_.slice().shift() || '' : '';
   }
 
   public get mainElement(): string {

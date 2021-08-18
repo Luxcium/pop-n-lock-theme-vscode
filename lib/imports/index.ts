@@ -1,1 +1,1 @@
-export { importJsonBaseColorElementList, readLines } from './readers';
+export { importJsonBaseColorElementList, readColorsLines } from './readers';

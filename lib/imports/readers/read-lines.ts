@@ -1,24 +1,28 @@
 import { promises, readFileSync } from 'fs';
+import { unCommentJSONC } from '../../utils/jsonc-to-json-parser';
 
-export function readLines(path: string): string[];
-export function readLines(path: Promise<string>): Promise<string[]>;
-export function readLines(
+export function readColorsLines(path: string): string[];
+export function readColorsLines(path: Promise<string>): Promise<string[]>;
+export function readColorsLines(
   path: string | Promise<string>
 ): string[] | Promise<string[]> {
   if (path instanceof Promise) {
-    return readLinesAsync(Promise.resolve(path));
+    return readColorsLinesAsync(Promise.resolve(path));
   }
-  return readLinesSync(path);
+  return readColorsLinesSync(path);
 }
 
-function readLinesSync(path: string): string[] {
-  return readLines_(readFileSync(path));
+function readColorsLinesSync(path: string): string[] {
+  return readColorsLines_(readFileSync(path));
 }
 
-async function readLinesAsync(path: Promise<string>): Promise<string[]> {
-  return readLines_(await promises.readFile(await path));
+async function readColorsLinesAsync(path: Promise<string>): Promise<string[]> {
+  return readColorsLines_(await promises.readFile(await path));
 }
 
-function readLines_(stringBuff: Buffer): string[] {
-  return stringBuff.toString().split(/\r?\n/);
+function readColorsLines_(stringBuff: Buffer): string[] {
+  const buffStr = stringBuff.toString();
+  const parsed = unCommentJSONC(buffStr);
+  const stringnified = JSON.stringify(parsed.colors, null, 2);
+  return stringnified.split(/\r?\n/);
 }

@@ -1,6 +1,6 @@
 import { BASE_COLORS_INPUT_PATH } from '../../constants';
 import { splitLines } from '../../utils/split-lines';
-import { readLines } from '../readers';
+import { readColorsLines } from '../readers';
 
 describe('Get Base Colors from JSON', () => {
   let pathToJsonColours: string = BASE_COLORS_INPUT_PATH;
@@ -18,7 +18,7 @@ describe('Get Base Colors from JSON', () => {
   // somesuncetion();
   it('Step 1 readLines return a string[]', async () => {
     expect(true).toBe(true);
-    step1 = readLines(pathToJsonColours);
+    step1 = readColorsLines(pathToJsonColours);
     expect(
       Array.isArray(step1) && step1.every(item => typeof item === 'string')
     ).toBe(true);

@@ -519,14 +519,14 @@ selectByColorHexValue
 // describe('ColorElementList tests to be implemented', () => {
 //   const mainColorsList = ColorElementList.of(shortDummyList());
 //   describe('Static method ColorElementList.of() ', () => {
-//     it.skip('GENERIC TEST TO REMPLACE WITH ACTUAL TEST', () => {
+//     it.skp('GENERIC TEST TO REMPLACE WITH ACTUAL TEST', () => {
 //       expect('identity').toBe('identity');
 //     });
 
 //   });
 
 //   describe('Constructor of ColorElementList.of() ', () => {
-//     it.skip('GENERIC TEST TO REMPLACE WITH ACTUAL TEST', () => {
+//     it.skp('GENERIC TEST TO REMPLACE WITH ACTUAL TEST', () => {
 //       expect('identity').toBe('identity');
 //     });
 
@@ -610,14 +610,14 @@ selectByColorHexValue
 //   });
 
 //   describe('Method « find() »', () => {
-//     it.skip('GENERIC TEST TO REMPLACE WITH ACTUAL TEST', () => {
+//     it.skp('GENERIC TEST TO REMPLACE WITH ACTUAL TEST', () => {
 //       expect('identity').toBe('identity');
 //     });
 
 //   });
 
 //   describe('Method « forEach() »', () => {
-//     it.skip('GENERIC TEST TO REMPLACE WITH ACTUAL TEST', () => {
+//     it.skp('GENERIC TEST TO REMPLACE WITH ACTUAL TEST', () => {
 //       mainColorsList.forEach(element => element.colorHexValue);
 //       expect('identity').toBe('identity');
 //     });
@@ -625,28 +625,28 @@ selectByColorHexValue
 //   });
 
 //   describe('Method « map() »', () => {
-//     it.skip('GENERIC TEST TO REMPLACE WITH ACTUAL TEST', () => {
+//     it.skp('GENERIC TEST TO REMPLACE WITH ACTUAL TEST', () => {
 //       expect('identity').toBe('identity');
 //     });
 
 //   });
 
 //   describe('Method « reduce() »', () => {
-//     it.skip('GENERIC TEST TO REMPLACE WITH ACTUAL TEST', () => {
+//     it.skp('GENERIC TEST TO REMPLACE WITH ACTUAL TEST', () => {
 //       expect('identity').toBe('identity');
 //     });
 
 //   });
 
 //   describe('Method « reduceRight() »', () => {
-//     it.skip('GENERIC TEST TO REMPLACE WITH ACTUAL TEST', () => {
+//     it.skp('GENERIC TEST TO REMPLACE WITH ACTUAL TEST', () => {
 //       expect('identity').toBe('identity');
 //     });
 
 //   });
 
 //   describe('Method « some() »', () => {
-//     it.skip('GENERIC TEST TO REMPLACE WITH ACTUAL TEST', () => {
+//     it.skp('GENERIC TEST TO REMPLACE WITH ACTUAL TEST', () => {
 //       expect('identity').toBe('identity');
 //     });
 
@@ -671,21 +671,21 @@ selectByColorHexValue
 //   });
 
 //   describe('Method « filterAttribute() »', () => {
-//     it.skip('GENERIC TEST TO REMPLACE WITH ACTUAL TEST', () => {
+//     it.skp('GENERIC TEST TO REMPLACE WITH ACTUAL TEST', () => {
 //       expect('identity').toBe('identity');
 //     });
 
 //   });
 
 //   describe('Method « countAttribute() »', () => {
-//     it.skip('GENERIC TEST TO REMPLACE WITH ACTUAL TEST', () => {
+//     it.skp('GENERIC TEST TO REMPLACE WITH ACTUAL TEST', () => {
 //       expect('identity').toBe('identity');
 //     });
 
 //   });
 
 //   describe('Method « filterElement() »', () => {
-//     it.skip('GENERIC TEST TO REMPLACE WITH ACTUAL TEST', () => {
+//     it.skp('GENERIC TEST TO REMPLACE WITH ACTUAL TEST', () => {
 //       expect('identity').toBe('identity');
 //     });
 
@@ -857,7 +857,7 @@ selectByColorHexValue
 //   });
 
 //   describe('Property « firstElementsList »', () => {
-//     it.skip('GENERIC TEST TO REMPLACE WITH ACTUAL TEST', () => {
+//     it.skp('GENERIC TEST TO REMPLACE WITH ACTUAL TEST', () => {
 //       expect('identity').toBe('identity');
 //     });
 
@@ -878,7 +878,7 @@ selectByColorHexValue
 // #region ColorElement
 // describe('ColorElementList implemented test', () => {});
 
-// describe.skip('ColorElementList', () => {});
+// describe.skp('ColorElementList', () => {});
 // #endregion ColorElement
 
 /*

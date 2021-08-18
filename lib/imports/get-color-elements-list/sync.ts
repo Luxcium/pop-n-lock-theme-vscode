@@ -1,4 +1,4 @@
-import { readLines } from '..';
+import { readColorsLines } from '..';
 import ColorElement from '../../classes/color-element';
 import { createColorElementsList } from '../../utils/create-color-element-list';
 import { extractColorInformation } from '../../utils/extract-color-information';
@@ -11,7 +11,7 @@ export function getColorJsonListSync(
   pathToJsonColours: string,
   template: string | [string] | [string, string] = '#'
 ): ColorElement[] {
-  const step1 = readLines(pathToJsonColours);
+  const step1 = readColorsLines(pathToJsonColours);
   const step2 = splitLines(step1);
   const step3 = extractColorInformation(step2, template);
   const step4 = normalizeQuotedStrings(step3);
