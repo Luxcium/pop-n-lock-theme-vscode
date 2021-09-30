@@ -2,6 +2,7 @@
   "$schema": "vscode://schemas/color-theme",
   "name": "Pop N Lock Theme by Luxcium",
   "type": "dark",
+  "description": "",
   "colors": {
     "quickInput.foreground": "#C4BDB5DD",
     "peekViewEditor.background": "#235B",

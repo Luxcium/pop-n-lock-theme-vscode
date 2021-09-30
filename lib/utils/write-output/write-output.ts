@@ -13,14 +13,16 @@ const model =
   '/home/luxcium/projects/main-POP-N-LOCK-x1DF2/data/extensions/pop-n-lock-theme-vscode/lib/templates/imports/JSON/Pop-N-Lock.original.json';
 export const myWriter = writeFileToPathAsync(BASE_COLORS_OUTPUT_PATH);
 
-async function getInputData(
+export async function getInputData(
   path: string = model,
   options: ReadOptions = { encoding: 'utf8' }
 ): Promise<string> {
   return (await readFileAsync(path, options)).toString();
 }
 
-function colorElementsAgregator(colorslist: ColorElement[] = colorslist_) {
+export function colorElementsAgregator(
+  colorslist: ColorElement[] = colorslist_
+) {
   let colors = {};
   colorslist.forEach(colorElement => {
     colors = {

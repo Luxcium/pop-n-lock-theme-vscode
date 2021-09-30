@@ -1,5 +1,5 @@
 {
-  "extends": "./tsconfig.base.json",
+  "extends": "../tsconfig.base.json",
   "compilerOptions": {
     /* Basic Options */
     "target": "es5",
@@ -13,10 +13,10 @@
     "noResolve": false,
     /* Paths */
     "rootDir": "./",
-    "outDir": "./build/",
-    "declarationDir": "./build/typings",
-    "tsBuildInfoFile": "./build/.tsbuildinfo.lib",
-    "generateCpuProfile": "./build/profile.cpuprofile",
+    "outDir": "build",
+    "declarationDir": "build/typings",
+    "tsBuildInfoFile": "build/.tsbuildinfo.lib",
+    "generateCpuProfile": "build/profile.cpuprofile",
     /* Declaration and Map Options */
     "declaration": true,
     "inlineSourceMap": true,
@@ -43,26 +43,8 @@
       "jest"
     ],
   },
-  "exclude": [
-    "build",
-    "out",
-    "dist",
-    "./color-convert/",
-    "**/dist/",
-    "**/out/",
-    "**/build/",
-    "./examples/",
-    "./images/",
-    "**/node_modules/",
-    "./resources/",
-    "./scripts/",
-    "./extensions/**",
-    "./archives/**",
-    "**/?(*.)+(spec).[tj]s?(x)",
-    "./src/resources/",
-  ],
   "include": [
-    "./lib",
+    ".",
     // helpers/index.ts
     // "./node_modules/vscode/lib/*"
     // "./node_modules/vscode/vscode.d.ts",,

@@ -1,7 +1,7 @@
-import ColorElement from '../classes/color-element';
 import ColorElementList from '../classes/color-element-list';
 import { getBaseColorList } from '../imports/get-color-elements-list';
 import { shortDummyList } from '../tests';
+import { ColorElementSelections } from '../types/ColorElementSelections';
 
 export const shortColorList = ColorElementList.of(shortDummyList()); // getBaseColorList();
 export const baseColorList = getBaseColorList();
@@ -24,12 +24,6 @@ export function namedHex(hex: string) {
 export function hashedHex(hex: string) {
   return `#${hex.substring(1)}`.trim();
 }
-
-export type ColorElementSelections = {
-  list: { [selctionName: string]: ColorElement[] };
-  setList: string[];
-  length: number;
-};
 
 export const emptySelection: ColorElementSelections = {
   list: {},
