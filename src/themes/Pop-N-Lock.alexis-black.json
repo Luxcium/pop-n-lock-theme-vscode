@@ -4541,7 +4541,8 @@ source.css
         "source entity.name.type.class",
         "source entity.name.type.enum",
         "source entity.name.type.instance",
-        "source entity.name.type.module"
+        "source entity.name.type.module",
+        "source entity.name.type.record"
       ],
       "settings": {
         "foreground": "#EDAB",
