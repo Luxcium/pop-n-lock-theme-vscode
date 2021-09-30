@@ -29,7 +29,7 @@
     "update:global": "yarn global add --force --ignore-scripts --ignore-engines npm@latest yarn@latest vsce@latest",
     "update:local": "yarn add --dev --force --ignore-scripts --ignore-engines npm@latest yarn@latest vsce@latest",
     "update:all": "yarn run --ignore-engines unpdate:code; yarn run --ignore-engines update:global; yarn run --ignore-engines update:local",
-    "npm:publish": "/usr/local/bin/npm publish",
+    "npm:publish": "${HOME}/.yarn/bin/npm publish",
     "vsce:publish": "vsce publish --yarn",
     "vsce:package": "vsce package --yarn",
     "vsce:pak-pub": "vsce package --yarn && vsce publish --yarn",

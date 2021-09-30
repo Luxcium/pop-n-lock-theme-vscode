@@ -11,7 +11,7 @@
 
 **This powerful theme of colour is always evolving**
 
-Colourful features are added and more languages will be included soon. This theme is **STRONGLY OPINIONATED** to make sure to to be influencing the opinion request any changes you want by filling an issue to be part of the 26&nbsp;000+ happy users.
+Colourful features are added and more languages will be included soon. This theme is **STRONGLY OPINIONATED** to make sure to to be influencing the opinion request any changes you want by filling an issue to be part of the 62&nbsp;000+ happy users.
 
 > _The name of the theme contain emoticon and encoding of your config file must be set to "utf8"_
 
@@ -75,10 +75,6 @@ red on writing side / blue on the reading side
 
 [<img width="60%" alt="[Decorator support]" src="https://raw.githubusercontent.com/Luxcium/pop-n-lock-theme-vscode/master/images/v3.18.0/visual%20studio%20code%20best%20colourfull%20themes%20support%20of%20typescript%20decorators%20.png">](https://raw.githubusercontent.com/Luxcium/pop-n-lock-theme-vscode/master/images/v3.18.0/visual%20studio%20code%20best%20colourfull%20themes%20support%20of%20typescript%20decorators%20.png)
 <br/>(v3.18) Typescript decorator support<br/>
-
-## Latest TypeScript / Javascript Grammar
-
-[<img width="60%" alt="[Latest TypeScript / Javascript Grammar]" src="https://raw.githubusercontent.com/Luxcium/pop-n-lock-theme-vscode/master/images/v3.18.0/when%20using%20latest%20typscript%20javascript%20syntax%20highlighting%20in%20vscode%20visual%20studio%20vs%20code.png">](https://raw.githubusercontent.com/Luxcium/pop-n-lock-theme-vscode/master/images/v3.18.0/when%20using%20latest%20typscript%20javascript%20syntax%20highlighting%20in%20vscode%20visual%20studio%20vs%20code.png)
 
 ### Promise functions highlight
 
@@ -158,12 +154,10 @@ We would be happy to know more about the progaming language you are using, show 
 
 - [Alphabetical Sorter (not included anymore)](https://marketplace.visualstudio.com/items?itemName=ue.alphabetical-sorter)
 - [Better Comments†](https://marketplace.visualstudio.com/items?itemName=aaron-bond.better-comments)
-- [Bracket Pair Colorizer 2†](https://marketplace.visualstudio.com/items?itemName=CoenraadS.bracket-pair-colorizer-2)
 - [ErrorLens](https://marketplace.visualstudio.com/items?itemName=PhilHindle.errorlens)
 - [Material Icon Theme†](https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme)
 - [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
 - [Statusbar error](https://marketplace.visualstudio.com/items?itemName=JoeBerria.statusbarerror)
-- [TSLint](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-typescript-tslint-plugin)
 
 †Included as an Extension Pack with this theme
 
@@ -296,7 +290,7 @@ This theme is based on the designs of Hedinne's _Popping And Locking_ a theme wi
 
 ### **MIT LICENSE**
 
-**Pop N' Lock Theme by Luxcium ✨ Copyright © 2018-2020 Benjamin Vincent Kasapoglu (Luxcium)**
+**Pop N' Lock Theme by Luxcium ✨ Copyright © 2018-2021 Benjamin Vincent Kasapoglu (Luxcium)**
 
 Permission is hereby granted, free of charge, to all person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
@@ -311,12 +305,12 @@ Based on _Popping and Locking (VS Code Theme)_
 
 ---
 
-**THE LUXCIUM OWL LOGO IS A TRADEMARK OF BENJAMIN VINCENT KASAPOGLU (™ & © 2017-2020 ALL RIGHT RESERVED)**
+**THE LUXCIUM OWL LOGO IS A TRADEMARK OF BENJAMIN VINCENT KASAPOGLU (™ & © 2017-2021 ALL RIGHT RESERVED)**
 
-**« _POP N' LOCK THEME_ » & « _POP N' LOCK THEME BY LUXCIUM ✨_ » ARE TRADEMARKS OF BENJAMIN VINCENT KASAPOGLU (™ & © 2018-2020 ALL RIGHT RESERVED)**
+**« _POP N' LOCK THEME_ » & « _POP N' LOCK THEME BY LUXCIUM ✨_ » ARE TRADEMARKS OF BENJAMIN VINCENT KASAPOGLU (™ & © 2018-2021 ALL RIGHT RESERVED)**
 
 ---
 
-Copyright © 2018-2020 Benjamin Vincent Kasapoglu (Luxcium)
+Copyright © 2018-2021 Benjamin Vincent Kasapoglu (Luxcium)
 
 ###### Scientia is lux principium✨™
