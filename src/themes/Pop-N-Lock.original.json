@@ -6,6 +6,9 @@
   // '#417CC8',
   // '#FFAE17',
   // '#F7D84A',
+ 
+  // https://pastebin.com/7LaYhbZh //+ VSCODE-color-theme-1.56.0-insider-colors
+ 
   "colors": {
     "quickInput.foreground": "#C4BDB5DD",
     "peekViewEditor.background": "#235B",
