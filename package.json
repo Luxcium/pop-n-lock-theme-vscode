@@ -24,7 +24,7 @@
     "url": "https://github.com/luxcium/pop-n-lock-theme-vscode.git"
   },
   "scripts": {
-    "test": "snyk test",
+    "test": "yarn install; snyk test",
     "unpdate:code": "yarn add -D --force --ignore-scripts --ignore-engines @types/vscode@1.49.0; vsce -V",
     "update:global": "yarn global add --force --ignore-scripts --ignore-engines npm@latest yarn@latest vsce@latest",
     "update:local": "yarn add --dev --force --ignore-scripts --ignore-engines npm@latest yarn@latest vsce@latest",
@@ -49,7 +49,7 @@
     "@types/puppeteer": "^2.0.1",
     "@types/react": "^16.9.34",
     "@types/react-dom": "^16.9.6",
-    "@types/vscode": "1.34.0",
+    "@types/vscode": "1.49.0",
     "chalk": "^4.0.0",
     "dotenv": "^8.2.0",
     "eslint": "^6.8.0",
@@ -61,7 +61,7 @@
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.15",
     "mongoose": "^5.9.7",
-    "npm": "^6.14.8",
+    "npm": "^7.24.1",
     "prettier": "^2.0.4",
     "puppeteer": "^2.1.1",
     "ramda": "^0.27.0",
@@ -74,9 +74,9 @@
     "tslint": "^6.1.1",
     "tslint-config-prettier": "^1.18.0",
     "typescript": "^3.8.3",
-    "vsce": "^1.78.0",
+    "vsce": "^1.100.1",
     "vscode-languageclient": "^6.1.3",
-    "yarn": "^1.22.4"
+    "yarn": "^1.22.15"
   },
   "categories": [
     "Programming Languages",
