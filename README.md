@@ -83,12 +83,19 @@ red on writing side / blue on the reading side
 [<img width="60%" alt="[Promise functions highlight]" src="https://raw.githubusercontent.com/Luxcium/pop-n-lock-theme-vscode/master/images/v3.18.0/Promise%20dot%20all%20and%20promise%20catch%20and%20resolve%20highlight%20.png">](https://raw.githubusercontent.com/Luxcium/pop-n-lock-theme-vscode/master/images/v3.18.0/Promise%20dot%20all%20and%20promise%20catch%20and%20resolve%20highlight%20.png)
 <br/>(v3.18) When using Latest Typescipt Grammar Promise dot all and promise resolve and catch highlight<br/>
 
-### Console highlight
-
-> When using Latest Typescipt Grammar
+<!-- ### Console highlight
 
 [<img width="60%" alt="[Console highlight]" src="https://raw.githubusercontent.com/Luxcium/pop-n-lock-theme-vscode/master/images/v3.18.0/typescript%20javascript%20ecmascript%20vscode%20theme%20console%20log%20highlight.png">](https://raw.githubusercontent.com/Luxcium/pop-n-lock-theme-vscode/master/images/v3.18.0/typescript%20javascript%20ecmascript%20vscode%20theme%20console%20log%20highlight.png)
-<br/>(v3.18) When using Latest Typescipt Grammar support console.log / conso.error etc. highlight<br/>
+<br/>(v3.18) When using Latest Typescipt Grammar support console.log / conso.error etc. highlight<br/> -->
+
+## Git Decorations
+
+ <img width="60%" alt="[Git Decorations]" src="images/v3.32.3/git-resources-colors-modified-staged-add-untracked-renamed-ignored-vscode.png">
+
+<!-- [](https://raw.githubusercontent.com/Luxcium/pop-n-lock-theme-vscode/master/images/v3.18.0/typescript%20javascript%20ecmascript%20vscode%20theme%20console%20log%20highlight.png)
+<br/>(v3.32.3) When using Latest Typescipt Grammar support console.log / conso.error etc. highlight<br/> -->
+
+images/v3.32.3/git-resources-colors-modified-staged-add-untracked-renamed-ignored-vscode.png
 
 ## IMPORTS
 
