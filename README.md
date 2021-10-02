@@ -90,12 +90,14 @@ red on writing side / blue on the reading side
 
 ## Git Decorations
 
- <img width="60%" alt="[Git Decorations]" src="images/v3.32.3/git-resources-colors-modified-staged-add-untracked-renamed-ignored-vscode.png">
+[<img width="80%" alt="[Git Decorations Colors: Ignored, Untracked, Added, Modified, Modified Staged, Renamed]" src="images/v3.32.3/git-resources-colors-modified-staged-add-untracked-renamed-ignored-vscode.png">](images/v3.32.3/git-stages-resources-colors-modified-staged-add-untracked-renamed-ignored-vscode.png)
+<br/>(v3.32.3) Git Decorations colors: _Ignored, Untracked, Added, Modified, Modified Staged, Renamed_ **click on the image to enlarge**<br/>
 
-<!-- [](https://raw.githubusercontent.com/Luxcium/pop-n-lock-theme-vscode/master/images/v3.18.0/typescript%20javascript%20ecmascript%20vscode%20theme%20console%20log%20highlight.png)
-<br/>(v3.32.3) When using Latest Typescipt Grammar support console.log / conso.error etc. highlight<br/> -->
+<!--
 
 images/v3.32.3/git-resources-colors-modified-staged-add-untracked-renamed-ignored-vscode.png
+
+-->
 
 ## IMPORTS
 
