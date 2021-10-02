@@ -8,4 +8,6 @@ coverage-ts
 build
 lib/build
 **/tempCodeRunnerFile**
-
+ressource.ignrored
+ignrored.ressource
+ressource.0-ignored
