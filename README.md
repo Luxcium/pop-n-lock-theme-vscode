@@ -47,6 +47,19 @@ if you think something can be improved make sure to fill an issue on our GitHub 
 
 Please feel free to ask any question, to let us know about any problems that should be resolved and any improvement you would like to see by [filing an issue](https://github.com/luxcium/pop-n-lock-theme-vscode/issues) on our GitHub page.
 
+## Recently modified
+
+### Git Decorations
+
+[<img width="80%" alt="[Git Decorations Colors: Ignored, Untracked, Added, Modified, Modified Staged, Renamed]" src="images/v3.32.3/3.32.5/git-resources-colors-modified-staged-add-untracked-renamed-ignored-vscode.png">](images/v3.32.3/3.32.5/git-stages-resources-colors-modified-staged-add-untracked-renamed-ignored-vscode.png)
+<br/>(v3.32.3) Git Decorations colors: _Ignored, Untracked, Added, Modified, Modified Staged, Renamed_ **click on the image to enlarge**<br/>
+
+<!--
+
+images/v3.32.3/git-resources-colors-modified-staged-add-untracked-renamed-ignored-vscode.png
+
+-->
+
 ## TypeScript
 
 [<img width="60%" alt="TypeScript" src="https://raw.githubusercontent.com/Luxcium/pop-n-lock-theme-vscode/master/images/v3.18.0/typescript%20is%20awesome.png">](https://raw.githubusercontent.com/Luxcium/pop-n-lock-theme-vscode/master/images/v3.18.0/typescript%20is%20awesome.png)
@@ -87,17 +100,6 @@ red on writing side / blue on the reading side
 
 [<img width="60%" alt="[Console highlight]" src="https://raw.githubusercontent.com/Luxcium/pop-n-lock-theme-vscode/master/images/v3.18.0/typescript%20javascript%20ecmascript%20vscode%20theme%20console%20log%20highlight.png">](https://raw.githubusercontent.com/Luxcium/pop-n-lock-theme-vscode/master/images/v3.18.0/typescript%20javascript%20ecmascript%20vscode%20theme%20console%20log%20highlight.png)
 <br/>(v3.18) When using Latest Typescipt Grammar support console.log / conso.error etc. highlight<br/> -->
-
-## Git Decorations
-
-[<img width="80%" alt="[Git Decorations Colors: Ignored, Untracked, Added, Modified, Modified Staged, Renamed]" src="images/v3.32.3/git-resources-colors-modified-staged-add-untracked-renamed-ignored-vscode.png">](images/v3.32.3/git-stages-resources-colors-modified-staged-add-untracked-renamed-ignored-vscode.png)
-<br/>(v3.32.3) Git Decorations colors: _Ignored, Untracked, Added, Modified, Modified Staged, Renamed_ **click on the image to enlarge**<br/>
-
-<!--
-
-images/v3.32.3/git-resources-colors-modified-staged-add-untracked-renamed-ignored-vscode.png
-
--->
 
 ## IMPORTS
 
