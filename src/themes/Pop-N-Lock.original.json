@@ -441,7 +441,7 @@
     "list.warningForeground": "#CF4F",
     "editorWarning.foreground": "#CF4F",
     "minimap.warningHighlight": "#CF4F",
-    "terminal.background": "#202010",
+    "terminal.background": "#1F1B18",
     "terminal.border": "#77116655",
     "terminal.foreground": "#C4BDB5DD",
     "terminalCursor.background": "#29153A",
