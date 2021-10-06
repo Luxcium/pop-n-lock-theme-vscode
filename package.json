@@ -1,6 +1,6 @@
 {
   "name": "pop-n-lock-theme-vscode",
-  "version": "3.32.6",
+  "version": "3.32.7",
   "publisher": "Luxcium",
   "license": "MIT",
   "displayName": "Pop N' Lock Theme by Luxcium ✨",
@@ -61,7 +61,7 @@
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.15",
     "mongoose": "^5.9.7",
-    "npm": "^7.24.1",
+    "npm": "^7.24.2",
     "prettier": "^2.0.4",
     "puppeteer": "^2.1.1",
     "ramda": "^0.27.0",
