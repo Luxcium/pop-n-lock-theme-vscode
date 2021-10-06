@@ -5287,7 +5287,7 @@ source.css
       }
     },
     {
-      "name": "Function Return Type parameter punctuation",
+      "name": "Function Return Type parameter punctuations",
       "scope": [
         "source meta.return.type meta.type.parameters punctuation.definition.typeparameters",
         "source meta.return.type meta.type.tuple meta.brace.square",

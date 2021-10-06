@@ -66,7 +66,8 @@ export type defined =
   | false
   | undefined;
 
-@sealed
+// @sealed
+
 class Greeter {
   public greeting: string;
   constructor(message: string) {
@@ -243,3 +244,89 @@ export function formatStockChartData(stockChartDataInfos: any[]): any[] {
     };
   });
 }
+
+const APPLE = 'pomme';
+export const braketColors = [
+  [
+    {
+      bolo: 'pomme',
+      bileboquet: (1 * ((143 / (2 - 5 * (3 + (4 * (3 + 1) - 8)))) * 3)) / 5,
+    },
+    [
+      {
+        bolo: APPLE,
+        bileboquet: (1 * ((143 / (2 - 5 * (3 + (4 * (3 + 1) - 8)))) * 3)) / 5,
+      },
+      [
+        {
+          bileboquet: (1 * ((143 / (2 - 5 * (3 + (4 * (3 + 1) - 8)))) * 3)) / 5,
+        },
+        [
+          {
+            bileboquet: (1 * ((3 / (2 - 5 * (3 + (4 * (3 + 1) - 8)))) * 3)) / 5,
+          },
+          [
+            {
+              bileboquet:
+                (1 * ((3 / (2 - 5 * (3 + (4 * (3 + 1) - 8)))) * 3)) / 5,
+            },
+            [
+              {
+                bolo: 'pomme',
+                bileboquet:
+                  (1 * ((143 / (2 - 5 * (3 + (4 * (3 + 1) - 8)))) * 3)) / 5,
+              },
+              [
+                {
+                  bolo: 'pomme',
+                  bileboquet:
+                    (1 * ((143 / (2 - 5 * (3 + (4 * (3 + 1) - 8)))) * 3)) / 5,
+                },
+                [
+                  {
+                    bolo: 'pomme',
+                    bileboquet:
+                      (1 * ((143 / (2 - 5 * (3 + (4 * (3 + 1) - 8)))) * 3)) / 5,
+                  },
+                  [
+                    {
+                      bolo: 'pomme',
+                      bileboquet:
+                        (1 * ((143 / (2 - 5 * (3 + (4 * (3 + 1) - 8)))) * 3)) /
+                        5,
+                    },
+                    [
+                      {
+                        bolo: 'pomme',
+                        bileboquet:
+                          ((1 + 2) *
+                            ((143 / (2 - 5 * (3 + (4 * (3 + 1) - 8)))) * 3)) /
+                          5,
+                      },
+                      [
+                        {
+                          bolo: 'pomme',
+                          bileboquet:
+                            ((1 + 2) *
+                              ((143 / (2 - 5 * (3 + (4 * (3 + 1) - 8)))) * 3)) /
+                            5,
+                        },
+                        {
+                          bolo: 'pomme',
+                          bileboquet:
+                            ((1 + 2) *
+                              ((143 / (2 - 5 * (3 + (4 * (3 + 1) - 8)))) * 3)) /
+                            5,
+                        },
+                      ],
+                    ],
+                  ],
+                ],
+              ],
+            ],
+          ],
+        ],
+      ],
+    ],
+  ],
+];
