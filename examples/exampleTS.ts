@@ -119,18 +119,24 @@ export const asyncAnonymArowFunction = async () => {
   const angel = checker ? 48 : 47;
   const some = new ClassName({ value: 'value', angel });
   const others = [
-    some.otherMethodeValue,
+    some?.otherMethodeValue,
     450,
     null,
     NaN,
     Infinity,
-    this?._othervalue,
+    this,
     true,
     false,
     undefined,
   ];
   return { some, variable1, others };
 };
+{
+  {
+    // function name(params:type) {
+    // }
+  }
+}
 /**
  * Some predefined delays (in milliseconds).
  */
