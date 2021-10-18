@@ -255,7 +255,7 @@ const APPLE = 'pomme';
 export const braketColors = [
   [
     {
-      bolo: 'pomme',
+      bolo: 'pom me',
       bileboquet: (1 * ((143 / (2 - 5 * (3 + (4 * (3 + 1) - 8)))) * 3)) / 5,
     },
     [
