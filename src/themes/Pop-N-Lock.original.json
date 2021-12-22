@@ -1330,6 +1330,16 @@ foreground	source.ts variable.other.object { "foreground": "#EDCD", "fontStyle":
     {
       "name": "KEYWORD.CONTROL others ETC.",
       "scope": [
+        "source.ts meta.block keyword.control.flow",
+      ],
+      "settings": {
+        "foreground": "#F23F", // #D25 /%/
+        "fontStyle": "italic bold"
+      }
+    },
+    {
+      "name": "KEYWORD.CONTROL others ETC.",
+      "scope": [
         "source.ts keyword.control.as",
         "source.ts keyword.control.default",
         "source.ts keyword.control",
@@ -1345,7 +1355,6 @@ foreground	source.ts variable.other.object { "foreground": "#EDCD", "fontStyle":
         "source.ts keyword",
         "source.ts keyword.other",
         "source.ts keyword.generator.asterisk",
-        "source.ts meta.block keyword.control.flow",
         "source.ts keyword.operator.logical",
         "source.ts storage.type.numeric.bigint"
       ],

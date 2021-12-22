@@ -217,7 +217,21 @@ export class ClassName extends ParentClass implements IInterface {
   }
 }
 export { jwtSecret, List, ListItem, returnAllLists, router, User };
+export async function* asyncGeneratorFn<R>(
+  delay: number = 0,
+  asyncGenerator: any,
+  fn: (...x: any[]) => R
+): AsyncGenerator<Awaited<R>> {
+  let index = 0;
 
+  for await (const item of asyncGenerator()) {
+    if (delay === 0) {
+      await new Promise(resolve => setTimeout(resolve, delay));
+      yield fn(item, index++);
+    }
+    yield fn(item, index++);
+  }
+}
 export function formatStockChartData(stockChartDataInfos: any[]): any[] {
   return stockChartDataInfos.map(stockChartData => {
     return {

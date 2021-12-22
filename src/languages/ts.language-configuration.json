@@ -1,39 +1,23 @@
 {
   "comments": {
     "lineComment": "//",
-    "blockComment": [
-      "/*",
-      "*/"
-    ]
+    "blockComment": ["/*", "*/"]
   },
   "brackets": [
-    [
-      "{",
-      "}"
-    ],
-    [
-      "[",
-      "]"
-    ],
-    [
-      "(",
-      ")"
-    ]
+    ["{", "}"],
+    ["[", "]"],
+    ["(", ")"]
   ],
   "autoClosingPairs": [
     {
       "open": "${",
       "close": "}",
-      "in": [
-        "string"
-      ]
+      "in": ["string"]
     },
     {
       "open": "$",
       "close": "",
-      "in": [
-        "string"
-      ]
+      "in": ["string"]
     },
     {
       "open": "{",
@@ -50,96 +34,47 @@
     {
       "open": "'",
       "close": "'",
-      "notIn": [
-        "string",
-        "comment"
-      ]
+      "notIn": ["string", "comment"]
     },
     {
       "open": "<",
       "close": ">",
-      "notIn": [
-        "string",
-        "comment"
-      ],
+      "notIn": ["string", "comment"]
     },
     {
       "open": "\"",
       "close": "\"",
-      "notIn": [
-        "string"
-      ]
+      "notIn": ["string"]
     },
     {
       "open": "`",
       "close": "`",
-      "notIn": [
-        "string",
-        "comment"
-      ]
+      "notIn": ["string", "comment"]
     },
     {
       "open": "/*",
       "close": " */",
-      "notIn": [
-        "string"
-      ]
+      "notIn": ["string"]
     }
   ],
   "surroundingPairs": [
-    [
-      "${",
-      "}"
-    ],
-    [
-      "$",
-      " "
-    ],
-    [
-      "{",
-      "}"
-    ],
-    [
-      "[",
-      "]"
-    ],
-    [
-      "(",
-      ")"
-    ],
-    [
-      "'",
-      "'"
-    ],
-    [
-      "\"",
-      "\""
-    ],
-    [
-      "`",
-      "`"
-    ],
-    [
-      "<",
-      ">"
-    ],
-    [
-      "/",
-      "/"
-    ],
-    [
-      "*",
-      "*"
-    ],
-    [
-      "/*",
-      "*/"
-    ]
+    ["${", "}"],
+    ["$", " "],
+    ["{", "}"],
+    ["[", "]"],
+    ["(", ")"],
+    ["'", "'"],
+    ["\"", "\""],
+    ["`", "`"],
+    ["<", ">"],
+    ["/", "/"],
+    ["*", "*"],
+    ["/*", "*/"]
   ],
   "folding": {
     "markers": {
       "start": "^\\s*//\\s*#?region\\b",
       "end": "^\\s*//\\s*#?endregion\\b"
     }
-  },
+  }
 }
