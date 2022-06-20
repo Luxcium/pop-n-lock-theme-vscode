@@ -1,7 +1,8 @@
 import { config } from 'dotenv';
 import express from 'express';
 import mongoose from 'mongoose';
-
+import type { SomeValue1 } from './somefile';
+import { type SomeValue2 } from './somefile';
 config();
 const List = mongoose.model('List');
 const jwtSecret = process.env.JWTSECRET;
@@ -9,6 +10,10 @@ const router = express.Router();
 const User = mongoose.model('User');
 const ListItem = mongoose.model('ListItem');
 const newReg = /r\eg[A-B]Exp/;
+const newNumber1: SomeValue1 = 10;
+const newNumber2: SomeValue2 = 10;
+void newNumber1,newNumber2;
+// region
 function returnAllLists(userId: any, res: any) {
   return User.findById(userId)
     .populate({
@@ -29,6 +34,7 @@ function returnAllLists(userId: any, res: any) {
       });
     });
 }
+// endregion
 
 debugger;
 
@@ -119,18 +125,24 @@ export const asyncAnonymArowFunction = async () => {
   const angel = checker ? 48 : 47;
   const some = new ClassName({ value: 'value', angel });
   const others = [
-    some.otherMethodeValue,
+    some?.otherMethodeValue,
     450,
     null,
     NaN,
     Infinity,
-    this?._othervalue,
+    this,
     true,
     false,
     undefined,
   ];
   return { some, variable1, others };
 };
+{
+  {
+    // function name(params:type) {
+    // }
+  }
+}
 /**
  * Some predefined delays (in milliseconds).
  */

@@ -766,14 +766,14 @@
     // "debugView.stateLabelForeground": "#00FF00",
     // "debugView.valueChangedHighlight": "#00FF00",
     /* NEW ELEMENTS
-Version : 1.61.0-insider
-Commit : 6fed60f8f4dd21fb16dcbe64a742296b339ff0ee
-Date : 2021-09-30T05:16:25.640Z
-Electron : 13.5.0
-Chrome : 91.0.4472.164
-Node.js : 14.16.0
-V8 : 9.1.269.39-electron.0
-OS : Linux x64 5.13.16-200.fc34.x86_64
+Version : 1.61.0-insider
+Commit : 6fed60f8f4dd21fb16dcbe64a742296b339ff0ee
+Date : 2021-09-30T05:16:25.640Z
+Electron : 13.5.0
+Chrome : 91.0.4472.164
+Node.js : 14.16.0
+V8 : 9.1.269.39-electron.0
+OS : Linux x64 5.13.16-200.fc34.x86_64
     // "notebook.cellBorderColor": "#00FF00",
     // "notebook.outputContainerBackgroundColor": "#00FF00",
     // "notebookStatusErrorIcon.foreground": "#00FF00",
