@@ -39,6 +39,7 @@
     "vsce:release:patch": "yarn run --ignore-engines vsce:prepublish ; yarn version --ignore-engines  --no-git-tag-version --patch && yarn run --ignore-engines vsce:pak-pub && git add . && yarn run npm:publish"
   },
   "dependencies": {
+    "@types/yui": "^3.14.27",
     "color-convert": "^2.0.1",
     "typescript": "^4.5.4"
   },

@@ -1,4 +1,5 @@
 {
-    "workbench.colorTheme": "Pop N' Lock Theme by Luxcium ✨",
-    "editor.semanticHighlighting.enabled": false,
+  "workbench.colorTheme": "Pop N' Lock Theme by Luxcium ✨",
+  "window.title": "°Pop N' Lock° ✨${remoteName}${appName}✨ ${rootPath} ${dirty} ${activeEditorMedium} ",
+  "editor.semanticHighlighting.enabled": false
 }

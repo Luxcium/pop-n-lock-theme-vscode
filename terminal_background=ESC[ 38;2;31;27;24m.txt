@@ -1,0 +1,25 @@
+    terminal_background=ESC[ 38;2;31;27;24m
+    terminal_border=ESC[ 38;2;119;17;102m
+    terminal_foreground=ESC[ 38;2;196;189;181m
+    terminalCursor_background=ESC[ 38;2;41;21;58m
+    terminalCursor_foreground=ESC[ 38;2;255;51;51m
+    terminal_selectionBackground=ESC[ 38;2;51;34;119m
+    terminal_ansiBlack=ESC[ 38;2;26;10;42m
+    terminal_ansiRed=ESC[ 38;2;238;51;34m
+    terminal_ansiBlue=ESC[ 38;2;68;136;153m
+    terminal_ansiGreen=ESC[ 38;2;136;153;34m
+    terminal_ansiCyan=ESC[ 38;2;104;170;119m
+    terminal_ansiYellow=ESC[ 38;2;238;153;34m
+    terminal_ansiMagenta=ESC[ 38;2;187;85;153m
+    terminal_ansiWhite=ESC[ 38;2;204;187;170m
+    terminal_ansiBrightBlack=ESC[ 38;2;136;119;102m
+    terminal_ansiBrightRed=ESC[ 38;2;255;34;68m
+    terminal_ansiBrightBlue=ESC[ 38;2;153;204;221m
+    terminal_ansiBrightGreen=ESC[ 38;2;187;204;51m
+    terminal_ansiBrightCyan=ESC[ 38;2;136;238;153m
+    terminal_ansiBrightYellow=ESC[ 38;2;255;170;51m
+    terminal_ansiBrightMagenta=ESC[ 38;2;221;102;136m
+    terminal_ansiBrightWhite=ESC[ 38;2;221;204;170m
+
+    ESC[ 38;2;⟨r⟩;⟨g⟩;⟨b⟩ m Select RGB foreground color
+ESC[ 48;2;⟨r⟩;⟨g⟩;⟨b⟩ m Select RGB background color
