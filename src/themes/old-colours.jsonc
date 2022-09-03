@@ -1,0 +1,118 @@
+{
+
+
+  //   /* inactives colors */
+  //   "scrollbarSlider.hoverBackground": "#FC6C",
+  //   "scrollbarSlider.activeBackground": "#8B3C",
+  //   "scrollbarSlider.background": "#39C9",
+  //   "activityBar.activeBackground": "#6178", // 716
+  //   "activityBar.activeBorder": "#617", // 716
+  //   "activityBar.inactiveForeground": "#C4BDB5AA",
+  //   "activityBar.background": "#1C1C30",
+  //   "activityBar.border": "#FC65",
+  //   // "activityBar.dropBackground": "#6175", // 716
+  //   "activityBar.foreground": "#C4BDB5EE",
+  //   "activityBarBadge.background": "#39CC",
+  //   "activityBarBadge.foreground": "#FC6C",
+  //   "activityBar.dropBorder": "#39C",
+  //   "activityBar.activeFocusBorder": "#8B3",
+  //   "inputOption.activeForeground": "#C4BDB5",
+  //   // "#E36B","#E43D","#E67D","#E1AD","#7ADD", // #D25 /%/
+  //   // "#FC4E","#F91D","#C4BDB5DD","#A5BD","#ADEC",// #FC5 /%/ // #ADC /%/
+  //   // "#CE5C","#8D3D","#4B9D","#55FD","#5BFC", // #6BF  /%/ // #7C3 /%/
+  //   //
+  //   // #C27D1A, #652D90, #00539C, #388A34, #424242
+  //   //
+  //   // #C27D1A, (#F91) Class, Event
+  //   "symbolIcon.classForeground": "#D81",
+  //   "symbolIcon.eventForeground": "#FC3E",
+  //   // #652D90, (#A5B) Extension Method, Method, Module, Delegate
+  //   "symbolIcon.methodForeground": "#A5BE",
+  //   "symbolIcon.functionForeground": "#FC3E",
+  //   "symbolIcon.constructorForeground": "#E1AE",
+  //   "symbolIcon.moduleForeground": "#A5BE",
+  //   // #00539C, (#5BF) Field, Enum Item, Macro, Structure,  Union Value Type, Operator, Interface// #6BF  /%/
+  //   "symbolIcon.fieldForeground": "#39CD",
+  //   "symbolIcon.enumeratorMemberForeground": "#5BFD", // #6BF  /%/
+  //   "symbolIcon.structForeground": "#5BFD", // #6BF  /%/
+  //   "symbolIcon.operatorForeground": "#5BFD", // #6BF  /%/
+  //   "symbolIcon.interfaceForeground": "#297DC4",
+  //   // #388A34, (#8D3) Object // #7C3 /%/
+  //   "symbolIcon.objectForeground": "#8D3", // #7C3 /%/
+  //   "symbolIcon.arrayForeground": "#8D3", // #7C3 /%/
+  //   // #424242, (#C4BDB5) Constant, Exception, Enum Item, Map, Map Item, Namespace, Template, Type Definition
+  //   "symbolIcon.constantForeground": "#297DC4",
+  //   "symbolIcon.namespaceForeground": "#C4BDB5DD",
+  //   "symbolIcon.typeParameterForeground": "#C4BDB5DD",
+  //   //
+  //   "symbolIcon.numberForeground": "#E67",
+  //   "symbolIcon.keywordForeground": "#E36", // #D25 /%/
+  //   "symbolIcon.enumeratorForeground": "#FB2",
+  //   "symbolIcon.packageForeground": "#F90",
+  //   "symbolIcon.textForeground": "#FC3",
+  //   "symbolIcon.stringForeground": "#CE5",
+  //   "symbolIcon.booleanForeground": "#8D3", // #7C3 /%/
+  //   "symbolIcon.colorForeground": "#C4BDB5DD",
+  //   "symbolIcon.fileForeground": "#C4BDB5DD",
+  //   "symbolIcon.folderForeground": "#C4BDB5DD",
+  //   "symbolIcon.keyForeground": "#C4BDB5DD",
+  //   "symbolIcon.referenceForeground": "#00539C",
+  //   "symbolIcon.snippetForeground": "#652D90",
+  //   "symbolIcon.unitForeground": "#4B9",
+  //   "symbolIcon.propertyForeground": "#39C",
+  //   "symbolIcon.variableForeground": "#5BF", // #6BF  /%/
+  //   "symbolIcon.nullForeground": "#A5B",
+  //   //
+  //   // #b4bdc5EE
+  //   //
+  //   /* editorLightBulb */
+  //   "editorLightBulb.foreground": "#FC3D",
+  //   "editorLightBulbAutoFix.foreground": "#39CD",
+  //   /* error and warnings */
+  //   "list.errorForeground": "#F36F",
+  //   "minimap.errorHighlight": "#F36F",
+  //   "editorError.foreground": "#F36F",
+  //   "problemsErrorIcon.foreground": "#F36F",
+  //   "notificationsErrorIcon.foreground": "#F36F",
+  //   "tab.activeModifiedBorder": "#F36F",
+  //   "editorOverviewRuler.errorForeground": "#F36F",
+  //   "editorOverviewRuler.warningForeground": "#CF4F",
+  //   "notificationsWarningIcon.foreground": "#CF4F",
+  //   "problemsWarningIcon.foreground": "#CF4F",
+  //   "tab.activeBorderTop": "#CF4F",
+  //   "list.warningForeground": "#CF4F",
+  //   "editorWarning.foreground": "#CF4F",
+  //   "minimap.warningHighlight": "#CF4F",
+  //   /* terminal */
+  //   // #DDBC9A
+  //   // #D3BCA5
+  //   // #C9BDB0
+  //   // #C4BDB5 //&
+  //   // #BEBDBA
+  //   // #B4BDC5
+  //   /* terminal */
+  //   "terminal.background": "#202010",
+  //   "terminal.border": "#77116655",
+  //   "terminal.foreground": "#C4BDB5DD",
+  //   "terminalCursor.background": "#29153A",
+  //   "terminalCursor.foreground": "#F33",
+  //   "terminal.selectionBackground": "#3277",
+  //   /* terminal colors */
+  //   "terminal.ansiBlack": "#201020",
+  //   "terminal.ansiBlue": "#458588",
+  //   "terminal.ansiCyan": "#689E6A",
+  //   "terminal.ansiGreen": "#98971A",
+  //   "terminal.ansiMagenta": "#B16286",
+  //   "terminal.ansiRed": "#CC241D",
+  //   "terminal.ansiWhite": "#C0B0A0",
+  //   "terminal.ansiYellow": "#E7A931",
+  //   "terminal.ansiBrightBlack": "#928374",
+  //   "terminal.ansiBrightBlue": "#99C6CA",
+  //   "terminal.ansiBrightCyan": "#8AE180",
+  //   "terminal.ansiBrightGreen": "#B5C033",
+  //   "terminal.ansiBrightMagenta": "#D66282",
+  //   "terminal.ansiBrightRed": "#F42C3E",
+  //   "terminal.ansiBrightWhite": "#DDCCAA",
+  //   "terminal.ansiBrightYellow": "#FABE2F"
+  // },
+}
