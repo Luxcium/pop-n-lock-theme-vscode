@@ -80,10 +80,8 @@
     "editor.selectionForeground": "#DCBB",
     "menu.selectionBackground": "#EB55",
     "menu.selectionBorder": "#52AB",
-    "menu.selectionForeground": "#DCBB",
     "menubar.selectionBackground": "#2955",
     "menubar.selectionBorder": "#6186",
-    "menubar.selectionForeground": "#DCBB",
     "peekViewResult.selectionBackground": "#42b4",
     "peekViewResult.selectionForeground": "#DCBB",
     "selection.background": "#698A",
@@ -306,6 +304,21 @@
     // "terminal.border": "#77116655",
     /*
 
+    editorBracketHighlight
+
+    */
+    "menu.selectionForeground": "#FD8D",
+    "menubar.selectionForeground": "#FDAD",
+    "editorGutter.foldingControlForeground": "#FC7D",
+    "editorBracketHighlight.foreground1": "#FB6D",
+    "editorBracketHighlight.foreground2": "#F6BD",
+    "editorBracketHighlight.foreground3": "#5BFD",
+    "editorBracketHighlight.foreground4": "#B6FD",
+    "editorBracketHighlight.foreground5": "#86FD",
+    "editorBracketHighlight.foreground6": "#F66D",
+    "editorBracketHighlight.unexpectedBracket.foreground": "#C21D",
+    /*
+
     symbolIcon
 
     */
@@ -366,7 +379,7 @@
     "gitDecoration.submoduleResourceForeground": "#C3CE",
     /*
 
-     error and warnings
+    error and warnings
 
     */
     "editorError.foreground": "#F36F",
