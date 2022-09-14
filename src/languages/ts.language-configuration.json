@@ -78,3 +78,46 @@
     }
   }
 }
+
+/*
+{
+	"comments": {
+		"lineComment": "//",
+		"blockComment": [ "/*", "*ø/" ]
+	},
+	"brackets": [
+		["${", "}"],
+		["{", "}"],
+		["[", "]"],
+		["(", ")"]
+	],
+	"autoClosingPairs": [
+		{ "open": "{", "close": "}" },
+		{ "open": "[", "close": "]" },
+		{ "open": "(", "close": ")" },
+		{ "open": "'", "close": "'", "notIn": ["string", "comment"] },
+		{ "open": "\"", "close": "\"", "notIn": ["string"] },
+		{ "open": "`", "close": "`", "notIn": ["string", "comment"] },
+		{ "open": "/**", "close": " *ø/", "notIn": ["string"] }
+	],
+	"surroundingPairs": [
+		["{", "}"],
+		["[", "]"],
+		["(", ")"],
+		["'", "'"],
+		["\"", "\""],
+		["`", "`"],
+		["<", ">"]
+	],
+	"autoCloseBefore": ";:.,=}])>` \n\t",
+	"folding": {
+		"markers": {
+			"start": "^\\s*ø//\\s*#?region\\b",
+			"end": "^\\s*ø//\\s*#?endregion\\b"
+		}
+	}
+}
+---
+*/
+// "start": "^\\s*//\\s*#?[rR]egion\\b",
+// "end": "^\\s*//\\s*#?[eE]nd[rR]egion\\b"
