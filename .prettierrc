@@ -6,11 +6,38 @@
   "arrowParens": "avoid",
   "jsxSingleQuote": false,
   "bracketSpacing": true,
-  "endOfLine": "auto",
+  "endOfLine": "lf",
   "htmlWhitespaceSensitivity": "css",
   "insertPragma": false,
   "proseWrap": "preserve",
   "rangeStart": 0,
   "trailingComma": "es5",
-  "useTabs": false
+  "useTabs": false,
+  "overrides": [
+    {
+      "options": {
+        "printWidth": 80,
+        "semi": true
+      },
+      "files": [
+        "lib/utils/**/main.ts",
+        "lib/utils/**/sync.ts",
+        "lib/utils/**/async.ts",
+        "lib/**/*.ts",
+        "lib/classes/color-element-list/ColorElementList.ts",
+        "lib/classes/color-element/ColorElement.ts"
+      ]
+    },
+    {
+      "options": {
+        "printWidth": 120,
+        "semi": true
+      },
+      "files": [
+        "lib/tools/color/**/*.*",
+        "lib/**/*.spec.ts",
+        "lib/tests/mock/dummy-list.ts"
+      ]
+    }
+  ]
 }

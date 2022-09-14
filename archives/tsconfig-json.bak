@@ -1,0 +1,67 @@
+{
+  "extends": "../tsconfig.base.json",
+  // "include": [
+  //   "tools",
+  //   "components",
+  //   "../archives/testers/extract-color-information-complex.tester-ts,bak",
+  // ],
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    /* Output Options */
+    "rootDir": "./",
+    "outDir": "./build/",
+    /* Emit Options */
+    "noEmit": false,
+    "noResolve": false,
+    "noEmitOnError": false,
+    "noEmitHelpers": false,
+    /* Incremental compilation. */
+    "incremental": true,
+    "tsBuildInfoFile": "./build/build-info.lib",
+    /* Basic Options */
+    "importHelpers": true,
+    /* Compilation Options */
+    "noErrorTruncation": true,
+    "allowJs": true,
+    "checkJs": false,
+    "newLine": "lf",
+    "removeComments": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": false,
+    "useDefineForClassFields": true,
+    "importsNotUsedAsValues": "remove",
+    "forceConsistentCasingInFileNames": true,
+    "assumeChangesOnlyAffectDirectDependencies": false,
+    "generateCpuProfile": "./performance/.cpuprofile",
+    "noUnusedLocals": true,
+    "noImplicitReturns": true,
+    "noUnusedParameters": true,
+    "esModuleInterop": true,
+    "pretty": true,
+    "sourceMap": true,
+    "inlineSourceMap": false,
+    "inlineSources": true,
+    "declaration": true,
+    "declarationMap": true,
+    "declarationDir": "./build/types",
+    "isolatedModules": true,
+    "composite": true,
+    "downlevelIteration": true,
+    /* Experimental Decorators */
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "lib": [
+      "esnext",
+      "DOM"
+    ],
+    "types": [
+      "node",
+      "jest"
+    ],
+    // "typeRoots": [
+    //   "../node_modules/@types",
+    //   "../node_modules/.registry.npmjs.org/@types",
+    // ]
+  }
+}

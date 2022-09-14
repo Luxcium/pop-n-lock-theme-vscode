@@ -1,0 +1,1 @@
+export { extractColorInformation } from './main';

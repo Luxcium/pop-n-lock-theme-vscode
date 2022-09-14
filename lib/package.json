@@ -1,0 +1,21 @@
+{
+  "name": "pop-n-lock-lib",
+  "version": "0.1.0",
+  "publisher": "Luxcium",
+  "author": "Benjamin Vincent (Luxcium)",
+  "license": "MIT",
+  "description": "",
+  "main": "build/main.js",
+  "typings": "build/typings/main.d.ts",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "build": "tsc -b tsconfig.json",
+    "test": "echo \"Error: no test specified\" && exit 0"
+  },
+  "dependencies": {
+    "chroma-js": "^2.1.2"
+  },
+  "keywords": []
+}

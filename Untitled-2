@@ -1,0 +1,8 @@
+ (
+sudo killall -9 plasma
+sudo killall -9 plasmashell
+sudo kbuildsycoca4 --noincremental
+sudo kbuildsycoca5 --noincremental
+sudo mv /home/luxcium/.kde/ /home/luxcium/.kde-backup
+plasmashell &
+)

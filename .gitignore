@@ -11,3 +11,10 @@ lib/build
 ressource.ignrored
 ignrored.ressource
 ressource.0-ignored
+out
+tempCodeRunnerFile*
+docs
+coverage
+coverage-ts
+build
+.nyc_output

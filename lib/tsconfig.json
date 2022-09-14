@@ -1,0 +1,52 @@
+{
+  "extends": "../tsconfig.base.json",
+  "compilerOptions": {
+    /* Basic Options */
+    "target": "es5",
+    "module": "commonjs",
+    "moduleResolution": "Node",
+    "importHelpers": true,
+    /* Emit Options */
+    "noEmit": false,
+    "noEmitOnError": false,
+    "noEmitHelpers": true,
+    "noResolve": false,
+    /* Paths */
+    "rootDir": "./",
+    "outDir": "build",
+    "declarationDir": "build/typings",
+    "tsBuildInfoFile": "build/.tsbuildinfo.lib",
+    "generateCpuProfile": "build/profile.cpuprofile",
+    /* Declaration and Map Options */
+    "declaration": true,
+    "inlineSourceMap": true,
+    "inlineSources": true,
+    "declarationMap": true,
+    "downlevelIteration": true,
+    /* Compilation Options */
+    // "noLib": false,
+    "allowJs": true,
+    "checkJs": false,
+    "resolveJsonModule": true,
+    "removeComments": false,
+    "skipLibCheck": false,
+    "importsNotUsedAsValues": "remove",
+    /* Experimental Decorators */
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "lib": [
+      "esnext",
+      "DOM"
+    ],
+    "types": [
+      "node",
+      "jest"
+    ],
+  },
+  "include": [
+    ".",
+    // helpers/index.ts
+    // "./node_modules/vscode/lib/*"
+    // "./node_modules/vscode/vscode.d.ts",,
+  ]
+}
