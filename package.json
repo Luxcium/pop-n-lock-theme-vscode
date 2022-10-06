@@ -124,7 +124,7 @@
         "extensions": [
           ".tsx"
         ],
-        "configuration": "./src/languages/ts.language-configuration.json"
+        "configuration": "./src/languages/tsx.language-configuration.json"
       },
       {
         "id": "javascript",

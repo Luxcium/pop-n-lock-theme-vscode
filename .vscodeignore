@@ -48,3 +48,16 @@ pop-n-lock-theme-vscode-3.32.7.vsix
 !Scientia-is-lux-principium-400px-TM.png
 !social-media-image.png
 !src
+
+!src/themes/Pop-N-Lock.original.json
+!src/themes/Pop-N-Lock.alexis-black.json
+!src/themes/Pop-N-Lock.tsa-asd.json
+!src/languages/ts.language-configuration.json
+!src/languages/tsx.language-configuration.json
+!src/languages/js.language-configuration.json
+!src/languages/jsx.language-configuration.json
+!src/languages/json.language-configuration.json
+!src/languages/jsonc.language-configuration.json
+!src/languages/yaml.language-configuration.json
+!src/languages/html.language-configuration.json
+!src/languages/css.language-configuration.json
