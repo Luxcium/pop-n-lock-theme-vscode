@@ -379,36 +379,52 @@
     "terminal.border": "#1C1C24",
     "terminalCursor.background": "#00ff00",
     "terminalCursor.foreground": "#C02030",
+    // "terminal.background": "#202010",
+    // "terminal.border": "#77116655",
     /* terminal */
-    "terminal.foreground": "#C4BDB5",
-    // "#D25B","#E43D","#E67D","#E1AD","#7ADD",
-    // "#FC5D","#F91D","#C4BDB5","#A5BD","#ADCC",
-    // "#CE5C","#7C2D","#4B9D","#55FD","#6BFC",
     //
-    // #C27D1A, #652D90, #00539C, #388A34, #424242
     //
-    // #C27D1A, (#F91) Class, Event
-    "symbolIcon.classForeground": "#C27D1A",
-    "symbolIcon.eventForeground": "#FC3",
-    // #652D90, (#A5B) Extension Method, Method, Module, Delegate
-    "symbolIcon.methodForeground": "#A5B",
-    "symbolIcon.functionForeground": "#FC3",
-    "symbolIcon.constructorForeground": "#E1A",
-    "symbolIcon.moduleForeground": "#A5B",
-    // #00539C, (#6BF) Field, Enum Item, Macro, Structure, Union Value Type, Operator, Interface
-    "symbolIcon.fieldForeground": "#6BF",
-    "symbolIcon.enumeratorMemberForeground": "#6BF",
-    "symbolIcon.structForeground": "#6BF",
-    "symbolIcon.operatorForeground": "#6BF",
-    "symbolIcon.interfaceForeground": "#6BF",
-    // #388A34, (#7C2) Object
-    "symbolIcon.objectForeground": "#7C2",
-    "symbolIcon.arrayForeground": "#7C2",
-    // #424242, (#C4BDB5) Constant, Exception, Enum Item, Map, Map Item, Namespace, Template, Type Definition
-    "symbolIcon.constantForeground": "#7AD",
-    "symbolIcon.namespaceForeground": "#C4BDB5",
-    "symbolIcon.typeParameterForeground": "#C4BDB5",
+    // !! COMMON PARTS EACH STYLES ** START **
+    // !! COMMON PARTS EACH STYLES ** START **
+    // !! COMMON PARTS EACH STYLES ** START **
     //
+    //
+    /*
+
+    editorBracketHighlight
+
+    */
+    "menu.selectionForeground": "#FD8D",
+    "menubar.selectionForeground": "#FDAD",
+    "editorGutter.foldingControlForeground": "#FC7D",
+    "editorBracketHighlight.foreground1": "#FB6D",
+    "editorBracketHighlight.foreground2": "#F6BD",
+    "editorBracketHighlight.foreground3": "#5BFD",
+    "editorBracketHighlight.foreground4": "#B6FD",
+    "editorBracketHighlight.foreground5": "#86FD",
+    "editorBracketHighlight.foreground6": "#F66D",
+    "editorBracketHighlight.unexpectedBracket.foreground": "#C21D",
+    /*
+
+    symbolIcon
+
+    */
+    "symbolIcon.classForeground": "#D81",
+    "symbolIcon.eventForeground": "#FC3E",
+    "symbolIcon.methodForeground": "#A5BE",
+    "symbolIcon.functionForeground": "#FC3E",
+    "symbolIcon.constructorForeground": "#E1AE",
+    "symbolIcon.moduleForeground": "#A5BE",
+    "symbolIcon.fieldForeground": "#39CD",
+    "symbolIcon.enumeratorMemberForeground": "#5BFD",
+    "symbolIcon.structForeground": "#5BFD",
+    "symbolIcon.operatorForeground": "#5BFD",
+    "symbolIcon.interfaceForeground": "#297DC4",
+    "symbolIcon.objectForeground": "#8D3",
+    "symbolIcon.arrayForeground": "#8D3",
+    "symbolIcon.constantForeground": "#297DC4",
+    "symbolIcon.namespaceForeground": "#C4BDB5DD",
+    "symbolIcon.typeParameterForeground": "#C4BDB5DD",
     "symbolIcon.numberForeground": "#E67",
     "symbolIcon.keywordForeground": "#D25",
     "symbolIcon.enumeratorForeground": "#FB2",
@@ -706,16 +722,63 @@
       }
     },
     {
-      "name": "Types",
+      "name": "Others",
       "scope": [
-        "source.ts entity.name.type.class",
-        "source.ts entity.name.type.enum",
-        "source.ts entity.name.type.instance",
-        "source.ts entity.name.type.module"
+        "source.ts *link*",
+        "source.ts *uri*",
+        "source.ts *url*",
+        "source.ts case-clause.expr ",
+        "source.ts case-clause.expr",
+        "source.ts cast.expr",
+        "source.ts header",
+        "source.ts keyword.other.back-reference.regexp",
+        "source.ts keyword.other.unit",
+        "source.ts markup.changed",
+        "source.ts markup.deleted",
+        "source.ts markup.heading",
+        "source.ts markup.inline.raw",
+        "source.ts markup.inserted",
+        "source.ts markup.punctuation.list.beginning",
+        "source.ts markup.punctuation.quote.beginning",
+        "source.ts markup.underline",
+        "source.ts module.node",
+        "source.ts new.expr",
+        "source.ts prototype",
+        "source.ts punctuation.definition.binding-pattern.array",
+        "source.ts punctuation.definition.binding-pattern.object",
+        "source.ts source.embedded",
+        "source.ts switch-block.expr",
+        "source.ts switch-expression.expr",
+        "source.ts switch-statement.expr",
+        "source.ts variable.other.object",
+        "source.ts meta.object.member variable.other.object"
       ],
       "settings": {
-        "foreground": "#EDAB",
-        "fontStyle": "bold"
+        "foreground": "#EDCD", //#EDB /%/
+        "fontStyle": ""
+      }
+    },
+    // DDCCBBCC
+    // EEDDBBDD
+    {
+      "scope": [
+        "source.ts support.class",
+        "source.ts support.class.builtin",
+        "source.ts support.class.node",
+        "source.ts support.class.promise",
+        "source.ts support.constant",
+        "source.ts support.constant",
+        "source.ts support.constant.math",
+        "source.ts support.type",
+        "source.ts support.type.object.module",
+        "source.ts support.variable",
+        "source.ts support.variable.object.node",
+        "source.ts support.variable.object.process"
+        // "source.ts support.class.console"
+      ],
+      "settings": {
+        "foreground": "#EDCD", //#EDB /%/
+        "fontStyle": ""
       }
     },
     {
@@ -753,6 +816,26 @@
       "settings": {
         "foreground": "#EDAB",
         "fontStyle": "bold"
+      }
+    },
+    {
+      "scope": [
+        "source.ts emphasis",
+        "source.ts markup.bold",
+        "source.ts strong"
+      ],
+      "settings": {
+        "foreground": "#C8C3B7CC", // "#C4BDB5DD",
+        "fontStyle": "bold"
+      }
+    },
+    {
+      "scope": [
+        "source.ts markup.italic"
+      ],
+      "settings": {
+        "foreground": "#C8C3B7CC", // "#C4BDB5DD",
+        "fontStyle": "italic"
       }
     },
     {
@@ -1295,76 +1378,7 @@
         "source.ts keyword.operator.rest"
       ],
       "settings": {
-        "foreground": "#4B9B",
-        "fontStyle": "bold"
-      }
-    },
-    {
-      "name": "Others",
-      "scope": [
-        "source.ts *link*",
-        "source.ts *uri*",
-        "source.ts *url*",
-        "source.ts case-clause.expr ",
-        "source.ts case-clause.expr",
-        "source.ts cast.expr",
-        "source.ts header",
-        "source.ts keyword.other.back-reference.regexp",
-        "source.ts keyword.other.unit",
-        "source.ts markup.changed",
-        "source.ts markup.deleted",
-        "source.ts markup.heading",
-        "source.ts markup.inline.raw",
-        "source.ts markup.inserted",
-        "source.ts markup.punctuation.list.beginning",
-        "source.ts markup.punctuation.quote.beginning",
-        "source.ts markup.underline",
-        "source.ts module.node",
-        "source.ts new.expr",
-        "source.ts prototype",
-        "source.ts punctuation.definition.binding-pattern.array",
-        "source.ts punctuation.definition.binding-pattern.object",
-        "source.ts source.embedded",
-        "source.ts switch-block.expr",
-        "source.ts switch-expression.expr",
-        "source.ts switch-statement.expr",
-        "source.ts variable.other.object",
-        "source.ts meta.object.member variable.other.object"
-      ],
-      "settings": {
-        "foreground": "#EDAB",
-        "fontStyle": ""
-      }
-    },
-    {
-      "scope": [
-        "source.ts support.class",
-        "source.ts support.class.builtin",
-        "source.ts support.class.node",
-        "source.ts support.class.promise",
-        "source.ts support.constant",
-        "source.ts support.constant",
-        "source.ts support.constant.math",
-        "source.ts support.type",
-        "source.ts support.type.object.module",
-        "source.ts support.variable",
-        "source.ts support.variable.object.node",
-        "source.ts support.variable.object.process"
-        // "source.ts support.class.console"
-      ],
-      "settings": {
-        "foreground": "#EDAB",
-        "fontStyle": ""
-      }
-    },
-    {
-      "scope": [
-        "source.ts emphasis",
-        "source.ts markup.bold",
-        "source.ts strong"
-      ],
-      "settings": {
-        "foreground": "#EDAB",
+        "foreground": "#4B9A",
         "fontStyle": "bold"
       }
     },
@@ -4052,8 +4066,87 @@ support.function.console.js
     // "#BE5B" "#FC6D","#ADCB" "#6BFB" "#EDAB" "#4B9B""#D79B" "#DF8B"
     // "#fabE2fAA""#b8bb26AA""#8ec07cAA""#d3869bAA""#369ec7AA""#B35B""#EDAB"
     /* support.function.misc.css
+    meta.tag.metadata.doctype.html
+    text.html.derivative
+    entity.name.tag.html
+    entity.name.tag.html
 
 
+
+    meta.tag.metadata.doctype.html
+
+    meta.tag.metadata.doctype.html
+    text.html.derivative
+
+    text.html.derivative
+
+    meta.tag.metadata.doctype.html
+    text.html.derivative
+
+    meta.tag.metadata.doctype.html
+    text.html.derivative
+
+    meta.tag.metadata.doctype.html
+    text.html.derivative
+
+    meta.tag.structure.html.start.html
+
+
+
+
+
+entity.name.tag.html
+text.html.derivative
+
+entity.name.tag.html
+text.html.derivative
+
+entity.name.tag.html
+text.html.derivative
+
+entity.name.tag.html
+text.html.derivative
+
+entity.name.tag.html
+text.html.derivative
+
+entity.name.tag.html
+text.html.derivative
+
+
+
+
+
+
+entity.other.attribute-name.html
+meta.attribute.class.html
+meta.tag.structure.body.start.html
+text.html.derivative
+
+
+text.html meta.tag entity.name.tag
+text.html meta.tag entity.name.tag
+
+	entity.other.attribute-name.html
+meta.tag.metadata.doctype.html
+text.html.derivative
+
+meta.tag.metadata.doctype.html
+text.html.derivative
+
+meta.tag.metadata.doctype.html
+text.html.derivative
+
+meta.tag.metadata.doctype.html
+text.html.derivative
+
+
+text.html meta.tag.metadata.doctype
+
+
+
+
+#667A
 
      */
     {
