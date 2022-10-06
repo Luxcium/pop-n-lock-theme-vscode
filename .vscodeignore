@@ -12,6 +12,7 @@ lib/**/*
 !*.png
 !social-media*
 !LICENSE
+src/themes/backup/**/*.*
 pop-n-lock*.tgz
 color-convert
 colors-reference.js
@@ -35,15 +36,15 @@ tslint.json
 .vscodeignore
 working-notes.txt
 yarn.lock
+archives
+pop-n-lock-theme-vscode-3.32.6.vsix
+pop-n-lock-theme-vscode-3.32.7.vsix
 
-!images/**/*.*
+!images
+!LICENSE
+!luxcium-TM.ico
 !package.json
 !README.md
 !Scientia-is-lux-principium-400px-TM.png
-!src/languages/**/*.*
-!src/themes/**/*.*
-!*.ico
-!*.png
-!social-media*
-!LICENSE
- 
+!social-media-image.png
+!src
