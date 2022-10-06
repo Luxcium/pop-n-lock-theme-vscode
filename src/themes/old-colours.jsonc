@@ -1572,3 +1572,52 @@ OS : Linux x64 5.13.16-200.fc34. */
 //   "terminal.ansiBrightWhite": "#DDCCAA",
 //   "terminal.ansiBrightYellow": "#FABE2F"
 // },
+/* inactives colors */
+/* inactives colors */
+/* NEW ELEMENTS ― Version: 1.58.0-insider */
+/* NEW ELEMENTS
+Version : 1.61.0-insider
+Commit : 6fed60f8f4dd21fb16dcbe64a742296b339ff0ee
+Date : 2021-09-30T05:16:25.640Z
+Electron : 13.5.0
+Chrome : 91.0.4472.164
+Node.js : 14.16.0
+V8 : 9.1.269.39-electron.0
+OS : Linux x64 5.13.16-200.fc34.x86_64
+
+
+
+     */
+/* NEW ELEMENTS */
+/* inactives colors */
+/*
+
+
+
+textmate scopes	entity.name.function.ts
+meta.function-call.ts
+meta.var.expr.ts
+source.ts
+foreground	source.ts entity.name.function { "foreground": "#FC4E", "fontStyle": "" }// #FC5 /%/
+#FFCC44
+textmate scopes	entity.name.type.ts
+meta.type.declaration.ts
+source.ts
+foreground	source.ts meta.type.declaration entity.name.type { "foreground": "#FC4E", "fontStyle": "" }// #FC5 /%/
+
+textmate scopes	comment.block.html
+text.html.derivative
+foreground	text.html.derivative comment.block.html { "foreground": "#66DDFF88", "fontStyle": "" }
+
+textmate scopes	entity.name.type.ts
+meta.type.declaration.ts
+source.ts
+foreground	source.ts meta.type.declaration entity.name.type { "foreground": "#FFCC55DD", "fontStyle": "" }
+
+textmate scopes	support.type.primitive.ts
+meta.type.declaration.ts
+source.ts
+foreground	source.ts meta.type.declaration support.type.primitive { "foreground": "#FFCC55", "fontStyle": "" }
+
+
+    */
