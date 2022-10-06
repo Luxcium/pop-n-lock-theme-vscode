@@ -1,7 +1,8 @@
 import { config } from 'dotenv';
 import express from 'express';
 import mongoose from 'mongoose';
-
+import type { SomeValue1 } from './somefile';
+import { type SomeValue2 } from './somefile';
 config();
 const List = mongoose.model('List');
 const jwtSecret = process.env.JWTSECRET;
@@ -9,6 +10,10 @@ const router = express.Router();
 const User = mongoose.model('User');
 const ListItem = mongoose.model('ListItem');
 const newReg = /r\eg[A-B]Exp/;
+const newNumber1: SomeValue1 = 10;
+const newNumber2: SomeValue2 = 10;
+void newNumber1,newNumber2;
+// region
 function returnAllLists(userId: any, res: any) {
   return User.findById(userId)
     .populate({
@@ -29,6 +34,7 @@ function returnAllLists(userId: any, res: any) {
       });
     });
 }
+// endregion
 
 debugger;
 
@@ -152,7 +158,7 @@ export const asyncAnonymArowFunction = async () => {
 function delayedHello(
   name: string,
   delay: number = Delays.Medium
-): Promise<string> {
+): Promise<any> {
   return new Promise((resolve: (value?: string) => void) =>
     setTimeout(() => resolve(`Hello, ${name}`), delay)
   );
@@ -174,7 +180,7 @@ export class ClassName extends ParentClass implements IInterface {
   private _othervalue: any;
   public constructor(parametre: Arguments) {
     super();
-    if (isNaN(parametre.angel) && typeof parametre.value === 'number') {
+    if (isNaN(parametre.angel as any) && typeof parametre.value === 'number') {
       this.angel = Infinity;
     }
   }
@@ -185,6 +191,71 @@ export class ClassName extends ParentClass implements IInterface {
     const angel = checker ? 48 : 47;
     const aNewClass = new ClassName({ value: 'value', angel: angel });
     console.log(aNewClass.value, checker, Math.PI);
+    const myObjeWithClass = {ClassName:ClassName}
+    myObjeWithClass.ClassName.staticValue
+    ClassName.staticValue
+        /*
+
+## {ClassName:ClassName}
+meta.object-literal.key.ts
+meta.object.member.ts
+meta.objectliteral.ts
+meta.var.expr.ts
+meta.block.ts
+meta.method.declaration.ts
+meta.class.ts
+source.ts
+
+## {...:ClassName}
+variable.other.readwrite.ts
+meta.object.member.ts
+meta.objectliteral.ts
+meta.var.expr.ts
+meta.block.ts
+meta.method.declaration.ts
+meta.class.ts
+source.ts
+
+## {ClassName}
+variable.other.readwrite.ts
+meta.object.member.ts
+meta.objectliteral.ts
+meta.var.expr.ts
+meta.block.ts
+meta.method.declaration.ts
+meta.class.ts
+source.ts
+
+
+## myObjeWithClass
+variable.other.object.ts
+meta.block.ts
+meta.method.declaration.ts
+meta.class.ts
+source.ts
+
+## ClassName
+variable.other.object.property.ts
+meta.block.ts
+meta.method.declaration.ts
+meta.class.ts
+source.ts
+
+## staticValue
+variable.other.property.ts
+meta.block.ts
+meta.method.declaration.ts
+meta.class.ts
+source.ts
+
+## ClassName (loner)
+variable.other.object.ts
+meta.block.ts
+meta.method.declaration.ts
+meta.class.ts
+source.ts
+    */
+
     const others = [450, null, true, false, undefined];
     return { aNewClass, others };
   }
