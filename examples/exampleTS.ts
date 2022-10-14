@@ -12,7 +12,7 @@ const ListItem = mongoose.model('ListItem');
 const newReg = /r\eg[A-B]Exp/;
 const newNumber1: SomeValue1 = 10;
 const newNumber2: SomeValue2 = 10;
-void newNumber1,newNumber2;
+void newNumber1, newNumber2;
 // region
 function returnAllLists(userId: any, res: any) {
   return User.findById(userId)
@@ -30,7 +30,7 @@ function returnAllLists(userId: any, res: any) {
       return res.status(200).json({
         success: true,
         successMessage: 'Here is the page',
-        data: doc.collection,
+        data: doc?.collection,
       });
     });
 }
@@ -100,11 +100,15 @@ Promise.resolve();
 async function asyncFunction(): Promise<any> {
   const objectLike = { propertyOne: 10, propertyTwo: 'string' };
   const { propertyOne } = objectLike;
-
+  let path: `/home/user/${number}/target`;
+  let customPath: number = 10;
   const variable1 = 2 + 10;
   let message: string = 'this is a string indeed';
   message = 'this is a ${"string"}  indeed';
-  message = `this is a  ${'string'}   indeed`;
+
+  path = `/home/user/${customPath}/target`;
+
+  path;
   const variable3 = new Greeter(message);
 
   const variable2 = variable1.toFixed(200 - 400);
@@ -191,10 +195,10 @@ export class ClassName extends ParentClass implements IInterface {
     const angel = checker ? 48 : 47;
     const aNewClass = new ClassName({ value: 'value', angel: angel });
     console.log(aNewClass.value, checker, Math.PI);
-    const myObjeWithClass = {ClassName:ClassName}
-    myObjeWithClass.ClassName.staticValue
-    ClassName.staticValue
-        /*
+    const myObjeWithClass = { ClassName: ClassName };
+    myObjeWithClass.ClassName.staticValue;
+    ClassName.staticValue;
+    /*
 
 ## {ClassName:ClassName}
 meta.object-literal.key.ts
