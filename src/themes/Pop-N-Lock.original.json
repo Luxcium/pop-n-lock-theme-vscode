@@ -58,14 +58,16 @@
     "tab.unfocusedInactiveForeground": "#D2C8BEAA",
     "tab.hoverForeground": "#D2C8BE",
     "tab.unfocusedHoverForeground": "#D2C8BE",
-    "tab.activeBackground": "#1D2545",
+    // "tab.activeBackground": "#1D2545",
+    "tab.activeBackground": "#39C6",
     "tab.unfocusedActiveBackground": "#1D2545",
     "tab.inactiveBackground": "#2A2040",
     "tab.unfocusedInactiveBackground": "#2A2040",
     "tab.hoverBackground": "#52A5",
     "tab.unfocusedHoverBackground": "#52A4",
     "tab.activeBorder": "#1D254500",
-    "tab.unfocusedActiveBorder": "#1D254500",
+    // "tab.unfocusedActiveBorder": "#1D254500",
+    "tab.unfocusedActiveBorder": "#39C",
     "tab.unfocusedActiveBorderTop": "#AE49",
     "tab.unfocusedActiveModifiedBorder": "#F459",
     "tab.inactiveModifiedBorder": "#F459",
@@ -91,7 +93,11 @@
     /*
 
     start section select
-
+    // "tab.activeBackground": "#39C6", !!
+    // "tab.unfocusedActiveBorder": "#39C", !!
+    "tab.unfocusedActiveBorder": "#39C",
+    // "tab.activeModifiedBorder": "#ff0000",
+    "tab.activeModifiedBorder": "#ff0000",
 
     */
     "editor.rangeHighlightBackground": "#2355",
@@ -399,12 +405,13 @@
     "editorError.foreground": "#F36F",
     "problemsErrorIcon.foreground": "#F36F",
     "notificationsErrorIcon.foreground": "#F36F",
-    "tab.activeModifiedBorder": "#F55F",
+    "tab.activeModifiedBorder": "#F67F",
+    // "tab.activeModifiedBorder": "#ff0000",
     "editorOverviewRuler.errorForeground": "#F36F",
     "editorOverviewRuler.warningForeground": "#CF4F",
     "notificationsWarningIcon.foreground": "#CF4F",
     "problemsWarningIcon.foreground": "#CF4F",
-    "tab.activeBorderTop": "#BFBF",
+    "tab.activeBorderTop": "#AFAF",
     "list.warningForeground": "#CF4F",
     "editorWarning.foreground": "#CF4F",
     "terminal.background": "#1F1B18",
@@ -431,6 +438,9 @@
     "terminal.ansiBrightWhite": "#DDCCAA",
   },
   "tokenColors": [
+    // "#E36B","#E43D","#E67D","#E1AD","#7ADD", // #D25 /%/
+    // "#FC4E","#F91D","#C4BDB5DD","#A5BD","#ADEC",// #FC5 /%/ // #ADC /%/
+    // "#CE5C","#8D3D","#4B9D","#55FD","#5BFC", // #6BF  /%/ // #7C3 /%/
     {
       "name": "Interface and Type Aliase definition keyword",
       "scope": [
