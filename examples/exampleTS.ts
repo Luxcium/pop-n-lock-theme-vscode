@@ -128,6 +128,13 @@ export const asyncAnonymArowFunction = async () => {
   checker.valueOf();
   const angel = checker ? 48 : 47;
   const some = new ClassName({ value: 'value', angel });
+  const values = {
+    logoly: angel,
+    angels: 'inthesky',
+    numbers: 1024,
+  };
+  const { angels: glx } = values;
+  void values, glx;
   const others = [
     some?.otherMethodeValue,
     450,
@@ -198,6 +205,7 @@ export class ClassName extends ParentClass implements IInterface {
     const myObjeWithClass = { ClassName: ClassName };
     myObjeWithClass.ClassName.staticValue;
     ClassName.staticValue;
+
     /*
 
 ## {ClassName:ClassName}
@@ -292,6 +300,36 @@ source.ts
   }
 }
 export { jwtSecret, List, ListItem, returnAllLists, router, User };
+let receiveMessage: any = function () {};
+function waitForNextMessage() {
+  return new Promise(resolve => {
+    receiveMessage = resolve;
+  });
+}
+async function* createMessageStream() {
+  while (true) {
+    yield waitForNextMessage();
+  }
+}
+
+async function startConsumingMessageStream() {
+  let messageStream = createMessageStream();
+  for await (let message of messageStream) {
+    console.log(message);
+  }
+}
+
+startConsumingMessageStream();
+
+setTimeout(() => {
+  receiveMessage('Hello');
+}, 500);
+setTimeout(() => {
+  receiveMessage('world');
+}, 1000);
+setTimeout(() => {
+  receiveMessage('!!!');
+}, 3000);
 
 export function formatStockChartData(stockChartDataInfos: any[]): any[] {
   return stockChartDataInfos.map(stockChartData => {
