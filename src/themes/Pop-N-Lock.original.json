@@ -874,7 +874,6 @@ foreground	source.ts variable.other.object { "foreground": "#EDCD", "fontStyle":
       "scope": [
         "source.ts meta.object-binding-pattern-variable variable.other.constant",
         "source.ts meta.object.member meta.object-literal.key",
-        "source.ts meta.objectliteral meta.object.member",
         "source.ts meta.var.expr meta.object-literal.key",
         "source.ts variable.object.property",
         "source.ts variable.other.constant.object.property",
@@ -883,6 +882,62 @@ foreground	source.ts variable.other.object { "foreground": "#EDCD", "fontStyle":
       ],
       "settings": {
         "foreground": "#5BFB" // #6BF  /%/
+      }
+    },
+    /*
+
+textmate scopes	meta.object-literal.key.ts
+meta.object.member.ts
+meta.objectliteral.ts
+meta.var.expr.ts
+meta.embedded.block.typescript
+markup.fenced_code.block.markdown
+text.html.markdown
+foreground	text.html
+
+meta.object-literal.key.ts
+meta.object.member.ts
+meta.objectliteral.ts
+meta.var.expr.ts
+source.ts
+
+"source.ts",
+"source.ts meta.block",
+"source.ts meta.block meta.object-literal.key",
+"source.ts meta.block meta.object-literal.key meta.object.member",
+"source.ts meta.block meta.object-literal.key meta.object.member meta.objectliteral meta.var.expr",
+
+"source.ts meta.var.expr.ts meta.arrow.ts meta.block.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.object-literal.key.ts",
+"meta.var.expr.ts meta.arrow.ts meta.block.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.object-literal.key.ts",
+"meta.block.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.object-literal.key.ts",
+"meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.object-literal.key.ts",
+"meta.objectliteral.ts meta.object.member.ts meta.object-literal.key.ts",
+"meta.object.member.ts meta.object-literal.key.ts",
+" meta.object-literal.key.ts",
+source.ts meta.var.expr.ts meta.arrow.ts meta.block.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.object-literal.key.ts
+
+
+
+
+
+
+
+    */
+    {
+      "name": "Other Constant white",
+      "scope": [
+        "source.ts meta.var.expr.ts meta.arrow.ts meta.block.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.object-literal.key.ts",
+        "source.ts meta.var.expr.ts meta.arrow.ts meta.block.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.object-literal.key.ts",
+        "source.ts meta.block.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.object-literal.key.ts",
+        "source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.object-literal.key.ts",
+        "source.ts meta.objectliteral.ts meta.object.member.ts meta.object-literal.key.ts",
+        "source.ts meta.object.member.ts meta.object-literal.key.ts",
+        "source.ts meta.object-literal.key.ts meta.definition.variable.ts variable.other.constant.ts",
+        "source.ts meta.object-literal.key.ts variable.other.constant.ts",
+        "source.ts meta.object-literal.key.ts meta.definition.variable.ts",
+      ],
+      "settings": {
+        "foreground": "#FECD" // #6BF  /%/ #FFEECCDD
       }
     },
     {

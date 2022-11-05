@@ -2,18 +2,8 @@
 *.*
 **/*.*
 lib/**/*
-!images/**/*.*
-!package.json
-!README.md
-!Scientia-is-lux-principium-400px-TM.png
-!src/languages/**/*.*
-!src/themes/**/*.*
-!*.ico
-!*.png
-!social-media*
-!LICENSE
-src/themes/backup/**/*.*
-pop-n-lock*.tgz
+
+
 color-convert
 colors-reference.js
 contribute.md
@@ -26,7 +16,6 @@ myColorList.js
 myReducedSet.js
 node_modules
 .npmignore
-pop-n-lock-theme-vscode*.*vsix*
 .prettierrc
 removecode.jsonc
 .snyk
@@ -37,8 +26,17 @@ tslint.json
 working-notes.txt
 yarn.lock
 archives
-pop-n-lock-theme-vscode-3.32.6.vsix
-pop-n-lock-theme-vscode-3.32.7.vsix
+
+!images/**/*.*
+!package.json
+!README.md
+!Scientia-is-lux-principium-400px-TM.png
+!src/languages/**/*.*
+!src/themes/**/*.*
+!*.ico
+!*.png
+!social-media*
+!LICENSE
 
 !images
 !LICENSE
@@ -47,11 +45,9 @@ pop-n-lock-theme-vscode-3.32.7.vsix
 !README.md
 !Scientia-is-lux-principium-400px-TM.png
 !social-media-image.png
-!src
 
-!src/themes/Pop-N-Lock.original.json
-!src/themes/Pop-N-Lock.alexis-black.json
-!src/themes/Pop-N-Lock.tsa-asd.json
+
+src/languages/**/*.*
 !src/languages/ts.language-configuration.json
 !src/languages/tsx.language-configuration.json
 !src/languages/js.language-configuration.json
@@ -61,3 +57,13 @@ pop-n-lock-theme-vscode-3.32.7.vsix
 !src/languages/yaml.language-configuration.json
 !src/languages/html.language-configuration.json
 !src/languages/css.language-configuration.json
+
+src/themes/**/*.*
+!src/themes/Pop-N-Lock.original.json
+!src/themes/Pop-N-Lock.alexis-black.json
+!src/themes/Pop-N-Lock.tsa-asd.json
+
+
+pop-n-lock*.vsix
+pop-n-lock*.tgz
+*.lock
