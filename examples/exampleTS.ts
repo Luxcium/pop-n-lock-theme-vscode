@@ -38,7 +38,6 @@ function returnAllLists(userId: any, res: any) {
 
 debugger;
 
-
 export function* pushPullGenerator() {
   let n = 1;
   try {
@@ -110,8 +109,11 @@ class Greeter {
   public greet() {
     return 'Hello, ' + this.greeting;
   }
+  public static greet(greeting: string) {
+    return 'Hello, ' + greeting;
+  }
 }
-
+Greeter.greet('greeting');
 export async function greeter(name: any) {
   return await delayedHello(name, Delays.Long);
 }
@@ -125,9 +127,248 @@ function sealed(constructor: any): void {
 }
 console.log('hello');
 Promise.resolve();
+
+/*
+
+anObject
+variable.other.constant.ts
+meta.definition.variable.ts
+meta.var-single-variable.expr.ts
+meta.var.expr.ts
+source.ts
+foreground	source.ts variable.other.constant
+{ "foreground": "#AADDEECC" }
+
+Greeter
+variable.other.readwrite.ts
+meta.object.member.ts
+meta.objectliteral.ts
+meta.var.expr.ts
+source.ts
+foreground	source.ts variable.other.readwrite
+{ "foreground": "#AADDEECC" }
+
+
+greet
+meta.object-literal.key.ts
+meta.object.member.ts
+meta.objectliteral.ts
+meta.var.expr.ts
+source.ts
+foreground	source.ts meta.object.member meta.object-literal.key
+{ "foreground": "#55BBFFBB" }
+
+
+Greeter
+variable.other.object.ts
+meta.object.member.ts
+meta.objectliteral.ts
+meta.var.expr.ts
+source.ts
+foreground	source.ts meta.object.member variable.other.object
+{ "foreground": "#EEDDBBDD", "fontStyle": "" }
+
+greet
+variable.other.property.ts
+meta.object.member.ts
+meta.objectliteral.ts
+meta.var.expr.ts
+source.ts
+foreground	source.ts variable.other.property
+{ "foreground": "#55BBFFBB" }
+
+
+fn
+meta.object-literal.key.ts
+meta.object.member.ts
+meta.objectliteral.ts
+meta.var.expr.ts
+source.ts
+foreground	source.ts meta.object.member meta.object-literal.key
+{ "foreground": "#55BBFFBB" }
+
+
+sealed
+variable.other.readwrite.ts
+meta.object.member.ts
+meta.objectliteral.ts
+meta.var.expr.ts
+source.ts
+foreground	source.ts variable.other.readwrite
+{ "foreground": "#AADDEECC" }
+
+
+objOut
+meta.object-literal.key.ts
+meta.object.member.ts
+meta.objectliteral.ts
+meta.var.expr.ts
+source.ts
+foreground	source.ts meta.object.member meta.object-literal.key
+{ "foreground": "#55BBFFBB" }
+
+
+objIn1
+meta.object-literal.key.ts
+meta.object.member.ts
+meta.objectliteral.ts
+meta.object.member.ts
+meta.objectliteral.ts
+meta.var.expr.ts
+source.ts
+foreground	source.ts meta.object.member meta.object-literal.key
+{ "foreground": "#55BBFFBB" }
+
+
+value
+meta.object-literal.key.ts
+meta.object.member.ts
+meta.objectliteral.ts
+meta.object.member.ts
+meta.objectliteral.ts
+meta.object.member.ts
+meta.objectliteral.ts
+meta.var.expr.ts
+source.ts
+foreground	source.ts meta.object.member meta.object-literal.key
+{ "foreground": "#55BBFFBB" }
+
+
+str
+string.quoted.single.ts
+meta.object.member.ts
+meta.objectliteral.ts
+meta.object.member.ts
+meta.objectliteral.ts
+meta.object.member.ts
+meta.objectliteral.ts
+meta.var.expr.ts
+source.ts
+foreground	source.ts string.quoted.single
+{ "foreground": "#DDEE33CC" }
+
+objIn2
+meta.object-literal.key.ts
+meta.object.member.ts
+meta.objectliteral.ts
+meta.object.member.ts
+meta.objectliteral.ts
+meta.var.expr.ts
+source.ts
+foreground	source.ts meta.object.member meta.object-literal.key
+{ "foreground": "#55BBFFBB" }
+
+
+value
+meta.object-literal.key.ts
+meta.object.member.ts
+meta.objectliteral.ts
+meta.object.member.ts
+meta.objectliteral.ts
+meta.object.member.ts
+meta.objectliteral.ts
+meta.var.expr.ts
+source.ts
+foreground	source.ts meta.object.member meta.object-literal.key
+{ "foreground": "#55BBFFBB" }
+
+
+str
+string.quoted.single.ts
+meta.object.member.ts
+meta.objectliteral.ts
+meta.object.member.ts
+meta.objectliteral.ts
+meta.object.member.ts
+meta.objectliteral.ts
+meta.var.expr.ts
+source.ts
+foreground	source.ts string.quoted.single
+{ "foreground": "#DDEE33CC" }
+*/
+
+const anObject = {
+  Greeter,
+  greet: Greeter.greet,
+  fn: sealed,
+  objOut: {
+    objIn1: { value: 'str' },
+    objIn2: { value: 'str' },
+  },
+};
+
+const {
+  Greeter: GreeterClass,
+  fn: sealed2,
+  objOut: { objIn1: renamedObj, objIn2 },
+} = anObject;
+
+sealed2;
+GreeterClass;
+renamedObj;
+objIn2;
+/*
+// ------------------------------------------------------------------------------
+Greeter :
+variable.object.property.ts
+meta.object-binding-pattern-variable.ts
+meta.var.expr.ts
+source.ts
+foreground	source.ts variable.object.property
+{ "foreground": "#55BBFFBB" }
+
+
+GreeterClass :
+variable.other.constant.ts
+meta.definition.variable.ts
+meta.object-binding-pattern-variable.ts
+meta.var.expr.ts
+source.ts
+foreground	source.ts meta.object-binding-pattern-variable variable.other.constant
+{ "foreground": "#55BBFFBB" }
+
+
+objOut :
+variable.object.property.ts
+meta.object-binding-pattern-variable.ts
+meta.var.expr.ts
+source.ts
+foreground	source.ts variable.object.property
+{ "foreground": "#55BBFFBB" }
+
+
+objIn1 :
+variable.object.property.ts
+meta.object-binding-pattern-variable.ts
+meta.var.expr.ts
+source.ts
+foreground	source.ts variable.object.property
+{ "foreground": "#55BBFFBB" }
+
+
+renamedObj :
+variable.other.constant.ts
+meta.definition.variable.ts
+meta.object-binding-pattern-variable.ts
+meta.var.expr.ts
+source.ts
+foreground	source.ts meta.object-binding-pattern-variable variable.other.constant
+{ "foreground": "#55BBFFBB" }
+
+
+objIn2 :
+variable.other.constant.ts
+meta.definition.variable.ts
+meta.object-binding-pattern-variable.ts
+meta.var.expr.ts
+source.ts
+foreground	source.ts meta.object-binding-pattern-variable variable.other.constant
+{ "foreground": "#55BBFFBB" }
+ */
 async function asyncFunction(): Promise<any> {
   const objectLike = { propertyOne: 10, propertyTwo: 'string' };
   const { propertyOne } = objectLike;
+
   let path: `/home/user/${number}/target`;
   let customPath: number = 10;
   const variable1 = 2 + 10;

@@ -602,7 +602,7 @@
         "source.ts meta.return.type keyword.operator.type"
       ],
       "settings": {
-        "foreground": "#EDCD", //#EDB /%/
+        "foreground": "#EDBD", //#EDB /%/
         "fontStyle": ""
       }
     },
@@ -639,7 +639,7 @@
         "source.ts meta.object.member variable.other.object"
       ],
       "settings": {
-        "foreground": "#EDCD", //#EDB /%/
+        "foreground": "#EDBD", //#EDB /%/
         "fontStyle": ""
       }
     },
@@ -662,7 +662,7 @@
         // "source.ts support.class.console"
       ],
       "settings": {
-        "foreground": "#EDCD", //#EDB /%/
+        "foreground": "#EDBD", //#EDB /%/
         "fontStyle": ""
       }
     },
@@ -686,7 +686,7 @@
         "source.ts entity.static"
       ],
       "settings": {
-        "foreground": "#EDCD", //#EDB /%/
+        "foreground": "#EDBD", //#EDB /%/
         "fontStyle": ""
       }
     },
@@ -699,67 +699,81 @@
     meta.method.declaration.ts
     meta.class.ts
     source.ts
-    foreground	source.ts variable.other.object { "foreground": "#EDCD", "fontStyle": "" } //#EDB /%/
+    foreground	source.ts variable.other.object { "foreground": "#EDBD", "fontStyle": "" } //#EDB /%/
 
     textmate scopes	variable.other.object.ts
 meta.function-call.ts
 meta.var.expr.ts
 source.ts
-foreground	source.ts variable.other.object { "foreground": "#EDCD", "fontStyle": "" } //#EDB /%/
+foreground	source.ts variable.other.object { "foreground": "#EDBD", "fontStyle": "" } //#EDB /%/
 
 
 
     */
-    {
-      "name": "Interface and Type Aliase definition name",
-      "scope": [
-        "source.ts meta.interface entity.name.type.interface",
-        "entity.name.type.alias"
-      ],
-      "settings": {
-        "foreground": "#C8C3B7CC", // "#C4BDB5DD",
-        "fontStyle": "bold"
-      }
-    },
-    {
-      "name": "Types",
-      "scope": [
-        "source.ts entity.name.type.class",
-        "source.ts entity.name.type.enum",
-        "source.ts entity.name.type.instance",
-        "source.ts entity.name.type.module",
-        "source.ts entity.name.type.interface",
-        "source.ts entity.name.type.alias"
-      ],
-      "settings": {
-        "foreground": "#C8C3B7CC", // "#C4BDB5DD",
-        "fontStyle": "bold"
-      }
-    },
+    // {
+    //   "name": "Interface and Type Aliase definition name",
+    //   "scope": [
+    //     "source.ts meta.interface entity.name.type.interface",
+    //     "entity.name.type.alias"
+    //   ],
+    //   "settings": {
+    //     "foreground": "#C8C3B7CC", // "#C4BDB5DD",
+    //     "fontStyle": "bold"
+    //   }
+    // },
+    // {
+    //   "name": "Types",
+    //   "scope": [
+    //     "source.ts entity.name.type.class",
+    //     "source.ts entity.name.type.enum",
+    //     "source.ts entity.name.type.instance",
+    //     "source.ts entity.name.type.module",
+    //     "source.ts entity.name.type.interface",
+    //     "source.ts entity.name.type.alias"
+    //   ],
+    //   "settings": {
+    //     "foreground": "#C8C3B7CC", // "#C4BDB5DD",
+    //     "fontStyle": "bold"
+    //   }
+    // },
     {
       "name": "Entitys",
       "scope": [
         "source.ts meta.decorator entity.name",
         "source.ts meta.decorator entity.name.function",
         "source.ts meta.decorator meta.function-call entity.name",
-        "source.ts meta.decorator variable.other.readwrite"
-      ],
-      "settings": {
-        "foreground": "#C8C3B7CC", // "#C4BDB5DD",
-        "fontStyle": "bold"
-      }
-    },
-    {
-      "scope": [
+        "source.ts meta.decorator variable.other.readwrite",
+        // !!
         "source.ts emphasis",
         "source.ts markup.bold",
-        "source.ts strong"
+        "source.ts strong",
+        // !! Types
+        "source.ts entity.name.type.class",
+        "source.ts entity.name.type.enum",
+        "source.ts entity.name.type.instance",
+        "source.ts entity.name.type.module",
+        "source.ts entity.name.type.interface",
+        "source.ts entity.name.type.alias",
+        // !! Interface and Type Aliase definition name
+        "source.ts meta.interface entity.name.type.interface",
+        "entity.name.type.alias"
       ],
       "settings": {
-        "foreground": "#C8C3B7CC", // "#C4BDB5DD",
+        "foreground": "#C8C3C7DD", // "#C4BDB5DD",
         "fontStyle": "bold"
       }
     },
+    // {
+    //   "scope": [
+    //     "source.ts emphasis",
+    //     "source.ts markup.bold",
+    //     "source.ts strong"
+    //   ],
+    //   "settings": {
+    //     "foreground": "#C8C3B7CC", // "#C4BDB5DD",
+    //     "fontStyle": "bold"
+    //   }
+    // },
     {
       "scope": [
         "source.ts markup.italic"
@@ -6124,7 +6138,7 @@ source.css
         "punctuation.accessor.optional",
       ],
       "settings": {
-        "foreground": "#EDCD", //#EDB /%/
+        "foreground": "#EDBD", //#EDB /%/
         "fontStyle": "bold"
       }
     },
