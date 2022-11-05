@@ -874,6 +874,7 @@ foreground	source.ts variable.other.object { "foreground": "#EDCD", "fontStyle":
       "scope": [
         "source.ts meta.object-binding-pattern-variable variable.other.constant",
         "source.ts meta.object.member meta.object-literal.key",
+        "source.ts meta.objectliteral meta.object.member",
         "source.ts meta.var.expr meta.object-literal.key",
         "source.ts variable.object.property",
         "source.ts variable.other.constant.object.property",
@@ -923,23 +924,23 @@ source.ts meta.var.expr.ts meta.arrow.ts meta.block.ts meta.var.expr.ts meta.obj
 
 
     */
-    {
-      "name": "Other Constant white",
-      "scope": [
-        "source.ts meta.var.expr.ts meta.arrow.ts meta.block.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.object-literal.key.ts",
-        "source.ts meta.var.expr.ts meta.arrow.ts meta.block.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.object-literal.key.ts",
-        "source.ts meta.block.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.object-literal.key.ts",
-        "source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.object-literal.key.ts",
-        "source.ts meta.objectliteral.ts meta.object.member.ts meta.object-literal.key.ts",
-        "source.ts meta.object.member.ts meta.object-literal.key.ts",
-        "source.ts meta.object-literal.key.ts meta.definition.variable.ts variable.other.constant.ts",
-        "source.ts meta.object-literal.key.ts variable.other.constant.ts",
-        "source.ts meta.object-literal.key.ts meta.definition.variable.ts",
-      ],
-      "settings": {
-        "foreground": "#FECD" // #6BF  /%/ #FFEECCDD
-      }
-    },
+    // {
+    //   "name": "Other Constant white",
+    //   "scope": [
+    //     "source.ts meta.var.expr.ts meta.arrow.ts meta.block.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.object-literal.key.ts",
+    //     "source.ts meta.var.expr.ts meta.arrow.ts meta.block.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.object-literal.key.ts",
+    //     "source.ts meta.block.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.object-literal.key.ts",
+    //     "source.ts meta.var.expr.ts meta.objectliteral.ts meta.object.member.ts meta.object-literal.key.ts",
+    //     "source.ts meta.objectliteral.ts meta.object.member.ts meta.object-literal.key.ts",
+    //     "source.ts meta.object.member.ts meta.object-literal.key.ts",
+    //     "source.ts meta.object-literal.key.ts meta.definition.variable.ts variable.other.constant.ts",
+    //     "source.ts meta.object-literal.key.ts variable.other.constant.ts",
+    //     "source.ts meta.object-literal.key.ts meta.definition.variable.ts",
+    //   ],
+    //   "settings": {
+    //     "foreground": "#FECD" // #6BF  /%/ #FFEECCDD
+    //   }
+    // },
     {
       "name": "support properties",
       "scope": [
@@ -1211,7 +1212,6 @@ source.ts meta.var.expr.ts meta.arrow.ts meta.block.ts meta.var.expr.ts meta.obj
         "source.ts keyword.control.with",
         "source.ts keyword",
         "source.ts keyword.other",
-        "source.ts keyword.generator.asterisk",
         "source.ts meta.block keyword.control.flow",
         "source.ts keyword.operator.logical",
         "source.ts storage.type.numeric.bigint"
@@ -1243,7 +1243,8 @@ source.ts meta.var.expr.ts meta.arrow.ts meta.block.ts meta.var.expr.ts meta.obj
     },
     {
       "scope": [
-        "source.ts punctuation.decorator"
+        "source.ts punctuation.decorator",
+        "source.ts keyword.generator.asterisk",
       ],
       "settings": {
         "foreground": "#E36B", // #D25 /%/

@@ -38,6 +38,34 @@ function returnAllLists(userId: any, res: any) {
 
 debugger;
 
+
+export function* pushPullGenerator() {
+  let n = 1;
+  try {
+    while (true) {
+      if (n > 10) {
+        console.log('n > 10...');
+        n += 5;
+        return n;
+      }
+      console.log('inside :>> ', n);
+      n = yield n * 2;
+    }
+  } catch (e) {
+    console.log(e);
+    return n;
+  } finally {
+    console.log('inside :>> ', 'finally');
+    return n;
+  }
+}
+export const tryAsyncIterator = async () => ({
+  [Symbol.asyncIterator]() {},
+});
+export const tryAsyncGenerator = async () => ({});
+export const tryIterator = async () => ({
+  [Symbol.iterator]() {},
+});
 class ParentClass {}
 export interface IInterface {
   value: string;
