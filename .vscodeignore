@@ -27,7 +27,7 @@ working-notes.txt
 yarn.lock
 archives
 
-!images/**/*.*
+images/**/*.*
 !package.json
 !README.md
 !Scientia-is-lux-principium-400px-TM.png
