@@ -27,24 +27,8 @@ working-notes.txt
 yarn.lock
 archives
 
-images/**/*.*
-!package.json
-!README.md
-!Scientia-is-lux-principium-400px-TM.png
-!src/languages/**/*.*
-!src/themes/**/*.*
-!*.ico
-!*.png
-!social-media*
-!LICENSE
 
-!images
-!LICENSE
-!luxcium-TM.ico
-!package.json
-!README.md
-!Scientia-is-lux-principium-400px-TM.png
-!social-media-image.png
+
 
 
 src/languages/**/*.*
@@ -63,7 +47,15 @@ src/themes/**/*.*
 !src/themes/Pop-N-Lock.alexis-black.json
 !src/themes/Pop-N-Lock.tsa-asd.json
 
+!LICENSE
+!luxcium-TM.ico
+!package.json
+!README.md
+!Scientia-is-lux-principium-400px-TM.png
+!social-media-image.png
 
 pop-n-lock*.vsix
 pop-n-lock*.tgz
 *.lock
+
+images/**/*.*
