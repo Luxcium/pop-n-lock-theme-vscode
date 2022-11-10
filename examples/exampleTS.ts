@@ -1,7 +1,8 @@
 import { config } from 'dotenv';
 import express from 'express';
 import mongoose from 'mongoose';
-
+import type { SomeValue1 } from './somefile';
+import { type SomeValue2 } from './somefile';
 config();
 const List = mongoose.model('List');
 const jwtSecret = process.env.JWTSECRET;
@@ -9,6 +10,10 @@ const router = express.Router();
 const User = mongoose.model('User');
 const ListItem = mongoose.model('ListItem');
 const newReg = /r\eg[A-B]Exp/;
+const newNumber1: SomeValue1 = 10;
+const newNumber2: SomeValue2 = 10;
+void newNumber1, newNumber2;
+// region
 function returnAllLists(userId: any, res: any) {
   return User.findById(userId)
     .populate({
@@ -25,13 +30,41 @@ function returnAllLists(userId: any, res: any) {
       return res.status(200).json({
         success: true,
         successMessage: 'Here is the page',
-        data: doc.collection,
+        data: doc?.collection,
       });
     });
 }
+// endregion
 
 debugger;
 
+export function* pushPullGenerator() {
+  let n = 1;
+  try {
+    while (true) {
+      if (n > 10) {
+        console.log('n > 10...');
+        n += 5;
+        return n;
+      }
+      console.log('inside :>> ', n);
+      n = yield n * 2;
+    }
+  } catch (e) {
+    console.log(e);
+    return n;
+  } finally {
+    console.log('inside :>> ', 'finally');
+    return n;
+  }
+}
+export const tryAsyncIterator = async () => ({
+  [Symbol.asyncIterator]() {},
+});
+export const tryAsyncGenerator = async () => ({});
+export const tryIterator = async () => ({
+  [Symbol.iterator]() {},
+});
 class ParentClass {}
 export interface IInterface {
   value: string;
@@ -66,7 +99,8 @@ export type defined =
   | false
   | undefined;
 
-@sealed
+// @sealed
+
 class Greeter {
   public greeting: string;
   constructor(message: string) {
@@ -75,8 +109,11 @@ class Greeter {
   public greet() {
     return 'Hello, ' + this.greeting;
   }
+  public static greet(greeting: string) {
+    return 'Hello, ' + greeting;
+  }
 }
-
+Greeter.greet('greeting');
 export async function greeter(name: any) {
   return await delayedHello(name, Delays.Long);
 }
@@ -90,14 +127,257 @@ function sealed(constructor: any): void {
 }
 console.log('hello');
 Promise.resolve();
+
+/*
+
+anObject
+variable.other.constant.ts
+meta.definition.variable.ts
+meta.var-single-variable.expr.ts
+meta.var.expr.ts
+source.ts
+foreground	source.ts variable.other.constant
+{ "foreground": "#AADDEECC" }
+
+Greeter
+variable.other.readwrite.ts
+meta.object.member.ts
+meta.objectliteral.ts
+meta.var.expr.ts
+source.ts
+foreground	source.ts variable.other.readwrite
+{ "foreground": "#AADDEECC" }
+
+
+greet
+meta.object-literal.key.ts
+meta.object.member.ts
+meta.objectliteral.ts
+meta.var.expr.ts
+source.ts
+foreground	source.ts meta.object.member meta.object-literal.key
+{ "foreground": "#55BBFFBB" }
+
+
+Greeter
+variable.other.object.ts
+meta.object.member.ts
+meta.objectliteral.ts
+meta.var.expr.ts
+source.ts
+foreground	source.ts meta.object.member variable.other.object
+{ "foreground": "#EEDDBBDD", "fontStyle": "" }
+
+greet
+variable.other.property.ts
+meta.object.member.ts
+meta.objectliteral.ts
+meta.var.expr.ts
+source.ts
+foreground	source.ts variable.other.property
+{ "foreground": "#55BBFFBB" }
+
+
+fn
+meta.object-literal.key.ts
+meta.object.member.ts
+meta.objectliteral.ts
+meta.var.expr.ts
+source.ts
+foreground	source.ts meta.object.member meta.object-literal.key
+{ "foreground": "#55BBFFBB" }
+
+
+sealed
+variable.other.readwrite.ts
+meta.object.member.ts
+meta.objectliteral.ts
+meta.var.expr.ts
+source.ts
+foreground	source.ts variable.other.readwrite
+{ "foreground": "#AADDEECC" }
+
+
+objOut
+meta.object-literal.key.ts
+meta.object.member.ts
+meta.objectliteral.ts
+meta.var.expr.ts
+source.ts
+foreground	source.ts meta.object.member meta.object-literal.key
+{ "foreground": "#55BBFFBB" }
+
+
+objIn1
+meta.object-literal.key.ts
+meta.object.member.ts
+meta.objectliteral.ts
+meta.object.member.ts
+meta.objectliteral.ts
+meta.var.expr.ts
+source.ts
+foreground	source.ts meta.object.member meta.object-literal.key
+{ "foreground": "#55BBFFBB" }
+
+
+value
+meta.object-literal.key.ts
+meta.object.member.ts
+meta.objectliteral.ts
+meta.object.member.ts
+meta.objectliteral.ts
+meta.object.member.ts
+meta.objectliteral.ts
+meta.var.expr.ts
+source.ts
+foreground	source.ts meta.object.member meta.object-literal.key
+{ "foreground": "#55BBFFBB" }
+
+
+str
+string.quoted.single.ts
+meta.object.member.ts
+meta.objectliteral.ts
+meta.object.member.ts
+meta.objectliteral.ts
+meta.object.member.ts
+meta.objectliteral.ts
+meta.var.expr.ts
+source.ts
+foreground	source.ts string.quoted.single
+{ "foreground": "#DDEE33CC" }
+
+objIn2
+meta.object-literal.key.ts
+meta.object.member.ts
+meta.objectliteral.ts
+meta.object.member.ts
+meta.objectliteral.ts
+meta.var.expr.ts
+source.ts
+foreground	source.ts meta.object.member meta.object-literal.key
+{ "foreground": "#55BBFFBB" }
+
+
+value
+meta.object-literal.key.ts
+meta.object.member.ts
+meta.objectliteral.ts
+meta.object.member.ts
+meta.objectliteral.ts
+meta.object.member.ts
+meta.objectliteral.ts
+meta.var.expr.ts
+source.ts
+foreground	source.ts meta.object.member meta.object-literal.key
+{ "foreground": "#55BBFFBB" }
+
+
+str
+string.quoted.single.ts
+meta.object.member.ts
+meta.objectliteral.ts
+meta.object.member.ts
+meta.objectliteral.ts
+meta.object.member.ts
+meta.objectliteral.ts
+meta.var.expr.ts
+source.ts
+foreground	source.ts string.quoted.single
+{ "foreground": "#DDEE33CC" }
+*/
+
+const anObject = {
+  Greeter,
+  greet: Greeter.greet,
+  fn: sealed,
+  objOut: {
+    objIn1: { value: 'str' },
+    objIn2: { value: 'str' },
+  },
+};
+
+const {
+  Greeter: GreeterClass,
+  fn: sealed2,
+  objOut: { objIn1: renamedObj, objIn2 },
+} = anObject;
+
+sealed2;
+GreeterClass;
+renamedObj;
+objIn2;
+/*
+// ------------------------------------------------------------------------------
+Greeter :
+variable.object.property.ts
+meta.object-binding-pattern-variable.ts
+meta.var.expr.ts
+source.ts
+foreground	source.ts variable.object.property
+{ "foreground": "#55BBFFBB" }
+
+
+GreeterClass :
+variable.other.constant.ts
+meta.definition.variable.ts
+meta.object-binding-pattern-variable.ts
+meta.var.expr.ts
+source.ts
+foreground	source.ts meta.object-binding-pattern-variable variable.other.constant
+{ "foreground": "#55BBFFBB" }
+
+
+objOut :
+variable.object.property.ts
+meta.object-binding-pattern-variable.ts
+meta.var.expr.ts
+source.ts
+foreground	source.ts variable.object.property
+{ "foreground": "#55BBFFBB" }
+
+
+objIn1 :
+variable.object.property.ts
+meta.object-binding-pattern-variable.ts
+meta.var.expr.ts
+source.ts
+foreground	source.ts variable.object.property
+{ "foreground": "#55BBFFBB" }
+
+
+renamedObj :
+variable.other.constant.ts
+meta.definition.variable.ts
+meta.object-binding-pattern-variable.ts
+meta.var.expr.ts
+source.ts
+foreground	source.ts meta.object-binding-pattern-variable variable.other.constant
+{ "foreground": "#55BBFFBB" }
+
+
+objIn2 :
+variable.other.constant.ts
+meta.definition.variable.ts
+meta.object-binding-pattern-variable.ts
+meta.var.expr.ts
+source.ts
+foreground	source.ts meta.object-binding-pattern-variable variable.other.constant
+{ "foreground": "#55BBFFBB" }
+ */
 async function asyncFunction(): Promise<any> {
   const objectLike = { propertyOne: 10, propertyTwo: 'string' };
   const { propertyOne } = objectLike;
 
+  let path: `/home/user/${number}/target`;
+  let customPath: number = 10;
   const variable1 = 2 + 10;
   let message: string = 'this is a string indeed';
   message = 'this is a ${"string"}  indeed';
-  message = `this is a  ${'string'}   indeed`;
+
+  path = `/home/user/${customPath}/target`;
+
+  path;
   const variable3 = new Greeter(message);
 
   const variable2 = variable1.toFixed(200 - 400);
@@ -117,19 +397,32 @@ export const asyncAnonymArowFunction = async () => {
   checker.valueOf();
   const angel = checker ? 48 : 47;
   const some = new ClassName({ value: 'value', angel });
+  const values = {
+    logoly: angel,
+    angels: 'inthesky',
+    numbers: 1024,
+  };
+  const { angels: glx } = values;
+  void values, glx;
   const others = [
-    some.otherMethodeValue,
+    some?.otherMethodeValue,
     450,
     null,
     NaN,
     Infinity,
-    this?._othervalue,
+    this,
     true,
     false,
     undefined,
   ];
   return { some, variable1, others };
 };
+{
+  {
+    // function name(params:type) {
+    // }
+  }
+}
 /**
  * Some predefined delays (in milliseconds).
  */
@@ -145,7 +438,7 @@ export const asyncAnonymArowFunction = async () => {
 function delayedHello(
   name: string,
   delay: number = Delays.Medium
-): Promise<string> {
+): Promise<any> {
   return new Promise((resolve: (value?: string) => void) =>
     setTimeout(() => resolve(`Hello, ${name}`), delay)
   );
@@ -167,7 +460,7 @@ export class ClassName extends ParentClass implements IInterface {
   private _othervalue: any;
   public constructor(parametre: Arguments) {
     super();
-    if (isNaN(parametre.angel) && typeof parametre.value === 'number') {
+    if (isNaN(parametre.angel as any) && typeof parametre.value === 'number') {
       this.angel = Infinity;
     }
   }
@@ -178,6 +471,72 @@ export class ClassName extends ParentClass implements IInterface {
     const angel = checker ? 48 : 47;
     const aNewClass = new ClassName({ value: 'value', angel: angel });
     console.log(aNewClass.value, checker, Math.PI);
+    const myObjeWithClass = { ClassName: ClassName };
+    myObjeWithClass.ClassName.staticValue;
+    ClassName.staticValue;
+
+    /*
+
+## {ClassName:ClassName}
+meta.object-literal.key.ts
+meta.object.member.ts
+meta.objectliteral.ts
+meta.var.expr.ts
+meta.block.ts
+meta.method.declaration.ts
+meta.class.ts
+source.ts
+
+## {...:ClassName}
+variable.other.readwrite.ts
+meta.object.member.ts
+meta.objectliteral.ts
+meta.var.expr.ts
+meta.block.ts
+meta.method.declaration.ts
+meta.class.ts
+source.ts
+
+## {ClassName}
+variable.other.readwrite.ts
+meta.object.member.ts
+meta.objectliteral.ts
+meta.var.expr.ts
+meta.block.ts
+meta.method.declaration.ts
+meta.class.ts
+source.ts
+
+
+## myObjeWithClass
+variable.other.object.ts
+meta.block.ts
+meta.method.declaration.ts
+meta.class.ts
+source.ts
+
+## ClassName
+variable.other.object.property.ts
+meta.block.ts
+meta.method.declaration.ts
+meta.class.ts
+source.ts
+
+## staticValue
+variable.other.property.ts
+meta.block.ts
+meta.method.declaration.ts
+meta.class.ts
+source.ts
+
+## ClassName (loner)
+variable.other.object.ts
+meta.block.ts
+meta.method.declaration.ts
+meta.class.ts
+source.ts
+    */
+
     const others = [450, null, true, false, undefined];
     return { aNewClass, others };
   }
@@ -210,6 +569,36 @@ export class ClassName extends ParentClass implements IInterface {
   }
 }
 export { jwtSecret, List, ListItem, returnAllLists, router, User };
+let receiveMessage: any = function () {};
+function waitForNextMessage() {
+  return new Promise(resolve => {
+    receiveMessage = resolve;
+  });
+}
+async function* createMessageStream() {
+  while (true) {
+    yield waitForNextMessage();
+  }
+}
+
+async function startConsumingMessageStream() {
+  let messageStream = createMessageStream();
+  for await (let message of messageStream) {
+    console.log(message);
+  }
+}
+
+startConsumingMessageStream();
+
+setTimeout(() => {
+  receiveMessage('Hello');
+}, 500);
+setTimeout(() => {
+  receiveMessage('world');
+}, 1000);
+setTimeout(() => {
+  receiveMessage('!!!');
+}, 3000);
 
 export function formatStockChartData(stockChartDataInfos: any[]): any[] {
   return stockChartDataInfos.map(stockChartData => {
@@ -243,3 +632,89 @@ export function formatStockChartData(stockChartDataInfos: any[]): any[] {
     };
   });
 }
+
+const APPLE = 'pomme';
+export const braketColors = [
+  [
+    {
+      bolo: 'pomme',
+      bileboquet: (1 * ((143 / (2 - 5 * (3 + (4 * (3 + 1) - 8)))) * 3)) / 5,
+    },
+    [
+      {
+        bolo: APPLE,
+        bileboquet: (1 * ((143 / (2 - 5 * (3 + (4 * (3 + 1) - 8)))) * 3)) / 5,
+      },
+      [
+        {
+          bileboquet: (1 * ((143 / (2 - 5 * (3 + (4 * (3 + 1) - 8)))) * 3)) / 5,
+        },
+        [
+          {
+            bileboquet: (1 * ((3 / (2 - 5 * (3 + (4 * (3 + 1) - 8)))) * 3)) / 5,
+          },
+          [
+            {
+              bileboquet:
+                (1 * ((3 / (2 - 5 * (3 + (4 * (3 + 1) - 8)))) * 3)) / 5,
+            },
+            [
+              {
+                bolo: 'pomme',
+                bileboquet:
+                  (1 * ((143 / (2 - 5 * (3 + (4 * (3 + 1) - 8)))) * 3)) / 5,
+              },
+              [
+                {
+                  bolo: 'pomme',
+                  bileboquet:
+                    (1 * ((143 / (2 - 5 * (3 + (4 * (3 + 1) - 8)))) * 3)) / 5,
+                },
+                [
+                  {
+                    bolo: 'pomme',
+                    bileboquet:
+                      (1 * ((143 / (2 - 5 * (3 + (4 * (3 + 1) - 8)))) * 3)) / 5,
+                  },
+                  [
+                    {
+                      bolo: 'pomme',
+                      bileboquet:
+                        (1 * ((143 / (2 - 5 * (3 + (4 * (3 + 1) - 8)))) * 3)) /
+                        5,
+                    },
+                    [
+                      {
+                        bolo: 'pomme',
+                        bileboquet:
+                          ((1 + 2) *
+                            ((143 / (2 - 5 * (3 + (4 * (3 + 1) - 8)))) * 3)) /
+                          5,
+                      },
+                      [
+                        {
+                          bolo: 'pomme',
+                          bileboquet:
+                            ((1 + 2) *
+                              ((143 / (2 - 5 * (3 + (4 * (3 + 1) - 8)))) * 3)) /
+                            5,
+                        },
+                        {
+                          bolo: 'pomme',
+                          bileboquet:
+                            ((1 + 2) *
+                              ((143 / (2 - 5 * (3 + (4 * (3 + 1) - 8)))) * 3)) /
+                            5,
+                        },
+                      ],
+                    ],
+                  ],
+                ],
+              ],
+            ],
+          ],
+        ],
+      ],
+    ],
+  ],
+];

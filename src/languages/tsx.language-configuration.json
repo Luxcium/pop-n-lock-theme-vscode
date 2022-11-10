@@ -1,40 +1,24 @@
 {
   "comments": {
     "lineComment": "//",
-    "blockComment": [
-      "/*",
-      "*/"
-    ]
+    "blockComment": ["/*", "*/"]
   },
   "brackets": [
-    [
-      "{",
-      "}"
-    ],
-    [
-      "[",
-      "]"
-    ],
-    [
-      "(",
-      ")"
-    ]
+    ["{", "}"],
+    ["[", "]"],
+    ["(", ")"]
   ],
   "autoClosingPairs": [
     {
       "open": "${",
       "close": "}",
-      "in": [
-        "string"
-      ]
+      "in": ["string"]
     },
-    {
-      "open": "$",
-      "close": "",
-      "in": [
-        "string"
-      ]
-    },
+    // {
+    //   "open": "$",
+    //   "close": "",
+    //   "in": ["string"]
+    // },
     {
       "open": "{",
       "close": "}"
@@ -50,91 +34,45 @@
     {
       "open": "'",
       "close": "'",
-      "notIn": [
-        "string",
-        "comment"
-      ]
+      "notIn": ["string", "comment"]
     },
     {
       "open": "\"",
       "close": "\"",
-      "notIn": [
-        "string"
-      ]
+      "notIn": ["string"]
     },
     {
       "open": "`",
       "close": "`",
-      "notIn": [
-        "string",
-        "comment"
-      ]
+      "notIn": ["string", "comment"]
     },
-      {
-        "open": "<",
-        "close": ">",
-        "notIn": [
-          "string",
-          "comment"
-        ],
-      },
+    // {
+    //   "open": "<",
+    //   "close": ">",
+    //   "notIn": [
+    //     "string",
+    //     "comment"
+    //   ],
+    // },
     {
       "open": "/*",
       "close": " */",
-      "notIn": [
-        "string"
-      ]
+      "notIn": ["string"]
     }
   ],
   "surroundingPairs": [
-    [
-      "${",
-      "}"
-    ],
-    [
-      "$",
-      " "
-    ],
-    [
-      "{",
-      "}"
-    ],
-    [
-      "[",
-      "]"
-    ],
-    [
-      "(",
-      ")"
-    ],
-    [
-      "'",
-      "'"
-    ],
-    [
-      "\"",
-      "\""
-    ],
-    [
-      "`",
-      "`"
-    ],
-    [
-      "<",
-      ">"
-    ],
-    [
-      "/",
-      "/"
-    ],
-    [
-      "*",
-      "*"
-    ],
-    [
-      "/*",
-      "*/"
-    ]
+    ["${", "}"],
+    ["$", " "],
+    ["{", "}"],
+    ["[", "]"],
+    ["(", ")"],
+    ["'", "'"],
+    ["\"", "\""],
+    ["`", "`"],
+    ["<", ">"],
+    ["/", "/"],
+    ["*", "*"],
+    ["/*", "*/"]
   ],
   "folding": {
     "markers": {
