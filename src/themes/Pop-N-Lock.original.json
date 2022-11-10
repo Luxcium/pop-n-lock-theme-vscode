@@ -309,7 +309,7 @@
     "textPreformat.foreground": "#D2C8BEDD",
     "textSeparator.foreground": "#D2C8BEDD",
     "titleBar.border": "#1C1C2E",
-    "welcomePage.background": "#1D1028",
+    // "welcomePage.background": "#1D1028",
     "icon.foreground": "#FC7C",
     "widget.shadow": "#011",
     "editorGroupHeader.noTabsBackground": "#1C1C2E",

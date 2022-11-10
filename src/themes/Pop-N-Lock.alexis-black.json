@@ -304,7 +304,7 @@
     "textSeparator.foreground": "#DCBB",
     "titleBar.border": "#FC50",
     "walkThrough.embeddedEditorBackground": "#2C203C",
-    "welcomePage.background": "#1D1028",
+    // "welcomePage.background": "#1D1028",
     // "welcomePage.buttonBackground": "#7167",
     "widget.shadow": "#000",
     // "icon.foreground": "#00FF00",

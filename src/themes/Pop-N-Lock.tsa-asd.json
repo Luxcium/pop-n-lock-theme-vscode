@@ -293,7 +293,7 @@
     "textSeparator.foreground": "#DCBB",
     "titleBar.border": "#FC61",
     "walkThrough.embeddedEditorBackground": "#2C203C55",
-    "welcomePage.background": "#1D102855",
+    // "welcomePage.background": "#1D102855",
     "widget.shadow": "#112B",
     "quickInput.background": "#1D2555EE",
     "symbolIcon.classForeground": "#C27D1A",
