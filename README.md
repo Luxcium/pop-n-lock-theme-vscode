@@ -51,8 +51,8 @@ Please feel free to ask any question, to let us know about any problems that sho
 
 ### Git Decorations
 
-[<img width="80%" alt="[Git Decorations Colors: Ignored, Untracked, Added, Modified, Modified Staged, Renamed]" src="images/v3.32.3/3.32.5/git-resources-colors-modified-staged-add-untracked-renamed-ignored-vscode.png">](images/v3.32.3/3.32.5/git-stages-resources-colors-modified-staged-add-untracked-renamed-ignored-vscode.png)
-<br/>(v3.32.3) Git Decorations colors: _Ignored, Untracked, Added, Modified, Modified Staged, Renamed_ **click on the image to enlarge**<br/>
+[<img width="80%" alt="[Git Decorations Colors: Ignored, Untracked, Added, Modified, Modified Staged, Renamed]" src="https://raw.githubusercontent.com/Luxcium/pop-n-lock-theme-vscode/master/images/v3.32.13/vscode-gitDecoration-pop-n-lock-theme-visual-studio-code.png">](https://raw.githubusercontent.com/Luxcium/pop-n-lock-theme-vscode/master/images/v3.32.13/vscode-gitDecoration-pop-n-lock-theme-visual-studio-code.png)
+<br/>(v3.32.16) Git Decorations colors: _Ignored, Untracked, Added, Modified, Modified Staged, Renamed_ **click on the image to enlarge**<br/>
 
 ### High performance bracket pair colorization
 
