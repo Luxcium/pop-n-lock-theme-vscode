@@ -11,7 +11,7 @@
 
 **This powerful theme of colour is always evolving**
 
-Colourful features are added and more languages will be included soon. This theme is **STRONGLY OPINIONATED** to make sure to to be influencing the opinion request any changes you want by filling an issue to be part of the 62&nbsp;000+ happy users.
+Colourful features are added and more languages will be included soon. This theme is **STRONGLY OPINIONATED** to make sure to to be influencing the opinion request any changes you want by filling an issue to be part of the 82&nbsp;000+ happy users.
 
 > _The name of the theme contain emoticon and encoding of your config file must be set to "utf8"_
 
