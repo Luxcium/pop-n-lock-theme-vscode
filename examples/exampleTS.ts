@@ -37,7 +37,57 @@ function returnAllLists(userId: any, res: any) {
 // endregion
 
 debugger;
-
+export type DummyGeneric<T> = Promise<T>;
+export const brakets = () => [
+  [
+    [
+      {
+        BracketsColors: [
+          {
+            brakets<T>(value: T) {
+              return value as T;
+            },
+          },
+          [
+            {
+              brakets<T>(value: T) {
+                return value as T;
+              },
+            },
+            [
+              {
+                brakets<T>(value: T) {
+                  return value as T;
+                },
+              },
+              [
+                {
+                  brakets<T>(value: T) {
+                    return value as T;
+                  },
+                },
+                [
+                  {
+                    brakets<T>(value: T) {
+                      return value as T;
+                    },
+                  },
+                  [
+                    {
+                      brakets<T>(value: T) {
+                        return value as T;
+                      },
+                    },
+                  ],
+                ],
+              ],
+            ],
+          ],
+        ],
+      },
+    ],
+  ],
+];
 export function* pushPullGenerator() {
   let n = 1;
   try {
@@ -90,14 +140,7 @@ enum Delays {
   return { propertyOne, cinq, dix };
 })();
 export const value = 'this';
-export type defined =
-  | string
-  | IInterface
-  | 450
-  | null
-  | true
-  | false
-  | undefined;
+export type defined = string | IInterface | 450 | null | true | false | undefined;
 
 // @sealed
 
@@ -127,6 +170,14 @@ function sealed(constructor: any): void {
 }
 console.log('hello');
 Promise.resolve();
+
+export interface ICredentialsService<T> {
+  _serviceBrand: T;
+  getPassword(service: string, account: string): Promise<string | null>;
+  setPassword(service: string, account: string, password: string): Promise<void>;
+  deletePassword(service: string, account: string): Promise<boolean>;
+  findPassword(service: string): Promise<string | null>;
+}
 
 /*
 
@@ -404,17 +455,7 @@ export const asyncAnonymArowFunction = async () => {
   };
   const { angels: glx } = values;
   void values, glx;
-  const others = [
-    some?.otherMethodeValue,
-    450,
-    null,
-    NaN,
-    Infinity,
-    this,
-    true,
-    false,
-    undefined,
-  ];
+  const others = [some?.otherMethodeValue, 450, null, NaN, Infinity, this, true, false, undefined];
   return { some, variable1, others };
 };
 {
@@ -435,13 +476,8 @@ export const asyncAnonymArowFunction = async () => {
  * @returns {Promise<string>}
  * @see https://www.exemple.com
  */
-function delayedHello(
-  name: string,
-  delay: number = Delays.Medium
-): Promise<any> {
-  return new Promise((resolve: (value?: string) => void) =>
-    setTimeout(() => resolve(`Hello, ${name}`), delay)
-  );
+function delayedHello(name: string, delay: number = Delays.Medium): Promise<any> {
+  return new Promise((resolve: (value?: string) => void) => setTimeout(() => resolve(`Hello, ${name}`), delay));
 }
 export class ClassName extends ParentClass implements IInterface {
   public set otherMethodeValue(some) {
@@ -550,16 +586,7 @@ source.ts
       mice = 'ichy';
       console.log('mice', mice);
       return {
-        values: [
-          null,
-          NaN,
-          Infinity,
-          this._othervalue,
-          true,
-          false,
-          450 as number,
-          undefined as undefined,
-        ],
+        values: [null, NaN, Infinity, this._othervalue, true, false, 450 as number, undefined as undefined],
         popo,
         souris: mice,
       };
@@ -655,56 +682,41 @@ export const braketColors = [
           },
           [
             {
-              bileboquet:
-                (1 * ((3 / (2 - 5 * (3 + (4 * (3 + 1) - 8)))) * 3)) / 5,
+              bileboquet: (1 * ((3 / (2 - 5 * (3 + (4 * (3 + 1) - 8)))) * 3)) / 5,
             },
             [
               {
                 bolo: 'pomme',
-                bileboquet:
-                  (1 * ((143 / (2 - 5 * (3 + (4 * (3 + 1) - 8)))) * 3)) / 5,
+                bileboquet: (1 * ((143 / (2 - 5 * (3 + (4 * (3 + 1) - 8)))) * 3)) / 5,
               },
               [
                 {
                   bolo: 'pomme',
-                  bileboquet:
-                    (1 * ((143 / (2 - 5 * (3 + (4 * (3 + 1) - 8)))) * 3)) / 5,
+                  bileboquet: (1 * ((143 / (2 - 5 * (3 + (4 * (3 + 1) - 8)))) * 3)) / 5,
                 },
                 [
                   {
                     bolo: 'pomme',
-                    bileboquet:
-                      (1 * ((143 / (2 - 5 * (3 + (4 * (3 + 1) - 8)))) * 3)) / 5,
+                    bileboquet: (1 * ((143 / (2 - 5 * (3 + (4 * (3 + 1) - 8)))) * 3)) / 5,
                   },
                   [
                     {
                       bolo: 'pomme',
-                      bileboquet:
-                        (1 * ((143 / (2 - 5 * (3 + (4 * (3 + 1) - 8)))) * 3)) /
-                        5,
+                      bileboquet: (1 * ((143 / (2 - 5 * (3 + (4 * (3 + 1) - 8)))) * 3)) / 5,
                     },
                     [
                       {
                         bolo: 'pomme',
-                        bileboquet:
-                          ((1 + 2) *
-                            ((143 / (2 - 5 * (3 + (4 * (3 + 1) - 8)))) * 3)) /
-                          5,
+                        bileboquet: ((1 + 2) * ((143 / (2 - 5 * (3 + (4 * (3 + 1) - 8)))) * 3)) / 5,
                       },
                       [
                         {
                           bolo: 'pomme',
-                          bileboquet:
-                            ((1 + 2) *
-                              ((143 / (2 - 5 * (3 + (4 * (3 + 1) - 8)))) * 3)) /
-                            5,
+                          bileboquet: ((1 + 2) * ((143 / (2 - 5 * (3 + (4 * (3 + 1) - 8)))) * 3)) / 5,
                         },
                         {
                           bolo: 'pomme',
-                          bileboquet:
-                            ((1 + 2) *
-                              ((143 / (2 - 5 * (3 + (4 * (3 + 1) - 8)))) * 3)) /
-                            5,
+                          bileboquet: ((1 + 2) * ((143 / (2 - 5 * (3 + (4 * (3 + 1) - 8)))) * 3)) / 5,
                         },
                       ],
                     ],

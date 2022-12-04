@@ -46,27 +46,36 @@ We would like to hear from you fellow user of the _Pop N' Lock Theme by Luxcium 
 if you think something can be improved make sure to fill an issue on our GitHub page it's easy and will help us make Pop N' Lock the best theme available
 
 Please feel free to ask any question, to let us know about any problems that should be resolved and any improvement you would like to see by [filing an issue](https://github.com/luxcium/pop-n-lock-theme-vscode/issues) on our GitHub page.
+<br/>
+<br/>
 
 ## Recently modified
 
+<br/>
+
 ### Git Decorations
 
-[<img width="80%" alt="[Git Decorations Colors: Ignored, Untracked, Added, Modified, Modified Staged, Renamed]" src="https://raw.githubusercontent.com/Luxcium/pop-n-lock-theme-vscode/master/images/v3.32.13/vscode-gitDecoration-pop-n-lock-theme-visual-studio-code.png">](https://raw.githubusercontent.com/Luxcium/pop-n-lock-theme-vscode/master/images/v3.32.13/vscode-gitDecoration-pop-n-lock-theme-visual-studio-code.png)
+<br/>
+
+[<img width="60%" alt="[Git Decorations Colors: Ignored, Untracked, Added, Modified, Modified Staged, Renamed]" src="https://raw.githubusercontent.com/Luxcium/pop-n-lock-theme-vscode/master/images/v3.32.13/vscode-gitDecoration-pop-n-lock-theme-visual-studio-code.png">](https://raw.githubusercontent.com/Luxcium/pop-n-lock-theme-vscode/master/images/v3.32.13/vscode-gitDecoration-pop-n-lock-theme-visual-studio-code.png)
 <br/>(v3.32.16) Git Decorations colors: _Ignored, Untracked, Added, Modified, Modified Staged, Renamed_ **click on the image to enlarge**<br/>
+<br/>
+<br/>
 
 ### High performance bracket pair colorization
 
-[<img width="80%" alt="[High performance bracket pair colorization]" src="images/v3.32.3/3.32.6/bracquets-pairs.png">](images/v3.32.3/3.32.6/bracquets-pairs.png)
-<br/>(v3.32.3) Bracket Pair Colorizer 2 is unmaintened, now using native bracket pair colorization. **click on the image to enlarge**<br/>
+[Bracket pair colorization now 10,000x faster.](https://code.visualstudio.com/blogs/2021/09/29/bracket-pair-colorization)
+
+[<img width="90%" alt="[High performance bracket pair colorization]" src="images/v3.32.18/what_color_to_use_wiht_bracket_pair_colorization.png">](images/v3.32.18/what_color_to_use_wiht_bracket_pair_colorization.png)
+<br/>(v3.32.18)
+**[click on the image to enlarge](images/v3.32.18/what_color_to_use_wiht_bracket_pair_colorization.png)**<br/>
+<br/>
+<br/>
 
 <!--
 /home/luxcium/projects/main-POP-N-LOCK-x1DF2/data/extensions/pop-n-lock-theme-vscode/images/v3.32.3/3.32.6/bracquets-pairs.png
 
 images/v3.32.3/git-resources-colors-modified-staged-add-untracked-renamed-ignored-vscode.png
-
--->
-
-## TypeScript
 
 [<img width="60%" alt="TypeScript" src="https://raw.githubusercontent.com/Luxcium/pop-n-lock-theme-vscode/master/images/v3.18.0/typescript%20is%20awesome.png">](https://raw.githubusercontent.com/Luxcium/pop-n-lock-theme-vscode/master/images/v3.18.0/typescript%20is%20awesome.png)
 <br/>(v3.18) TypeScript Screenshot<br/>
@@ -74,14 +83,35 @@ images/v3.32.3/git-resources-colors-modified-staged-add-untracked-renamed-ignore
 [<img width="60%" alt="TypeScript" src="https://raw.githubusercontent.com/Luxcium/pop-n-lock-theme-vscode/master/images/v3.18.0/type%20script%20vscode%20theme%20with%20vivid%20colours%20colors.png">](https://raw.githubusercontent.com/Luxcium/pop-n-lock-theme-vscode/master/images/v3.18.0/type%20script%20vscode%20theme%20with%20vivid%20colours%20colors.png)
 <br/>
 (v3.18) TypeScript Screenshot<br/>
+<!--
+-->
 
+## JavaScript and TypeScript
+
+[<img width="90%" alt="JavaScript Classic (NodeJS) screenshot" src="images/v3.32.18/vscode-theme-colours-javaScript-classic.png">](images/v3.32.18/vscode-theme-colours-javaScript-classic.png)
+<br/>(v3.32.18) JavaScript Classic (NodeJS) screenshot<br/>
+<br/>
+<br/>
+
+[<img width="80%" alt="JavaScript and TypeScript comparaison screenshot" src="images/v3.32.18/javascript-typescript-theme-comparaison.png">](images/v3.32.18/javascript-typescript-theme-comparaison.png)
+<br/>
+(v3.32.18) JavaScript and TypeScript comparaison screenshot<br/>
+<br/>
+<br/>
+
+<!--
 [<img width="60%" alt="TypeScript syntax for vscode" src="https://raw.githubusercontent.com/Luxcium/pop-n-lock-theme-vscode/master/images/v3.18.2/vscode-syntax-typescript-theme-support-dark-cursive-italic.png">](https://raw.githubusercontent.com/Luxcium/pop-n-lock-theme-vscode/master/images/v3.18.2/vscode-syntax-typescript-theme-support-dark-cursive-italic.png)
 <br/>(v3.18.2) TypeScript Screenshot<br/>
+-->
 
 ### FUNCTION RETURN TYPE
 
-[<img width="60%" alt="[Return type of functions higlighting]" src="https://raw.githubusercontent.com/Luxcium/pop-n-lock-theme-vscode/master/images/v3.18.0/function%20return%20type%20in%20a%20diferent%20colour%20in%20typescript%20visual%20studio%20code%20best%20theme%20and%20syntaxes.png">](https://raw.githubusercontent.com/Luxcium/pop-n-lock-theme-vscode/master/images/v3.18.0/function%20return%20type%20in%20a%20diferent%20colour%20in%20typescript%20visual%20studio%20code%20best%20theme%20and%20syntaxes.png)
-<br/>(v3.18) Colorfull function return type highlight<br/>
+[<img width="60%" alt="[Return type of functions higlighting]" src="images/v3.32.18/colorfull-function-return-type-highlight.png">](images/v3.32.18/colorfull-function-return-type-highlight.png)
+<br/>(v3.32.18) Colorfull function return type highlight<br/>
+<br/>
+<br/>
+
+<!--
 
 ### VARIABLE HIGHLIGHT
 
@@ -106,7 +136,7 @@ red on writing side / blue on the reading side
 
 [<img width="60%" alt="[Console highlight]" src="https://raw.githubusercontent.com/Luxcium/pop-n-lock-theme-vscode/master/images/v3.18.0/typescript%20javascript%20ecmascript%20vscode%20theme%20console%20log%20highlight.png">](https://raw.githubusercontent.com/Luxcium/pop-n-lock-theme-vscode/master/images/v3.18.0/typescript%20javascript%20ecmascript%20vscode%20theme%20console%20log%20highlight.png)
 <br/>(v3.18) When using Latest Typescipt Grammar support console.log / conso.error etc. highlight<br/> -->
-
+<!--
 ## IMPORTS
 
 When using appropriate font the italics are treated as cursive
@@ -158,6 +188,7 @@ Will fall back to usig italic if the font doese not include support
 ## **Options and settings**
 
 > **Set highlightModifiedTabs to true in your settings.json** `"workbench.editor.highlightModifiedTabs": true`
+-->
 
 ### Set the editor.rulers: [80, 120, 121] in vscode settings
 
@@ -167,6 +198,7 @@ Your favourite streamlined code editor is getting more bright and radiant, optim
 
 We would be happy to know more about the progaming language you are using, show us your Visual Studio Code Settings and what you like the most or work best for you and also what should be improoved next in _Pop N' Lock Theme by Luxcium ✨_
 
+<!--
 ### **Suggested extensions**
 
 - [Alphabetical Sorter (not included anymore)](https://marketplace.visualstudio.com/items?itemName=ue.alphabetical-sorter)
@@ -256,9 +288,12 @@ We would be happy to know more about the progaming language you are using, show 
 [![TypeScript](https://raw.githubusercontent.com/luxcium/pop-n-lock-theme-vscode/master/images/v3.15.5/screen-captire-2.png) JS/TS Each section of code have a specific colour signature (v3.15.5)](https://raw.githubusercontent.com/luxcium/pop-n-lock-theme-vscode/master/images/v3.15.5/screen-captire-2.png)
 
 [![TypeScript](https://raw.githubusercontent.com/luxcium/pop-n-lock-theme-vscode/master/images/v3.15.5/screen-captire-1.png)(v3.15.5) JS/TS Each section of code have a specific colour signature](https://raw.githubusercontent.com/luxcium/pop-n-lock-theme-vscode/master/images/v3.15.5/screen-captire-1.png)
+<!--
+ -->
 
 [![TypeScript](https://raw.githubusercontent.com/luxcium/pop-n-lock-theme-vscode/master/images/v3.11.1/TS1.png)(v3.11.1) TypeScript Screenshot](https://raw.githubusercontent.com/luxcium/pop-n-lock-theme-vscode/master/images/v3.11.1/TS2.png)
 
+<!--
 ## Breaking Changes possible for `Luxcium Preview✨`
 
 > **⚠️ Themes marked `Luxcium Preview✨` are subject to change in a future release. You may have to manualy remove/reinstall the theme in your config file:**
@@ -272,7 +307,8 @@ Pop N' Lock Theme by Luxcium ✨ Alexis's Black ⛷ (PREVIEW may change in futur
 Pop N' Lock Theme by Luxcium ✨ TSA/ASD 🧩 (PREVIEW may change in future release)
 
 ---
-
+-->
+<!--
 ### **On the web**
 
 - [Pop n' Lock on Best VS Code Dark Themes - 2020 Edition](https://www.amitmerchant.com/vscode-dark-themes-2020/)
@@ -293,6 +329,8 @@ Pop N' Lock Theme by Luxcium ✨ TSA/ASD 🧩 (PREVIEW may change in future rele
 - [Pop n' Lock on open-vsx](https://open-vsx.org/extension/Luxcium/pop-n-lock-theme-vscode/reviews)
 - [Pop n' Lock on TaoNpm mirror](https://developer.aliyun.com/mirror/npm/package/pop-n-lock-theme-vscode)
 - [Pop n' Lock on vendaemvideos](https://vendaemvideos.com.br/blog/vscode-themes-2020-8d3168)
+<!--
+-->
 
 ### **Originally based on**
 
@@ -328,6 +366,6 @@ Based on _Popping and Locking (VS Code Theme)_
 
 ---
 
-Copyright © 2018-2021 Benjamin Vincent Kasapoglu (Luxcium)
+Copyright © 2018-2022 Benjamin Vincent Kasapoglu (Luxcium)
 
 ###### Scientia is lux principium✨™
