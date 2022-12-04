@@ -12,7 +12,7 @@ const myRepl = repl.start({
   useColors: true,
   ignoreUndefined: false,
   useGlobal: true,
-  prompt: '\u001b[45m\u001b[30m \ue74e \u001b[0m\u001b[35m\u001b[0m '
+  prompt: '\u001b[45m\u001b[30m \ue74e \u001b[0m\u001b[35m\u001b[0m ',
 });
 function initializeContext() {
   myRepl.prompt();
@@ -47,7 +47,7 @@ function initializeContext() {
     let myDomElements = {
       window: null,
       document: null,
-      body: null
+      body: null,
     };
     try {
       if (myURL.toUpperCase().indexOf('HTTP') === -1) {
@@ -76,11 +76,7 @@ function initializeContext() {
   // @ts-ignore
   myRepl.context.toHex = yourNumber =>
     log(
-      chalk.cyan.bold(
-        `0x${Math.round(yourNumber)
-          .toString(16)
-          .toUpperCase()}`
-      )
+      chalk.cyan.bold(`0x${Math.round(yourNumber).toString(16).toUpperCase()}`)
     );
   /**
    * @param {string} hexString
@@ -123,4 +119,28 @@ const puppetUrl = async myUrl => {
   await page.goto(myUrl);
   await page.screenshot({ path: 'example.png' });
   await browser.close();
+};
+
+/**
+ * send LIST
+ */
+debugger;
+
+(() => {
+  const objectLike = { propertyOne: 10, propertyTwo: 'string' };
+  const { propertyOne } = objectLike;
+  const myArray = [5, 10, 15, 20, 25];
+  const [cinq, dix] = myArray;
+  global.console.log('Hello World');
+  return { propertyOne, cinq, dix };
+})();
+
+export {
+  returnAllLists,
+  ListItem,
+  List,
+  router,
+  jwtSecret,
+  mongosanitize,
+  jwt,
 };
