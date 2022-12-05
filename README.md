@@ -66,7 +66,7 @@ Please feel free to ask any question, to let us know about any problems that sho
 
 [Bracket pair colorization now 10,000x faster.](https://code.visualstudio.com/blogs/2021/09/29/bracket-pair-colorization)
 
-[<img width="90%" alt="[High performance bracket pair colorization]" src="images/v3.32.18/what_color_to_use_wiht_bracket_pair_colorization.png">](images/v3.32.18/what_color_to_use_wiht_bracket_pair_colorization.png)
+[<img width="90%" alt="[High performance bracket pair colorization]" src="images/v3.32.18/what_color_to_use_wiht_bracket_pair_colorization.png">](https://raw.githubusercontent.com/Luxcium/pop-n-lock-theme-vscode/master/images/v3.32.18/what_color_to_use_wiht_bracket_pair_colorization.png)
 <br/>(v3.32.18)
 **[click on the image to enlarge](images/v3.32.18/what_color_to_use_wiht_bracket_pair_colorization.png)**<br/>
 <br/>
@@ -88,12 +88,12 @@ images/v3.32.3/git-resources-colors-modified-staged-add-untracked-renamed-ignore
 
 ## JavaScript and TypeScript
 
-[<img width="90%" alt="JavaScript Classic (NodeJS) screenshot" src="images/v3.32.18/vscode-theme-colours-javaScript-classic.png">](images/v3.32.18/vscode-theme-colours-javaScript-classic.png)
+[<img width="90%" alt="JavaScript Classic (NodeJS) screenshot" src="images/v3.32.18/vscode-theme-colours-javaScript-classic.png">](https://raw.githubusercontent.com/luxcium/pop-n-lock-theme-vscode/50e4d0af35f17d060d9a05183a5bb137a10f7836/images/v3.32.18/vscode-theme-colours-javaScript-classic.png)
 <br/>(v3.32.18) JavaScript Classic (NodeJS) screenshot<br/>
 <br/>
 <br/>
 
-[<img width="80%" alt="JavaScript and TypeScript comparaison screenshot" src="images/v3.32.18/javascript-typescript-theme-comparaison.png">](images/v3.32.18/javascript-typescript-theme-comparaison.png)
+[<img width="80%" alt="JavaScript and TypeScript comparaison screenshot" src="images/v3.32.18/javascript-typescript-theme-comparaison.png">](https://raw.githubusercontent.com/luxcium/pop-n-lock-theme-vscode/50e4d0af35f17d060d9a05183a5bb137a10f7836/images/v3.32.18/javascript-typescript-theme-comparaison.png)
 <br/>
 (v3.32.18) JavaScript and TypeScript comparaison screenshot<br/>
 <br/>
@@ -106,7 +106,7 @@ images/v3.32.3/git-resources-colors-modified-staged-add-untracked-renamed-ignore
 
 ### FUNCTION RETURN TYPE
 
-[<img width="60%" alt="[Return type of functions higlighting]" src="images/v3.32.18/colorfull-function-return-type-highlight.png">](images/v3.32.18/colorfull-function-return-type-highlight.png)
+[<img width="60%" alt="[Return type of functions higlighting]" src="images/v3.32.18/colorfull-function-return-type-highlight.png">](https://raw.githubusercontent.com/Luxcium/pop-n-lock-theme-vscode/master/images/v3.32.18/colorfull-function-return-type-highlight.png)
 <br/>(v3.32.18) Colorfull function return type highlight<br/>
 <br/>
 <br/>
